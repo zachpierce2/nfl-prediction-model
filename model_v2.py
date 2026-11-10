@@ -72,7 +72,27 @@ def run(games,odds,out,edge):
     for year in range(2020,2026):
         train=played[played.season<year]; test=played[played.season==year].copy()
         if len(train)<150 or test.empty:continue
-        model=make_pipeline(SimpleImputer(strategy='median'),StandardScaler(),Ridge(alpha=100))
+        ridge_model = make_pipeline(
+    SimpleImputer(strategy='median'),
+    StandardScaler(),
+    Ridge(alpha=100)
+)
+
+xgb_model = make_pipeline(
+    SimpleImputer(strategy='median'),
+    XGBRegressor(
+        n_estimators=300,
+        max_depth=3,
+        learning_rate=0.03,
+        subsample=0.8,
+        colsample_bytree=0.8,
+        objective='reg:squarederror',
+        random_state=42,
+        n_jobs=2
+    )
+)
+
+model = xgb_model
         model.fit(train[FEATURES],train.actual_margin)
         # Residual spread estimated only from past seasons using cross-fitted earlier-year predictions.
         # Conservative fallback from past training margins until at least one prior fold exists.
