@@ -29,11 +29,15 @@ jobs:
       - name: Run NFL historical backtest
         run: python model.py --games data/games.csv --out nfl_model_results
 
-      - name: Save backtest results
+      
+              - name: Save backtest results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: nfl-backtest-results
-          path: nfl_model_results/
+          path: |
+            nfl_model_results/
+            data/games.csv
           if-no-files-found: warn
           retention-days: 30
+
