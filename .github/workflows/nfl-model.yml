@@ -1,4 +1,4 @@
-name: NFL Model Test
+name: NFL Historical Backtest
 
 on:
   workflow_dispatch:
@@ -7,9 +7,9 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  backtest:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
       - name: Download repository
@@ -23,5 +23,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Check Python files
-        run: python -m compileall -q .
+      - name: Download NFL historical data
+        run: python download_data.py
+
+      - name: Run NFL historical backtest
+        run: python model.py --games data/games.csv --out nfl_model_results
+
+      - name: Save backtest results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nfl-backtest-results
+          path: nfl_model_results/
+          if-no-files-found: warn
+          retention-days: 30
