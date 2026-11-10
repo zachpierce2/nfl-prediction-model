@@ -14,6 +14,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
+from xgboost import XGBRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 URL='https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv'
