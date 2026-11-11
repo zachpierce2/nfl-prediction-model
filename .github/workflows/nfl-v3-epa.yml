@@ -1,4 +1,4 @@
-name: NFL V3 EPA Comparison
+name: NFL V3 EPA Locked Audit
 
 on:
   workflow_dispatch:
@@ -8,44 +8,78 @@ permissions:
 
 jobs:
   backtest:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
 
     env:
-      OMP_NUM_THREADS: '2'
-      OPENBLAS_NUM_THREADS: '2'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PYTHONHASHSEED: '0'
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up exact Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          cache: pip
-          cache-dependency-path: requirements-v3-epa.txt
+          python-version: '3.12.14'
 
-      - name: Install dependencies
-        run: pip install -r requirements-v3-epa.txt
+      - name: Verify and extract frozen comparison
+        shell: bash
+        run: |
+          echo '321b31509e13a85d2ef7b0255abfd54b7309232e580557a1718785db79fda1e5  v3_epa_locked.zip' | sha256sum --check --strict
+          python -m zipfile -e v3_epa_locked.zip locked_epa
 
-      - name: Check historical boundaries
+      - name: Install exact dependencies
+        run: |
+          python -m pip install -r locked_epa/requirements-locked.txt
+          python -m pip check
+
+      - name: Check historical boundaries and grading
+        working-directory: locked_epa
         run: python -m unittest -v test_v3_epa.py
 
-      - name: Download game data
+      - name: Run first locked comparison
+        shell: bash
         run: |
-          mkdir -p data
-          curl --fail --location --retry 3 https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv --output data/games.csv
+          mkdir -p nfl_v3_epa_locked_results/run_a
+          set -o pipefail
+          python locked_epa/run_locked.py --out nfl_v3_epa_locked_results/run_a 2>&1 | tee nfl_v3_epa_locked_results/run_a.log
 
-      - name: Run EPA comparison
-        run: python model_v3_epa.py --games data/games.csv --out nfl_v3_epa_results
+      - name: Run second locked comparison
+        shell: bash
+        run: |
+          mkdir -p nfl_v3_epa_locked_results/run_b
+          set -o pipefail
+          python locked_epa/run_locked.py --out nfl_v3_epa_locked_results/run_b 2>&1 | tee nfl_v3_epa_locked_results/run_b.log
 
-      - name: Record dependency versions
-        run: pip freeze > nfl_v3_epa_results/dependencies.txt
+      - name: Check both runs match exactly
+        shell: bash
+        run: |
+          for file in predictions.csv by_season.csv spread_backtest.csv summary.json; do
+            cmp "nfl_v3_epa_locked_results/run_a/$file" "nfl_v3_epa_locked_results/run_b/$file"
+          done
+          echo 'Both runs match exactly.' > nfl_v3_epa_locked_results/repeat_check.txt
 
-      - name: Upload results
+      - name: Record environment
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p nfl_v3_epa_locked_results
+          python --version > nfl_v3_epa_locked_results/python.txt
+          python -m pip freeze > nfl_v3_epa_locked_results/dependencies.txt
+          uname -a > nfl_v3_epa_locked_results/platform.txt
+          if [ -f locked_epa/lock.json ]; then
+            cp locked_epa/lock.json nfl_v3_epa_locked_results/input_lock.json
+          fi
+
+      - name: Upload results and diagnostics
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: nfl-v3-epa-results
-          path: nfl_v3_epa_results/
+          name: nfl-v3-epa-locked-results
+          path: nfl_v3_epa_locked_results/
           if-no-files-found: error
