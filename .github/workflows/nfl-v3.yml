@@ -16,8 +16,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: pip
-          cache-dependency-path: requirements-v3.txt
 
       - name: Install dependencies
         run: pip install -r requirements-v3.txt
@@ -29,6 +27,147 @@ jobs:
 
       - name: Run V3
         run: python model_v3.py --games data/games.csv --out nfl_v3_results
+
+      - name: Exploratory spread backtest
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import numpy as np
+          import pandas as pd
+
+          out = Path("nfl_v3_results")
+          predictions = pd.read_csv(out / "predictions.csv")
+          games = pd.read_csv("data/games.csv", low_memory=False)
+
+          if "spread_line" not in games.columns:
+              raise ValueError("Game data has no spread_line column.")
+          if games["game_id"].duplicated().any():
+              raise ValueError("Duplicate game IDs in game data.")
+
+          lines = games[["game_id", "spread_line"]].copy()
+          lines["spread_line"] = pd.to_numeric(
+              lines["spread_line"], errors="coerce"
+          )
+
+          data = predictions.merge(
+              lines, on="game_id", how="left",
+              validate="many_to_one"
+          )
+          missing = int(data["spread_line"].isna().sum())
+          data = data.dropna(subset=["spread_line"]).copy()
+
+          # nflverse spread_line: positive means home is favored.
+          # Example: home favored by 3 => spread_line = 3.
+          data["edge"] = (
+              data["predicted_margin"] - data["spread_line"]
+          )
+
+          rows = []
+          for model, group in data.groupby("model"):
+              for threshold in [0, 1, 2, 3, 4, 5, 6, 7]:
+                  selected = group[
+                      (group["edge"].abs() >= threshold)
+                      & (group["edge"] != 0)
+                  ].copy()
+
+                  selected["pick"] = np.where(
+                      selected["edge"] > 0, "home", "away"
+                  )
+                  selected["cover_margin"] = (
+                      selected["actual_margin"]
+                      - selected["spread_line"]
+                  ) * np.sign(selected["edge"])
+
+                  selected["result"] = np.select(
+                      [
+                          selected["cover_margin"] > 0,
+                          selected["cover_margin"] < 0
+                      ],
+                      ["win", "loss"],
+                      default="push"
+                  )
+
+                  selected["threshold"] = threshold
+                  selected.to_csv(
+                      out / f"bets_{model}_edge_{threshold}.csv",
+                      index=False
+                  )
+
+                  scopes = [
+                      ("all_2020_2025", group, selected),
+                      (
+                          "2020_2023",
+                          group[group["season"] <= 2023],
+                          selected[selected["season"] <= 2023]
+                      ),
+                      (
+                          "2024_2025",
+                          group[group["season"] >= 2024],
+                          selected[selected["season"] >= 2024]
+                      )
+                  ]
+
+                  for season in sorted(group["season"].unique()):
+                      scopes.append((
+                          str(int(season)),
+                          group[group["season"] == season],
+                          selected[selected["season"] == season]
+                      ))
+
+                  for scope, available, bets in scopes:
+                      wins = int((bets["result"] == "win").sum())
+                      losses = int((bets["result"] == "loss").sum())
+                      pushes = int((bets["result"] == "push").sum())
+                      count = len(bets)
+                      seasons = available["season"].nunique()
+
+                      # Hypothetical -110: risk $110 to win $100.
+                      profit = wins * 100 - losses * 110
+                      rows.append({
+                          "model": model,
+                          "minimum_edge_points": threshold,
+                          "period": scope,
+                          "bets": count,
+                          "bets_per_season": (
+                              round(count / seasons, 1)
+                              if seasons else None
+                          ),
+                          "wins": wins,
+                          "losses": losses,
+                          "pushes": pushes,
+                          "win_pct_excluding_pushes": (
+                              round(100 * wins / (wins + losses), 2)
+                              if wins + losses else None
+                          ),
+                          "hypothetical_profit_dollars": profit,
+                          "roi_pct": (
+                              round(100 * profit / (count * 110), 2)
+                              if count else None
+                          )
+                      })
+
+          results = pd.DataFrame(rows)
+          results.to_csv(out / "spread_backtest.csv", index=False)
+
+          print(results[
+              results["period"] == "all_2020_2025"
+          ].to_string(index=False))
+
+          (out / "spread_backtest_notes.txt").write_text(
+              "EXPLORATORY RESULTS ONLY.\n"
+              "Historical schedule spreads have unverified timing.\n"
+              "All bets assume -110; actual prices are not supplied.\n"
+              "Pushes are excluded from win percentage.\n"
+              "ROI uses total stakes including refunded pushes.\n"
+              f"Prediction rows missing spreads: {missing}.\n"
+              "Thresholds are reported, not optimized or validated.\n"
+              "2024-2025 is a separate reporting period, not a "
+              "fully untouched holdout: model comparisons have "
+              "already been inspected for those seasons.\n"
+              "Do not treat the best row as proven future performance.\n"
+          )
+          PY
 
       - name: Upload results
         uses: actions/upload-artifact@v4
