@@ -9,9 +9,11 @@ jobs:
     timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
@@ -20,10 +22,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-v3.txt
 
+      - name: Download game data
+        run: |
+          mkdir -p data
+          curl --fail --location --retry 3 https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv --output data/games.csv
+
       - name: Run V3
         run: python model_v3.py --games data/games.csv --out nfl_v3_results
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload results
+        uses: actions/upload-artifact@v4
         with:
           name: nfl-v3-results
           path: nfl_v3_results/
+          if-no-files-found: error
