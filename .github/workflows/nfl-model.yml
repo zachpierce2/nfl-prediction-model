@@ -27,7 +27,7 @@ jobs:
         run: python download_data.py
 
       - name: Run NFL historical backtest
-        run: python model.py --games data/games.csv --out nfl_model_results
+        run: model_v2.py --games data/games.csv --out nfl_model_results
 
       - name: Save backtest results
         if: always()
