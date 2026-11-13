@@ -21,7 +21,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - uses: actions/checkout@v4
@@ -32,8 +32,8 @@ jobs:
 
       - name: Extract and verify data tools
         run: |
-          echo '6a25fe9aa2d9a2d5da0a73034a29439c5992a7eb24efbc1f81af5a80d219c001  nfl_advanced_data_tools.zip' | sha256sum --check --strict
-          python -m zipfile -e nfl_advanced_data_tools.zip advanced_tools
+          echo '96ace67f6de8ccb045aaf97ed3a0d2193b065100cba92640914eec45e26b541d  nfl_advanced_data_auto.zip' | sha256sum --check --strict
+          python -m zipfile -e nfl_advanced_data_auto.zip advanced_tools
           cd advanced_tools
           python verify.py
 
@@ -70,12 +70,23 @@ jobs:
           --inputs nfl_data_inputs
           --out nfl_data_results/availability
 
+      - name: Collect automatic QB and injury source reports
+        if: inputs.mode == 'capture'
+        run: >-
+          python advanced_tools/auto_reports.py
+          --availability nfl_data_results/availability
+          --out nfl_data_results/auto_reports
+
       - name: Preserve collected data even if later preparation fails
         if: always() && inputs.mode == 'capture'
         shell: bash
         run: |
           if [ -f nfl_data_results/capture/capture.json ]; then
             python -c 'import sys; sys.path.insert(0,"advanced_tools"); from data_layer import archive_capture; import os; archive_capture("nfl_data_results/capture",os.environ["RUNNER_TEMP"]+"/nfl-data-archive/data")'
+            if [ -d nfl_data_results/auto_reports ]; then
+              mkdir -p "$RUNNER_TEMP/nfl-data-archive/data/auto_reports"
+              cp -a nfl_data_results/auto_reports "$RUNNER_TEMP/nfl-data-archive/data/auto_reports/${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+            fi
             git -C "$RUNNER_TEMP/nfl-data-archive" config user.name 'github-actions[bot]'
             git -C "$RUNNER_TEMP/nfl-data-archive" config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git -C "$RUNNER_TEMP/nfl-data-archive" add data
