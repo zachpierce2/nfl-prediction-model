@@ -1,0 +1,12 @@
+{
+  "provider": "The Odds API",
+  "captured_at_utc": "2026-11-13T07:13:54.704323+00:00",
+  "response_sha256": "2ec3433ba9f23bce55469b5b8c8d879d379a0d103c1137fc87e3fdd8801a2766",
+  "quota": {
+    "x-requests-remaining": "499",
+    "x-requests-used": "1",
+    "x-requests-last": "1"
+  },
+  "accepted_quotes": 404,
+  "note": "Timestamped provider snapshot, not guaranteed executable odds or a wager fill."
+}
