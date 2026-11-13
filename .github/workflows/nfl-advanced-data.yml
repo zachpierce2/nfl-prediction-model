@@ -1,1 +1,94 @@
+name: NFL Advanced Data Archive
 
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Test the installation or capture one fresh snapshot
+        type: choice
+        default: test
+        options:
+          - test
+          - capture
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-advanced-data-archive
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Extract and verify data tools
+        run: |
+          echo '7bf82f317af0e51982e7c68ec21c3458bd1e4a2ebd235d66a5ccbf0b83c80fb3  nfl_advanced_data_tools.zip' | sha256sum --check --strict
+          python -m zipfile -e nfl_advanced_data_tools.zip advanced_tools
+          cd advanced_tools
+          python verify.py
+
+      - name: Install data dependencies
+        run: python -m pip install -r advanced_tools/requirements.txt
+
+      - name: Run validation tests
+        run: python -m unittest discover -s advanced_tools -v
+
+      - name: Open persistent archive branch
+        if: inputs.mode == 'capture'
+        shell: bash
+        run: |
+          if git ls-remote --exit-code --heads origin nfl-data-archive > /dev/null; then
+            git fetch --depth=1 origin refs/heads/nfl-data-archive
+            git worktree add --detach "$RUNNER_TEMP/nfl-data-archive" FETCH_HEAD
+          else
+            git worktree add --detach "$RUNNER_TEMP/nfl-data-archive" HEAD
+            git -C "$RUNNER_TEMP/nfl-data-archive" switch --orphan nfl-data-archive
+          fi
+
+      - name: Capture current odds once
+        if: inputs.mode == 'capture'
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python advanced_tools/odds.py --out nfl_data_results/capture
+
+      - name: Prepare availability inputs and archive snapshot
+        if: inputs.mode == 'capture'
+        run: >-
+          python advanced_tools/data_layer.py
+          --capture nfl_data_results/capture
+          --archive "$RUNNER_TEMP/nfl-data-archive/data"
+          --inputs nfl_data_inputs
+          --out nfl_data_results/availability
+
+      - name: Preserve collected data even if later preparation fails
+        if: always() && inputs.mode == 'capture'
+        shell: bash
+        run: |
+          if [ -f nfl_data_results/capture/capture.json ]; then
+            python -c 'import sys; sys.path.insert(0,"advanced_tools"); from data_layer import archive_capture; import os; archive_capture("nfl_data_results/capture",os.environ["RUNNER_TEMP"]+"/nfl-data-archive/data")'
+            git -C "$RUNNER_TEMP/nfl-data-archive" config user.name 'github-actions[bot]'
+            git -C "$RUNNER_TEMP/nfl-data-archive" config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git -C "$RUNNER_TEMP/nfl-data-archive" add data
+            if ! git -C "$RUNNER_TEMP/nfl-data-archive" diff --cached --quiet; then
+              git -C "$RUNNER_TEMP/nfl-data-archive" commit -m "Record NFL data snapshot ${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+              git -C "$RUNNER_TEMP/nfl-data-archive" push origin HEAD:refs/heads/nfl-data-archive
+            fi
+          fi
+
+      - name: Save downloadable run results
+        if: always() && inputs.mode == 'capture'
+        uses: actions/upload-artifact@v4
+        with:
+          name: nfl-advanced-data-${{ github.run_id }}-${{ github.run_attempt }}
+          path: nfl_data_results/
+          retention-days: 90
+          if-no-files-found: warn
