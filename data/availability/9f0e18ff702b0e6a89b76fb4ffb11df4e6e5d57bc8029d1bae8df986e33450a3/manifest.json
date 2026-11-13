@@ -1,0 +1,31 @@
+{
+  "status": "DATA_COLLECTION_ONLY",
+  "created_at_utc": "2026-11-13T08:37:09.709545+00:00",
+  "capture_id": "b33f6217ccd4760de0490610f6b70c1066983d6d60a26c691889362922e35b2c",
+  "matched_quote_rows": 378,
+  "unmatched_events": 2,
+  "teams": 48,
+  "ready_teams": 0,
+  "schedule_sha256": "bb1c39189edc15121dde73b28b7794ec8dfd51c3405291719bf871e002bef4cb",
+  "files": {
+    "matched_quotes.csv": "4b478d5e7087149e5fb496c505f7a63b183ae3cc3b92789ef6a974db9f9832ee",
+    "injuries.csv": "54f65f04c754d1a9c5c53683dd33744e02964c2b5cc90254c12b4396c8d1775f",
+    "game_features.csv": "7a211e1e14db90856bb705cd5500a7ce229d5d0d2a45eca9e0994c7a5af8a6bf",
+    "injuries_to_fill.csv": "3808c15107f1b16e499e6dda8abc042f562a305900c68f98267eadf68eab674e",
+    "availability_features.csv": "b87871346c6078ef668cf008a7a4eccf07ac7b8d981a68d0e9ece1477a13d677",
+    "injury_coverage.csv": "84b65c72968d3fd3536226f47fe36be4fe11b181d5318b4f535cffd02dcb81b8",
+    "qb_scenarios_to_fill.csv": "797b5436a9d9faeccd669e5c443665d08b672d9dd713b92fdf048c9f28741052",
+    "qb_scenarios.csv": "f1151f9408cda67f873ed13beeb35b16be7e861ae89191fa01625aaee47b4bd3",
+    "unmatched_events.json": "324376ae8bf95e6f53f8ff8fa209361d54582b84892d279a3a0a7799bdcb3482",
+    "injury_coverage_to_fill.csv": "33ea0956eb33e1a62ab1b3aee826511ded4874dbf154da33ab902ddd501be419",
+    "schedule.csv": "bb1c39189edc15121dde73b28b7794ec8dfd51c3405291719bf871e002bef4cb",
+    "selected_qb_scenarios.csv": "f1151f9408cda67f873ed13beeb35b16be7e861ae89191fa01625aaee47b4bd3"
+  },
+  "limits": [
+    "Manual reports and probabilities are source claims, not authenticated facts.",
+    "Injury features have no fitted effect on spread or cover probability.",
+    "No model improvement or betting performance has been established.",
+    "Blank injury features mean unknown, not healthy.",
+    "Capture does not establish an executable wager fill."
+  ]
+}
