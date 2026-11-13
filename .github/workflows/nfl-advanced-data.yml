@@ -22,6 +22,7 @@ jobs:
   collect:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+
     steps:
       - uses: actions/checkout@v4
 
@@ -31,7 +32,7 @@ jobs:
 
       - name: Extract and verify data tools
         run: |
-          echo '7bf82f317af0e51982e7c68ec21c3458bd1e4a2ebd235d66a5ccbf0b83c80fb3  nfl_advanced_data_tools.zip' | sha256sum --check --strict
+          echo '6a25fe9aa2d9a2d5da0a73034a29439c5992a7eb24efbc1f81af5a80d219c001  nfl_advanced_data_tools.zip' | sha256sum --check --strict
           python -m zipfile -e nfl_advanced_data_tools.zip advanced_tools
           cd advanced_tools
           python verify.py
