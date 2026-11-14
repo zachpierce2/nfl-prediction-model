@@ -39,7 +39,7 @@ jobs:
 
       - name: Verify and extract comparison tools
         run: |
-          echo '541b390f0b06e039d581e3fdd56fb5c7385adacc9fc8ff59628bac265a9255cf  nfl_v3_shadow_tools.zip' | sha256sum --check --strict
+          echo 'bada57efdc4f49626ca883847f68f8e6ae49c2a032109499f8d68c3fa1561a71  nfl_v3_shadow_tools.zip' | sha256sum --check --strict
           python -m zipfile -e nfl_v3_shadow_tools.zip comparison_tools
           echo '96ace67f6de8ccb045aaf97ed3a0d2193b065100cba92640914eec45e26b541d  nfl_advanced_data_auto.zip' | sha256sum --check --strict
           python -m zipfile -e nfl_advanced_data_auto.zip advanced_tools
