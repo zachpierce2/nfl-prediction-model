@@ -1,0 +1,53 @@
+{
+  "status": "AUTOMATIC_SOURCE_REPORTS_COLLECTED",
+  "feature_cutoff_utc": "2026-11-14T07:08:41.252849+00:00",
+  "games": 24,
+  "team_rows": 48,
+  "teams_with_qb_candidate": 48,
+  "teams_with_current_week_injury_rows": 26,
+  "injury_records": 325,
+  "confirmed_qb_probabilities_generated": 0,
+  "sources": {
+    "depth": {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
+      "captured_at_utc": "2026-11-14T07:08:36.099588+00:00",
+      "last_modified_utc": "2026-11-14T07:02:01+00:00",
+      "etag": "\"0x8DF421D2EA7DD74\"",
+      "sha256": "96bdd74fd36524ee38f4c6b3981f95e0da0ebbf9437c3e954294a30ed38aea06",
+      "bytes": 75018347
+    },
+    "injuries": {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+      "captured_at_utc": "2026-11-14T07:08:40.283694+00:00",
+      "last_modified_utc": "2026-11-14T07:01:33+00:00",
+      "etag": "\"0x8DF421D1E1F2D96\"",
+      "sha256": "1a0242ef9bbb956233928c66a8977fbde46c45e84d7c368b911f5dca23541754",
+      "bytes": 362340
+    },
+    "snaps": {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv",
+      "captured_at_utc": "2026-11-14T07:08:40.450798+00:00",
+      "last_modified_utc": "2026-11-13T12:01:35+00:00",
+      "etag": "\"0x8DF417DDD5B4475\"",
+      "sha256": "ba54197d9e1e9a5473153f984f4880e736020c9e20565d1df246bf1e62714866",
+      "bytes": 1147455
+    },
+    "players": {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
+      "captured_at_utc": "2026-11-14T07:08:40.710176+00:00",
+      "last_modified_utc": "2026-11-13T15:51:27+00:00",
+      "etag": "\"0x8DF419DFA29535E\"",
+      "sha256": "ee474475efbd568e00fa723d09733b9e5e3ffd64d7aeefa20cdcfdad53cadc27",
+      "bytes": 7308491
+    }
+  },
+  "limits": [
+    "Depth-chart candidates are not confirmed game starters; no starting probabilities are invented.",
+    "Questionable/doubtful are categorical, not mapped to arbitrary play probabilities.",
+    "Injury rows are partial and do not establish a healthy roster or report completeness.",
+    "Snap shares are recent-use proxies, not estimated healthy usage or replacement quality.",
+    "IR/reserve list coverage is not supplied by these weekly injury reports.",
+    "No historical as-of reconstruction; report observations begin at capture time.",
+    "No fitted injury/QB effects or new betting predictions are produced."
+  ]
+}

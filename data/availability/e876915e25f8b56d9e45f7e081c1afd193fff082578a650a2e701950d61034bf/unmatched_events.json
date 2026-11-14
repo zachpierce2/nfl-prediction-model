@@ -1,0 +1,50 @@
+[
+  {
+    "event_id": "cbe45bafcc2615fc1d96cbc12840377a",
+    "home_team": "PHI",
+    "away_team": "PIT",
+    "kickoff_utc": "2026-11-22T18:00:00+00:00",
+    "reason": "no_schedule_match",
+    "candidates": [
+      {
+        "game_id": "2026_11_PIT_PHI",
+        "kickoff_utc": "2026-11-22 21:25:00+00:00",
+        "delta_minutes": 205.0
+      },
+      {
+        "game_id": "2024_15_PIT_PHI",
+        "kickoff_utc": "2024-12-15 21:25:00+00:00",
+        "delta_minutes": 1017875.0
+      },
+      {
+        "game_id": "2022_08_PIT_PHI",
+        "kickoff_utc": "2022-10-30 17:00:00+00:00",
+        "delta_minutes": 2137020.0
+      }
+    ]
+  },
+  {
+    "event_id": "8ba112fabf4e87639338a5f437c5abfe",
+    "home_team": "NYG",
+    "away_team": "JAX",
+    "kickoff_utc": "2026-11-22T21:25:00+00:00",
+    "reason": "no_schedule_match",
+    "candidates": [
+      {
+        "game_id": "2026_11_JAX_NYG",
+        "kickoff_utc": "2026-11-22 18:00:00+00:00",
+        "delta_minutes": 205.0
+      },
+      {
+        "game_id": "2018_01_JAX_NYG",
+        "kickoff_utc": "2018-09-09 17:00:00+00:00",
+        "delta_minutes": 4314505.0
+      },
+      {
+        "game_id": "2010_12_JAX_NYG",
+        "kickoff_utc": "2010-11-28 18:00:00+00:00",
+        "delta_minutes": 8406925.0
+      }
+    ]
+  }
+]
