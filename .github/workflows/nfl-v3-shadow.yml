@@ -22,7 +22,7 @@ concurrency:
 jobs:
   compare:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 60
     env:
       OMP_NUM_THREADS: '1'
       OPENBLAS_NUM_THREADS: '1'
@@ -39,7 +39,7 @@ jobs:
 
       - name: Verify and extract comparison tools
         run: |
-          echo '252281b4e3ef4d05522d0cc210cab5b3b9b1b557a58d1c113a9d73c9f7c0c34b  nfl_v3_shadow_tools.zip' | sha256sum --check --strict
+          echo '541b390f0b06e039d581e3fdd56fb5c7385adacc9fc8ff59628bac265a9255cf  nfl_v3_shadow_tools.zip' | sha256sum --check --strict
           python -m zipfile -e nfl_v3_shadow_tools.zip comparison_tools
           echo '96ace67f6de8ccb045aaf97ed3a0d2193b065100cba92640914eec45e26b541d  nfl_advanced_data_auto.zip' | sha256sum --check --strict
           python -m zipfile -e nfl_advanced_data_auto.zip advanced_tools
@@ -51,6 +51,17 @@ jobs:
 
       - name: Run comparison and replay tests
         run: python -m unittest discover -s comparison_tools -v
+
+      - name: Cache historical extended statistics
+        if: inputs.mode == 'forecast'
+        uses: actions/cache@v4
+        with:
+          path: nfl_all_stats_cache
+          key: nfl-all-stats-v1-2017-2025
+
+      - name: Prepare historical extended statistics
+        if: inputs.mode == 'forecast'
+        run: python comparison_tools/all_stats.py --prepare nfl_all_stats_cache
 
       - name: Open existing data archive
         if: inputs.mode != 'test'
@@ -88,6 +99,7 @@ jobs:
           --archive "$RUNNER_TEMP/nfl-data-archive"
           --out nfl_shadow_results/comparison
           --qb-confirmations nfl_data_inputs/qb_starters.csv
+          --all-stats-cache nfl_all_stats_cache
 
       - name: Evaluate recorded forecasts without new odds
         if: inputs.mode == 'evaluate'
