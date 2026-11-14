@@ -1,0 +1,5 @@
+model,settled_forecasts,mae,selected_games,wins,losses,pushes,win_pct,hypothetical_profit_per_unit_risked,hypothetical_roi_pct
+locked_v3,0,,0,0,0,0,,,
+neutral_candidate,0,,0,0,0,0,,,
+qb_candidate,0,,0,0,0,0,,,
+qb_injury_shadow,0,,0,0,0,0,,,

@@ -1,0 +1,34 @@
+{
+  "depth": {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
+    "captured_at_utc": "2026-11-14T08:00:11.661906+00:00",
+    "last_modified_utc": "2026-11-14T07:02:01+00:00",
+    "etag": "\"0x8DF421D2EA7DD74\"",
+    "sha256": "96bdd74fd36524ee38f4c6b3981f95e0da0ebbf9437c3e954294a30ed38aea06",
+    "bytes": 75018347
+  },
+  "injuries": {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+    "captured_at_utc": "2026-11-14T08:00:15.401219+00:00",
+    "last_modified_utc": "2026-11-14T07:01:33+00:00",
+    "etag": "\"0x8DF421D1E1F2D96\"",
+    "sha256": "1a0242ef9bbb956233928c66a8977fbde46c45e84d7c368b911f5dca23541754",
+    "bytes": 362340
+  },
+  "snaps": {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv",
+    "captured_at_utc": "2026-11-14T08:00:15.731955+00:00",
+    "last_modified_utc": "2026-11-13T12:01:35+00:00",
+    "etag": "\"0x8DF417DDD5B4475\"",
+    "sha256": "ba54197d9e1e9a5473153f984f4880e736020c9e20565d1df246bf1e62714866",
+    "bytes": 1147455
+  },
+  "players": {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
+    "captured_at_utc": "2026-11-14T08:00:16.211016+00:00",
+    "last_modified_utc": "2026-11-13T15:51:27+00:00",
+    "etag": "\"0x8DF419DFA29535E\"",
+    "sha256": "ee474475efbd568e00fa723d09733b9e5e3ffd64d7aeefa20cdcfdad53cadc27",
+    "bytes": 7308491
+  }
+}
