@@ -1,0 +1,77 @@
+name: NFL Record Pregame Quote
+
+on:
+  workflow_dispatch:
+    inputs:
+      game_id:
+        description: 'Game ID matching your schedule CSV'
+        required: true
+        type: string
+      home_line:
+        description: 'HOME spread: -8.5 if home favored by 8.5'
+        required: true
+        type: string
+      home_price_american:
+        description: 'Price for HOME spread, for example -110'
+        required: true
+        type: string
+      kickoff_utc:
+        description: 'Kickoff with timezone, e.g. 2026-11-22T21:25:00Z'
+        required: true
+        type: string
+      captured_at_utc:
+        description: 'When you saw quote, with timezone; do not guess'
+        required: true
+        type: string
+      sportsbook:
+        description: 'Sportsbook displaying this quote'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-manual-market-quotes
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Record quote before kickoff
+        env:
+          GAME_ID: ${{ inputs.game_id }}
+          HOME_LINE: ${{ inputs.home_line }}
+          HOME_PRICE_AMERICAN: ${{ inputs.home_price_american }}
+          KICKOFF_UTC: ${{ inputs.kickoff_utc }}
+          CAPTURED_AT_UTC: ${{ inputs.captured_at_utc }}
+          SPORTSBOOK: ${{ inputs.sportsbook }}
+        run: python record_market_quote.py
+
+      - name: Save archive in repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market_quotes.csv
+          if git diff --cached --quiet; then
+            echo "Archive already contains this quote"
+          else
+            git commit -m "Record pregame sportsbook quote"
+            git push
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nfl-market-quotes
+          path: data/market_quotes.csv
