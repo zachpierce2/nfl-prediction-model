@@ -1,0 +1,18 @@
+{
+  "updated_at_utc": "2026-11-15T22:51:05.517482+00:00",
+  "forecasts": 1,
+  "graded_games": 0,
+  "pending_games": 1,
+  "hypothetical_wins": 0,
+  "hypothetical_losses": 0,
+  "pushes": 0,
+  "no_lean": 0,
+  "hypothetical_win_pct": null,
+  "market_mae": null,
+  "model_mae": null,
+  "missing_result_over_3_days": [],
+  "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim.",
+  "newly_graded": 0,
+  "remaining_api_credits": "488",
+  "last_request_credits": "2"
+}
