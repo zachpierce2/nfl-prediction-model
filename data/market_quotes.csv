@@ -1,0 +1,2 @@
+quote_id,game_id,home_line,home_price_american,kickoff_utc,sportsbook,captured_at_utc,recorded_at_utc,source,github_run_id
+44b1bea58d9cb021250b9fe0,2026_10_PIT_CIN,-3.5,-110,2026-11-16T01:20:00+00:00,DraftKings via Action Network,2026-11-15T22:10:15+00:00,2026-11-15T22:11:57.443604+00:00,MANUAL_USER_SUPPLIED_UNVERIFIED,43767918935
