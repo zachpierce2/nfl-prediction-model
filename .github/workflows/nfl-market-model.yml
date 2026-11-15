@@ -1,0 +1,33 @@
+name: NFL Market Model Research
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements-market.txt
+
+      - name: Run model checks
+        run: python -m unittest test_market_model.py
+
+      - name: Run saved-data comparison
+        run: python market_model.py --games games_snapshot.csv --out market_results
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nfl-market-model-results
+          path: market_results/
