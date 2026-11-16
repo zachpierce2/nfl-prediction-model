@@ -61,6 +61,63 @@ class PassingTests(unittest.TestCase):
                 r=q.record('unused',[dict(game_id='g',home_team='H',away_team='A',kickoff_utc='2099-01-01T00:00:00Z')],Path(d))
                 self.assertEqual(r['status'],'MISSING_CONFIRMED_STARTERS')
                 fetch.assert_not_called()
+    def test_live_confirmed_profile_is_archived_on_identical_quote(self):
+        from datetime import datetime,timezone,timedelta
+        now=datetime.now(timezone.utc)
+        core={k:'' for k in q.auto.FORECAST_FIELDS}
+        core.update(game_id='target',home_team='H',away_team='A',quote_id='same',home_line=-3.,
+            captured_at_utc=q.auto.stamp(now-timedelta(minutes=3)),
+            forecast_created_at_utc=q.auto.stamp(now-timedelta(minutes=2)),
+            kickoff_utc=q.auto.stamp(now+timedelta(hours=12)))
+        reports=pd.DataFrame([dict(game_id='target',team=team,qb_id=qid,status='confirmed',
+            source_url='https://example.com/report',
+            published_at_utc=q.auto.stamp(now-timedelta(minutes=5)),
+            observed_at_utc=q.auto.stamp(now-timedelta(minutes=4)))
+            for team,qid in [('H','backup'),('A','away')]])
+        cols=list(dict.fromkeys(q.base.INPUTS+q.ADJ))
+        frame=pd.DataFrame(np.zeros((601,len(cols))),columns=cols)
+        frame['game_id']=[str(i) for i in range(600)]+['target']
+        frame['season']=[2025]*600+[2026]
+        frame['actual_margin']=[7.]*600+[np.nan]
+        frame['gameday']=pd.to_datetime(['2025-01-01']*600+[now.date().isoformat()],utc=True)
+        frame['home_team']='H';frame['away_team']='A'
+        frame['home_qb_id']='starter';frame['away_qb_id']='away'
+        stats=pd.DataFrame([dict(game_id=str(i),posteam=team,passer_player_id=qid,
+            epa_sum=epa,success_sum=10.,dropbacks=20.)
+            for i in range(600) for team,qid,epa in [('H','backup',-2.),('A','away',2.)]])
+        with tempfile.TemporaryDirectory() as d:
+            folder=Path(d);path=folder/'reports.csv';reports.to_csv(path,index=False)
+            schedule=folder/'schedule.csv';schedule.write_text('snapshot')
+            (folder/'epa_features_asof.csv.gz').write_bytes(b'epa')
+            with patch.object(q,'ROOT',folder/'archive'),patch.object(q.confirmations,'CONFIRMATIONS',path),patch.object(q.confirmations,'load_frame',return_value=frame),patch.object(q,'load_stats',return_value=(stats,[])),patch.object(q.confirmations,'fit') as fit:
+                fit.return_value.predict.return_value=np.array([1.])
+                result=q.record(schedule,[core],folder)
+                self.assertEqual(result['new_qb_forecasts'],1)
+                row=pd.read_csv(folder/'archive/forecasts.csv').iloc[0]
+                self.assertEqual(row.home_confirmed_qb_id,'backup')
+                self.assertEqual(row.quote_id,'same')
+                self.assertEqual(row.predicted_home_margin,3.25)
+                self.assertAlmostEqual(row.qb_epa_diff,(-16-16)/260)
+                self.assertTrue(fit.call_args.args[0].season.lt(2026).all())
+    def test_paired_grading_rejects_altered_core(self):
+        from datetime import datetime,timezone
+        import grade_market as grader
+        from epa_shadow import core_hash
+        core={k:'' for k in q.auto.FORECAST_FIELDS}
+        core.update(game_id='g',quote_id='same',sportsbook='Book',home_team='H',away_team='A',
+            home_line=-3.,predicted_home_margin=4.,captured_at_utc='2026-01-01T10:00:00Z',
+            forecast_created_at_utc='2026-01-01T10:01:00Z',kickoff_utc='2026-01-01T20:00:00Z')
+        candidate=dict(core,core_forecast_sha256=core_hash(core),
+            predicted_home_margin=2.,forecast_created_at_utc='2026-01-01T10:02:00Z')
+        final=dict(provider_event_id='event',home_team='H',away_team='A',
+            kickoff_utc=core['kickoff_utc'],home_score=24,away_score=20,snapshot_id='final')
+        with tempfile.TemporaryDirectory() as d,patch.object(q,'ROOT',Path(d)),patch.object(grader,'read_rows',return_value=[candidate]):
+            report=q.grade_shadow(grader,[core],[final],[],datetime(2026,1,2,tzinfo=timezone.utc))
+            self.assertEqual(report['core']['hypothetical_wins'],1)
+            self.assertEqual(report['qb_passing']['hypothetical_losses'],1)
+            with self.assertRaises(ValueError):
+                q.grade_shadow(grader,[dict(core,predicted_home_margin=5.)],[final],[],datetime(2026,1,2,tzinfo=timezone.utc))
+
     def test_source_aggregate_reuses_existing_function(self):
         p=pd.DataFrame(dict(game_id=['x']*3,posteam=['H']*3,defteam=['A']*3,
             epa=[1.,-1.,999.],play_type=['pass']*3,qb_dropback=[1.]*3,
