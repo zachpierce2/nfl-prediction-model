@@ -254,6 +254,9 @@ def main():
     h={k.lower():v for k,v in headers.items()}
     report.update(newly_graded=len(fresh),remaining_api_credits=h.get('x-requests-remaining','unknown'),last_request_credits=h.get('x-requests-last','unknown'))
     movement,movement_text=line_report(rows,quotes,finals,now)
+    import epa_shadow
+    paired,paired_text=epa_shadow.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
+    report['epa_paired_comparison']=paired
     report['line_comparison']=movement
     (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
     pct=report['hypothetical_win_pct'];win_text=f'{pct:.2f}%' if pct is not None else 'N/A'
@@ -266,7 +269,7 @@ def main():
         f'| Sportsbook MAE | {mae(report["market_mae"])} |\n| Model MAE | {mae(report["model_mae"])} |\n\n'
         'Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.\n\n'
         'Only provider-confirmed completed games are graded. Pending games are not losses. Scores are fetched daily with a three-day lookback; outages longer than that may leave missing results.\n')
-    text+=movement_text
+    text+=movement_text+paired_text
     (ROOT/'report.md').write_text(text)
     print(json.dumps(report,indent=2))
     if os.environ.get('GITHUB_STEP_SUMMARY'):

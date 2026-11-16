@@ -203,9 +203,19 @@ def main():
         with legacy.open(newline='') as f:seen.update(r['game_id'] for r in csv.DictReader(f))
     forecasts=predict(schedule_path,[q for q in quotes if q['game_id'] not in seen],sid,captured)
     saved=archive_rows(forecast_path,FORECAST_FIELDS,forecasts,'game_id')
+    # EPA is an independent shadow forecast from exactly this run's new core quotes.
+    import epa_shadow
+    try:
+        epa_status=epa_shadow.record(schedule_path,saved,folder)
+    except Exception as exc:
+        # Preserve core forecasts and make any missing EPA pair explicit. Never backfill.
+        epa_status=dict(status='EPA_UNAVAILABLE_AT_FORECAST',new_epa_forecasts=0,
+            error_type=type(exc).__name__,model_version=epa_shadow.VERSION)
+        if isinstance(exc,(ValueError,RuntimeError)):epa_status['reason']=str(exc)
+    (folder/'epa_status.json').write_text(json.dumps(epa_status,indent=2))
     normalized_headers={k.lower():v for k,v in headers.items()}
     report=dict(captured_at_utc=stamp(captured),snapshot_id=sid,provider_events=len(events),
-        eligible_quotes=len(quotes),new_forecasts=len(saved),skipped=skipped,
+        eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,skipped=skipped,
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),
@@ -214,6 +224,9 @@ def main():
     (ROOT/'latest_run.json').write_text(json.dumps(report,indent=2))
     print(json.dumps(report,indent=2))
     summary=os.environ.get('GITHUB_STEP_SUMMARY')
+    if summary:
+        with open(summary,'a') as f:
+            f.write('## EPA shadow capture\n\n'+json.dumps(epa_status,sort_keys=True)+'\n\n')
     if summary:
         with open(summary,'a') as f:
             f.write(f'## Automatic NFL market run\n\nArchived {len(quotes)} eligible quotes; saved {len(saved)} new forecasts.\n\nRemaining provider credits: {report["remaining_credits"]}.\n\nDownload nfl-auto-market-results for CSVs and source snapshots. No bets are placed. Research model remains unvalidated.\n')
