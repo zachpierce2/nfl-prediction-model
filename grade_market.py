@@ -103,6 +103,124 @@ def summary(grades,all_forecasts,now):
         missing_result_over_3_days=overdue,
         interpretation='Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim.')
 
+
+# Point spread movement only: archived observations are not certified closing odds.
+def line_comparison(row, quotes, now, final=None):
+    kickoff=auto.utc(final['kickoff_utc'] if final else row['kickoff_utc'])
+    created=auto.utc(row['forecast_created_at_utc'])
+    captured=auto.utc(row['captured_at_utc'])
+    initial=number(row['home_line'])
+    lean=number(row['predicted_home_margin'])+initial
+    side='NONE' if abs(lean)<=1e-10 else ('HOME' if lean>0 else 'AWAY')
+    result=dict(game_id=row['game_id'],sportsbook=row['sportsbook'],selected_side=side,
+        forecast_quote_id=row['quote_id'],initial_home_line=initial,
+        initial_selected_line=initial if side=='HOME' else (-initial if side=='AWAY' else ''),
+        initial_selected_price=row.get('home_price_american' if side=='HOME' else 'away_price_american',''),
+        forecast_created_at_utc=row['forecast_created_at_utc'],kickoff_utc=auto.stamp(kickoff),
+        kickoff_source='FINAL_PROVIDER' if final else 'FORECAST_SCHEDULE',
+        status='',latest_quote_id='',latest_captured_at_utc='',latest_provider_updated_at_utc='',
+        latest_selected_line='',latest_selected_price='',minutes_before_kickoff='',line_value_points='')
+    if not captured<=created<kickoff:
+        result['status']='INVALID_FORECAST_TIMING';return result
+    if side=='NONE':result['status']='NO_LEAN';return result
+    if now<kickoff:result['status']='PENDING_KICKOFF';return result
+    anchors=[q for q in quotes if q.get('quote_id')==row['quote_id'] and q.get('game_id')==row['game_id']]
+    event_ids={q.get('provider_event_id') for q in anchors if q.get('provider_event_id')}
+    candidates=[]
+    for q in quotes:
+        if (q.get('game_id')!=row['game_id'] or q.get('sportsbook')!=row['sportsbook']
+            or q.get('home_team')!=row['home_team'] or q.get('away_team')!=row['away_team']):continue
+        if event_ids and q.get('provider_event_id') not in event_ids:continue
+        if final and q.get('provider_event_id')!=final['provider_event_id']:continue
+        try:
+            at=auto.utc(q['captured_at_utc']);updated=auto.utc(q['provider_updated_at_utc'])
+            # Exclude initial quote, after-kickoff data, stale odds, and rescheduled-event observations.
+            if q['quote_id']==row['quote_id'] or not created<=at<kickoff or at>now:continue
+            if auto.utc(q['kickoff_utc'])!=kickoff:continue
+            if not timedelta(0)<=at-updated<=timedelta(minutes=30):continue
+            hl=number(q['home_line']);al=number(q['away_line'])
+            if abs(hl+al)>1e-6:continue
+        except (KeyError,ValueError,TypeError):continue
+        candidates.append((at,updated,q['quote_id'],q))
+    if not candidates:result['status']='NO_LATER_SAME_BOOK_QUOTE';return result
+    at,updated,_,q=max(candidates,key=lambda item:item[:3])
+    latest=number(q['home_line'] if side=='HOME' else q['away_line'])
+    gap=(kickoff-at).total_seconds()/60
+    result.update(status='NEAR_KICKOFF_PROXY' if gap<=60 else 'EARLY_LAST_OBSERVATION',
+        latest_quote_id=q['quote_id'],latest_captured_at_utc=q['captured_at_utc'],
+        latest_provider_updated_at_utc=q['provider_updated_at_utc'],latest_selected_line=latest,
+        latest_selected_price=q.get('home_price_american' if side=='HOME' else 'away_price_american',''),
+        minutes_before_kickoff=round(gap,3),line_value_points=result['initial_selected_line']-latest)
+    return result
+
+def line_report(rows, quotes, finals, now):
+    comparisons=[line_comparison(r,quotes,now,match(r,finals,quotes)) for r in rows]
+    # Rebuild this derived report; original forecasts and quotes remain append-only.
+    if comparisons:
+        with (ROOT/'line_comparison.csv').open('w',newline='') as f:
+            writer=csv.DictWriter(f,fieldnames=list(comparisons[0]));writer.writeheader();writer.writerows(comparisons)
+    else:
+        (ROOT/'line_comparison.csv').write_text('game_id,status,line_value_points\n')
+    near=[r for r in comparisons if r['status']=='NEAR_KICKOFF_PROXY']
+    early=[r for r in comparisons if r['status']=='EARLY_LAST_OBSERVATION']
+    counts={status:sum(r['status']==status for r in comparisons) for status in sorted({r['status'] for r in comparisons})}
+    report=dict(updated_at_utc=auto.stamp(now),forecasts=len(rows),status_counts=counts,
+        near_kickoff_games=len(near),early_observations=len(early),
+        mean_near_kickoff_line_value_points=sum(r['line_value_points'] for r in near)/len(near) if near else None,
+        positive_near_kickoff_games=sum(r['line_value_points']>0 for r in near),
+        negative_near_kickoff_games=sum(r['line_value_points']<0 for r in near),
+        unchanged_near_kickoff_games=sum(r['line_value_points']==0 for r in near),
+        certified_closing_lines=0,
+        interpretation='Same sportsbook, later pre-kickoff archived quote. Positive points mean a better original spread for the selected side. Near-kickoff means within 60 minutes; earlier observations excluded from primary average. Not certified closing odds, price-adjusted CLV, or profit.')
+    (ROOT/'line_comparison_summary.json').write_text(json.dumps(report,indent=2))
+    avg=report['mean_near_kickoff_line_value_points']
+    avg_text=f'{avg:+.3f}' if avg is not None else 'N/A'
+    text=('\n## Line movement against later sportsbook prices\n\n'
+        f'Near-kickoff comparisons (within 60 minutes): {len(near)}. Average point advantage: {avg_text}.\n\n'
+        f'Earlier last observations: {len(early)} (excluded from that average).\n\n'
+        'Positive means the saved pick had a better spread than the later same-book quote. '
+        'Each CSV row shows the quote time and minutes before kickoff. Three-hour polling may miss the closing price. '
+        'These are proxies, not certified closing lines; odds/juice are shown separately and are not included in point value.\n\n'
+        f'Status counts: {json.dumps(counts,sort_keys=True)}\n')
+    return report,text
+
+def test_line_comparison():
+    import unittest
+    class LineTests(unittest.TestCase):
+        def setUp(self):
+            self.row=dict(game_id='fixture',quote_id='first',sportsbook='Book',home_team='H',away_team='A',
+                home_line='-3',predicted_home_margin='4',captured_at_utc='2026-11-15T10:00:00Z',
+                forecast_created_at_utc='2026-11-15T10:01:00Z',kickoff_utc='2026-11-15T20:00:00Z')
+            self.q=dict(game_id='fixture',quote_id='later',sportsbook='Book',home_team='H',away_team='A',
+                home_line='-4',away_line='4',captured_at_utc='2026-11-15T19:30:00Z',
+                provider_updated_at_utc='2026-11-15T19:29:00Z',kickoff_utc='2026-11-15T20:00:00Z')
+            self.now=auto.utc('2026-11-16T00:00:00Z')
+        def test_home_and_away_signs(self):
+            self.assertEqual(line_comparison(self.row,[self.q],self.now)['line_value_points'],1)
+            self.row['predicted_home_margin']='2'
+            self.assertEqual(line_comparison(self.row,[self.q],self.now)['line_value_points'],-1)
+        def test_postkickoff_and_wrong_book_excluded(self):
+            for change in [dict(captured_at_utc='2026-11-15T20:01:00Z'),dict(sportsbook='Other'),dict(kickoff_utc='2026-11-15T21:00:00Z')]:
+                self.assertEqual(line_comparison(self.row,[dict(self.q,**change)],self.now)['status'],'NO_LATER_SAME_BOOK_QUOTE')
+        def test_pending_and_missing_not_zero(self):
+            r=line_comparison(self.row,[],auto.utc('2026-11-15T19:00:00Z'))
+            self.assertEqual(r['status'],'PENDING_KICKOFF');self.assertEqual(r['line_value_points'],'')
+            self.assertEqual(line_comparison(self.row,[],self.now)['line_value_points'],'')
+        def test_stale_and_early_quotes(self):
+            stale=dict(self.q,provider_updated_at_utc='2026-11-15T18:00:00Z')
+            self.assertEqual(line_comparison(self.row,[stale],self.now)['status'],'NO_LATER_SAME_BOOK_QUOTE')
+            early=dict(self.q,captured_at_utc='2026-11-15T17:00:00Z',provider_updated_at_utc='2026-11-15T16:59:00Z')
+            self.assertEqual(line_comparison(self.row,[early],self.now)['status'],'EARLY_LAST_OBSERVATION')
+        def test_latest_valid_quote_selected(self):
+            older=dict(self.q,quote_id='older',captured_at_utc='2026-11-15T19:00:00Z',provider_updated_at_utc='2026-11-15T18:59:00Z',home_line='-5',away_line='5')
+            r=line_comparison(self.row,[self.q,older],self.now)
+            self.assertEqual(r['latest_quote_id'],'later');self.assertEqual(r['minutes_before_kickoff'],30)
+        def test_no_lean(self):
+            self.row['predicted_home_margin']='3'
+            self.assertEqual(line_comparison(self.row,[self.q],self.now)['status'],'NO_LEAN')
+    result=unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromTestCase(LineTests))
+    if not result.wasSuccessful():raise ValueError('Line comparison tests failed')
+
 def main():
     now=datetime.now(timezone.utc);sid=now.strftime('%Y%m%dT%H%M%S%fZ')
     rows=forecasts();ROOT.mkdir(parents=True,exist_ok=True)
@@ -135,6 +253,8 @@ def main():
     grades=read_rows(grade_path);report=summary(grades,rows,now)
     h={k.lower():v for k,v in headers.items()}
     report.update(newly_graded=len(fresh),remaining_api_credits=h.get('x-requests-remaining','unknown'),last_request_credits=h.get('x-requests-last','unknown'))
+    movement,movement_text=line_report(rows,quotes,finals,now)
+    report['line_comparison']=movement
     (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
     pct=report['hypothetical_win_pct'];win_text=f'{pct:.2f}%' if pct is not None else 'N/A'
     mae=lambda x:f'{x:.4f}' if x is not None else 'N/A'
@@ -146,13 +266,16 @@ def main():
         f'| Sportsbook MAE | {mae(report["market_mae"])} |\n| Model MAE | {mae(report["model_mae"])} |\n\n'
         'Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.\n\n'
         'Only provider-confirmed completed games are graded. Pending games are not losses. Scores are fetched daily with a three-day lookback; outages longer than that may leave missing results.\n')
+    text+=movement_text
     (ROOT/'report.md').write_text(text)
     print(json.dumps(report,indent=2))
     if os.environ.get('GITHUB_STEP_SUMMARY'):
         with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(text)
 
 if __name__=='__main__':
-    try:main()
+    try:
+        if '--self-test' in sys.argv:test_line_comparison()
+        else:main()
     except Exception as exc:
         if isinstance(exc,(ValueError,RuntimeError,FileNotFoundError)):print(f'ERROR: {exc}',file=sys.stderr)
         else:print(f'ERROR: {type(exc).__name__}; inspect archive schema or provider availability',file=sys.stderr)
