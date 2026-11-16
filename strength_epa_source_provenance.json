@@ -1,0 +1,69 @@
+{
+  "status": "EXPLORATORY_NO_LIVE_CHANGE",
+  "sources": [
+    {
+      "season": 2017,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2017.parquet",
+      "sha256": "84eacd963c1fdd45965f6222c62e9329a7f3412f029d92c1ac5e34a1bb4d3710"
+    },
+    {
+      "season": 2018,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2018.parquet",
+      "sha256": "2e6f2dce7c7ebd46e985cabe0c17eb72b39a77f98cb4478409294f50b5820150"
+    },
+    {
+      "season": 2019,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2019.parquet",
+      "sha256": "60c3067017db2d28a78f66a79b657268be8578d9a5288e6a827efdcd7fe42540"
+    },
+    {
+      "season": 2020,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2020.parquet",
+      "sha256": "8889f5d8782b5c5dce3c3644acdc0322b228a7e9cb13fa36cbac250e260e9f60"
+    },
+    {
+      "season": 2021,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2021.parquet",
+      "sha256": "333ad34378e5339d5172717cc83378e908daf02c8699416ab3e17c2ec10f78d8"
+    },
+    {
+      "season": 2022,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2022.parquet",
+      "sha256": "931121d8897779d7944e2a293e92ed8799c8e5cceef84096ac42339003fedc09"
+    },
+    {
+      "season": 2023,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2023.parquet",
+      "sha256": "bd3484731408def6b0ec93225bba2bd7b2c65769ca707a2b9444d891abdc6776"
+    },
+    {
+      "season": 2024,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.parquet",
+      "sha256": "3fd2896bc0b911b615142d2f1fabae54a4bbba5ab7b73b28187b118ef8af6a3b"
+    },
+    {
+      "season": 2025,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.parquet",
+      "sha256": "c6ecedd6d678cc37ed316b23ef84ee1ec6abb69c514bb11868a7ebd5a367df29"
+    }
+  ],
+  "games_sha256": "7eb9194c185304b2df04d2e92cd5a0ef8335247ab238b4eb7eb7c4ed38dc4818",
+  "code_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+  "reference_sha256": "2be201fca3bcdab80b14f30460330cb1806810e997979e539074556ffdd846b2",
+  "settings": {
+    "history_games": 8,
+    "reset_each_season": true,
+    "opponent_ridge_alpha": 200,
+    "residual_ridge_alpha": 1000,
+    "shrink": 0.25,
+    "cap": 2,
+    "first_validation_season": 2020
+  },
+  "limitations": [
+    "Previously inspected seasons are not an untouched holdout.",
+    "Historical PBP/EPA and spreads may have been revised; no verified pregame publication timestamps.",
+    "No verified profitability, executable historical prices, or automatic model promotion.",
+    "Success is EPA > 0 on run/pass plays, excluding kneels/spikes.",
+    "Opponent adjustment is a play-weighted additive ridge estimate, not a causal estimate."
+  ]
+}
