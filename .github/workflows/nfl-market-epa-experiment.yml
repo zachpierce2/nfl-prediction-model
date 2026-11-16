@@ -1,0 +1,41 @@
+name: NFL Market EPA Experiment
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r epa-experiment-requirements.txt
+
+      - name: Test feature timing and data checks
+        run: python -m unittest test_market_epa_experiment.py
+
+      - name: Cache play-by-play downloads
+        uses: actions/cache@v4
+        with:
+          path: epa_pbp_cache
+          key: nfl-epa-pbp-2017-2025-v1
+
+      - name: Download data and run experiment
+        run: python -u market_epa_experiment.py --games epa_games_snapshot.csv --cache epa_pbp_cache --out epa_experiment_results
+
+      - name: Upload experiment results
+        uses: actions/upload-artifact@v4
+        with:
+          name: nfl-market-epa-experiment
+          path: epa_experiment_results/
+          if-no-files-found: error
