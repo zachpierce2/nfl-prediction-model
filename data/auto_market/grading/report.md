@@ -1,6 +1,6 @@
 # NFL prospective grading
 
-Updated: 2026-11-16T05:59:10.034017+00:00
+Updated: 2026-11-16T06:19:42.135468+00:00
 
 | Metric | Result |
 |---|---:|
@@ -28,3 +28,14 @@ Earlier last observations: 0 (excluded from that average).
 Positive means the saved pick had a better spread than the later same-book quote. Each CSV row shows the quote time and minutes before kickoff. Three-hour polling may miss the closing price. These are proxies, not certified closing lines; odds/juice are shown separately and are not included in point value.
 
 Status counts: {"NO_LATER_SAME_BOOK_QUOTE": 1, "PENDING_KICKOFF": 1}
+
+## Prospective core versus EPA (paired games only)
+
+Paired pregame forecasts: 0. Historical predictions are not backfilled.
+
+| Model | Graded | Wins | Losses | Pushes | ATS win rate | MAE |
+|---|---:|---:|---:|---:|---:|---:|
+| core | 0 | 0 | 0 | 0 | N/A | N/A |
+| epa | 0 | 0 | 0 | 0 | N/A | N/A |
+
+Matched same-book near-kickoff comparisons: 0. Separate line-value means are in epa_shadow/summary.json. These are point-spread proxies, not certified closing prices or profit.
