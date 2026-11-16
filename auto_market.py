@@ -213,9 +213,19 @@ def main():
             error_type=type(exc).__name__,model_version=epa_shadow.VERSION)
         if isinstance(exc,(ValueError,RuntimeError)):epa_status['reason']=str(exc)
     (folder/'epa_status.json').write_text(json.dumps(epa_status,indent=2))
+    # Reuse the existing timestamped starter-confirmation file in an independent candidate.
+    import qb_market
+    try:
+        qb_status=qb_market.record(schedule_path,saved,folder)
+    except Exception as exc:
+        qb_status=dict(status='QB_UNAVAILABLE_AT_FORECAST',new_qb_forecasts=0,
+            error_type=type(exc).__name__)
+        if isinstance(exc,(ValueError,RuntimeError)):qb_status['reason']=str(exc)
+    (folder/'qb_status.json').write_text(json.dumps(qb_status,indent=2))
+
     normalized_headers={k.lower():v for k,v in headers.items()}
     report=dict(captured_at_utc=stamp(captured),snapshot_id=sid,provider_events=len(events),
-        eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,skipped=skipped,
+        eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,qb_shadow=qb_status,skipped=skipped,
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),
