@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-11-16T06:19:42.135468+00:00",
+  "updated_at_utc": "2026-11-16T11:00:04.870563+00:00",
   "forecasts": 2,
   "graded_games": 1,
   "pending_games": 1,
@@ -13,14 +13,14 @@
   "missing_result_over_3_days": [],
   "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim.",
   "newly_graded": 0,
-  "remaining_api_credits": "481",
+  "remaining_api_credits": "477",
   "last_request_credits": "2",
   "epa_paired_comparison": {
-    "updated_at_utc": "2026-11-16T06:19:42.135468+00:00",
+    "updated_at_utc": "2026-11-16T11:00:04.870563+00:00",
     "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
     "paired_forecasts": 0,
     "core": {
-      "updated_at_utc": "2026-11-16T06:19:42.135468+00:00",
+      "updated_at_utc": "2026-11-16T11:00:04.870563+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -36,7 +36,7 @@
       "mean_matched_line_value_points": null
     },
     "epa": {
-      "updated_at_utc": "2026-11-16T06:19:42.135468+00:00",
+      "updated_at_utc": "2026-11-16T11:00:04.870563+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -54,7 +54,7 @@
     "matched_near_kickoff_comparisons": 0
   },
   "line_comparison": {
-    "updated_at_utc": "2026-11-16T06:19:42.135468+00:00",
+    "updated_at_utc": "2026-11-16T11:00:04.870563+00:00",
     "forecasts": 2,
     "status_counts": {
       "NO_LATER_SAME_BOOK_QUOTE": 1,
