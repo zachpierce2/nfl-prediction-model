@@ -15,7 +15,7 @@ concurrency:
 jobs:
   auto-market:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 40
 
     steps:
       - uses: actions/checkout@v4
@@ -32,11 +32,16 @@ jobs:
         run: python -m pip install -r requirements-market.txt
 
       - name: Validate paired forecast boundaries
-        run: python -m unittest -v test_epa_shadow.py
+        run: python -m unittest -v test_epa_shadow test_qb_market test_qb_passing
 
       - name: Check live EPA inputs on manual runs
         if: github.event_name == 'workflow_dispatch'
         run: python epa_shadow.py --validate-live
+
+      - uses: actions/cache@v4
+        with:
+          path: qb_passing_cache
+          key: qb-passing-v1-2017-2025
 
       - name: Collect odds and save forecasts
         env:
