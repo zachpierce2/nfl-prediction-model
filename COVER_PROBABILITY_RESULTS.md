@@ -55,3 +55,32 @@ All evaluated seasons are previously examined development data, not an untouched
 ## Next proposed improvement
 
 Test the sportsbook pregame total_line as one additional input to the existing margin + EPA model, keeping the current settings fixed. This field is available in the schedule snapshot. Only total_line is eligible; total (the actual combined score) must never be used as a pregame feature. That experiment is not implemented or promoted here.
+
+## Branch workflow
+
+The `experiment/direct-cover-probability` branch adds `.github/workflows/nfl-direct-cover.yml`.
+It runs automatically when experiment code, inputs, or the workflow changes on that branch,
+and on relevant pull requests. Manual dispatch is also declared; GitHub normally exposes
+that button after the workflow exists on the default branch. No merge is needed for the
+branch push run.
+
+The workflow uses Python 3.12 and `requirements-cover.txt`, runs seven unit/integration
+checks, reruns the frozen 2020–2025 annual walk-forward experiment, and uploads
+`nfl-direct-cover-results-<run-id>-<attempt>`. The run summary shows the 2021–2025
+comparison. The artifact contains `predictions.csv`, `comparison.csv`, `calibration.csv`,
+`training_folds.csv`, `provenance.json`, `summary.md`, dependency versions and commit SHA.
+Training folds now include the final training date and first evaluation date; overlapping
+dates fail the run. Each method must cover exactly the same games. Integration checks
+inspect actual fit rows, reproduce the frozen margin reference within 1e-10 points, and
+confirm same-day/future score changes cannot alter earlier core features. EPA inputs
+remain the existing frozen snapshots with the provenance limitations above.
+
+Reproduce from the repository root:
+
+```bash
+python -m pip install -r requirements-cover.txt
+python -m unittest -v verify_cover_probability.py test_direct_cover_experiment.py
+python market_cover_probability.py --out cover_probability_results
+```
+
+This is an isolated research branch. The production forecast scripts are unchanged.
