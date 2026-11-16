@@ -1,18 +1,34 @@
 {
-  "updated_at_utc": "2026-11-15T22:51:05.517482+00:00",
-  "forecasts": 1,
-  "graded_games": 0,
+  "updated_at_utc": "2026-11-16T05:59:10.034017+00:00",
+  "forecasts": 2,
+  "graded_games": 1,
   "pending_games": 1,
   "hypothetical_wins": 0,
-  "hypothetical_losses": 0,
+  "hypothetical_losses": 1,
   "pushes": 0,
   "no_lean": 0,
-  "hypothetical_win_pct": null,
-  "market_mae": null,
-  "model_mae": null,
+  "hypothetical_win_pct": 0.0,
+  "market_mae": 16.5,
+  "model_mae": 16.543729682659105,
   "missing_result_over_3_days": [],
   "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim.",
-  "newly_graded": 0,
-  "remaining_api_credits": "488",
-  "last_request_credits": "2"
+  "newly_graded": 1,
+  "remaining_api_credits": "484",
+  "last_request_credits": "2",
+  "line_comparison": {
+    "updated_at_utc": "2026-11-16T05:59:10.034017+00:00",
+    "forecasts": 2,
+    "status_counts": {
+      "NO_LATER_SAME_BOOK_QUOTE": 1,
+      "PENDING_KICKOFF": 1
+    },
+    "near_kickoff_games": 0,
+    "early_observations": 0,
+    "mean_near_kickoff_line_value_points": null,
+    "positive_near_kickoff_games": 0,
+    "negative_near_kickoff_games": 0,
+    "unchanged_near_kickoff_games": 0,
+    "certified_closing_lines": 0,
+    "interpretation": "Same sportsbook, later pre-kickoff archived quote. Positive points mean a better original spread for the selected side. Near-kickoff means within 60 minutes; earlier observations excluded from primary average. Not certified closing odds, price-adjusted CLV, or profit."
+  }
 }
