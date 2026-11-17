@@ -1,0 +1,36 @@
+name: NFL Pass Rush EPA Experiment
+on:
+  pull_request:
+    paths:
+      - market_pass_rush.py
+      - test_pass_rush.py
+      - .github/workflows/nfl-pass-rush.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  experiment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-market.txt
+      - run: pip install -r requirements-market.txt
+      - run: python -m unittest -v test_pass_rush.Tests
+      - uses: actions/cache@v4
+        with:
+          path: pass_rush_cache
+          key: pass-rush-v1-${{ hashFiles('market_pass_rush.py') }}
+      - run: python market_pass_rush.py
+      - run: python -m unittest -v test_pass_rush.ResultTests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nfl-pass-rush-results
+          path: pass_rush_results/
