@@ -113,7 +113,7 @@ class IntegrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             folder=Path(d);path=folder/'reports.csv';pd.DataFrame(reports).to_csv(path,index=False)
             schedule=folder/'schedule.csv';schedule.write_text('snapshot');(folder/'epa_features_asof.csv.gz').write_bytes(b'epa')
-            with patch.object(shadow,'ROOT',folder/'expected'),patch.dict(os.environ,{'QB_EXPECTATIONS_PATH':str(path)}),patch.object(passing.confirmations,'load_frame',return_value=frame),patch.object(passing,'load_stats',return_value=(stats,[])),patch.object(passing.confirmations,'fit') as fit:
+            with patch.object(shadow,'ROOT',folder/'expected'),patch.object(shadow.qb_starter_comparison,'ROOT',folder/'control'),patch.dict(os.environ,{'QB_EXPECTATIONS_PATH':str(path)}),patch.object(passing.confirmations,'load_frame',return_value=frame),patch.object(passing,'load_stats',return_value=(stats,[])),patch.object(passing.confirmations,'fit') as fit:
                 fit.return_value.predict.return_value=np.array([1.])
                 result=shadow.record(schedule,[core],folder)
                 self.assertEqual(result['new_qb_forecasts'],1)
