@@ -36,7 +36,7 @@ jobs:
         run: python -m pip install -r requirements-market.txt
 
       - name: Validate paired EPA tracking
-        run: python -m unittest -v test_epa_shadow.py test_advanced_shadow.py test_qb_market.py test_qb_passing.py
+        run: python -m unittest -v test_epa_shadow.py test_advanced_shadow.py test_qb_market.py test_qb_passing.py test_qb_expected.py
 
       - name: Validate line comparison
         run: python grade_market.py --self-test
@@ -50,7 +50,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/auto_market/grading/ data/auto_market/epa_shadow/ data/auto_market/advanced_shadow/ data/auto_market/qb_passing_shadow/
+          git add data/auto_market/expected_qb_shadow/ data/auto_market/grading/ data/auto_market/epa_shadow/ data/auto_market/advanced_shadow/ data/auto_market/qb_passing_shadow/
           if git diff --cached --quiet; then
             echo "No grading changes"
           else
@@ -66,3 +66,4 @@ jobs:
             data/auto_market/epa_shadow/
             data/auto_market/advanced_shadow/
             data/auto_market/qb_passing_shadow/
+            data/auto_market/expected_qb_shadow/
