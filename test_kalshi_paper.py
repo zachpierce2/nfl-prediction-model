@@ -32,9 +32,14 @@ class KalshiTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d, patch.object(k,'ROOT',Path(d)):
             for game,side in [('a','no'),('b','pass')]:
                 k.save(k.ROOT/'decisions'/(game+'.json'),dict(market={'ticker':'X'},decision=side,
-                       offers={'no':{'ask':'.41','fee':'.0170'}},p_yes=.4))
+                       offers=({'yes':{'ask':'.63'},'no':{'ask':'.41','fee':'.0170'}} if side=='pass' else {'no':{'ask':'.41','fee':'.0170'}}),p_yes=.4))
             with patch.object(k,'get',return_value={'market':dict(ticker='X',status='finalized',result='no')}):
                 k.grade()
             r=json.loads((k.ROOT/'report.json').read_text())
             self.assertEqual((r['graded'],r['graded_passes'],r['net_paper_dollars']),(2,1,.573))
             self.assertAlmostEqual(r['mean_brier'],.16)
+            bench=r['probability_benchmark']
+            self.assertEqual((bench['comparable'],bench['excluded']),(1,1))
+            self.assertAlmostEqual(bench['kalshi_midpoint_brier'],.61**2)
+            self.assertAlmostEqual(bench['model_advantage'],.61**2-.4**2)
+            self.assertIsNone(k.yes_midpoint({'yes':{'ask':'.40'},'no':{'ask':'.40'}}))

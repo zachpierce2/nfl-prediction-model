@@ -132,6 +132,17 @@ def capture():
     save(ROOT/'capture_status.json',dict(snapshot=sid,games=status))
 
 
+def yes_midpoint(offers):
+    """Recover the original Yes bid from the simultaneous No ask."""
+    if not all(side in offers for side in ('yes','no')):
+        return None
+    ask = D(offers['yes']['ask'])
+    bid = 1 - D(offers['no']['ask'])
+    if not (0 < bid <= ask < 1):
+        return None
+    return float((bid + ask)/2)
+
+
 def grade():
     results=[]
     for path in sorted((ROOT/'decisions').glob('*.json')):
@@ -156,11 +167,20 @@ def grade():
         if side!='pass':
             offer=entry['offers'][side]
             profit=D(int(side==final['result']))-D(offer['ask'])-D(offer['fee'])
-        results.append(dict(game=path.stem,ticker=ticker,decision=side,result=final['result'],
+        midpoint = yes_midpoint(entry['offers'])
+        results.append(dict(model_yes_probability=entry['p_yes'],kalshi_yes_midpoint=midpoint,
+                            midpoint_brier=(midpoint-int(won))**2 if midpoint is not None else None,
+                            game=path.stem,ticker=ticker,decision=side,result=final['result'],
                             net_dollars=float(profit),brier=(entry['p_yes']-int(won))**2))
     recorded=len(list((ROOT/'decisions').glob('*.json')))
     trades=[r for r in results if r['decision']!='pass']
-    save(ROOT/'report.json',dict(recorded=recorded,graded=len(results),awaiting_binary_settlement=recorded-len(results),
+    paired = [r for r in results if r['midpoint_brier'] is not None]
+    model_score = sum(r['brier'] for r in paired)/len(paired) if paired else None
+    market_score = sum(r['midpoint_brier'] for r in paired)/len(paired) if paired else None
+    benchmark = dict(comparable=len(paired), excluded=len(results)-len(paired),
+                     model_brier=model_score, kalshi_midpoint_brier=market_score,
+                     model_advantage=market_score-model_score if paired else None)
+    save(ROOT/'report.json',dict(probability_benchmark=benchmark,recorded=recorded,graded=len(results),awaiting_binary_settlement=recorded-len(results),
         graded_paper_trades=len(trades),graded_passes=len(results)-len(trades),
         net_paper_dollars=sum(r['net_dollars'] for r in trades) if trades else None,
         mean_brier=float(np.mean([r['brier'] for r in results])) if results else None, games=results))

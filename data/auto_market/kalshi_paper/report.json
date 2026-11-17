@@ -1,4 +1,11 @@
 {
+  "probability_benchmark": {
+    "comparable": 0,
+    "excluded": 0,
+    "model_brier": null,
+    "kalshi_midpoint_brier": null,
+    "model_advantage": null
+  },
   "recorded": 0,
   "graded": 0,
   "awaiting_binary_settlement": 0,
