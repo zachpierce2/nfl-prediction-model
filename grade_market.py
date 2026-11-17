@@ -259,6 +259,8 @@ def main():
     import advanced_shadow
     report['advanced_paired_comparison']=advanced_shadow.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     report['epa_paired_comparison']=paired
+    import epa_simple_shadow
+    report['epa_simple_paired_comparison'],simple_text=epa_simple_shadow.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     import qb_passing
     report['qb_passing_paired_comparison']=qb_passing.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     report['line_comparison']=movement
@@ -273,7 +275,7 @@ def main():
         f'| Sportsbook MAE | {mae(report["market_mae"])} |\n| Model MAE | {mae(report["model_mae"])} |\n\n'
         'Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.\n\n'
         'Only provider-confirmed completed games are graded. Pending games are not losses. Scores are fetched daily with a three-day lookback; outages longer than that may leave missing results.\n')
-    text+=movement_text+paired_text
+    text+=movement_text+paired_text+simple_text
     (ROOT/'report.md').write_text(text)
     print(json.dumps(report,indent=2))
     if os.environ.get('GITHUB_STEP_SUMMARY'):
