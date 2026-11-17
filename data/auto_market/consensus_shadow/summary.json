@@ -1,0 +1,22 @@
+{
+  "paired": 0,
+  "graded": 0,
+  "pending": 0,
+  "changed": 0,
+  "primary": {
+    "WIN": 0,
+    "LOSS": 0,
+    "PUSH": 0,
+    "NO_LEAN": 0,
+    "changed_wins": 0,
+    "hypothetical_net_units": null
+  },
+  "consensus": {
+    "WIN": 0,
+    "LOSS": 0,
+    "PUSH": 0,
+    "NO_LEAN": 0,
+    "changed_wins": 0,
+    "hypothetical_net_units": null
+  }
+}
