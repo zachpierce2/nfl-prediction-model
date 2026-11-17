@@ -106,7 +106,10 @@ def observe(f,history):
     if not created<=now<kickoff:
         return dict(status='OUTSIDE_PREGAME_WINDOW')
     sides,decision=offers(book,prob,multiplier)
-    return dict(status='RECORDED',captured_at=now.isoformat(),forecast=f,market=market,
+    comparison = freeze_comparison(prob, book, multiplier)
+    if datetime.now(timezone.utc) >= kickoff:
+        return dict(status='OUTSIDE_PREGAME_WINDOW')
+    return dict(comparison=comparison,status='RECORDED',captured_at=now.isoformat(),forecast=f,market=market,
                 book=book,fee_type=series['fee_type'],fee_multiplier=str(multiplier),
                 residual_games=len(prior),source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
                 p_yes=prob,offers=sides,decision=decision,contracts=int(decision!='pass'))
@@ -143,6 +146,45 @@ def yes_midpoint(offers):
     return float((bid + ask)/2)
 
 
+def freeze_comparison(model_probability, book, multiplier):
+    original, _ = offers(book, model_probability, multiplier)
+    midpoint = yes_midpoint(original)
+    if midpoint is None:
+        return None
+    forecasts = {'model': model_probability, 'market': midpoint,
+                 'blend': (model_probability + midpoint) / 2}
+    frozen = {}
+    for name, probability in forecasts.items():
+        prices, decision = offers(book, probability, multiplier)
+        frozen[name] = dict(p_yes=probability, decision=decision, offers=prices)
+    return frozen
+
+
+def settle_comparison(frozen, result):
+    scores = {}
+    for name, arm in frozen.items():
+        side = arm['decision']
+        profit = D(0)
+        if side != 'pass':
+            offer = arm['offers'][side]
+            profit = D(int(side == result)) - D(offer['ask']) - D(offer['fee'])
+        scores[name] = dict(p_yes=arm['p_yes'], decision=side, net_dollars=float(profit),
+                            brier=(arm['p_yes'] - int(result == 'yes')) ** 2)
+    return scores
+
+
+def summarize_comparison(results):
+    comparable = [r['comparison'] for r in results if r['comparison'] is not None]
+    summary = dict(comparable=len(comparable), excluded_settlements=len(results)-len(comparable))
+    for name in ('model', 'market', 'blend'):
+        arms = [r[name] for r in comparable]
+        trades = sum(a['decision'] != 'pass' for a in arms)
+        summary[name] = dict(trades=trades, passes=len(arms)-trades,
+                             net_paper_dollars=sum(a['net_dollars'] for a in arms) if arms else None,
+                             brier=sum(a['brier'] for a in arms)/len(arms) if arms else None)
+    return summary
+
+
 def grade():
     results=[]
     for path in sorted((ROOT/'decisions').glob('*.json')):
@@ -168,7 +210,8 @@ def grade():
             offer=entry['offers'][side]
             profit=D(int(side==final['result']))-D(offer['ask'])-D(offer['fee'])
         midpoint = yes_midpoint(entry['offers'])
-        results.append(dict(model_yes_probability=entry['p_yes'],kalshi_yes_midpoint=midpoint,
+        comparison = settle_comparison(entry['comparison'], final['result']) if entry.get('comparison') else None
+        results.append(dict(comparison=comparison,model_yes_probability=entry['p_yes'],kalshi_yes_midpoint=midpoint,
                             midpoint_brier=(midpoint-int(won))**2 if midpoint is not None else None,
                             game=path.stem,ticker=ticker,decision=side,result=final['result'],
                             net_dollars=float(profit),brier=(entry['p_yes']-int(won))**2))
@@ -180,7 +223,7 @@ def grade():
     benchmark = dict(comparable=len(paired), excluded=len(results)-len(paired),
                      model_brier=model_score, kalshi_midpoint_brier=market_score,
                      model_advantage=market_score-model_score if paired else None)
-    save(ROOT/'report.json',dict(probability_benchmark=benchmark,recorded=recorded,graded=len(results),awaiting_binary_settlement=recorded-len(results),
+    save(ROOT/'report.json',dict(three_way=summarize_comparison(results),probability_benchmark=benchmark,recorded=recorded,graded=len(results),awaiting_binary_settlement=recorded-len(results),
         graded_paper_trades=len(trades),graded_passes=len(results)-len(trades),
         net_paper_dollars=sum(r['net_dollars'] for r in trades) if trades else None,
         mean_brier=float(np.mean([r['brier'] for r in results])) if results else None, games=results))
