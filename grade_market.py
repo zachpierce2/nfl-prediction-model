@@ -265,6 +265,8 @@ def main():
     report['expected_qb_paired_comparison']=expected_qb_shadow.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     import qb_starter_comparison
     report['qb_starter_comparison'],starter_text=qb_starter_comparison.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
+    import total_shadow
+    report['pregame_total']=total_shadow.grade(sys.modules[__name__],finals,now)
     report['line_comparison']=movement
     (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
     pct=report['hypothetical_win_pct'];win_text=f'{pct:.2f}%' if pct is not None else 'N/A'

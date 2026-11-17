@@ -50,7 +50,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/auto_market/qb_starter_comparison/ data/auto_market/expected_qb_shadow/ data/auto_market/grading/ data/auto_market/epa_shadow/ data/auto_market/advanced_shadow/ data/auto_market/qb_passing_shadow/
+          git add data/auto_market/total_shadow/ data/auto_market/qb_starter_comparison/ data/auto_market/expected_qb_shadow/ data/auto_market/grading/ data/auto_market/epa_shadow/ data/auto_market/advanced_shadow/ data/auto_market/qb_passing_shadow/
           if git diff --cached --quiet; then
             echo "No grading changes"
           else
