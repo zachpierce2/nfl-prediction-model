@@ -1,0 +1,20 @@
+{
+  "paired": 0,
+  "graded": 0,
+  "pending": 0,
+  "disagreements": 0,
+  "baseline": {
+    "WIN": 0,
+    "LOSS": 0,
+    "PUSH": 0,
+    "NO_LEAN": 0,
+    "wins_on_disagreements": 0
+  },
+  "with_total": {
+    "WIN": 0,
+    "LOSS": 0,
+    "PUSH": 0,
+    "NO_LEAN": 0,
+    "wins_on_disagreements": 0
+  }
+}
