@@ -1,6 +1,6 @@
 {
   "version": "market_epa_last_observed_same_fit_v1",
-  "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+  "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
   "complete_triples": 0,
   "expected_forecasts": 0,
   "last_observed_forecasts": 0,
@@ -9,7 +9,7 @@
   "starter_changed_forecasts": 0,
   "same_game_results": {
     "epa": {
-      "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+      "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -24,7 +24,7 @@
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "last_observed": {
-      "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+      "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -39,7 +39,7 @@
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "expected": {
-      "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+      "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -56,7 +56,7 @@
   },
   "changed_starter_results": {
     "epa": {
-      "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+      "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -71,7 +71,7 @@
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "last_observed": {
-      "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+      "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -86,7 +86,7 @@
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "expected": {
-      "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+      "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
