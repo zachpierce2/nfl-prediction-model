@@ -1,0 +1,431 @@
+{
+  "adapter": "official_explicit_game_v1",
+  "observed_at_utc": "2026-11-17T18:04:33.300764+00:00",
+  "schedule_upcoming_games": 13,
+  "player_identity_rows": 111,
+  "sources_attempted": 57,
+  "sources_checked": 54,
+  "matched_decisions": 0,
+  "new_ledger_rows": 0,
+  "new_confirmations": 0,
+  "coverage": {
+    "quoted_upcoming_games": 12,
+    "both_confirmed_games": 0,
+    "games": [
+      {
+        "game_id": "2026_11_ARI_KC",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "KC",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "ARI",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_BAL_CAR",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "CAR",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "BAL",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_IND_HOU",
+        "kickoff_utc": "2026-11-20T01:15:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "HOU",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "IND",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_JAX_NYG",
+        "kickoff_utc": "2026-11-22T21:25:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "NYG",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "JAX",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_LV_DEN",
+        "kickoff_utc": "2026-11-22T21:25:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "DEN",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "LV",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_MIA_BUF",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "BUF",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "MIA",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_MIN_SF",
+        "kickoff_utc": "2026-11-23T01:20:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "SF",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "MIN",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_NO_CHI",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "CHI",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "NO",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_NYJ_LAC",
+        "kickoff_utc": "2026-11-22T21:05:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "LAC",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "NYJ",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_PIT_PHI",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "PHI",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "PIT",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_TB_DET",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "DET",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "TB",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      },
+      {
+        "game_id": "2026_11_TEN_DAL",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "latest_quote_at_utc": "2026-11-16T19:06:52.615330+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "DAL",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "TEN",
+          "qb_id": null,
+          "status": "MISSING"
+        }
+      }
+    ],
+    "scope": "Upcoming eight days in existing odds archive; not full schedule coverage"
+  },
+  "schedule_coverage": {
+    "both_confirmed_games": 0,
+    "games": [
+      {
+        "game_id": "2026_11_ARI_KC",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "KC",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "ARI",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_BAL_CAR",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "CAR",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "BAL",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_CIN_WAS",
+        "kickoff_utc": "2026-11-24T01:15:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "WAS",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "CIN",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_IND_HOU",
+        "kickoff_utc": "2026-11-20T01:15:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "HOU",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "IND",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_JAX_NYG",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "NYG",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "JAX",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_LV_DEN",
+        "kickoff_utc": "2026-11-22T21:25:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "DEN",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "LV",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_MIA_BUF",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "BUF",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "MIA",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_MIN_SF",
+        "kickoff_utc": "2026-11-23T01:20:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "SF",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "MIN",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_NO_CHI",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "CHI",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "NO",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_NYJ_LAC",
+        "kickoff_utc": "2026-11-22T21:05:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "LAC",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "NYJ",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_PIT_PHI",
+        "kickoff_utc": "2026-11-22T21:25:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "PHI",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "PIT",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_TB_DET",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "DET",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "TB",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      },
+      {
+        "game_id": "2026_11_TEN_DAL",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "both_confirmed": false,
+        "home": {
+          "team": "DAL",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "away": {
+          "team": "TEN",
+          "qb_id": null,
+          "status": "MISSING"
+        },
+        "schedule_captured_at_utc": "2026-11-17T18:03:51.420323+00:00"
+      }
+    ],
+    "scope": "Every upcoming regular-season game in the current schedule over eight days",
+    "scheduled_upcoming_games": 13
+  },
+  "limitations": [
+    "Only explicit regular-season week/opponent statements in headline or first three paragraphs qualify.",
+    "Other wording, missing identity, speculative and unsupported articles abstain.",
+    "This is a conservative partial source adapter, not comprehensive starter coverage.",
+    "Previously archived forecasts are never backfilled."
+  ]
+}

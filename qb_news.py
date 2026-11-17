@@ -109,6 +109,19 @@ def coverage(quotes, confirmations, now):
         games=rows, scope='Upcoming eight days in existing odds archive; not full schedule coverage')
 
 
+def collect(root, teams):
+    now = datetime.now(timezone.utc)
+    folder = root / now.strftime('%Y%m%dT%H%M%S%fZ')
+    folder.mkdir(parents=True, exist_ok=False)
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        collected = list(pool.map(lambda team: collect_one(team, folder), teams))
+    sources = [s for s, _ in collected]
+    rows = [r for _, items in collected for r in items]
+    (folder / 'sources.json').write_text(json.dumps(sources, indent=2))
+    (folder / 'news.json').write_text(json.dumps(rows, indent=2))
+    return folder, sources, rows
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--out', default='data/qb_news')
@@ -116,14 +129,7 @@ def main():
     args = p.parse_args()
     now = datetime.now(timezone.utc)
     root = Path(args.out)
-    folder = root / now.strftime('%Y%m%dT%H%M%S%fZ')
-    folder.mkdir(parents=True, exist_ok=False)
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        collected = list(pool.map(lambda team: collect_one(team, folder), args.teams))
-    sources = [s for s, _ in collected]
-    news = [r for _, rows in collected for r in rows]
-    (folder / 'sources.json').write_text(json.dumps(sources, indent=2))
-    (folder / 'news.json').write_text(json.dumps(news, indent=2))
+    folder, sources, news = collect(root,args.teams)
     report = coverage(read_rows(Path('data/auto_market/quotes.csv')),
         read_rows(Path('nfl_data_inputs/qb_starters.csv')), datetime.now(timezone.utc))
     report.update(captured_at_utc=now.isoformat(), source_snapshot=str(folder),

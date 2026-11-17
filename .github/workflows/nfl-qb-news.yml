@@ -6,7 +6,12 @@ on:
   pull_request:
     paths:
       - qb_news.py
+      - qb_announcements.py
+      - collect_qb_inputs.py
       - test_qb_news.py
+      - test_qb_announcements.py
+      - qb_market.py
+      - .github/workflows/nfl-auto-market.yml
       - .github/workflows/nfl-qb-news.yml
 permissions:
   contents: read
@@ -22,13 +27,15 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-market.txt
       - run: python -m pip install -r requirements-market.txt
-      - run: python -m unittest -v test_qb_news test_qb_market test_qb_passing
+      - run: python -m unittest -v test_qb_news test_qb_announcements test_qb_market test_qb_passing
       - name: Collect official news and count verified coverage
         if: github.event_name != 'pull_request'
-        run: python qb_news.py
+        run: python collect_qb_inputs.py
       - uses: actions/upload-artifact@v4
         if: github.event_name != 'pull_request'
         with:
           name: qb-news-evidence-${{ github.run_id }}
-          path: data/qb_news/
+          path: |
+            qb_announcement_evidence/
+            data/auto_market/qb_announcements/
           retention-days: 90
