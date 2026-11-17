@@ -259,6 +259,8 @@ def main():
     import advanced_shadow
     report['advanced_paired_comparison']=advanced_shadow.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     report['epa_paired_comparison']=paired
+    import qb_passing
+    report['qb_passing_paired_comparison']=qb_passing.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     report['line_comparison']=movement
     (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
     pct=report['hypothetical_win_pct'];win_text=f'{pct:.2f}%' if pct is not None else 'N/A'

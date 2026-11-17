@@ -1,0 +1,52 @@
+name: NFL Market EPA QB Experiment
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - qb_market.py
+      - test_qb_market.py
+      - auto_market.py
+      - .github/workflows/nfl-market-qb.yml
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -r requirements-market.txt
+      - name: Check QB timing and existing EPA boundaries
+        run: python -m unittest -v test_qb_market test_epa_shadow
+      - name: Compare identical historical games
+        run: python qb_market.py
+      - name: Publish development comparison
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          r=json.loads(Path('qb_market_results/summary.json').read_text())
+          lines=['## QB experiment: retrospective starter diagnostic','',
+                 'Historical starter publication timestamps are unverified. No live promotion.','',
+                 '| Method | Wins | Losses | Pushes | ATS win rate |',
+                 '|---|---:|---:|---:|---:|']
+          for row in r['results']:
+              if row['period']=='all':
+                  lines.append('| {} | {} | {} | {} | {:.2f}% |'.format(
+                      row['method'],row['hypothetical_wins'],row['hypothetical_losses'],
+                      row['hypothetical_pushes'],row['hypothetical_win_pct']))
+          text='\n'.join(lines)
+          print(text)
+          with open(os.environ['GITHUB_STEP_SUMMARY'],'a') as f:f.write(text+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: market-qb-experiment-results
+          path: qb_market_results/
+          if-no-files-found: error
