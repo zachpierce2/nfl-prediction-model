@@ -1,0 +1,37 @@
+{
+  "captured_at_utc": "2026-11-17T22:45:43.510756+00:00",
+  "snapshot_id": "20261117T224543510756Z",
+  "provider_events": 29,
+  "total_shadow": {
+    "paired": 0
+  },
+  "eligible_quotes": 13,
+  "new_forecasts": 0,
+  "epa_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_epa_forecasts": 0,
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1"
+  },
+  "advanced_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "arms": {}
+  },
+  "qb_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_qb_forecasts": 0
+  },
+  "qb_passing_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_qb_forecasts": 0
+  },
+  "expected_qb_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_qb_forecasts": 0
+  },
+  "skipped": [],
+  "remaining_credits": "449",
+  "last_request_credits": "1",
+  "schedule_sha256": "0c643fd014305eeb334f4bdf42c779e94325ad0864cc71b1fbb2ebed5ef14f63",
+  "odds_sha256": "7171f2ee69fa7c50ebf9b53e0c2dad3c2ccd85ddae793baa8368decbd013071c",
+  "policy": "First automatic quote within 24h of kickoff; fixed bookmaker priority; same-day scores excluded"
+}
