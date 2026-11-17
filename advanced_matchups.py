@@ -190,7 +190,7 @@ def injury_features(games,injuries,snaps,players,live_cutoff=None):
         # Historical values are a diagnostic only. Missing publication times cannot be backdated.
         if is_live:
             ti=ti[ti._observed.le(cutoff)&ti._observed.ge(cutoff-pd.Timedelta(hours=48))&
-                  (ti._published.isna()|ti._published.le(cutoff))].copy()
+                  (ti._published.isna()|ti._published.le(ti._observed))].copy()
         else:ti=ti[ti._published.notna()&ti._published.lt(cutoff)].copy()
         values=[]
         for team in [g.home_team,g.away_team]:
@@ -216,7 +216,7 @@ def injury_features(games,injuries,snaps,players,live_cutoff=None):
                     col='offense_pct' if group in ['OL','SKILL'] else 'st_pct' if group=='ST' else 'defense_pct'
                     share=shares.loc[item.gsis_id,col]
                     if pd.isna(share):v['unknown']+=1
-                    elif share>=.5:v[status+'_'+group]+=float(share)
+                    elif share>=.5 or (group=='ST' and share>0):v[status+'_'+group]+=float(share)
             values.append(v)
         a,b=values
         r={m+'_diff':a[m]-b[m] for m in INJ_METRICS}
@@ -295,7 +295,7 @@ def main():
     result=dict(status='DEVELOPMENT_ONLY_NO_LIVE_PROMOTION',version=VERSION,arms=ARMS,
         results=summary[summary.period.eq('2021-2025')].to_dict('records'),
         settings=dict(window_games=8,reset_each_season=True,pass_explosive_yards=20,rush_explosive_yards=10,
-                      snap_history_team_games=3,key_player_snap_share=.5,ridge_alpha=1000,shrink=.25,cap=2),
+                      snap_history_team_games=3,key_player_snap_share=.5,specialist_minimum='positive prior special-teams usage',ridge_alpha=1000,shrink=.25,cap=2),
         baseline_reproduced_games=len(replay),
         hashes={p:digest(p) for p in [__file__,base.__file__,args.games,'strength_epa_features.csv','strength_epa_reference_predictions.csv']},
         limits=['Previously examined historical seasons are development data, not untouched validation.',
