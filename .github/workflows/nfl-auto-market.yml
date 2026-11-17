@@ -2,6 +2,10 @@ name: NFL Automatic Odds and Forecasts
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/nfl-auto-market.yml
   schedule:
     - cron: '17 */3 * * *'
 
