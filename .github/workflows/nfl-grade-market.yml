@@ -2,6 +2,10 @@ name: NFL Automatic Grading
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/nfl-grade-market.yml
   schedule:
     - cron: '43 9 * * *'
 

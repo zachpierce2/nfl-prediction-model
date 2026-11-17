@@ -102,6 +102,7 @@ class PassingTests(unittest.TestCase):
     def test_paired_grading_rejects_altered_core(self):
         from datetime import datetime,timezone
         import grade_market as grader
+        import epa_shadow
         from epa_shadow import core_hash
         core={k:'' for k in q.auto.FORECAST_FIELDS}
         core.update(game_id='g',quote_id='same',sportsbook='Book',home_team='H',away_team='A',
@@ -111,7 +112,7 @@ class PassingTests(unittest.TestCase):
             predicted_home_margin=2.,forecast_created_at_utc='2026-01-01T10:02:00Z')
         final=dict(provider_event_id='event',home_team='H',away_team='A',
             kickoff_utc=core['kickoff_utc'],home_score=24,away_score=20,snapshot_id='final')
-        with tempfile.TemporaryDirectory() as d,patch.object(q,'ROOT',Path(d)),patch.object(grader,'read_rows',return_value=[candidate]):
+        with tempfile.TemporaryDirectory() as d,patch.object(q,'ROOT',Path(d)),patch.object(epa_shadow,'ROOT',Path(d)/'missing_epa'),patch.object(grader,'read_rows',return_value=[candidate]):
             report=q.grade_shadow(grader,[core],[final],[],datetime(2026,1,2,tzinfo=timezone.utc))
             self.assertEqual(report['core']['hypothetical_wins'],1)
             self.assertEqual(report['qb_passing']['hypothetical_losses'],1)
