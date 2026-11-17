@@ -1,0 +1,15 @@
+{
+  "version": "prior_season_empirical_integer_margin_v1",
+  "status": "RESEARCH_ONLY_NO_PROMOTION",
+  "source_sha256": "b6e978b5ccac305732e63d972d9b99216acbb3f7e14e597dce37627b9c853b72",
+  "code_sha256": "2702040139b247ca226b7e8690e38ba49362781461b3712d19fd05c2de3fa6a6",
+  "method": "Prior-season out-of-fold residuals; round simulated final margins to nearest integer, half up",
+  "limitations": [
+    "Previously examined revised historical development data; not untouched validation.",
+    "Probabilities are experimental and are not claimed to be calibrated.",
+    "No historical book prices available: no historical EV, ROI or profitable filter claim.",
+    "Unconditional home/push/away scoring includes every evaluation game.",
+    "Empirical distribution can assign zero mass to unseen outcomes; log loss clipped at 1e-15.",
+    "Rounding and pooled residuals can misrepresent key-number frequencies; needs prospective evaluation."
+  ]
+}

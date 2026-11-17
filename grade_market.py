@@ -266,6 +266,8 @@ def main():
     import qb_starter_comparison
     report['qb_starter_comparison'],starter_text=qb_starter_comparison.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     report['line_comparison']=movement
+    import sportsbook_pricing
+    report['pricing_probability_scores']=sportsbook_pricing.grade_prices(sys.modules[__name__],finals,now)
     (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
     pct=report['hypothetical_win_pct'];win_text=f'{pct:.2f}%' if pct is not None else 'N/A'
     mae=lambda x:f'{x:.4f}' if x is not None else 'N/A'
