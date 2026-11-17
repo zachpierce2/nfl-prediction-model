@@ -30,7 +30,7 @@ class ShadowTests(unittest.TestCase):
         self.assertTrue(shadow.eligible('epa_baseline',row))
 
     def test_immutable_quote_hash_and_time_checks(self):
-        c=self.core();r=dict(c,core_forecast_sha256=epa_shadow.core_hash(c))
+        c=self.core();r=dict(c,arm='epa_pressure',core_forecast_sha256=epa_shadow.core_hash(c))
         self.assertEqual(len(shadow.verified_pairs([r],[c])),1)
         for key,value in [('quote_id','changed'),('home_price_american',-120),
                           ('forecast_created_at_utc',auto.stamp(datetime.now(timezone.utc)-timedelta(days=1)))]:
@@ -67,5 +67,25 @@ class ShadowTests(unittest.TestCase):
                 self.assertEqual(shadow.record(schedule,[c],folder)['arms']['epa_pressure']['new_forecasts'],0)
                 late=dict(c,kickoff_utc=auto.stamp(datetime.now(timezone.utc)-timedelta(seconds=1)))
                 with self.assertRaisesRegex(ValueError,'kickoff'):shadow.record(schedule,[late],folder)
+
+    def test_grading_pairs_candidate_with_epa_on_same_games(self):
+        c=self.core()
+        baseline=dict(c,arm='epa_baseline',core_forecast_sha256=epa_shadow.core_hash(c))
+        pressure=dict(c,arm='epa_pressure',core_forecast_sha256=epa_shadow.core_hash(c))
+        class Grader:
+            def read_rows(self,path):
+                return [baseline] if path.parent.name=='epa_baseline' else [pressure] if path.parent.name=='epa_pressure' else []
+            def match(self,row,finals,quotes):return {'final':True}
+            def grade(self,row,final,now):
+                return dict(game_id=row['game_id'],forecast_archive=row.get('forecast_archive','core'))
+            def summary(self,grades,rows,now):return dict(graded=len(grades),forecasts=len(rows))
+        with tempfile.TemporaryDirectory() as tmp,patch.object(shadow,'ROOT',Path(tmp)):
+            result=shadow.grade_shadow(Grader(),[c],[],[],datetime.now(timezone.utc))
+            self.assertEqual(result['epa_pressure']['candidate']['graded'],1)
+            self.assertEqual(result['epa_pressure']['epa']['graded'],1)
+            p=pd.read_csv(Path(tmp)/'epa_pressure/graded_predictions.csv')
+            self.assertEqual(p.forecast_archive.iloc[0],str(Path(tmp)/'epa_pressure/forecasts.csv'))
+            e=pd.read_csv(Path(tmp)/'epa_pressure/paired_epa_grades.csv')
+            self.assertEqual(e.forecast_archive.iloc[0],str(Path(tmp)/'epa_baseline/forecasts.csv'))
 
 if __name__=='__main__':unittest.main()

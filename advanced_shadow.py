@@ -28,6 +28,8 @@ def verified_pairs(candidates,cores):
     # Reuse exact-quote and immutable core-hash checks; enforce core-to-candidate time too.
     pairs=epa_shadow.verified_pairs(candidates,cores)
     for core,candidate in pairs:
+        if candidate.get('arm') not in advanced.ARMS:raise ValueError('Unknown advanced arm')
+        candidate['forecast_archive']=str(ROOT/candidate['arm']/'forecasts.csv')
         if auto.utc(candidate['forecast_created_at_utc'])<auto.utc(core['forecast_created_at_utc']):
             raise ValueError('Advanced forecast precedes its core pair')
     return pairs
@@ -103,7 +105,7 @@ def grade_shadow(grader,core_rows,finals,quotes,now):
             epa=epa_by_id.get(row['game_id'])
             if epa is None or epa['core_forecast_sha256']!=row['core_forecast_sha256']:
                 raise ValueError('Advanced candidate missing identical EPA baseline pair')
-            epa_grades.append(grader.grade(epa,final,now))
+            epa_grades.append(grader.grade(dict(epa,forecast_archive=str(ROOT/'epa_baseline'/'forecasts.csv')),final,now))
         for name,data in [('graded_predictions',graded),('paired_core_grades',core_grades),('paired_epa_grades',epa_grades)]:
             pd.DataFrame(data).to_csv(folder/(name+'.csv'),index=False)
         report[arm]=dict(paired_forecasts=len(pairs),candidate=grader.summary(graded,rows,now),
