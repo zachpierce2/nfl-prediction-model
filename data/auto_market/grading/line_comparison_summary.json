@@ -1,15 +1,16 @@
 {
-  "updated_at_utc": "2026-11-17T23:18:12.570752+00:00",
+  "updated_at_utc": "2026-11-17T23:24:42.277276+00:00",
   "forecasts": 2,
   "status_counts": {
-    "NO_LATER_SAME_BOOK_QUOTE": 2
+    "NEAR_KICKOFF_PROXY": 1,
+    "NO_LATER_SAME_BOOK_QUOTE": 1
   },
-  "near_kickoff_games": 0,
+  "near_kickoff_games": 1,
   "early_observations": 0,
-  "mean_near_kickoff_line_value_points": null,
+  "mean_near_kickoff_line_value_points": 0.0,
   "positive_near_kickoff_games": 0,
   "negative_near_kickoff_games": 0,
-  "unchanged_near_kickoff_games": 0,
+  "unchanged_near_kickoff_games": 1,
   "certified_closing_lines": 0,
   "interpretation": "Same sportsbook, later pre-kickoff archived quote. Positive points mean a better original spread for the selected side. Near-kickoff means within 60 minutes; earlier observations excluded from primary average. Not certified closing odds, price-adjusted CLV, or profit."
 }

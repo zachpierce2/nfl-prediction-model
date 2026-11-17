@@ -1,6 +1,6 @@
 # NFL prospective grading
 
-Updated: 2026-11-17T23:18:12.570752+00:00
+Updated: 2026-11-17T23:24:42.277276+00:00
 
 | Metric | Result |
 |---|---:|
@@ -21,13 +21,13 @@ Only provider-confirmed completed games are graded. Pending games are not losses
 
 ## Line movement against later sportsbook prices
 
-Near-kickoff comparisons (within 60 minutes): 0. Average point advantage: N/A.
+Near-kickoff comparisons (within 60 minutes): 1. Average point advantage: +0.000.
 
 Earlier last observations: 0 (excluded from that average).
 
 Positive means the saved pick had a better spread than the later same-book quote. Each CSV row shows the quote time and minutes before kickoff. Three-hour polling may miss the closing price. These are proxies, not certified closing lines; odds/juice are shown separately and are not included in point value.
 
-Status counts: {"NO_LATER_SAME_BOOK_QUOTE": 2}
+Status counts: {"NEAR_KICKOFF_PROXY": 1, "NO_LATER_SAME_BOOK_QUOTE": 1}
 
 ## Prospective core versus EPA (paired games only)
 
