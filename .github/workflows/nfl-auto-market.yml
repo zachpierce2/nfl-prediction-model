@@ -81,6 +81,9 @@ jobs:
       - name: Publish primary market + EPA output
         run: python publish_primary.py capture
 
+      - name: Kalshi paper capture
+        run: python kalshi_paper.py capture
+
       - name: Commit automatic archives
         run: |
           git config user.name "github-actions[bot]"
