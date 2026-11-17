@@ -1,0 +1,278 @@
+{
+  "status": "DEVELOPMENT_ONLY_NO_PROMOTION",
+  "summary": [
+    {
+      "period": "2021-2025",
+      "method": "epa_baseline",
+      "games": 1424,
+      "wins": 714,
+      "losses": 677,
+      "pushes": 33,
+      "no_pick": 0,
+      "win_pct": 51.32997843278217,
+      "mae": 9.765093072619628,
+      "rmse": 12.661226704127658
+    },
+    {
+      "period": "2021",
+      "method": "epa_baseline",
+      "games": 285,
+      "wins": 150,
+      "losses": 131,
+      "pushes": 4,
+      "no_pick": 0,
+      "win_pct": 53.380782918149464,
+      "mae": 10.654714025103823,
+      "rmse": 13.548626644740796
+    },
+    {
+      "period": "2022",
+      "method": "epa_baseline",
+      "games": 284,
+      "wins": 130,
+      "losses": 144,
+      "pushes": 10,
+      "no_pick": 0,
+      "win_pct": 47.44525547445255,
+      "mae": 8.803470365157445,
+      "rmse": 11.504728592509867
+    },
+    {
+      "period": "2023",
+      "method": "epa_baseline",
+      "games": 285,
+      "wins": 144,
+      "losses": 127,
+      "pushes": 14,
+      "no_pick": 0,
+      "win_pct": 53.13653136531365,
+      "mae": 9.982033924496726,
+      "rmse": 13.1705377018494
+    },
+    {
+      "period": "2024",
+      "method": "epa_baseline",
+      "games": 285,
+      "wins": 153,
+      "losses": 128,
+      "pushes": 4,
+      "no_pick": 0,
+      "win_pct": 54.44839857651245,
+      "mae": 9.70089131245042,
+      "rmse": 12.720659214152137
+    },
+    {
+      "period": "2025",
+      "method": "epa_baseline",
+      "games": 285,
+      "wins": 137,
+      "losses": 147,
+      "pushes": 1,
+      "no_pick": 0,
+      "win_pct": 48.23943661971831,
+      "mae": 9.680981621126707,
+      "rmse": 12.256955061497303
+    },
+    {
+      "period": "2021-2025",
+      "method": "pass_rush_epa",
+      "games": 1424,
+      "wins": 707,
+      "losses": 684,
+      "pushes": 33,
+      "no_pick": 0,
+      "win_pct": 50.82674335010783,
+      "mae": 9.764498316615153,
+      "rmse": 12.657237158010433
+    },
+    {
+      "period": "2021",
+      "method": "pass_rush_epa",
+      "games": 285,
+      "wins": 143,
+      "losses": 138,
+      "pushes": 4,
+      "no_pick": 0,
+      "win_pct": 50.88967971530249,
+      "mae": 10.656834754814211,
+      "rmse": 13.547371486396116
+    },
+    {
+      "period": "2022",
+      "method": "pass_rush_epa",
+      "games": 284,
+      "wins": 128,
+      "losses": 146,
+      "pushes": 10,
+      "no_pick": 0,
+      "win_pct": 46.715328467153284,
+      "mae": 8.806009109617104,
+      "rmse": 11.50333962016041
+    },
+    {
+      "period": "2023",
+      "method": "pass_rush_epa",
+      "games": 285,
+      "wins": 145,
+      "losses": 126,
+      "pushes": 14,
+      "no_pick": 0,
+      "win_pct": 53.505535055350556,
+      "mae": 9.976621229600859,
+      "rmse": 13.16927036251674
+    },
+    {
+      "period": "2024",
+      "method": "pass_rush_epa",
+      "games": 285,
+      "wins": 157,
+      "losses": 124,
+      "pushes": 4,
+      "no_pick": 0,
+      "win_pct": 55.87188612099644,
+      "mae": 9.689947477108364,
+      "rmse": 12.702154662261286
+    },
+    {
+      "period": "2025",
+      "method": "pass_rush_epa",
+      "games": 285,
+      "wins": 134,
+      "losses": 150,
+      "pushes": 1,
+      "no_pick": 0,
+      "win_pct": 47.183098591549296,
+      "mae": 9.689715891910677,
+      "rmse": 12.259605636480313
+    }
+  ],
+  "paired": {
+    "nonpush_disagreements": 237,
+    "baseline_wins": 122,
+    "candidate_wins": 115
+  },
+  "arms": {
+    "epa_baseline": [
+      "elo_diff",
+      "home_elo",
+      "away_elo",
+      "rest_diff",
+      "home_rest",
+      "away_rest",
+      "margin4_diff",
+      "margin8_diff",
+      "pf8_diff",
+      "pa8_diff",
+      "wins8_diff",
+      "experience_diff",
+      "home_field",
+      "spread_line",
+      "adj_off_epa_diff",
+      "adj_def_epa_diff",
+      "adj_off_success_diff",
+      "adj_def_success_diff"
+    ],
+    "pass_rush_epa": [
+      "elo_diff",
+      "home_elo",
+      "away_elo",
+      "rest_diff",
+      "home_rest",
+      "away_rest",
+      "margin4_diff",
+      "margin8_diff",
+      "pf8_diff",
+      "pa8_diff",
+      "wins8_diff",
+      "experience_diff",
+      "home_field",
+      "spread_line",
+      "pass_adj_off_epa_diff",
+      "pass_adj_def_epa_diff",
+      "pass_adj_off_success_diff",
+      "pass_adj_def_success_diff",
+      "run_adj_off_epa_diff",
+      "run_adj_def_epa_diff",
+      "run_adj_off_success_diff",
+      "run_adj_def_success_diff"
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2017.parquet",
+      "sha256": "21ff41abc6043cce68829bad2f2cbae100cb41aa106ca6cf9c93b35856e51ab6",
+      "captured_at_utc": "2026-11-17T20:14:24.665543+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:43:56 GMT",
+      "aggregate_sha256": "af3ea5a0118371ba94d3800ab58dd42a186d2f55ef7d15b3b3b65b56dbb47528"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2018.parquet",
+      "sha256": "f04d65f5993a0a982de4de5fbafd2fbf7c1649470f59de128fd17d924d38c5d3",
+      "captured_at_utc": "2026-11-17T20:14:31.471354+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:45:27 GMT",
+      "aggregate_sha256": "2c9b45d59dcd81b5e6b5d0b264a71c6d458eb3bc769c071d83b9e8317eda98aa"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2019.parquet",
+      "sha256": "54396ede038f0b2c43f17be2ac550ac06ba21e4317f0da64c99e1e3bd4117681",
+      "captured_at_utc": "2026-11-17T20:14:38.804489+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:46:55 GMT",
+      "aggregate_sha256": "bb97f69590679e606e3f7fa19ee0aff99af574536595f3b6aaa45f4a799ac444"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2020.parquet",
+      "sha256": "13704b508fcef4a127e363c7f280b04ea7b41efe2002e238d0a0de1ce1b7ef76",
+      "captured_at_utc": "2026-11-17T20:14:45.683214+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:48:16 GMT",
+      "aggregate_sha256": "0ad63710dae396b81b8957c3269c690bc3b93dfddf7063bc728bc984e3e855c8"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2021.parquet",
+      "sha256": "0d0222bdfc56af39e43f82cff0d02f47e2b5311776daf59a89254dd12e5e9f20",
+      "captured_at_utc": "2026-11-17T20:14:52.415419+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:49:44 GMT",
+      "aggregate_sha256": "8d4e3bd387d22282996eb865fb9535ae68ca98132608863f688dc10b665344ec"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2022.parquet",
+      "sha256": "167dff9290b11a47822157443af586877b38de1b6a90e41f95ac52e524cf4bb3",
+      "captured_at_utc": "2026-11-17T20:15:00.605165+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:51:10 GMT",
+      "aggregate_sha256": "2fbc8bfefcd8effcff17776f2fc2cd4652f2f754e2f92d91d37a310a77930dc7"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2023.parquet",
+      "sha256": "e8200fde627d460975cfe5d91c355702fcf931b747671d4e5eb972270265ec88",
+      "captured_at_utc": "2026-11-17T20:15:08.641842+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:52:26 GMT",
+      "aggregate_sha256": "50d85d5eeb47f3eed3e6832ab09247ee85417107c1262889e8934032a3a07d84"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.parquet",
+      "sha256": "6e6996601f9c29dd10c8d6a15eca255b836ba1dd4718f12bfb69137da1e07c1e",
+      "captured_at_utc": "2026-11-17T20:15:15.735736+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:54:12 GMT",
+      "aggregate_sha256": "0fd13b12e9a0bf0007a9a2648732e0c2620a9a484e9e3d341c5866e6110981bc"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.parquet",
+      "sha256": "6b7f629136def21702592bf7d70876d746aafe3207c675d9920632e9d7fd6d2d",
+      "captured_at_utc": "2026-11-17T20:15:23.928988+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:55:50 GMT",
+      "aggregate_sha256": "9946cd2bf4d31e7650e3d9edc1d4629bf12cd90beca4fc9006c19bd1557e7518"
+    }
+  ],
+  "hashes": {
+    "strength_games_snapshot.csv": "7eb9194c185304b2df04d2e92cd5a0ef8335247ab238b4eb7eb7c4ed38dc4818",
+    "strength_epa_features.csv": "e9b8e433a8ffc551b4646d22e0e41f434507edeffc098930f42366ab3b470b73",
+    "/workspace/scratch/17e20e737d23/nfl-prediction-model/market_pass_rush.py": "cc05db8750679919f7f1346782e8afdfc00804a2cad56243bc8081a55539012c",
+    "/workspace/scratch/17e20e737d23/nfl-prediction-model/market_model.py": "2be201fca3bcdab80b14f30460330cb1806810e997979e539074556ffdd846b2",
+    "/workspace/scratch/17e20e737d23/nfl-prediction-model/market_epa_experiment.py": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a"
+  },
+  "limitations": [
+    "Previously examined development seasons, not untouched validation.",
+    "Revised PBP and historical lines lack verified pregame publication timestamps.",
+    "Pass/run follows nflverse play_type; scrambles remain runs.",
+    "No executable odds, profitability claim, or live changes."
+  ]
+}
