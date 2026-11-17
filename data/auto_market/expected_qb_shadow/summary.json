@@ -1,0 +1,68 @@
+{
+  "model_version": "market_epa_expected_qb_passing_v1",
+  "paired_forecasts": 0,
+  "core": {
+    "updated_at_utc": "2026-11-17T20:43:30.425812+00:00",
+    "forecasts": 0,
+    "graded_games": 0,
+    "pending_games": 0,
+    "hypothetical_wins": 0,
+    "hypothetical_losses": 0,
+    "pushes": 0,
+    "no_lean": 0,
+    "hypothetical_win_pct": null,
+    "market_mae": null,
+    "model_mae": null,
+    "missing_result_over_3_days": [],
+    "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
+  },
+  "qb_passing": {
+    "updated_at_utc": "2026-11-17T20:43:30.425812+00:00",
+    "forecasts": 0,
+    "graded_games": 0,
+    "pending_games": 0,
+    "hypothetical_wins": 0,
+    "hypothetical_losses": 0,
+    "pushes": 0,
+    "no_lean": 0,
+    "hypothetical_win_pct": null,
+    "market_mae": null,
+    "model_mae": null,
+    "missing_result_over_3_days": [],
+    "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
+  },
+  "epa_comparison": {
+    "paired_forecasts": 0,
+    "missing_epa_forecasts": 0,
+    "epa_baseline": {
+      "updated_at_utc": "2026-11-17T20:43:30.425812+00:00",
+      "forecasts": 0,
+      "graded_games": 0,
+      "pending_games": 0,
+      "hypothetical_wins": 0,
+      "hypothetical_losses": 0,
+      "pushes": 0,
+      "no_lean": 0,
+      "hypothetical_win_pct": null,
+      "market_mae": null,
+      "model_mae": null,
+      "missing_result_over_3_days": [],
+      "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
+    },
+    "qb_passing": {
+      "updated_at_utc": "2026-11-17T20:43:30.425812+00:00",
+      "forecasts": 0,
+      "graded_games": 0,
+      "pending_games": 0,
+      "hypothetical_wins": 0,
+      "hypothetical_losses": 0,
+      "pushes": 0,
+      "no_lean": 0,
+      "hypothetical_win_pct": null,
+      "market_mae": null,
+      "model_mae": null,
+      "missing_result_over_3_days": [],
+      "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
+    }
+  }
+}
