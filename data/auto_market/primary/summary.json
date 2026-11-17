@@ -1,0 +1,39 @@
+{
+  "primary_model": "market_plus_epa",
+  "primary": {
+    "updated_at_utc": "2026-11-17T22:44:53.688951+00:00",
+    "forecasts": 0,
+    "graded_games": 0,
+    "pending_games": 0,
+    "hypothetical_wins": 0,
+    "hypothetical_losses": 0,
+    "pushes": 0,
+    "no_lean": 0,
+    "hypothetical_win_pct": null,
+    "market_mae": null,
+    "model_mae": null,
+    "missing_result_over_3_days": [],
+    "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim.",
+    "mean_matched_line_value_points": null
+  },
+  "total_comparison": {
+    "paired": 0,
+    "graded": 0,
+    "pending": 0,
+    "disagreements": 0,
+    "baseline": {
+      "WIN": 0,
+      "LOSS": 0,
+      "PUSH": 0,
+      "NO_LEAN": 0,
+      "wins_on_disagreements": 0
+    },
+    "with_total": {
+      "WIN": 0,
+      "LOSS": 0,
+      "PUSH": 0,
+      "NO_LEAN": 0,
+      "wins_on_disagreements": 0
+    }
+  }
+}
