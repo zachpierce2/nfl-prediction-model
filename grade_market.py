@@ -259,7 +259,7 @@ def main():
     auto.archive_rows(finals_path,FINAL_FIELDS,final_rows,'provider_event_id')
     finals=read_rows(finals_path)
     grade_path=ROOT/'graded_predictions.csv';existing=read_rows(grade_path);graded_ids={r['game_id'] for r in existing}
-    quotes=read_rows(Path('data/auto_market/quotes.csv'));fresh=[]
+    quotes=read_rows(Path('data/auto_market/quotes.csv')) + read_rows(Path('data/auto_market/near_kickoff/quotes.csv'));fresh=[]
     for row in rows:
         if row['game_id'] in graded_ids:continue
         final=match(row,finals,quotes)
