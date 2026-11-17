@@ -102,6 +102,7 @@ class PassingTests(unittest.TestCase):
     def test_paired_grading_rejects_altered_core(self):
         from datetime import datetime,timezone
         import grade_market as grader
+        import epa_shadow
         from epa_shadow import core_hash
         core={k:'' for k in q.auto.FORECAST_FIELDS}
         core.update(game_id='g',quote_id='same',sportsbook='Book',home_team='H',away_team='A',
@@ -111,12 +112,37 @@ class PassingTests(unittest.TestCase):
             predicted_home_margin=2.,forecast_created_at_utc='2026-01-01T10:02:00Z')
         final=dict(provider_event_id='event',home_team='H',away_team='A',
             kickoff_utc=core['kickoff_utc'],home_score=24,away_score=20,snapshot_id='final')
-        with tempfile.TemporaryDirectory() as d,patch.object(q,'ROOT',Path(d)),patch.object(grader,'read_rows',return_value=[candidate]):
+        with tempfile.TemporaryDirectory() as d,patch.object(q,'ROOT',Path(d)),patch.object(epa_shadow,'ROOT',Path(d)/'missing_epa'),patch.object(grader,'read_rows',return_value=[candidate]):
             report=q.grade_shadow(grader,[core],[final],[],datetime(2026,1,2,tzinfo=timezone.utc))
             self.assertEqual(report['core']['hypothetical_wins'],1)
             self.assertEqual(report['qb_passing']['hypothetical_losses'],1)
             with self.assertRaises(ValueError):
                 q.grade_shadow(grader,[dict(core,predicted_home_margin=5.)],[final],[],datetime(2026,1,2,tzinfo=timezone.utc))
+
+    def test_epa_comparison_uses_identical_quote_and_subset(self):
+        from datetime import datetime,timezone
+        import grade_market as grader
+        import epa_shadow
+        core={k:'' for k in q.auto.FORECAST_FIELDS}
+        core.update(game_id='g',quote_id='same',sportsbook='Book',home_team='H',away_team='A',
+            home_line=-3.,predicted_home_margin=4.,captured_at_utc='2026-01-01T10:00:00Z',
+            forecast_created_at_utc='2026-01-01T10:01:00Z',kickoff_utc='2026-01-01T20:00:00Z')
+        candidate=dict(core,core_forecast_sha256=epa_shadow.core_hash(core),
+            predicted_home_margin=2.,forecast_created_at_utc='2026-01-01T10:03:00Z')
+        baseline=dict(core,core_forecast_sha256=epa_shadow.core_hash(core),model_version=epa_shadow.VERSION,
+            forecast_created_at_utc='2026-01-01T10:02:00Z')
+        final=dict(provider_event_id='event',home_team='H',away_team='A',
+            kickoff_utc=core['kickoff_utc'],home_score=24,away_score=20,snapshot_id='final')
+        with tempfile.TemporaryDirectory() as d,patch.object(q,'ROOT',Path(d)/'qb'),patch.object(epa_shadow,'ROOT',Path(d)/'epa'):
+            epa_shadow.ROOT.mkdir();(epa_shadow.ROOT/'forecasts.csv').touch()
+            def read(path):return [baseline] if path.parent==epa_shadow.ROOT else [candidate]
+            with patch.object(grader,'read_rows',side_effect=read):
+                report=q.grade_shadow(grader,[core],[final],[],datetime(2026,1,2,tzinfo=timezone.utc))
+                self.assertEqual(report['epa_comparison']['epa_baseline']['hypothetical_wins'],1)
+                self.assertEqual(report['epa_comparison']['qb_passing']['hypothetical_losses'],1)
+                self.assertEqual(report['epa_comparison']['epa_baseline']['model_mae'],0.)
+                baseline['quote_id']='other'
+                with self.assertRaises(ValueError):q.grade_shadow(grader,[core],[final],[],datetime(2026,1,2,tzinfo=timezone.utc))
 
     def test_source_aggregate_reuses_existing_function(self):
         p=pd.DataFrame(dict(game_id=['x']*3,posteam=['H']*3,defteam=['A']*3,

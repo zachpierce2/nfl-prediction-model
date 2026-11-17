@@ -1,6 +1,7 @@
 """Reuse confirmed starter inputs in a separate market/EPA QB research candidate."""
 import argparse
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
@@ -13,7 +14,7 @@ from market_epa_experiment import ADJ
 QB = ['qb_margin_diff', 'qb_experience_diff']
 VERSION = 'market_epa_confirmed_qb_margin_v1'
 ROOT = Path('data/auto_market/qb_shadow')
-CONFIRMATIONS = Path('nfl_data_inputs/qb_starters.csv')
+CONFIRMATIONS = Path(os.environ.get('QB_CONFIRMATIONS_PATH','nfl_data_inputs/qb_starters.csv'))
 FIELDS = auto.FORECAST_FIELDS + ['model_version','core_forecast_sha256','qb_inputs_sha256',
     'home_confirmed_qb_id','away_confirmed_qb_id'] + QB
 
