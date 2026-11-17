@@ -36,7 +36,8 @@ def score(g):
 def run(games_path,features_path,out):
     f=base.read_games(games_path);f=f[f.season.between(2017,2025)].copy()
     e=pd.read_csv(features_path)
-    if e.game_id.duplicated().any():raise ValueError('Duplicate EPA features')
+    if e.game_id.isna().any() or e.game_id.duplicated().any():
+        raise ValueError('Unique nonnull EPA game_id required')
     f=f.merge(e[['game_id']+EPA],on='game_id',how='left',validate='one_to_one')
     if not np.isfinite(f[EPA].to_numpy()).all():raise ValueError('Missing EPA features')
     f=f.dropna(subset=['actual_margin','spread_line']);columns=base.INPUTS+EPA
@@ -45,6 +46,8 @@ def run(games_path,features_path,out):
         train=f[f.season<year];test=f[f.season.eq(year)]
         binary=train[(train.actual_margin-train.spread_line).ne(0)]
         if len(binary)<500 or test.empty:raise ValueError('Insufficient fold')
+        if train.gameday.max() >= test.gameday.min():
+            raise ValueError('Training dates overlap evaluation dates')
         y=(binary.actual_margin-binary.spread_line).gt(0).astype(int)
         logistic=base.make_pipeline(base.SimpleImputer(strategy='median'),base.StandardScaler(),
             LogisticRegression(C=C,solver='lbfgs',max_iter=2000,tol=1e-8))
@@ -53,20 +56,29 @@ def run(games_path,features_path,out):
         ridge.fit(train[columns],train.actual_margin-train.spread_line)
         adjustment=np.clip(.25*ridge.predict(test[columns]),-2.,2.)
         folds.append(dict(test_season=year,train_last_season=int(train.season.max()),
+            train_last_date=str(train.gameday.max()),test_first_date=str(test.gameday.min()),
             train_games=len(train),classifier_training_nonpush_games=len(binary),test_games=len(test)))
         for name,prob,direction in [
             ('margin_core_epa',np.full(len(test),np.nan),np.where(abs(adjustment)>1e-10,np.sign(adjustment),0)),
             ('cover_logistic',logistic.predict_proba(test[columns])[:,1],None),
             ('constant_half',np.full(len(test),.5),np.zeros(len(test))),
             ('prior_home_cover_rate',np.full(len(test),float(y.mean())),np.zeros(len(test)))]:
-            g=test[['game_id','season','actual_margin','spread_line']].copy()
+            g=test[['game_id','season','gameday','home_team','away_team','actual_margin','spread_line']].copy()
             g['method']=name;g['home_cover_probability']=prob
             # A fixed 0.5 tie has no lean, matching the margin baseline's zero adjustment.
             g['direction']=np.sign(prob-.5) if direction is None else direction
             if name=='margin_core_epa':g['predicted_margin']=g.spread_line+adjustment
             else:g['predicted_margin']=np.nan
             predictions.append(g)
-    p=pd.concat(predictions,ignore_index=True);summary=[]
+    p=pd.concat(predictions,ignore_index=True)
+    # Every method must cover the same games, with finite classifier probabilities.
+    expected=set(f[f.season.between(2020,2025)].game_id)
+    for name,g in p.groupby('method'):
+        if g.game_id.duplicated().any() or set(g.game_id)!=expected:
+            raise ValueError(f'Invalid game coverage: {name}')
+        if name!='margin_core_epa' and not (np.isfinite(g.home_cover_probability).all() and g.home_cover_probability.between(0,1).all()):
+            raise ValueError(f'Invalid probabilities: {name}')
+    summary=[]
     for (year,name),g in p[p.season.ge(2021)].groupby(['season','method']):summary.append(dict(period=str(year),method=name,**score(g)))
     for name,g in p[p.season.ge(2021)].groupby('method'):summary.append(dict(period='2021-2025',method=name,**score(g)))
     summary=pd.DataFrame(summary);out=Path(out);out.mkdir(parents=True,exist_ok=True)
@@ -98,6 +110,13 @@ def run(games_path,features_path,out):
         'Calibration error is descriptive and bin-dependent; probability scores exclude pushes.',
         'No executable-price profit or betting EV established.'])
     (out/'provenance.json').write_text(json.dumps(meta,indent=2))
+    pooled=summary[summary.period.eq('2021-2025')]
+    report=['# Direct cover-probability backtest', '',
+        'Annual prior-season-only training; all games included. Probabilities condition on no push.',
+        '', '```', pooled.to_string(index=False), '```', '',
+        'Development data only. Historical spreads/EPA lack verified publication timestamps.',
+        'No live model change or verified betting profitability.']
+    (out/'summary.md').write_text('\n'.join(report)+'\n')
     print(summary.to_string(index=False));print(calibration.to_string(index=False));print(json.dumps(paired))
     return p,summary
 
