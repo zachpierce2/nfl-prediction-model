@@ -78,6 +78,9 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python auto_market.py
 
+      - name: Publish primary market + EPA output
+        run: python publish_primary.py capture
+
       - name: Commit automatic archives
         run: |
           git config user.name "github-actions[bot]"
