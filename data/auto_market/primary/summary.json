@@ -1,4 +1,14 @@
 {
+  "same_price_timing": {
+    "better": 0,
+    "equal": 0,
+    "worse": 0,
+    "changed_price": 0,
+    "missing_price": 0,
+    "comparable": 0,
+    "primary_forecasts": 0,
+    "mean_points": null
+  },
   "primary_model": "market_plus_epa",
   "primary": {
     "updated_at_utc": "2026-11-17T23:29:14.498474+00:00",
