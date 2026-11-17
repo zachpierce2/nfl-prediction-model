@@ -1,4 +1,26 @@
 {
+  "three_way": {
+    "comparable": 0,
+    "excluded_settlements": 0,
+    "model": {
+      "trades": 0,
+      "passes": 0,
+      "net_paper_dollars": null,
+      "brier": null
+    },
+    "market": {
+      "trades": 0,
+      "passes": 0,
+      "net_paper_dollars": null,
+      "brier": null
+    },
+    "blend": {
+      "trades": 0,
+      "passes": 0,
+      "net_paper_dollars": null,
+      "brier": null
+    }
+  },
   "probability_benchmark": {
     "comparable": 0,
     "excluded": 0,

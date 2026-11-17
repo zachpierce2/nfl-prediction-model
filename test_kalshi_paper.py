@@ -18,6 +18,19 @@ class KalshiTests(unittest.TestCase):
         book['no_dollars'][0][1]='.75'
         self.assertEqual(k.offers(book,.51,Decimal('1'))[1],'pass')
 
+    def test_frozen_blend_and_matched_accounting(self):
+        book={'yes_dollars':[['.48','5']], 'no_dollars':[['.48','5']]}
+        arms=k.freeze_comparison(.56,book,Decimal('1'))
+        self.assertAlmostEqual(arms['blend']['p_yes'],.53)
+        self.assertEqual([arms[a]['decision'] for a in ('model','market','blend')],['yes','pass','pass'])
+        scores=k.settle_comparison(arms,'no')
+        report=k.summarize_comparison([dict(comparison=scores),dict(comparison=None)])
+        self.assertEqual((report['comparable'],report['excluded_settlements']),(1,1))
+        self.assertAlmostEqual(report['model']['net_paper_dollars'],-.5375)
+        self.assertAlmostEqual(report['blend']['brier'],.53**2)
+        self.assertEqual(report['market']['net_paper_dollars'],0)
+        self.assertIsNone(k.freeze_comparison(.56,{'no_dollars':[['.48','5']]},Decimal('1')))
+
     def test_match_threshold_before_considering_prices(self):
         e='KXNFLSPREAD-26NOV19INDHOU'
         def market(team,line):
