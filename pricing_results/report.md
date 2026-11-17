@@ -1,0 +1,27 @@
+# Sportsbook pricing probability experiment
+
+Research only; no live promotion or profitability claim.
+
+Prior-season empirical errors produce home-cover, push and away-cover probabilities. Lower scores are better.
+
+| period | method | games | brier_three_outcome | log_loss_three_outcome | mean_push_probability | observed_push_rate |
+| --- | --- | --- | --- | --- | --- | --- |
+| all | market | 1424 | 0.5215664562268169 | 0.7718454360989554 | 0.01425322132942512 | 0.023174157303370788 |
+| all | opponent_epa | 1424 | 0.5218935325730945 | 0.7719946977555434 | 0.015712592477724316 | 0.023174157303370788 |
+| 2021 | market | 285 | 0.5128756718567747 | 0.7477359676989652 | 0.00919585208374095 | 0.014035087719298246 |
+| 2021 | opponent_epa | 285 | 0.5125417709500878 | 0.7468806905002003 | 0.015691645470553708 | 0.014035087719298246 |
+| 2022 | market | 284 | 0.5330411091973782 | 0.8120345455101725 | 0.011980729140184066 | 0.035211267605633804 |
+| 2022 | opponent_epa | 284 | 0.5339266568142974 | 0.8125453958155999 | 0.012953170285249402 | 0.035211267605633804 |
+| 2023 | market | 285 | 0.5448882714530072 | 0.8386398953311356 | 0.017334505715362394 | 0.04912280701754386 |
+| 2023 | opponent_epa | 285 | 0.5441637369607225 | 0.8374356491728335 | 0.016978604027969687 | 0.04912280701754386 |
+| 2024 | market | 285 | 0.5133435867468961 | 0.7479470675735151 | 0.021246348283888706 | 0.014035087719298246 |
+| 2024 | opponent_epa | 285 | 0.5134891427624034 | 0.7483264096098315 | 0.02133695771039353 | 0.014035087719298246 |
+| 2025 | market | 285 | 0.5037239038202752 | 0.7130107187999754 | 0.011500697767145135 | 0.0035087719298245615 |
+| 2025 | opponent_epa | 285 | 0.5053885768665272 | 0.71492762683034 | 0.011592902711323762 | 0.0035087719298245615 |
+
+- Previously examined revised historical development data; not untouched validation.
+- Probabilities are experimental and are not claimed to be calibrated.
+- No historical book prices available: no historical EV, ROI or profitable filter claim.
+- Unconditional home/push/away scoring includes every evaluation game.
+- Empirical distribution can assign zero mass to unseen outcomes; log loss clipped at 1e-15.
+- Rounding and pooled residuals can misrepresent key-number frequencies; needs prospective evaluation.

@@ -98,7 +98,7 @@ def archive_rows(path, fields, rows, unique_key):
             writer.writerows(fresh)
     return fresh
 
-def match_quotes(events, schedule, captured, snapshot_id):
+def match_quotes(events, schedule, captured, snapshot_id, *, all_books=False):
     rows=[]; skipped=[]
     for e in events:
         kickoff=utc(e['commence_time'])
@@ -138,7 +138,7 @@ def match_quotes(events, schedule, captured, snapshot_id):
                 row['quote_id']=digest(json.dumps(identity,sort_keys=True).encode())[:24]
                 candidates.append(row)
         if candidates:
-            rows.append(min(candidates,key=lambda r:BOOK_ORDER.index(r['bookmaker_key'])))
+            rows.extend(candidates if all_books else [min(candidates,key=lambda r:BOOK_ORDER.index(r['bookmaker_key']))])
         else: skipped.append(f'No fresh two-sided spread at supported books: {away} at {home}')
     return rows, skipped
 
@@ -191,7 +191,11 @@ def main():
     (folder/'schedule_raw.csv.gz').write_bytes(gzip.compress(raw_schedule))
     schedule=schedule_frame(raw_schedule,captured)
     schedule_path=folder/'schedule_asof.csv.gz';schedule.to_csv(schedule_path,index=False)
-    quotes,skipped=match_quotes(events,schedule,captured,sid)
+    all_quotes,skipped=match_quotes(events,schedule,captured,sid,all_books=True)
+    # Preserve the existing core quote selection; independently archive every supported book.
+    quotes=list({q['game_id']:q for q in sorted(all_quotes,
+        key=lambda q:BOOK_ORDER.index(q['bookmaker_key']),reverse=True)}.values())
+    archive_rows(ROOT/'all_book_quotes.csv',QUOTE_FIELDS,all_quotes,'quote_id')
     archive_rows(ROOT/'quotes.csv',QUOTE_FIELDS,quotes,'quote_id')
     seen=set()
     forecast_path=ROOT/'forecasts.csv'
@@ -247,9 +251,16 @@ def main():
         advanced_status=dict(status='ADVANCED_UNAVAILABLE_AT_FORECAST',error_type=type(exc).__name__)
         if isinstance(exc,(ValueError,RuntimeError)):advanced_status['reason']=str(exc)
     (folder/'advanced_status.json').write_text(json.dumps(advanced_status,indent=2))
+    import sportsbook_pricing
+    try:
+        pricing_status=sportsbook_pricing.record(all_quotes,folder,captured)
+    except Exception as exc:
+        pricing_status=dict(status='PRICING_UNAVAILABLE',error_type=type(exc).__name__)
+        if isinstance(exc,(ValueError,RuntimeError)):pricing_status['reason']=str(exc)
+    (folder/'pricing_status.json').write_text(json.dumps(pricing_status,indent=2))
     normalized_headers={k.lower():v for k,v in headers.items()}
     report=dict(captured_at_utc=stamp(captured),snapshot_id=sid,provider_events=len(events),
-        eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
+        eligible_quotes=len(quotes),all_book_quotes=len(all_quotes),pricing=pricing_status,new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),

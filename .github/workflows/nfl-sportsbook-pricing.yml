@@ -1,0 +1,35 @@
+name: NFL Sportsbook Pricing Research
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - sportsbook_pricing.py
+      - test_sportsbook_pricing.py
+      - auto_market.py
+      - grade_market.py
+      - .github/workflows/nfl-sportsbook-pricing.yml
+
+permissions:
+  contents: read
+
+jobs:
+  pricing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-market.txt
+      - run: python -m pip install -r requirements-market.txt
+      - name: Test quote, timing, push and price boundaries
+        run: python -m unittest -v test_sportsbook_pricing test_epa_shadow test_qb_market test_qb_passing test_qb_starter_comparison
+      - name: Reproduce prior-season probability comparison
+        run: python sportsbook_pricing.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nfl-sportsbook-pricing-research
+          path: pricing_results/
