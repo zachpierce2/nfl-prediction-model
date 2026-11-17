@@ -1,0 +1,28 @@
+name: NFL Advanced Matchup Experiment
+
+on:
+  pull_request:
+    paths:
+      - advanced_source_audit.py
+      - advanced_matchups.py
+      - test_advanced_matchups.py
+      - .github/workflows/nfl-advanced-matchups.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-market.txt
+      - run: pip install -r requirements-market.txt
+      - name: Audit available sources and existing features
+        run: python advanced_source_audit.py
