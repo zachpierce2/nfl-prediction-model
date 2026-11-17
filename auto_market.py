@@ -179,7 +179,14 @@ def main():
     if not key:raise ValueError('Add the ODDS_API_KEY repository Actions secret first')
     ROOT.mkdir(parents=True,exist_ok=True)
     raw_schedule,_=download(SCHEDULE_URL,'Schedule refresh')
-    params=urlencode(dict(apiKey=key,regions='us',markets='spreads',oddsFormat='american',dateFormat='iso'))
+    # Request the second market only on days with games approaching the forecast window.
+    schedule_days = pd.read_csv(io.BytesIO(raw_schedule),usecols=['gameday','gametime','home_score'])
+    eastern = pd.to_datetime(schedule_days.gameday+' '+schedule_days.gametime,errors='coerce').dt.tz_localize(
+        'America/New_York',ambiguous='NaT',nonexistent='NaT').dt.tz_convert('UTC')
+    request_time = pd.Timestamp.now(tz='UTC')
+    near = schedule_days.home_score.isna() & eastern.between(request_time,request_time+pd.Timedelta(hours=25))
+    markets = 'spreads,totals' if near.any() else 'spreads'
+    params=urlencode(dict(apiKey=key,regions='us',markets=markets,oddsFormat='american',dateFormat='iso'))
     raw_odds,headers=download('https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?'+params,'Odds refresh')
     captured=datetime.now(timezone.utc)
     events=json.loads(raw_odds)
@@ -213,6 +220,12 @@ def main():
             error_type=type(exc).__name__,model_version=epa_shadow.VERSION)
         if isinstance(exc,(ValueError,RuntimeError)):epa_status['reason']=str(exc)
     (folder/'epa_status.json').write_text(json.dumps(epa_status,indent=2))
+    import total_shadow
+    try:
+        total_status = total_shadow.record(schedule_path, quotes, events, folder)
+    except Exception as exc:
+        total_status = {'status':'TOTAL_UNAVAILABLE','error':type(exc).__name__}
+    (folder/'total_status.json').write_text(json.dumps(total_status,indent=2))
     # Reuse the existing timestamped starter-confirmation file in an independent candidate.
     import qb_market
     try:
@@ -249,7 +262,7 @@ def main():
     (folder/'advanced_status.json').write_text(json.dumps(advanced_status,indent=2))
     normalized_headers={k.lower():v for k,v in headers.items()}
     report=dict(captured_at_utc=stamp(captured),snapshot_id=sid,provider_events=len(events),
-        eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
+        total_shadow=total_status,eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),
