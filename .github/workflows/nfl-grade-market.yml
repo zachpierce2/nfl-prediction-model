@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/nfl-grade-market.yml
+      - grade_market.py
   schedule:
     - cron: '43 9 * * *'
 

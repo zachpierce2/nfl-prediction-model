@@ -136,7 +136,11 @@ def line_comparison(row, quotes, now, final=None):
             at=auto.utc(q['captured_at_utc']);updated=auto.utc(q['provider_updated_at_utc'])
             # Exclude initial quote, after-kickoff data, stale odds, and rescheduled-event observations.
             if q['quote_id']==row['quote_id'] or not created<=at<kickoff or at>now:continue
-            if auto.utc(q['kickoff_utc'])!=kickoff:continue
+            quote_kickoff=auto.utc(q['kickoff_utc'])
+            if at>=min(quote_kickoff,kickoff,auto.utc(row['kickoff_utc'])):continue
+            if quote_kickoff!=kickoff:
+                if not final or not q.get('provider_event_id') or event_ids!={q['provider_event_id']}:continue
+                if abs(quote_kickoff-kickoff)>timedelta(minutes=5):continue
             if not timedelta(0)<=at-updated<=timedelta(minutes=30):continue
             hl=number(q['home_line']);al=number(q['away_line'])
             if abs(hl+al)>1e-6:continue
@@ -215,6 +219,17 @@ def test_line_comparison():
             older=dict(self.q,quote_id='older',captured_at_utc='2026-11-15T19:00:00Z',provider_updated_at_utc='2026-11-15T18:59:00Z',home_line='-5',away_line='5')
             r=line_comparison(self.row,[self.q,older],self.now)
             self.assertEqual(r['latest_quote_id'],'later');self.assertEqual(r['minutes_before_kickoff'],30)
+        def test_verified_kickoff_drift(self):
+            anchor=dict(self.q,quote_id='first',provider_event_id='event')
+            later=dict(self.q,provider_event_id='event')
+            final=dict(kickoff_utc='2026-11-15T20:05:00Z',provider_event_id='event')
+            def status(q=later, f=final, a=anchor):
+                return line_comparison(self.row,[a,q],self.now,f)['status']
+            self.assertEqual(status(),'NEAR_KICKOFF_PROXY')
+            for q in [dict(later,provider_event_id='other'),dict(later,captured_at_utc=later['kickoff_utc'],provider_updated_at_utc=later['kickoff_utc'])]:
+                self.assertEqual(status(q),'NO_LATER_SAME_BOOK_QUOTE')
+            self.assertEqual(status(f=dict(final,kickoff_utc='2026-11-15T20:05:01Z')),'NO_LATER_SAME_BOOK_QUOTE')
+            self.assertEqual(status(a=dict(anchor,provider_event_id='')),'NO_LATER_SAME_BOOK_QUOTE')
         def test_no_lean(self):
             self.row['predicted_home_margin']='3'
             self.assertEqual(line_comparison(self.row,[self.q],self.now)['status'],'NO_LEAN')
