@@ -2,6 +2,10 @@ name: NFL Automatic Odds and Forecasts
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/nfl-auto-market.yml
   schedule:
     - cron: '17 */3 * * *'
 
@@ -15,7 +19,7 @@ concurrency:
 jobs:
   auto-market:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 40
 
     steps:
       - uses: actions/checkout@v4
@@ -37,6 +41,14 @@ jobs:
       - name: Check live EPA inputs on manual runs
         if: github.event_name == 'workflow_dispatch'
         run: python epa_shadow.py --validate-live
+
+      - name: Validate advanced candidate boundaries
+        run: python -m unittest -v test_advanced_matchups.AdvancedTests test_advanced_shadow
+
+      - uses: actions/cache@v4
+        with:
+          path: advanced_matchup_cache
+          key: advanced-matchups-v1-${{ hashFiles('advanced_matchups.py') }}
 
       - name: Collect odds and save forecasts
         env:
