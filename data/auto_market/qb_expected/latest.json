@@ -1,6 +1,8 @@
 {
   "version": "expected_qb_v1",
-  "observed_at_utc": "2026-11-17T20:29:23.035128+00:00",
+  "code_sha256": "2dcd4d383ea9a368b9684b333489b4a416b3765b5f60d3f8b2333dc067d3ffb0",
+  "snapshot_sha256": "4ba5080dffa9daa3c5da1573ac010e9d8abeaa05ace45e72812b42b3f4e02e21",
+  "observed_at_utc": "2026-11-17T20:44:24.633501+00:00",
   "upcoming_games": 13,
   "team_rows": 26,
   "status_counts": {
@@ -13,25 +15,25 @@
   "sources": {
     "schedule": {
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
-      "observed_at_utc": "2026-11-17T20:26:36.478628+00:00",
-      "sha256": "0bcd3385130f0cc5a53df51f94832f2d22033b774da0ed181e2f6cd84385539a",
+      "observed_at_utc": "2026-11-17T20:44:19.999864+00:00",
+      "sha256": "ded02ffa153554b427a001ae54daa8ac2e978f279620d4b92e2354d7f81fe4c3",
       "last_modified_utc": null
     },
     "depth": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
-      "observed_at_utc": "2026-11-17T20:26:47.107441+00:00",
+      "observed_at_utc": "2026-11-17T20:44:20.797019+00:00",
       "sha256": "69bf8635ac2ebea63b56a46ba19d0ddd1a8dc9271f43f2ca3aaede207731032d",
       "last_modified_utc": "2026-11-17T16:52:17+00:00"
     },
     "injuries": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
-      "observed_at_utc": "2026-11-17T20:26:59.166605+00:00",
+      "observed_at_utc": "2026-11-17T20:44:24.022128+00:00",
       "sha256": "8169fb6947f3e86b436fabd025df6211f77eca5f2a38c3d91d2412b568b58441",
       "last_modified_utc": "2026-11-17T16:50:46+00:00"
     },
     "players": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
-      "observed_at_utc": "2026-11-17T20:27:06.307854+00:00",
+      "observed_at_utc": "2026-11-17T20:44:24.210231+00:00",
       "sha256": "07d69a7df6fe8ef7e0d104d3414ef145cd4354bd471a4235b05e30800021fe5d",
       "last_modified_utc": "2026-11-17T17:18:01+00:00"
     }
@@ -42,7 +44,5 @@
     "Questionable/doubtful or limited/no practice remain uncertain and skip the expected-QB forecast.",
     "Recent starts are a current-season fallback, not an announcement.",
     "No backfill, historical accuracy claim or primary-model promotion."
-  ],
-  "code_sha256": "ce2d7605ad725ea2cc72329371c36d3ce3a32a1192b56cc49fe75d4cf39703b3",
-  "snapshot_sha256": "65acdea1e5bffad9eb54281ecce7d8d24350e4edd81c16f4022734fb77ce369a"
+  ]
 }
