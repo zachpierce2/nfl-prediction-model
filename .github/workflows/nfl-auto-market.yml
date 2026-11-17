@@ -36,7 +36,7 @@ jobs:
         run: python -m pip install -r requirements-market.txt
 
       - name: Validate paired forecast boundaries
-        run: python -m unittest -v test_epa_shadow test_qb_market test_qb_passing test_qb_news test_qb_announcements
+        run: python -m unittest -v test_epa_shadow test_qb_market test_qb_passing test_qb_news test_qb_announcements test_qb_expected
 
       - name: Collect explicit official starter decisions
         id: qb-inputs
@@ -47,6 +47,15 @@ jobs:
         if: steps.qb-inputs.outcome == 'failure'
         run: |
           echo 'QB collection failed; only existing manual confirmations are eligible.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Collect expected starters from depth, injuries and recent starts
+        id: expected-qbs
+        continue-on-error: true
+        run: python qb_expected.py
+
+      - name: Record unavailable expected starter collector
+        if: steps.expected-qbs.outcome == 'failure'
+        run: echo 'Expected starter collection failed; expected-QB forecasts will skip this run.' >> "$GITHUB_STEP_SUMMARY"
 
       - name: Check live EPA inputs on manual runs
         if: github.event_name == 'workflow_dispatch'
@@ -92,4 +101,11 @@ jobs:
         with:
           name: qb-announcement-evidence-${{ github.run_id }}
           path: qb_announcement_evidence/
+          retention-days: 90
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qb-expected-evidence-${{ github.run_id }}
+          path: qb_expected_evidence/
           retention-days: 90

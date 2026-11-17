@@ -76,7 +76,7 @@ def difference(history,home,away):
 
 
 def features(games,stats,starter_ids=None):
-    """Batch by date before history updates. Dict overrides are confirmed live IDs."""
+    """Batch by date before history updates. Live override IDs come from the caller’s timestamped starter gate."""
     history=defaultdict(list);last={};rows=[]
     by_game={gid:g for gid,g in stats.groupby('game_id')}
     for day,group in games.sort_values(['gameday','game_id']).groupby('gameday',sort=True):
@@ -149,18 +149,25 @@ def backtest(out,cache=CACHE):
     return report
 
 
-def record(schedule_path,core_rows,folder):
-    ROOT.mkdir(parents=True,exist_ok=True)
+def record(schedule_path,core_rows,folder,*,reports_path=None,resolver=None,root=None,version=None,id_fields=None,tag='qb_passing'):
+    root=ROOT if root is None else Path(root)
+    version=VERSION if version is None else version
+    reports_path=confirmations.CONFIRMATIONS if reports_path is None else Path(reports_path)
+    resolver=confirmations.confirmed_ids if resolver is None else resolver
+    id_fields=id_fields or ['home_confirmed_qb_id','away_confirmed_qb_id']
+    fields=auto.FORECAST_FIELDS+['model_version','core_forecast_sha256','qb_inputs_sha256']+id_fields+QB
+    root.mkdir(parents=True,exist_ok=True)
     if not core_rows:return dict(status='NO_NEW_CORE_FORECASTS',new_qb_forecasts=0)
-    reports=pd.read_csv(confirmations.CONFIRMATIONS,dtype=str,keep_default_na=False)
-    (folder/'qb_passing_confirmations_asof.csv').write_bytes(confirmations.CONFIRMATIONS.read_bytes())
+    reports=pd.read_csv(reports_path,dtype=str,keep_default_na=False)
+    starter_snapshot=folder/('qb_passing_confirmations_asof.csv' if tag=='qb_passing' else tag+'_starters_asof.csv')
+    starter_snapshot.write_bytes(reports_path.read_bytes())
     cutoff=datetime.now(timezone.utc);eligible=[];missing=[]
     for core in core_rows:
-        ids=tuple(confirmations.confirmed_ids(reports,core['game_id'],core[s+'_team'],
+        ids=tuple(resolver(reports,core['game_id'],core[s+'_team'],
             auto.stamp(cutoff),core['kickoff_utc']) for s in ['home','away'])
         if None in ids:missing.append(core['game_id'])
         else:eligible.append((core,ids))
-    if not eligible:return dict(status='MISSING_CONFIRMED_STARTERS',new_qb_forecasts=0,
+    if not eligible:return dict(status='MISSING_CONFIRMED_STARTERS' if tag=='qb_passing' else 'MISSING_USABLE_EXPECTED_STARTERS',new_qb_forecasts=0,
         confirmation_rows=len(reports),missing_confirmation_games=missing)
     frame=confirmations.load_frame(schedule_path,folder/'epa_features_asof.csv.gz')
     stats,sources=load_stats(frame.loc[frame.actual_margin.notna(),'season'].unique(),CACHE)
@@ -169,11 +176,11 @@ def record(schedule_path,core_rows,folder):
     historical_ids.update({c['game_id']:ids for c,ids in eligible})
     qb=features(frame,stats,historical_ids)
     frame=frame.merge(qb,on='game_id',validate='one_to_one')
-    qb.to_csv(folder/'qb_passing_features_asof.csv.gz',index=False)
-    stats.to_csv(folder/'qb_passing_stats_asof.csv.gz',index=False)
-    (folder/'qb_passing_sources.json').write_text(json.dumps(sources,indent=2))
-    input_hash=auto.digest((folder/'qb_passing_features_asof.csv.gz').read_bytes()+
-        (folder/'qb_passing_confirmations_asof.csv').read_bytes()+
+    qb.to_csv(folder/(tag+'_features_asof.csv.gz'),index=False)
+    stats.to_csv(folder/(tag+'_stats_asof.csv.gz'),index=False)
+    (folder/(tag+'_sources.json')).write_text(json.dumps(sources,indent=2))
+    input_hash=auto.digest((folder/(tag+'_features_asof.csv.gz')).read_bytes()+
+        starter_snapshot.read_bytes()+
         (folder/'epa_features_asof.csv.gz').read_bytes()+Path(schedule_path).read_bytes())
     from epa_shadow import core_hash
     rows=[]
@@ -188,9 +195,9 @@ def record(schedule_path,core_rows,folder):
         adj=float(np.clip(.25*confirmations.fit(train,columns).predict(test[columns])[0],-2.,2.))
         row=dict(core);margin=-float(core['home_line'])+adj
         row.update(adjustment=adj,predicted_home_margin=margin,home_model_spread=-margin,
-            model_version=VERSION,core_forecast_sha256=core_hash(core),qb_inputs_sha256=input_hash,
-            home_confirmed_qb_id=ids[0],away_confirmed_qb_id=ids[1],
-            model_sha256=auto.digest(Path(__file__).read_bytes()),
+            model_version=version,core_forecast_sha256=core_hash(core),qb_inputs_sha256=input_hash,
+            **dict(zip(id_fields,ids)),
+            model_sha256=auto.digest(Path(__file__).read_bytes()+Path(resolver.__code__.co_filename).read_bytes()),
             pipeline_sha256=auto.digest(Path(old.__file__).read_bytes()),
             **{c:float(test.iloc[0][c]) for c in QB})
         rows.append(row)
@@ -198,16 +205,18 @@ def record(schedule_path,core_rows,folder):
     if any(not auto.utc(r['forecast_created_at_utc'])<=cutoff<=finished<auto.utc(r['kickoff_utc']) for r in rows):
         raise ValueError('QB passing forecast crossed kickoff')
     for r in rows:r['forecast_created_at_utc']=auto.stamp(finished)
-    saved=auto.archive_rows(ROOT/'forecasts.csv',FIELDS,rows,'game_id')
-    return dict(status='QB_PASSING_SHADOW_SAVED',new_qb_forecasts=len(saved),
+    saved=auto.archive_rows(root/'forecasts.csv',fields,rows,'game_id')
+    return dict(status='QB_PASSING_SHADOW_SAVED' if tag=='qb_passing' else 'EXPECTED_QB_SHADOW_SAVED',new_qb_forecasts=len(saved),
         missing_confirmation_games=missing,confirmation_rows=len(reports))
 
 
-def grade_shadow(grader,core_rows,finals,quotes,now):
+def grade_shadow(grader,core_rows,finals,quotes,now,*,root=None,version=None):
+    root=ROOT if root is None else Path(root)
+    version=VERSION if version is None else version
     import epa_shadow
     from epa_shadow import core_hash
-    ROOT.mkdir(parents=True,exist_ok=True)
-    candidates=grader.read_rows(ROOT/'forecasts.csv')
+    root.mkdir(parents=True,exist_ok=True)
+    candidates=grader.read_rows(root/'forecasts.csv')
     cores={r['game_id']:r for r in core_rows}
     pairs=[]
     for r in candidates:
@@ -225,8 +234,8 @@ def grade_shadow(grader,core_rows,finals,quotes,now):
         if final:
             paired_core.append(grader.grade(c,final,now))
             paired_qb.append(grader.grade(r,final,now))
-    pd.DataFrame(paired_core).to_csv(ROOT/'paired_core_grades.csv',index=False)
-    pd.DataFrame(paired_qb).to_csv(ROOT/'graded_predictions.csv',index=False)
+    pd.DataFrame(paired_core).to_csv(root/'paired_core_grades.csv',index=False)
+    pd.DataFrame(paired_qb).to_csv(root/'graded_predictions.csv',index=False)
     # Compare the QB challenger directly with the same-run EPA baseline, too.
     epa_path=epa_shadow.ROOT/'forecasts.csv'
     baseline_rows=grader.read_rows(epa_path) if epa_path.exists() else []
@@ -248,15 +257,15 @@ def grade_shadow(grader,core_rows,finals,quotes,now):
         if final:
             epa_grades.append(grader.grade(e,final,now))
             qb_epa_grades.append(grader.grade(r,final,now))
-    pd.DataFrame(epa_grades).to_csv(ROOT/'paired_epa_baseline_grades.csv',index=False)
-    pd.DataFrame(qb_epa_grades).to_csv(ROOT/'paired_epa_qb_grades.csv',index=False)
-    report=dict(model_version=VERSION,paired_forecasts=len(pairs),
+    pd.DataFrame(epa_grades).to_csv(root/'paired_epa_baseline_grades.csv',index=False)
+    pd.DataFrame(qb_epa_grades).to_csv(root/'paired_epa_qb_grades.csv',index=False)
+    report=dict(model_version=version,paired_forecasts=len(pairs),
         core=grader.summary(paired_core,[c for c,r in pairs],now),
         qb_passing=grader.summary(paired_qb,[r for c,r in pairs],now),
         epa_comparison=dict(paired_forecasts=len(epa_pairs),missing_epa_forecasts=len(pairs)-len(epa_pairs),
             epa_baseline=grader.summary(epa_grades,[e for e,r in epa_pairs],now),
             qb_passing=grader.summary(qb_epa_grades,[r for e,r in epa_pairs],now)))
-    (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
+    (root/'summary.json').write_text(json.dumps(report,indent=2))
     return report
 
 
