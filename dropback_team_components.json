@@ -1,0 +1,78 @@
+{
+  "version": "dropback_components_v1",
+  "sha256": "59f178d2e1307beaade106ffb1bac9c516613afe215fb63f48f3ddc15aa07ebf",
+  "sources": [
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2017.parquet",
+      "sha256": "21ff41abc6043cce68829bad2f2cbae100cb41aa106ca6cf9c93b35856e51ab6",
+      "captured_at_utc": "2026-11-17T21:26:26.571232+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:43:56 GMT",
+      "aggregate_sha256": "2147ea9d63ad86b459c6c392d85ce99a853e71f5efaf4ed9efd7f8112c8d61f3",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2018.parquet",
+      "sha256": "f04d65f5993a0a982de4de5fbafd2fbf7c1649470f59de128fd17d924d38c5d3",
+      "captured_at_utc": "2026-11-17T21:28:09.082872+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:45:27 GMT",
+      "aggregate_sha256": "b8dd5f3218567db4e626b9b134002cce5ef46d266a9fcb2c70b98e3f33d034b7",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2019.parquet",
+      "sha256": "54396ede038f0b2c43f17be2ac550ac06ba21e4317f0da64c99e1e3bd4117681",
+      "captured_at_utc": "2026-11-17T21:30:14.848422+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:46:55 GMT",
+      "aggregate_sha256": "c0a99225d6f402c9dc8542cc9d83284358478d430084f21b2c50b36b057f2906",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2020.parquet",
+      "sha256": "13704b508fcef4a127e363c7f280b04ea7b41efe2002e238d0a0de1ce1b7ef76",
+      "captured_at_utc": "2026-11-17T21:30:29.053398+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:48:16 GMT",
+      "aggregate_sha256": "95d4c5b32de7f974995f6340278feb9e41370fcf6f3cb4062e7d42af3de0220f",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2021.parquet",
+      "sha256": "0d0222bdfc56af39e43f82cff0d02f47e2b5311776daf59a89254dd12e5e9f20",
+      "captured_at_utc": "2026-11-17T21:30:45.039302+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:49:44 GMT",
+      "aggregate_sha256": "a4ee98bbd4d38439edd96a073a579a75c11bd333a03f3f359415b861e6e324a8",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2022.parquet",
+      "sha256": "167dff9290b11a47822157443af586877b38de1b6a90e41f95ac52e524cf4bb3",
+      "captured_at_utc": "2026-11-17T21:30:59.890991+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:51:10 GMT",
+      "aggregate_sha256": "046cbaefebc087c438528ad2671cfdee1bc63c197bbc4b51866b92bcb21b01cc",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2023.parquet",
+      "sha256": "e8200fde627d460975cfe5d91c355702fcf931b747671d4e5eb972270265ec88",
+      "captured_at_utc": "2026-11-17T21:31:12.384601+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:52:26 GMT",
+      "aggregate_sha256": "2cd15928c353aa55a1c8e2f9cb0e40c1f4ce4c375ff7671c30df438ea1d53e04",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.parquet",
+      "sha256": "6e6996601f9c29dd10c8d6a15eca255b836ba1dd4718f12bfb69137da1e07c1e",
+      "captured_at_utc": "2026-11-17T21:31:30.353884+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:54:12 GMT",
+      "aggregate_sha256": "ba2896d395dee6f671b7b568d8f3f6721f1eb5b3df4128f4b0de89600a776b61",
+      "version": "dropback_components_v1"
+    },
+    {
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.parquet",
+      "sha256": "6b7f629136def21702592bf7d70876d746aafe3207c675d9920632e9d7fd6d2d",
+      "captured_at_utc": "2026-11-17T21:31:44.225305+00:00",
+      "last_modified": "Tue, 17 Nov 2026 19:55:50 GMT",
+      "aggregate_sha256": "100cbb6960b6cbfba58c5523d473742f6e8551a36384d1d00b5d6a54849a2462",
+      "version": "dropback_components_v1"
+    }
+  ]
+}
