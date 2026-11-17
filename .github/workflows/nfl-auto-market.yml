@@ -2,6 +2,10 @@ name: NFL Automatic Odds and Forecasts
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/nfl-auto-market.yml
   schedule:
     - cron: '17 */3 * * *'
 
@@ -42,6 +46,13 @@ jobs:
         with:
           path: qb_passing_cache
           key: qb-passing-v1-2017-2025
+      - name: Validate advanced candidate boundaries
+        run: python -m unittest -v test_advanced_matchups.AdvancedTests test_advanced_shadow
+
+      - uses: actions/cache@v4
+        with:
+          path: advanced_matchup_cache
+          key: advanced-matchups-v1-${{ hashFiles('advanced_matchups.py') }}
 
       - name: Collect odds and save forecasts
         env:

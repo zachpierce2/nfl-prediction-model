@@ -1,0 +1,48 @@
+name: NFL Advanced Matchup Experiment
+
+on:
+  pull_request:
+    paths:
+      - advanced_source_audit.py
+      - advanced_matchups.py
+      - test_advanced_matchups.py
+      - advanced_shadow.py
+      - test_advanced_shadow.py
+      - auto_market.py
+      - grade_market.py
+      - .github/workflows/nfl-advanced-matchups.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-market.txt
+      - run: pip install -r requirements-market.txt
+      - name: Validate temporal boundaries and feature definitions
+        run: python -m unittest -v test_advanced_matchups test_advanced_shadow test_epa_shadow
+      - uses: actions/cache@v4
+        with:
+          path: advanced_matchup_cache
+          key: advanced-matchups-v1-${{ hashFiles('advanced_matchups.py') }}
+      - name: Validate existing grading behavior
+        run: python grade_market.py --self-test
+      - name: Run all four feature ablations and combined model
+        run: python advanced_matchups.py
+      - name: Verify full game coverage and baseline reproduction
+        run: python -m unittest -v test_advanced_matchups.ResultTests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nfl-advanced-matchup-results
+          path: advanced_matchup_results/
+          if-no-files-found: warn

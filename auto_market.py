@@ -232,9 +232,16 @@ def main():
     (folder/'qb_passing_status.json').write_text(json.dumps(passing_status,indent=2))
 
 
+    import advanced_shadow
+    try:
+        advanced_status=advanced_shadow.record(schedule_path,saved,folder)
+    except Exception as exc:
+        advanced_status=dict(status='ADVANCED_UNAVAILABLE_AT_FORECAST',error_type=type(exc).__name__)
+        if isinstance(exc,(ValueError,RuntimeError)):advanced_status['reason']=str(exc)
+    (folder/'advanced_status.json').write_text(json.dumps(advanced_status,indent=2))
     normalized_headers={k.lower():v for k,v in headers.items()}
     report=dict(captured_at_utc=stamp(captured),snapshot_id=sid,provider_events=len(events),
-        eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,skipped=skipped,
+        eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,skipped=skipped,
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),

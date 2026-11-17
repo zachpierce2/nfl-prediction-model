@@ -1,19 +1,19 @@
 # NFL prospective grading
 
-Updated: 2026-11-16T11:00:04.870563+00:00
+Updated: 2026-11-17T10:37:47.459604+00:00
 
 | Metric | Result |
 |---|---:|
 | Forecasts | 2 |
-| Graded games | 1 |
-| Pending | 1 |
+| Graded games | 2 |
+| Pending | 0 |
 | Hypothetical wins | 0 |
-| Hypothetical losses | 1 |
+| Hypothetical losses | 2 |
 | Pushes | 0 |
 | No lean | 0 |
 | Win rate excluding pushes | 0.00% |
-| Sportsbook MAE | 16.5000 |
-| Model MAE | 16.5437 |
+| Sportsbook MAE | 12.0000 |
+| Model MAE | 12.0238 |
 
 Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.
 
@@ -27,7 +27,7 @@ Earlier last observations: 0 (excluded from that average).
 
 Positive means the saved pick had a better spread than the later same-book quote. Each CSV row shows the quote time and minutes before kickoff. Three-hour polling may miss the closing price. These are proxies, not certified closing lines; odds/juice are shown separately and are not included in point value.
 
-Status counts: {"NO_LATER_SAME_BOOK_QUOTE": 1, "PENDING_KICKOFF": 1}
+Status counts: {"NO_LATER_SAME_BOOK_QUOTE": 2}
 
 ## Prospective core versus EPA (paired games only)
 
