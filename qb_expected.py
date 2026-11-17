@@ -102,7 +102,7 @@ def derive(games,schedule,depth,injuries,players,reports,metadata,now):
                         if statuses=={'out'}:excluded.add(qid)
                 # No source-confirmed player can silently remain the expected starter after revocation.
                 revoked=latest['qb_id'] if latest and latest['status'].lower()!='confirmed' else None
-                if not candidates and not unresolved_depth:
+                if not candidates and not unresolved_depth and fresh(metadata.get('players',{}),now):
                     # Earlier completed starts, current season only, with current team identity.
                     ids={r['gsis_id']:r['display_name'] for r in players if r.get('position')=='QB' and r.get('latest_team')==team and r.get('last_season')==str(game['season'])}
                     recent=[]
@@ -192,7 +192,7 @@ def collect(out,local=None):
     manual=qb_news.read_rows(Path('nfl_data_inputs/qb_starters.csv'))
     path=Path(os.environ.get('QB_CONFIRMATIONS_PATH',''))
     if path.is_file():reports=qb_news.read_rows(path)
-    else:reports=announcements.combine_confirmations(manual,qb_news.read_rows(Path('data/auto_market/qb_announcements/automatic_ledger.csv')))
+    else:reports=manual  # Failed current collection cannot refresh old automatic confirmations.
     now=datetime.now(timezone.utc)
     rows=derive(games,schedule,frames['depth'],frames['injuries'],frames['players'].to_dict('records'),pd.DataFrame(reports,columns=announcements.FIELDS),metadata,now)
     path=out/'starters_asof.csv';pd.DataFrame(rows,columns=FIELDS).to_csv(path,index=False)
