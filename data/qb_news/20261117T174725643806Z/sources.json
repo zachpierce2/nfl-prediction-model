@@ -1,0 +1,258 @@
+[
+  {
+    "team": "ARI",
+    "source_url": "https://www.azcardinals.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:29.063205+00:00",
+    "sha256": "1a38bfe7398f33e21753afec238f543338f6da13ef8f215b05aacd49aed44059",
+    "recent_items": 20
+  },
+  {
+    "team": "ATL",
+    "source_url": "https://www.atlantafalcons.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:31.019133+00:00",
+    "sha256": "743e0349c9b5379b98a261fe830ac1ad9981cb996c5fbce0f8dca09223dc766a",
+    "recent_items": 26
+  },
+  {
+    "team": "BAL",
+    "source_url": "https://www.baltimoreravens.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:30.251225+00:00",
+    "sha256": "83f36aeb314d6329fd0bafe724d2037d2553e1eae5cb40003215f9c576fedb55",
+    "recent_items": 38
+  },
+  {
+    "team": "BUF",
+    "source_url": "https://www.buffalobills.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:29.699161+00:00",
+    "sha256": "fd94fa871a719c491d7c76ca5941ee87e8bbc506878dc08a0ee2c3378361a377",
+    "recent_items": 10
+  },
+  {
+    "team": "CAR",
+    "source_url": "https://www.panthers.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:30.411046+00:00",
+    "sha256": "f51e1a34db0b1e7f348335fcfec69c204fccc712977ab668954ba4f53ad2e84a",
+    "recent_items": 36
+  },
+  {
+    "team": "CHI",
+    "source_url": "https://www.chicagobears.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:31.803396+00:00",
+    "sha256": "8f61e7d0c0a755c92dc355af0c57459507a2a68182c15cb00097cc2a22497e7f",
+    "recent_items": 9
+  },
+  {
+    "team": "CIN",
+    "source_url": "https://www.bengals.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:28.919042+00:00",
+    "sha256": "6e7068c645b1d3d4f844c1904c1fa92f897bb8746a083ba063ba03d401d4b051",
+    "recent_items": 25
+  },
+  {
+    "team": "CLE",
+    "source_url": "https://www.clevelandbrowns.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:29.747199+00:00",
+    "sha256": "5270190a5097f530152d1df1d57daf8c1e5d98ef7723514a6cfcf6c3fca5ca1a",
+    "recent_items": 27
+  },
+  {
+    "team": "DAL",
+    "source_url": "https://www.dallascowboys.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:31.826939+00:00",
+    "sha256": "f628f712c5b0c9b88f601ec01f5c4a144068ce74d31961001f9860edf31d8f6e",
+    "recent_items": 45
+  },
+  {
+    "team": "DEN",
+    "source_url": "https://www.denverbroncos.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:32.351120+00:00",
+    "sha256": "417a28fcd1d1e1ae428d14f225024b81c5c14df5ef0fdabb16dae6df56c36354",
+    "recent_items": 8
+  },
+  {
+    "team": "DET",
+    "source_url": "https://www.detroitlions.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:32.887128+00:00",
+    "sha256": "69c740e090cabe9823b5e7345002d1274b927c07f1c44b5e57e356d33dff000b",
+    "recent_items": 20
+  },
+  {
+    "team": "GB",
+    "source_url": "https://www.packers.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:32.943926+00:00",
+    "sha256": "5475803f2ca8e4d4f7ae70c79562d1de466050c305fcd80f5cd1c7912c6a5469",
+    "recent_items": 40
+  },
+  {
+    "team": "HOU",
+    "source_url": "https://www.houstontexans.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:33.497014+00:00",
+    "sha256": "fb0d29ef483a736d636f6b6806b00e03acfa28e9832722d064fd1e86c788c15e",
+    "recent_items": 16
+  },
+  {
+    "team": "IND",
+    "source_url": "https://www.colts.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:34.667069+00:00",
+    "sha256": "c1ff52f0d1c6e0374c91eb9dc61f481bb6d07b9a5c029473f03413444a21d0f9",
+    "recent_items": 31
+  },
+  {
+    "team": "JAX",
+    "source_url": "https://www.jaguars.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:34.555086+00:00",
+    "sha256": "26ac8eb725645edc11819d6cfabd0677b64274a8f16a0c02690786dd74aeb552",
+    "recent_items": 30
+  },
+  {
+    "team": "KC",
+    "source_url": "https://www.chiefs.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:35.183076+00:00",
+    "sha256": "44fe280c21de4d9f5aeec8f0a883e9de86ac0878781af2c58a5a13c97a8159d5",
+    "recent_items": 20
+  },
+  {
+    "team": "LAC",
+    "source_url": "https://www.chargers.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:35.031353+00:00",
+    "sha256": "07fe8ce41bab9b44ddd5e9a8030fdb1fbef911f6abe2fb9ee287bf98dd7ab293",
+    "recent_items": 21
+  },
+  {
+    "team": "LAR",
+    "source_url": "https://www.therams.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:36.079046+00:00",
+    "sha256": "276e7305fbc204e56e00a9d40b267855ff3249230f0d075a44e9bdf72275200e",
+    "recent_items": 21
+  },
+  {
+    "team": "LV",
+    "source_url": "https://www.raiders.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:37.131177+00:00",
+    "sha256": "43c945057234f8527743788cce3b17cca8f5e53c42b06db07c56be7743ecc1f3",
+    "recent_items": 29
+  },
+  {
+    "team": "MIA",
+    "source_url": "https://www.miamidolphins.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:36.487138+00:00",
+    "sha256": "596e3e5a036c4560bc741adf47ddd0bac30483d598f801909deec2d797755fd1",
+    "recent_items": 12
+  },
+  {
+    "team": "MIN",
+    "source_url": "https://www.vikings.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:36.011223+00:00",
+    "sha256": "7ecdac7e8a7ec0a53ef112895292f54d56c0107eb02418dc2f301a272959a6ae",
+    "recent_items": 6
+  },
+  {
+    "team": "NE",
+    "source_url": "https://www.patriots.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:38.173359+00:00",
+    "sha256": "4dd1569483abf3ff5b5ac67aa7ad6375d95be0a33841a30553bd83742851afc3",
+    "recent_items": 5
+  },
+  {
+    "team": "NO",
+    "source_url": "https://www.neworleanssaints.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:44.923030+00:00",
+    "sha256": "2dd7d68a8364cbfcd973ffb99d08aeb5661467d82d6ee58d96184a1ea66655ce",
+    "recent_items": 20
+  },
+  {
+    "team": "NYG",
+    "source_url": "https://www.giants.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:38.379053+00:00",
+    "sha256": "e43e70642dda73a4de1d8317b727f8774041da7f45095daa9bb5d5c74a073287",
+    "recent_items": 43
+  },
+  {
+    "team": "NYJ",
+    "source_url": "https://www.newyorkjets.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:38.707087+00:00",
+    "sha256": "701ccf49f9dd8779e9a87a625f5af41027e033d7699cb7f5f3f441718a41c9e4",
+    "recent_items": 17
+  },
+  {
+    "team": "PHI",
+    "source_url": "https://www.philadelphiaeagles.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:39.824449+00:00",
+    "sha256": "b1ace3666e520f2c86fb8bdbab9177c1c0c847bd650bce5eb5f395ea85a11b67",
+    "recent_items": 8
+  },
+  {
+    "team": "PIT",
+    "source_url": "https://www.steelers.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:39.351057+00:00",
+    "sha256": "267ce97ebc30a146935d69f013bcfc6514f60c45e30c15ea589a7f8d779ff9e8",
+    "recent_items": 12
+  },
+  {
+    "team": "SEA",
+    "source_url": "https://www.seahawks.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:39.812989+00:00",
+    "sha256": "aa98eab4b0bc0cae2c83c51c9ed475dc089395f1bf732443914fabeccdddd4e1",
+    "recent_items": 42
+  },
+  {
+    "team": "SF",
+    "source_url": "https://www.49ers.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:41.235115+00:00",
+    "sha256": "8c4513485f058fa2d3183467bd5da916113c123412124c3a13e406a8b6b9cf80",
+    "recent_items": 20
+  },
+  {
+    "team": "TB",
+    "source_url": "https://www.buccaneers.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:42.322991+00:00",
+    "sha256": "b096eac7e2e14634a73cad36815f8ea177d6879883eba137757c1466a2fdef79",
+    "recent_items": 17
+  },
+  {
+    "team": "TEN",
+    "source_url": "https://www.tennesseetitans.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:41.599163+00:00",
+    "sha256": "fd4642b1996da4ec9ffc59da0f3e441261945ad73936e6a4c234100bc380fe37",
+    "recent_items": 15
+  },
+  {
+    "team": "WAS",
+    "source_url": "https://www.commanders.com/rss/news",
+    "status": "FETCHED",
+    "observed_at_utc": "2026-11-17T17:47:42.519399+00:00",
+    "sha256": "9bb33466858501b4946f23d1ad2c6c3cfd27515baab3cf332e31ed5c82087c2d",
+    "recent_items": 0
+  }
+]
