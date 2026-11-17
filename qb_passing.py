@@ -204,6 +204,7 @@ def record(schedule_path,core_rows,folder):
 
 
 def grade_shadow(grader,core_rows,finals,quotes,now):
+    import epa_shadow
     from epa_shadow import core_hash
     ROOT.mkdir(parents=True,exist_ok=True)
     candidates=grader.read_rows(ROOT/'forecasts.csv')
@@ -226,9 +227,35 @@ def grade_shadow(grader,core_rows,finals,quotes,now):
             paired_qb.append(grader.grade(r,final,now))
     pd.DataFrame(paired_core).to_csv(ROOT/'paired_core_grades.csv',index=False)
     pd.DataFrame(paired_qb).to_csv(ROOT/'graded_predictions.csv',index=False)
+    # Compare the QB challenger directly with the same-run EPA baseline, too.
+    epa_path=epa_shadow.ROOT/'forecasts.csv'
+    baseline_rows=grader.read_rows(epa_path) if epa_path.exists() else []
+    if len({r['game_id'] for r in baseline_rows})!=len(baseline_rows):
+        raise ValueError('Duplicate EPA forecast game IDs')
+    baselines={r['game_id']:r for r in baseline_rows}
+    epa_pairs=[];epa_grades=[];qb_epa_grades=[]
+    for c,r in pairs:
+        e=baselines.get(r['game_id'])
+        if e is None:continue
+        if e.get('model_version')!=epa_shadow.VERSION or e.get('core_forecast_sha256')!=core_hash(c):
+            raise ValueError('QB/EPA baseline identity mismatch')
+        for k in ['quote_id','sportsbook','home_team','away_team','home_line','captured_at_utc','kickoff_utc']:
+            if str(e[k])!=str(r[k]):raise ValueError('QB/EPA quote mismatch')
+        if not auto.utc(c['forecast_created_at_utc'])<=auto.utc(e['forecast_created_at_utc'])<=auto.utc(r['forecast_created_at_utc'])<auto.utc(r['kickoff_utc']):
+            raise ValueError('QB/EPA baseline timing invalid')
+        epa_pairs.append((e,r))
+        final=grader.match(r,finals,quotes)
+        if final:
+            epa_grades.append(grader.grade(e,final,now))
+            qb_epa_grades.append(grader.grade(r,final,now))
+    pd.DataFrame(epa_grades).to_csv(ROOT/'paired_epa_baseline_grades.csv',index=False)
+    pd.DataFrame(qb_epa_grades).to_csv(ROOT/'paired_epa_qb_grades.csv',index=False)
     report=dict(model_version=VERSION,paired_forecasts=len(pairs),
         core=grader.summary(paired_core,[c for c,r in pairs],now),
-        qb_passing=grader.summary(paired_qb,[r for c,r in pairs],now))
+        qb_passing=grader.summary(paired_qb,[r for c,r in pairs],now),
+        epa_comparison=dict(paired_forecasts=len(epa_pairs),missing_epa_forecasts=len(pairs)-len(epa_pairs),
+            epa_baseline=grader.summary(epa_grades,[e for e,r in epa_pairs],now),
+            qb_passing=grader.summary(qb_epa_grades,[r for e,r in epa_pairs],now)))
     (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
     return report
 

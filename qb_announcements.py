@@ -17,7 +17,7 @@ PLAYERS_URL = 'https://github.com/nflverse/nflverse-data/releases/download/playe
 SCHEDULE_URL = 'https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv'
 FIELDS = ['game_id','team','qb_id','qb_name','status','source_url','published_at_utc','observed_at_utc']
 NICKNAMES = dict(zip(news.DOMAINS, 'Cardinals Falcons Ravens Bills Panthers Bears Bengals Browns Cowboys Broncos Lions Packers Texans Colts Jaguars Chiefs Raiders Chargers Rams Dolphins Vikings Patriots Saints Giants Jets Eagles Steelers 49ers Seahawks Buccaneers Titans Commanders'.split()))
-VERSION = 'official_explicit_game_v1'
+VERSION = 'official_explicit_game_v2'
 
 
 def norm(text):
@@ -98,7 +98,7 @@ def upcoming(rows, now):
 
 
 def interpret(a, games, players):
-    """Full-name + explicit decision + exact week/opponent in ONE statement."""
+    """Full-name + explicit decision + exact game context in ONE statement."""
     output = []
     observed, published = news.utc(a['observed_at_utc']), news.utc(a['published_at_utc'])
     # Only headline and first three body paragraphs: exclude sidebars and historical recaps.
@@ -122,6 +122,16 @@ def interpret(a, games, players):
                 if len(passage)>450 or re.search(r'\b(if|unless|barring|could|may|might|expected|likely|optimistic|hopes?|would|should|last year|but|however|pending|questionable|doubtful|undecided|uncertain|not cleared|not confirmed)\b|[?"“”]', passage, re.I):
                     continue
                 if any(int(y)!=int(g['season']) for y in re.findall(r'\b20\d{2}\b',passage)):
+                    continue
+                # Verified club phrasing can specify team + week + season rather
+                # than repeat the opponent. Accept only a unique scheduled game.
+                unique = [x for x in games if str(x['season'])==str(g['season'])
+                    and int(x['week'])==int(g['week']) and a['team'] in [x['home_team'],x['away_team']]]
+                designation = (r'\b'+re.escape(name)+r'\s+will be the\s+'
+                    +re.escape(NICKNAMES[a['team']])+r"'?\s+starting quarterback\s+heading into\s+Week\s+"
+                    +str(int(g['week']))+r'\s+of the\s+'+str(g['season'])+r'\s+season\b')
+                if len(unique)==1 and re.search(designation,passage,re.I):
+                    decisions.append((g,p,'confirmed',passage))
                     continue
                 start = re.search(r'\b'+re.escape(name)+r'\s+(?:(?:is|has been)\s+)?(?:will start|is starting|set to start|to start|named (?:the )?starting quarterback|will not start|won\x27t start|ruled out)\b', passage, re.I)
                 if not start:
@@ -263,7 +273,7 @@ def run(snapshot, out, destination, ledger_root=Path('data/auto_market/qb_announ
         player_identity_rows=len(players),sources_attempted=len(sources),sources_checked=sum(s['status']=='CHECKED' for s in sources),
         matched_decisions=len(decisions),new_ledger_rows=len(additions),
         new_confirmations=sum(r['status']=='confirmed' for r in additions),coverage=coverage,schedule_coverage=schedule_coverage,
-        limitations=['Only explicit regular-season week/opponent statements in headline or first three paragraphs qualify.',
+        limitations=['Requires explicit regular-season week/opponent or team/week/season with a unique scheduled game, in headline or first three paragraphs.',
             'Other wording, missing identity, speculative and unsupported articles abstain.',
             'This is a conservative partial source adapter, not comprehensive starter coverage.',
             'Previously archived forecasts are never backfilled.'])

@@ -99,5 +99,16 @@ class AnnouncementTests(unittest.TestCase):
         self.assertEqual(combine_confirmations([manual],[automatic]),[manual])
         self.assertEqual(combine_confirmations([],[automatic]),[automatic])
 
+    def test_verified_team_week_season_designation(self):
+        text="Deshaun Watson will be the Browns' starting quarterback heading into Week 11 of the 2026 season."
+        self.assertEqual(self.decisions(sample(text))[0]['confirmation']['qb_id'],PLAYER['gsis_id'])
+        for wrong in [text.replace('Week 11','Week 10'),text.replace('2026','2025'),
+            text.replace('Browns','Raiders'),text+' if healthy',text.replace(' of the 2026 season','')]:
+            self.assertEqual(self.decisions(sample(wrong)),[])
+
+    def test_team_week_designation_requires_unique_game(self):
+        text="Deshaun Watson will be the Browns' starting quarterback heading into Week 11 of the 2026 season."
+        self.assertEqual(interpret(sample(text),[GAME,dict(GAME,game_id='duplicate')],[PLAYER]),[])
+
 
 if __name__=='__main__':unittest.main()

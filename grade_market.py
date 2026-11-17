@@ -256,6 +256,8 @@ def main():
     movement,movement_text=line_report(rows,quotes,finals,now)
     import epa_shadow
     paired,paired_text=epa_shadow.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
+    import advanced_shadow
+    report['advanced_paired_comparison']=advanced_shadow.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     report['epa_paired_comparison']=paired
     import qb_passing
     report['qb_passing_paired_comparison']=qb_passing.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)

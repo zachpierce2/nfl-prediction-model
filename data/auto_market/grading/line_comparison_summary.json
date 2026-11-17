@@ -1,9 +1,8 @@
 {
-  "updated_at_utc": "2026-11-16T11:00:04.870563+00:00",
+  "updated_at_utc": "2026-11-17T10:37:47.459604+00:00",
   "forecasts": 2,
   "status_counts": {
-    "NO_LATER_SAME_BOOK_QUOTE": 1,
-    "PENDING_KICKOFF": 1
+    "NO_LATER_SAME_BOOK_QUOTE": 2
   },
   "near_kickoff_games": 0,
   "early_observations": 0,

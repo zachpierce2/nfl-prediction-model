@@ -1,0 +1,22 @@
+{
+  "captured_at_utc": "2026-11-17T10:18:53.508834+00:00",
+  "snapshot_id": "20261117T101853508834Z",
+  "provider_events": 13,
+  "eligible_quotes": 13,
+  "new_forecasts": 0,
+  "epa_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_epa_forecasts": 0,
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1"
+  },
+  "advanced_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "arms": {}
+  },
+  "skipped": [],
+  "remaining_credits": "468",
+  "last_request_credits": "1",
+  "schedule_sha256": "8bf44cfa852b80b8611eea5193d91cf21bb5e6a320a40dc1278dabbbf1b6859a",
+  "odds_sha256": "49cc6fdcf475810ac762f30e73ec602760bf1396c0a944dbe026819946644dfe",
+  "policy": "First automatic quote within 24h of kickoff; fixed bookmaker priority; same-day scores excluded"
+}
