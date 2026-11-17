@@ -75,7 +75,7 @@ def difference(history,home,away):
         home_qb_missing=h['missing'],away_qb_missing=a['missing'])
 
 
-def features(games,stats,starter_ids=None):
+def features(games,stats,starter_ids=None,include_ids=False):
     """Batch by date before history updates. Live override IDs come from the caller’s timestamped starter gate."""
     history=defaultdict(list);last={};rows=[]
     by_game={gid:g for gid,g in stats.groupby('game_id')}
@@ -85,7 +85,9 @@ def features(games,stats,starter_ids=None):
                 ids=(last.get(g.home_team),last.get(g.away_team))
             else:
                 ids=starter_ids.get(g.game_id,(None,None))
-            rows.append(dict(game_id=g.game_id,**difference(history,*ids)))
+            row=dict(game_id=g.game_id,**difference(history,*ids))
+            if include_ids:row.update(home_last_qb_id=ids[0],away_last_qb_id=ids[1])
+            rows.append(row)
         for g in group.itertuples():
             if pd.isna(g.actual_margin):continue
             q=by_game.get(g.game_id)
@@ -149,7 +151,7 @@ def backtest(out,cache=CACHE):
     return report
 
 
-def record(schedule_path,core_rows,folder,*,reports_path=None,resolver=None,root=None,version=None,id_fields=None,tag='qb_passing'):
+def record(schedule_path,core_rows,folder,*,reports_path=None,resolver=None,root=None,version=None,id_fields=None,tag='qb_passing',control_root=None):
     root=ROOT if root is None else Path(root)
     version=VERSION if version is None else version
     reports_path=confirmations.CONFIRMATIONS if reports_path is None else Path(reports_path)
@@ -175,6 +177,10 @@ def record(schedule_path,core_rows,folder,*,reports_path=None,resolver=None,root
     # Only historical training uses retrospectively recorded IDs. Live uses evidence.
     historical_ids.update({c['game_id']:ids for c,ids in eligible})
     qb=features(frame,stats,historical_ids)
+    lagged=None
+    if control_root is not None:
+        lagged=features(frame,stats,include_ids=True).set_index('game_id')
+        lagged.to_csv(folder/'qb_last_observed_features_asof.csv.gz')
     frame=frame.merge(qb,on='game_id',validate='one_to_one')
     qb.to_csv(folder/(tag+'_features_asof.csv.gz'),index=False)
     stats.to_csv(folder/(tag+'_stats_asof.csv.gz'),index=False)
@@ -182,8 +188,10 @@ def record(schedule_path,core_rows,folder,*,reports_path=None,resolver=None,root
     input_hash=auto.digest((folder/(tag+'_features_asof.csv.gz')).read_bytes()+
         starter_snapshot.read_bytes()+
         (folder/'epa_features_asof.csv.gz').read_bytes()+Path(schedule_path).read_bytes())
+    if lagged is not None:
+        input_hash=auto.digest(input_hash.encode()+(folder/'qb_last_observed_features_asof.csv.gz').read_bytes())
     from epa_shadow import core_hash
-    rows=[]
+    rows=[];controls=[]
     for core,ids in eligible:
         test=frame[frame.game_id.eq(core['game_id'])].copy()
         if len(test)!=1 or test.actual_margin.notna().any():raise ValueError('Invalid live QB game')
@@ -192,7 +200,8 @@ def record(schedule_path,core_rows,folder,*,reports_path=None,resolver=None,root
         if len(train)<500 or not np.isfinite(train[ADJ+QB].to_numpy()).all() or not np.isfinite(test[ADJ+QB].to_numpy()).all():
             raise ValueError('Incomplete QB passing inputs')
         test['spread_line']=-float(core['home_line'])
-        adj=float(np.clip(.25*confirmations.fit(train,columns).predict(test[columns])[0],-2.,2.))
+        fitted=confirmations.fit(train,columns)
+        adj=float(np.clip(.25*fitted.predict(test[columns])[0],-2.,2.))
         row=dict(core);margin=-float(core['home_line'])+adj
         row.update(adjustment=adj,predicted_home_margin=margin,home_model_spread=-margin,
             model_version=version,core_forecast_sha256=core_hash(core),qb_inputs_sha256=input_hash,
@@ -201,12 +210,38 @@ def record(schedule_path,core_rows,folder,*,reports_path=None,resolver=None,root
             pipeline_sha256=auto.digest(Path(old.__file__).read_bytes()),
             **{c:float(test.iloc[0][c]) for c in QB})
         rows.append(row)
+        if lagged is not None:
+            prior=lagged.loc[core['game_id']]
+            if prior[['home_last_qb_id','away_last_qb_id']].notna().all():
+                control_test=test.copy()
+                for column in QB:control_test[column]=float(prior[column])
+                control_adj=float(np.clip(.25*fitted.predict(control_test[columns])[0],-2.,2.))
+                control=dict(row)
+                for field in id_fields:control.pop(field)
+                control.update(home_last_qb_id=prior.home_last_qb_id,away_last_qb_id=prior.away_last_qb_id,
+                    adjustment=control_adj,predicted_home_margin=-float(core['home_line'])+control_adj,
+                    home_model_spread=float(core['home_line'])-control_adj,
+                    **{c:float(prior[c]) for c in QB})
+                controls.append(control)
     finished=datetime.now(timezone.utc)
     if any(not auto.utc(r['forecast_created_at_utc'])<=cutoff<=finished<auto.utc(r['kickoff_utc']) for r in rows):
         raise ValueError('QB passing forecast crossed kickoff')
     for r in rows:r['forecast_created_at_utc']=auto.stamp(finished)
     saved=auto.archive_rows(root/'forecasts.csv',fields,rows,'game_id')
-    return dict(status='QB_PASSING_SHADOW_SAVED' if tag=='qb_passing' else 'EXPECTED_QB_SHADOW_SAVED',new_qb_forecasts=len(saved),
+    control_status=None
+    if control_root is not None:
+        import qb_starter_comparison
+        # Pair only forecasts created now, never backfill an older expected record.
+        fresh={r['game_id']:r for r in saved}
+        new_controls=[]
+        for row in controls:
+            if row['game_id'] not in fresh:continue
+            row.update(forecast_created_at_utc=auto.stamp(finished),model_version=qb_starter_comparison.VERSION,
+                expected_forecast_sha256=qb_starter_comparison.row_hash(fresh[row['game_id']]))
+            new_controls.append(row)
+        count=len(auto.archive_rows(Path(control_root)/'forecasts.csv',qb_starter_comparison.FIELDS,new_controls,'game_id'))
+        control_status=dict(new_last_observed_forecasts=count,missing_prior_identity_games=sorted(set(fresh)-{r['game_id'] for r in new_controls}))
+    return dict(control_comparison=control_status,status='QB_PASSING_SHADOW_SAVED' if tag=='qb_passing' else 'EXPECTED_QB_SHADOW_SAVED',new_qb_forecasts=len(saved),
         missing_confirmation_games=missing,confirmation_rows=len(reports))
 
 
