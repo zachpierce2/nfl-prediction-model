@@ -24,5 +24,19 @@ jobs:
           cache: pip
           cache-dependency-path: requirements-market.txt
       - run: pip install -r requirements-market.txt
-      - name: Audit available sources and existing features
-        run: python advanced_source_audit.py
+      - name: Validate temporal boundaries and feature definitions
+        run: python -m unittest -v test_advanced_matchups
+      - uses: actions/cache@v4
+        with:
+          path: advanced_matchup_cache
+          key: advanced-matchups-v1-${{ hashFiles('advanced_matchups.py') }}
+      - name: Run all four feature ablations and combined model
+        run: python advanced_matchups.py
+      - name: Verify full game coverage and baseline reproduction
+        run: python -m unittest -v test_advanced_matchups.ResultTests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nfl-advanced-matchup-results
+          path: advanced_matchup_results/
+          if-no-files-found: warn
