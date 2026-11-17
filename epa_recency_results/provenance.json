@@ -1,0 +1,23 @@
+{
+  "status": "FIXED_RECENCY_DEVELOPMENT_TEST_NO_LIVE_CHANGE",
+  "half_life_games": 4,
+  "normalization": "preserve total play weight per offense",
+  "lookback_team_games": 8,
+  "opponent_alpha": 200,
+  "residual_alpha": 1000,
+  "shrink": 0.25,
+  "cap": 2,
+  "hashes": {
+    "epa_games_snapshot.csv": "7eb9194c185304b2df04d2e92cd5a0ef8335247ab238b4eb7eb7c4ed38dc4818",
+    "carryover_team_game_epa.csv": "db27a35ce0639f0aaca349670c05a2960ad5665976a99d74773c791715c815f8",
+    "/workspace/scratch/40344e928c26/nfl-prediction-model/market_epa_recency.py": "eb98dcba2560b39681bdecdbab4ac5a14c1a355b7dab1895563320a5e2d2502e",
+    "/workspace/scratch/40344e928c26/nfl-prediction-model/market_model.py": "2be201fca3bcdab80b14f30460330cb1806810e997979e539074556ffdd846b2",
+    "/workspace/scratch/40344e928c26/nfl-prediction-model/market_epa_experiment.py": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a"
+  },
+  "limitations": [
+    "Previously examined seasons; not an untouched holdout.",
+    "One fixed half-life, no threshold filter or automatic promotion.",
+    "Historical EPA/spreads may be revised and lack verified pregame publication times.",
+    "No executable-price profitability established."
+  ]
+}
