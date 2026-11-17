@@ -1,0 +1,30 @@
+name: NFL Nonlinear Cover Experiment
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - market_cover_nonlinear.py
+      - verify_cover_nonlinear.py
+      - .github/workflows/nfl-cover-nonlinear.yml
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r epa-strength-requirements.txt
+      - run: python -m unittest verify_cover_probability verify_cover_nonlinear
+      - run: python market_cover_nonlinear.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nonlinear-cover-results
+          path: nonlinear_cover_results/
+          if-no-files-found: error

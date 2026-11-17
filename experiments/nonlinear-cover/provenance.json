@@ -1,0 +1,46 @@
+{
+  "status": "DEVELOPMENT_ONLY_NO_LIVE_CHANGE",
+  "parameters": {
+    "max_iter": 100,
+    "learning_rate": 0.03,
+    "max_leaf_nodes": 4,
+    "min_samples_leaf": 100,
+    "l2_regularization": 10.0,
+    "early_stopping": false,
+    "random_state": 2026
+  },
+  "features": [
+    "elo_diff",
+    "home_elo",
+    "away_elo",
+    "rest_diff",
+    "home_rest",
+    "away_rest",
+    "margin4_diff",
+    "margin8_diff",
+    "pf8_diff",
+    "pa8_diff",
+    "wins8_diff",
+    "experience_diff",
+    "home_field",
+    "spread_line",
+    "adj_off_epa_diff",
+    "adj_def_epa_diff",
+    "adj_off_success_diff",
+    "adj_def_success_diff"
+  ],
+  "pick_threshold": 0.5,
+  "probability": "P(home covers | no push)",
+  "limitations": [
+    "Previously examined seasons; no untouched holdout.",
+    "Historical revised data; pregame publication times unverified.",
+    "No tuning, selection filters, profit claim, or automatic promotion."
+  ],
+  "hashes": {
+    "strength_games_snapshot.csv": "7eb9194c185304b2df04d2e92cd5a0ef8335247ab238b4eb7eb7c4ed38dc4818",
+    "strength_epa_features.csv": "e9b8e433a8ffc551b4646d22e0e41f434507edeffc098930f42366ab3b470b73",
+    "/workspace/scratch/e98879686845/nfl-prediction-model/market_cover_nonlinear.py": "ffe95b7ef3ba0c4cb51e1f86dec4fcc43c49a025e50c88a712da7ab9ca9809b4",
+    "/workspace/scratch/e98879686845/nfl-prediction-model/market_cover_probability.py": "6cd079c13aaf41f426e588337b645a26cf31da55e59bd47df1fa497636154d8d",
+    "/workspace/scratch/e98879686845/nfl-prediction-model/market_model.py": "2be201fca3bcdab80b14f30460330cb1806810e997979e539074556ffdd846b2"
+  }
+}
