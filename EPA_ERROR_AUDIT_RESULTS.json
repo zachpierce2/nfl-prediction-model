@@ -1,0 +1,775 @@
+{
+  "status": "EXPLORATORY_ERROR_AUDIT_NO_LIVE_CHANGE",
+  "overall": {
+    "games": 1424,
+    "wins": 714,
+    "losses": 677,
+    "pushes": 33,
+    "no_pick": 0,
+    "win_pct": 51.32997843278217,
+    "signed_error": 0.6527048742842888,
+    "mae": 9.765093072619628,
+    "market_mae": 9.762289325842696,
+    "mae_gain": -0.0028037467769323173,
+    "mean_absolute_adjustment": 0.1511880394732614,
+    "signed_error_interval": [
+      -0.0028316001293668693,
+      1.326077977205474
+    ],
+    "mae_gain_interval": [
+      -0.01304530702163422,
+      0.00668486787369051
+    ]
+  },
+  "subgroups": [
+    {
+      "axis": "line_size",
+      "bucket": "0_to_3",
+      "games": 547,
+      "wins": 287,
+      "losses": 239,
+      "pushes": 21,
+      "no_pick": 0,
+      "win_pct": 54.56273764258555,
+      "signed_error": 0.31373459944432674,
+      "mae": 9.612536799448163,
+      "market_mae": 9.622486288848263,
+      "mae_gain": 0.009949489400102495,
+      "mean_absolute_adjustment": 0.15357064833634834,
+      "signed_error_interval": [
+        -0.7503021659547557,
+        1.4118698328069328
+      ],
+      "mae_gain_interval": [
+        -0.005369535407307567,
+        0.023107679314136015
+      ]
+    },
+    {
+      "axis": "line_size",
+      "bucket": "over_3_to_7",
+      "games": 548,
+      "wins": 282,
+      "losses": 261,
+      "pushes": 5,
+      "no_pick": 0,
+      "win_pct": 51.93370165745856,
+      "signed_error": 0.022530547759065035,
+      "mae": 9.578179735695521,
+      "market_mae": 9.574817518248175,
+      "mae_gain": -0.0033622174473468226,
+      "mean_absolute_adjustment": 0.14607533025244782,
+      "signed_error_interval": [
+        -1.0491904050493377,
+        1.1392716128298697
+      ],
+      "mae_gain_interval": [
+        -0.019316468430738882,
+        0.012876199112021203
+      ]
+    },
+    {
+      "axis": "line_size",
+      "bucket": "over_7",
+      "games": 329,
+      "wins": 145,
+      "losses": 177,
+      "pushes": 7,
+      "no_pick": 0,
+      "win_pct": 45.03105590062112,
+      "signed_error": 2.265933662348975,
+      "mae": 10.330068118392285,
+      "market_mae": 10.306990881458967,
+      "mae_gain": -0.023077236933318014,
+      "mean_absolute_adjustment": 0.15574268264924104,
+      "signed_error_interval": [
+        0.8050862598073201,
+        3.6879812894736914
+      ],
+      "mae_gain_interval": [
+        -0.04363698082959837,
+        -0.002186071164352267
+      ]
+    },
+    {
+      "axis": "favorite_location",
+      "bucket": "away_favorite",
+      "games": 561,
+      "wins": 281,
+      "losses": 267,
+      "pushes": 13,
+      "no_pick": 0,
+      "win_pct": 51.277372262773724,
+      "signed_error": 0.6383030070663998,
+      "mae": 9.635171592351563,
+      "market_mae": 9.620320855614974,
+      "mae_gain": -0.014850736736590998,
+      "mean_absolute_adjustment": 0.16411714571425562,
+      "signed_error_interval": [
+        -0.38121741252954444,
+        1.6711075312568793
+      ],
+      "mae_gain_interval": [
+        -0.03383345285558506,
+        0.0033474982444665737
+      ]
+    },
+    {
+      "axis": "favorite_location",
+      "bucket": "home_favorite",
+      "games": 863,
+      "wins": 433,
+      "losses": 410,
+      "pushes": 20,
+      "no_pick": 0,
+      "win_pct": 51.36417556346382,
+      "signed_error": 0.6620669223830554,
+      "mae": 9.849549562110225,
+      "market_mae": 9.854577056778679,
+      "mae_gain": 0.005027494668454149,
+      "mean_absolute_adjustment": 0.1427833713374587,
+      "signed_error_interval": [
+        -0.17623052781788154,
+        1.5229022934212124
+      ],
+      "mae_gain_interval": [
+        -0.006099481712297681,
+        0.01671336863828325
+      ]
+    },
+    {
+      "axis": "pick_type",
+      "bucket": "favorite",
+      "games": 712,
+      "wins": 350,
+      "losses": 345,
+      "pushes": 17,
+      "no_pick": 0,
+      "win_pct": 50.35971223021583,
+      "signed_error": 0.827106327431389,
+      "mae": 9.74128640724416,
+      "market_mae": 9.729634831460674,
+      "mae_gain": -0.011651575783487307,
+      "mean_absolute_adjustment": 0.15275000081291967,
+      "signed_error_interval": [
+        0.05004924582660064,
+        1.664877287744415
+      ],
+      "mae_gain_interval": [
+        -0.026497378511675086,
+        0.002849986297806467
+      ]
+    },
+    {
+      "axis": "pick_type",
+      "bucket": "underdog",
+      "games": 712,
+      "wins": 364,
+      "losses": 332,
+      "pushes": 16,
+      "no_pick": 0,
+      "win_pct": 52.298850574712645,
+      "signed_error": 0.4783034211371884,
+      "mae": 9.788899737995097,
+      "market_mae": 9.794943820224718,
+      "mae_gain": 0.00604408222962267,
+      "mean_absolute_adjustment": 0.14962607813360312,
+      "signed_error_interval": [
+        -0.4952878831586392,
+        1.4761375671392882
+      ],
+      "mae_gain_interval": [
+        -0.0068676513833928875,
+        0.018947815400787927
+      ]
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "postseason",
+      "games": 65,
+      "wins": 29,
+      "losses": 36,
+      "pushes": 0,
+      "no_pick": 0,
+      "win_pct": 44.61538461538461,
+      "signed_error": 2.7639173382567006,
+      "mae": 10.02546941779449,
+      "market_mae": 9.976923076923077,
+      "mae_gain": -0.04854634087141378,
+      "mean_absolute_adjustment": 0.14663970005292412,
+      "signed_error_interval": [
+        -0.6064270585801605,
+        6.32770893300866
+      ],
+      "mae_gain_interval": [
+        -0.09829683688083594,
+        -0.010612315160650355
+      ]
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "weeks_13_plus",
+      "games": 462,
+      "wins": 232,
+      "losses": 219,
+      "pushes": 11,
+      "no_pick": 0,
+      "win_pct": 51.44124168514412,
+      "signed_error": 1.197905116499327,
+      "mae": 9.696144614041,
+      "market_mae": 9.691558441558442,
+      "mae_gain": -0.004586172482558835,
+      "mean_absolute_adjustment": 0.13454871417882708,
+      "signed_error_interval": [
+        0.21754753568747068,
+        2.2121346175988417
+      ],
+      "mae_gain_interval": [
+        -0.018602886663096885,
+        0.010254074591501322
+      ]
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "weeks_1_4",
+      "games": 320,
+      "wins": 176,
+      "losses": 135,
+      "pushes": 9,
+      "no_pick": 0,
+      "win_pct": 56.59163987138264,
+      "signed_error": 0.45208375860966593,
+      "mae": 9.813725093446275,
+      "market_mae": 9.83125,
+      "mae_gain": 0.017524906553725163,
+      "mean_absolute_adjustment": 0.1888445364265947,
+      "signed_error_interval": [
+        -0.8754478093664453,
+        1.8933984396437666
+      ],
+      "mae_gain_interval": [
+        -0.0022183396568506734,
+        0.03954679876565106
+      ]
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "weeks_5_12",
+      "games": 577,
+      "wins": 277,
+      "losses": 287,
+      "pushes": 13,
+      "no_pick": 0,
+      "win_pct": 49.11347517730496,
+      "signed_error": 0.08959817576492093,
+      "mae": 9.76399684863771,
+      "market_mae": 9.756499133448873,
+      "mae_gain": -0.007497715188838119,
+      "mean_absolute_adjustment": 0.14413939358640512,
+      "signed_error_interval": [
+        -0.9736455776210751,
+        1.1172173625153003
+      ],
+      "mae_gain_interval": [
+        -0.023134248155080788,
+        0.007949748829957873
+      ]
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "0.10_to_0.25",
+      "games": 566,
+      "wins": 273,
+      "losses": 278,
+      "pushes": 15,
+      "no_pick": 0,
+      "win_pct": 49.54627949183303,
+      "signed_error": 1.2274512411640677,
+      "mae": 9.46039197842546,
+      "market_mae": 9.45583038869258,
+      "mae_gain": -0.004561589732879353,
+      "mean_absolute_adjustment": 0.16224733562797938,
+      "signed_error_interval": [
+        0.4083121521911632,
+        2.0714914320658786
+      ],
+      "mae_gain_interval": [
+        -0.017315207114244797,
+        0.009381131478042197
+      ]
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "0.25_to_0.50",
+      "games": 253,
+      "wins": 121,
+      "losses": 127,
+      "pushes": 5,
+      "no_pick": 0,
+      "win_pct": 48.79032258064516,
+      "signed_error": 0.9117599286829727,
+      "mae": 10.20142008646643,
+      "market_mae": 10.179841897233201,
+      "mae_gain": -0.021578189233227903,
+      "mean_absolute_adjustment": 0.3406140065118412,
+      "signed_error_interval": [
+        -0.6954132862320698,
+        2.445547183452406
+      ],
+      "mae_gain_interval": [
+        -0.06181424077895912,
+        0.018243806628427665
+      ]
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "0.50_plus",
+      "games": 17,
+      "wins": 11,
+      "losses": 6,
+      "pushes": 0,
+      "no_pick": 0,
+      "win_pct": 64.70588235294117,
+      "signed_error": -6.147429633324755,
+      "mae": 10.34243051458214,
+      "market_mae": 10.5,
+      "mae_gain": 0.15756948541785998,
+      "mean_absolute_adjustment": 0.5350409555715008,
+      "signed_error_interval": [
+        -10.351812081278272,
+        -0.0004998606035878958
+      ],
+      "mae_gain_interval": [
+        -0.1563369130659067,
+        0.32833648517270725
+      ]
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "under_0.10",
+      "games": 588,
+      "wins": 309,
+      "losses": 266,
+      "pushes": 13,
+      "no_pick": 0,
+      "win_pct": 53.73913043478261,
+      "signed_error": 0.18460098689063534,
+      "mae": 9.853962712581017,
+      "market_mae": 9.856292517006803,
+      "mae_gain": 0.0023298044257842395,
+      "mean_absolute_adjustment": 0.04794002780999418,
+      "signed_error_interval": [
+        -0.8802841184446353,
+        1.25045585379884
+      ],
+      "mae_gain_interval": [
+        -0.0025980253801858996,
+        0.007244625757307359
+      ]
+    },
+    {
+      "axis": "rest_bucket",
+      "bucket": "away_more_rest",
+      "games": 259,
+      "wins": 130,
+      "losses": 128,
+      "pushes": 1,
+      "no_pick": 0,
+      "win_pct": 50.3875968992248,
+      "signed_error": 0.7829167210142953,
+      "mae": 9.7231063443288,
+      "market_mae": 9.718146718146718,
+      "mae_gain": -0.004959626182081806,
+      "mean_absolute_adjustment": 0.11635604025926517,
+      "signed_error_interval": [
+        -0.7016301777731024,
+        2.1385423024693773
+      ],
+      "mae_gain_interval": [
+        -0.019315070139758965,
+        0.010072329966685611
+      ]
+    },
+    {
+      "axis": "rest_bucket",
+      "bucket": "equal_rest",
+      "games": 895,
+      "wins": 447,
+      "losses": 424,
+      "pushes": 24,
+      "no_pick": 0,
+      "win_pct": 51.3203214695752,
+      "signed_error": 0.5215219140794353,
+      "mae": 10.122631913026392,
+      "market_mae": 10.121787709497207,
+      "mae_gain": -0.000844203529185703,
+      "mean_absolute_adjustment": 0.15398089661227354,
+      "signed_error_interval": [
+        -0.2968543466882952,
+        1.3697255872030694
+      ],
+      "mae_gain_interval": [
+        -0.013462887766349492,
+        0.012217294669838319
+      ]
+    },
+    {
+      "axis": "rest_bucket",
+      "bucket": "home_more_rest",
+      "games": 270,
+      "wins": 137,
+      "losses": 125,
+      "pushes": 8,
+      "no_pick": 0,
+      "win_pct": 52.29007633587786,
+      "signed_error": 0.9626451745815926,
+      "mae": 8.62019418544656,
+      "market_mae": 8.612962962962962,
+      "mae_gain": -0.007231222483597145,
+      "mean_absolute_adjustment": 0.17534315301773984,
+      "signed_error_interval": [
+        -0.34416948559648164,
+        2.198811255149415
+      ],
+      "mae_gain_interval": [
+        -0.02938652494796808,
+        0.017045680393096594
+      ]
+    },
+    {
+      "axis": "site",
+      "bucket": "home_site",
+      "games": 1392,
+      "wins": 700,
+      "losses": 659,
+      "pushes": 33,
+      "no_pick": 0,
+      "win_pct": 51.50846210448859,
+      "signed_error": 0.6038351914694376,
+      "mae": 9.788605941210342,
+      "market_mae": 9.78735632183908,
+      "mae_gain": -0.0012496193712613283,
+      "mean_absolute_adjustment": 0.14974183218789633,
+      "signed_error_interval": [
+        -0.06701951467090059,
+        1.2758966091266077
+      ],
+      "mae_gain_interval": [
+        -0.011327249415493311,
+        0.008653936531785112
+      ]
+    },
+    {
+      "axis": "site",
+      "bucket": "neutral_or_other",
+      "games": 32,
+      "wins": 14,
+      "losses": 18,
+      "pushes": 0,
+      "no_pick": 0,
+      "win_pct": 43.75,
+      "signed_error": 2.7785360767303047,
+      "mae": 8.74228328892362,
+      "market_mae": 8.671875,
+      "mae_gain": -0.07040828892362037,
+      "mean_absolute_adjustment": 0.21409805638664212,
+      "signed_error_interval": [
+        -1.3740784687742265,
+        7.166312390716772
+      ],
+      "mae_gain_interval": [
+        -0.16196112732162665,
+        0.018365153701771615
+      ]
+    }
+  ],
+  "stability": [
+    {
+      "axis": "line_size",
+      "bucket": "0_to_3",
+      "games": 547,
+      "same_direction_years": 4,
+      "years": 5,
+      "signed_error": 0.31373459944432674,
+      "mae_gain": 0.009949489400102495,
+      "early_games": 332,
+      "early_signed_error": 0.2831604786250978,
+      "later_games": 215,
+      "later_signed_error": 0.36094673019774004
+    },
+    {
+      "axis": "line_size",
+      "bucket": "over_3_to_7",
+      "games": 548,
+      "same_direction_years": 2,
+      "years": 5,
+      "signed_error": 0.022530547759065035,
+      "mae_gain": -0.0033622174473468226,
+      "early_games": 309,
+      "early_signed_error": -0.03426764172434509,
+      "later_games": 239,
+      "later_signed_error": 0.09596419022924799
+    },
+    {
+      "axis": "line_size",
+      "bucket": "over_7",
+      "games": 329,
+      "same_direction_years": 5,
+      "years": 5,
+      "signed_error": 2.265933662348975,
+      "mae_gain": -0.023077236933318014,
+      "early_games": 213,
+      "early_signed_error": 2.182275648258228,
+      "later_games": 116,
+      "later_signed_error": 2.4195470847742255
+    },
+    {
+      "axis": "favorite_location",
+      "bucket": "away_favorite",
+      "games": 561,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.6383030070663998,
+      "mae_gain": -0.014850736736590998,
+      "early_games": 326,
+      "early_signed_error": 1.2340691968387862,
+      "later_games": 235,
+      "later_signed_error": -0.1881641327880599
+    },
+    {
+      "axis": "favorite_location",
+      "bucket": "home_favorite",
+      "games": 863,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.6620669223830554,
+      "mae_gain": 0.005027494668454149,
+      "early_games": 528,
+      "early_signed_error": 0.27639911462171995,
+      "later_games": 335,
+      "later_signed_error": 1.2699254373024143
+    },
+    {
+      "axis": "pick_type",
+      "bucket": "favorite",
+      "games": 712,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.827106327431389,
+      "mae_gain": -0.011651575783487307,
+      "early_games": 412,
+      "early_signed_error": 0.8151549224394222,
+      "later_games": 300,
+      "later_signed_error": 0.843519590287023
+    },
+    {
+      "axis": "pick_type",
+      "bucket": "underdog",
+      "games": 712,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.4783034211371884,
+      "mae_gain": 0.00604408222962267,
+      "early_games": 442,
+      "early_signed_error": 0.4805462955761776,
+      "later_games": 270,
+      "later_signed_error": 0.47463175261113966
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "postseason",
+      "games": 65,
+      "same_direction_years": 4,
+      "years": 5,
+      "signed_error": 2.7639173382567006,
+      "mae_gain": -0.04854634087141378,
+      "early_games": 39,
+      "early_signed_error": 1.7474189930592208,
+      "later_games": 26,
+      "later_signed_error": 4.288664856052919
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "weeks_13_plus",
+      "games": 462,
+      "same_direction_years": 4,
+      "years": 5,
+      "signed_error": 1.197905116499327,
+      "mae_gain": -0.004586172482558835,
+      "early_games": 275,
+      "early_signed_error": 1.8974702146187272,
+      "later_games": 187,
+      "later_signed_error": 0.1691329133825619
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "weeks_1_4",
+      "games": 320,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.45208375860966593,
+      "mae_gain": 0.017524906553725163,
+      "early_games": 192,
+      "early_signed_error": -0.207927468724623,
+      "later_games": 128,
+      "later_signed_error": 1.4421005996110994
+    },
+    {
+      "axis": "season_phase",
+      "bucket": "weeks_5_12",
+      "games": 577,
+      "same_direction_years": 4,
+      "years": 5,
+      "signed_error": 0.08959817576492093,
+      "mae_gain": -0.007497715188838119,
+      "early_games": 348,
+      "early_signed_error": -0.0051330030592514125,
+      "later_games": 229,
+      "later_signed_error": 0.23355647371606517
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "0.10_to_0.25",
+      "games": 566,
+      "same_direction_years": 5,
+      "years": 5,
+      "signed_error": 1.2274512411640677,
+      "mae_gain": -0.004561589732879353,
+      "early_games": 339,
+      "early_signed_error": 1.3104490448420225,
+      "later_games": 227,
+      "later_signed_error": 1.1035029792837736
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "0.25_to_0.50",
+      "games": 253,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.9117599286829727,
+      "mae_gain": -0.021578189233227903,
+      "early_games": 171,
+      "early_signed_error": 0.2655512414642818,
+      "later_games": 82,
+      "later_signed_error": 2.259341459346342
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "0.50_plus",
+      "games": 17,
+      "same_direction_years": 2,
+      "years": 4,
+      "signed_error": -6.147429633324755,
+      "mae_gain": 0.15756948541785998,
+      "early_games": 13,
+      "early_signed_error": -5.543392012592412,
+      "later_games": 4,
+      "later_signed_error": -8.110551900704868
+    },
+    {
+      "axis": "edge_size",
+      "bucket": "under_0.10",
+      "games": 588,
+      "same_direction_years": 2,
+      "years": 5,
+      "signed_error": 0.18460098689063534,
+      "mae_gain": 0.0023298044257842395,
+      "early_games": 331,
+      "early_signed_error": 0.3947368530561212,
+      "later_games": 257,
+      "later_signed_error": -0.08604092634195525
+    },
+    {
+      "axis": "rest_bucket",
+      "bucket": "away_more_rest",
+      "games": 259,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.7829167210142953,
+      "mae_gain": -0.004959626182081806,
+      "early_games": 145,
+      "early_signed_error": 1.772373874022309,
+      "later_games": 114,
+      "later_signed_error": -0.475603342022214
+    },
+    {
+      "axis": "rest_bucket",
+      "bucket": "equal_rest",
+      "games": 895,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 0.5215219140794353,
+      "mae_gain": -0.000844203529185703,
+      "early_games": 544,
+      "early_signed_error": 0.14621242555351147,
+      "later_games": 351,
+      "later_signed_error": 1.1031981584045139
+    },
+    {
+      "axis": "rest_bucket",
+      "bucket": "home_more_rest",
+      "games": 270,
+      "same_direction_years": 4,
+      "years": 5,
+      "signed_error": 0.9626451745815926,
+      "mae_gain": -0.007231222483597145,
+      "early_games": 165,
+      "early_signed_error": 1.2831001179113175,
+      "later_games": 105,
+      "later_signed_error": 0.45907312077773904
+    },
+    {
+      "axis": "site",
+      "bucket": "home_site",
+      "games": 1392,
+      "same_direction_years": 5,
+      "years": 5,
+      "signed_error": 0.6038351914694376,
+      "mae_gain": -0.0012496193712613283,
+      "early_games": 837,
+      "early_signed_error": 0.6298682809368581,
+      "later_games": 555,
+      "later_signed_error": 0.5645744781645172
+    },
+    {
+      "axis": "site",
+      "bucket": "neutral_or_other",
+      "games": 32,
+      "same_direction_years": 3,
+      "years": 5,
+      "signed_error": 2.7785360767303047,
+      "mae_gain": -0.07040828892362037,
+      "early_games": 17,
+      "early_signed_error": 1.2379729144448328,
+      "later_games": 15,
+      "later_signed_error": 4.524507660653839
+    }
+  ],
+  "adjustment_quantiles": {
+    "0.0": 0.000197085978779,
+    "0.25": 0.0569453305601991,
+    "0.5": 0.12375825172948565,
+    "0.75": 0.21774369939600938,
+    "0.9": 0.32821372031331336,
+    "1.0": 0.6436709459041197
+  },
+  "prospective": {
+    "timestamped_epa_forecasts": 0,
+    "graded_epa_games": 0,
+    "status": "NO_GRADED_PROSPECTIVE_EPA_SAMPLE",
+    "note": "No historical predictions or reconstructed 2026 forecasts are added to this count."
+  },
+  "limits": [
+    "2021-2025 seasons have already been examined; every subgroup is exploratory.",
+    "Subgroups overlap and many comparisons are reported; intervals are descriptive, not multiplicity-adjusted proof.",
+    "Historical spreads and features may be revised and lack verified pregame publication times.",
+    "Largest realized errors are outcome diagnostics, not eligibility rules for future bets.",
+    "Historical diagnostics never count as timestamped prospective performance."
+  ],
+  "hashes": {
+    "/home/runner/work/nfl-prediction-model/nfl-prediction-model/epa_error_audit.py": "8c65e7231cfd5431775f7a4aac1d647158a5076fa6c9c7d2b43c093be01d9c4a",
+    "strength_epa_reference_predictions.csv": "b6e978b5ccac305732e63d972d9b99216acbb3f7e14e597dce37627b9c853b72",
+    "strength_games_snapshot.csv": "7eb9194c185304b2df04d2e92cd5a0ef8335247ab238b4eb7eb7c4ed38dc4818",
+    "/home/runner/work/nfl-prediction-model/nfl-prediction-model/market_model.py": "2be201fca3bcdab80b14f30460330cb1806810e997979e539074556ffdd846b2"
+  }
+}
