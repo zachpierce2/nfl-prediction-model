@@ -153,6 +153,8 @@ def freeze_comparison(model_probability, book, multiplier):
         return None
     forecasts = {'model': model_probability, 'market': midpoint,
                  'blend': (model_probability + midpoint) / 2}
+    same_side = (model_probability - .5) * (midpoint - .5) > 0
+    forecasts['agreement_v1'] = forecasts['blend'] if same_side else midpoint
     frozen = {}
     for name, probability in forecasts.items():
         prices, decision = offers(book, probability, multiplier)
@@ -173,10 +175,10 @@ def settle_comparison(frozen, result):
     return scores
 
 
-def summarize_comparison(results):
-    comparable = [r['comparison'] for r in results if r['comparison'] is not None]
+def summarize_comparison(results, names=('model', 'market', 'blend')):
+    comparable = [r['comparison'] for r in results if r['comparison'] and all(name in r['comparison'] for name in names)]
     summary = dict(comparable=len(comparable), excluded_settlements=len(results)-len(comparable))
-    for name in ('model', 'market', 'blend'):
+    for name in names:
         arms = [r[name] for r in comparable]
         trades = sum(a['decision'] != 'pass' for a in arms)
         summary[name] = dict(trades=trades, passes=len(arms)-trades,
@@ -223,7 +225,8 @@ def grade():
     benchmark = dict(comparable=len(paired), excluded=len(results)-len(paired),
                      model_brier=model_score, kalshi_midpoint_brier=market_score,
                      model_advantage=market_score-model_score if paired else None)
-    save(ROOT/'report.json',dict(three_way=summarize_comparison(results),probability_benchmark=benchmark,recorded=recorded,graded=len(results),awaiting_binary_settlement=recorded-len(results),
+    save(ROOT/'report.json',dict(agreement_vs_blend=summarize_comparison(results, ('agreement_v1', 'blend')),
+        three_way=summarize_comparison(results),probability_benchmark=benchmark,recorded=recorded,graded=len(results),awaiting_binary_settlement=recorded-len(results),
         graded_paper_trades=len(trades),graded_passes=len(results)-len(trades),
         net_paper_dollars=sum(r['net_dollars'] for r in trades) if trades else None,
         mean_brier=float(np.mean([r['brier'] for r in results])) if results else None, games=results))

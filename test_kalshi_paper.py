@@ -31,6 +31,25 @@ class KalshiTests(unittest.TestCase):
         self.assertEqual(report['market']['net_paper_dollars'],0)
         self.assertIsNone(k.freeze_comparison(.56,{'no_dollars':[['.48','5']]},Decimal('1')))
 
+    def test_agreement_rule_and_legacy_settlements(self):
+        for midpoint, model, expected in [(.60, .70, .65), (.40, .30, .35),
+                                         (.60, .30, .60), (.40, .70, .40),
+                                         (.50, .70, .50), (.60, .50, .60)]:
+            book = {'yes_dollars': [[f'{midpoint-.01:.2f}', '5']],
+                    'no_dollars': [[f'{1-midpoint-.01:.2f}', '5']]}
+            arms = k.freeze_comparison(model, book, Decimal('1'))
+            self.assertAlmostEqual(arms['agreement_v1']['p_yes'], expected)
+        scores = k.settle_comparison(arms, 'no')
+        legacy = {name: score for name, score in scores.items() if name != 'agreement_v1'}
+        results = [dict(comparison=r) for r in (scores, legacy, None)]
+        report = k.summarize_comparison(results, ('agreement_v1', 'blend'))
+        self.assertEqual((report['comparable'], report['excluded_settlements']), (1, 2))
+        self.assertAlmostEqual(report['agreement_v1']['brier'], .60**2)
+        self.assertEqual(report['agreement_v1']['passes'], 1)
+        self.assertEqual(report['blend']['trades'], 1)
+        self.assertAlmostEqual(report['blend']['net_paper_dollars'], scores['blend']['net_dollars'])
+        self.assertEqual(k.summarize_comparison(results)['comparable'], 2)
+
     def test_match_threshold_before_considering_prices(self):
         e='KXNFLSPREAD-26NOV19INDHOU'
         def market(team,line):
