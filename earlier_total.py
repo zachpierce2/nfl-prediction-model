@@ -11,7 +11,7 @@ from sklearn.linear_model import Ridge
 import market_model as base
 from market_epa_experiment import ADJ, ALIASES, build_features
 
-YEARS = range(1999,2017)
+FIRST_SEASON = 1999
 
 
 def aggregate(year, cache):
@@ -30,12 +30,13 @@ def aggregate(year, cache):
     return team,hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def run(cache):
+def run(cache, last_season=2016):
+    years = range(FIRST_SEASON, last_season + 1)
     cache.mkdir(exist_ok=True,parents=True)
     with ThreadPoolExecutor(4) as pool:
-        sources=list(pool.map(lambda year:aggregate(year,cache),YEARS))
+        sources=list(pool.map(lambda year:aggregate(year,cache),years))
     raw=pd.read_csv('strength_games_snapshot.csv')
-    raw=raw[raw.season.isin(YEARS)].copy()
+    raw=raw[raw.season.isin(years)].copy()
     raw['gameday']=pd.to_datetime(raw.gameday,utc=True)
     for c in ['home_team','away_team']:
         raw[c]=raw[c].replace(ALIASES)
@@ -51,7 +52,7 @@ def run(cache):
     games=games.merge(build_features(games,team),on='game_id',validate='one_to_one')
     eligible=games.dropna(subset=['actual_margin','spread_line','total_line'])
     records=[]
-    for year in range(2003,2017):
+    for year in range(2003,last_season + 1):
         train=eligible[eligible.season.lt(year)]
         test=eligible[eligible.season.eq(year)].copy()
         for name,extra in [('baseline',[]),('with_total',['total_line'])]:
@@ -74,9 +75,9 @@ def run(cache):
             row[arm+'_changed_wins']=int((changed&outcome.gt(0)).sum())
         summary.append(row)
     pd.DataFrame(summary).to_csv(out/'summary.csv',index=False)
-    pd.DataFrame({'season':list(YEARS),'pbp_sha256':[pair[1] for pair in sources]}).to_csv(out/'sources.csv',index=False)
+    pd.DataFrame({'season':list(years),'pbp_sha256':[pair[1] for pair in sources]}).to_csv(out/'sources.csv',index=False)
     p[['game_id','season','actual_margin','spread_line','total_line','baseline','with_total']].to_csv(out/'games.csv',index=False)
     print(pd.DataFrame(summary).to_string(index=False))
 
 if __name__=='__main__':
-    run(Path(sys.argv[1]))
+    run(Path(sys.argv[1]), int(sys.argv[2]) if len(sys.argv) > 2 else 2016)
