@@ -1,0 +1,29 @@
+{
+  "cutoffs": {
+    "1440": {
+      "due": 0,
+      "captured": 0,
+      "quoted": 0,
+      "graded_teams": 0,
+      "named": 0,
+      "correct": 0
+    },
+    "360": {
+      "due": 0,
+      "captured": 0,
+      "quoted": 0,
+      "graded_teams": 0,
+      "named": 0,
+      "correct": 0
+    },
+    "90": {
+      "due": 0,
+      "captured": 0,
+      "quoted": 0,
+      "graded_teams": 0,
+      "named": 0,
+      "correct": 0
+    }
+  },
+  "paired_one_contract_costs": []
+}
