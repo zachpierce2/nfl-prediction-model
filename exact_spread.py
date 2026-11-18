@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 import auto_market as auto
 import kalshi_paper as k
+import exact_close
 
 ROOT = k.ROOT/'exact_spread'
 ARMS = ('sportsbooks','sportsbooks_epa_blend')
@@ -168,5 +169,6 @@ def grade():
             k.save(path,market)
         results.append(dict(game=entry['game'],ticker=ticker,comparison=k.settle_comparison(entry['arms'],market['result'])))
     cheaper=sum(e['arms']['sportsbooks']['decision']!='pass' for e in entries)
+    k.save(ROOT/'closing_report.json',exact_close.report(entries,results,ROOT))
     k.save(ROOT/'report.json',dict(matched_games=len(entries),games_with_positive_sportsbook_edge=cheaper,
            awaiting_settlement=len(entries)-len(results),paired=k.summarize_comparison(results,ARMS),games=results))
