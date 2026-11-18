@@ -2,7 +2,7 @@
   "model_version": "market_epa_expected_qb_passing_v1",
   "paired_forecasts": 0,
   "core": {
-    "updated_at_utc": "2026-11-17T23:45:29.167949+00:00",
+    "updated_at_utc": "2026-11-18T10:36:35.738758+00:00",
     "forecasts": 0,
     "graded_games": 0,
     "pending_games": 0,
@@ -17,7 +17,7 @@
     "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
   },
   "qb_passing": {
-    "updated_at_utc": "2026-11-17T23:45:29.167949+00:00",
+    "updated_at_utc": "2026-11-18T10:36:35.738758+00:00",
     "forecasts": 0,
     "graded_games": 0,
     "pending_games": 0,
@@ -35,7 +35,7 @@
     "paired_forecasts": 0,
     "missing_epa_forecasts": 0,
     "epa_baseline": {
-      "updated_at_utc": "2026-11-17T23:45:29.167949+00:00",
+      "updated_at_utc": "2026-11-18T10:36:35.738758+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,
@@ -50,7 +50,7 @@
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "qb_passing": {
-      "updated_at_utc": "2026-11-17T23:45:29.167949+00:00",
+      "updated_at_utc": "2026-11-18T10:36:35.738758+00:00",
       "forecasts": 0,
       "graded_games": 0,
       "pending_games": 0,

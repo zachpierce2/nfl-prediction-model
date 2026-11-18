@@ -1,4 +1,20 @@
 {
+  "agreement_vs_blend": {
+    "comparable": 0,
+    "excluded_settlements": 0,
+    "agreement_v1": {
+      "trades": 0,
+      "passes": 0,
+      "net_paper_dollars": null,
+      "brier": null
+    },
+    "blend": {
+      "trades": 0,
+      "passes": 0,
+      "net_paper_dollars": null,
+      "brier": null
+    }
+  },
   "three_way": {
     "comparable": 0,
     "excluded_settlements": 0,

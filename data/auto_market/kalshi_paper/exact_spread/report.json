@@ -1,0 +1,22 @@
+{
+  "matched_games": 0,
+  "games_with_positive_sportsbook_edge": 0,
+  "awaiting_settlement": 0,
+  "paired": {
+    "comparable": 0,
+    "excluded_settlements": 0,
+    "sportsbooks": {
+      "trades": 0,
+      "passes": 0,
+      "net_paper_dollars": null,
+      "brier": null
+    },
+    "sportsbooks_epa_blend": {
+      "trades": 0,
+      "passes": 0,
+      "net_paper_dollars": null,
+      "brier": null
+    }
+  },
+  "games": []
+}

@@ -1,0 +1,105 @@
+{
+  "groups": {
+    "EPA adds": {
+      "games": 0,
+      "closing_coverage": {},
+      "sportsbooks": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      },
+      "sportsbooks_epa_blend": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      }
+    },
+    "EPA skips": {
+      "games": 0,
+      "closing_coverage": {},
+      "sportsbooks": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      },
+      "sportsbooks_epa_blend": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      }
+    },
+    "opposite sides": {
+      "games": 0,
+      "closing_coverage": {},
+      "sportsbooks": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      },
+      "sportsbooks_epa_blend": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      }
+    },
+    "same trade": {
+      "games": 0,
+      "closing_coverage": {},
+      "sportsbooks": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      },
+      "sportsbooks_epa_blend": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      }
+    },
+    "both pass": {
+      "games": 0,
+      "closing_coverage": {},
+      "sportsbooks": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      },
+      "sportsbooks_epa_blend": {
+        "trades": 0,
+        "usable_closes": 0,
+        "beat_close": 0,
+        "mean_advantage_cents": null,
+        "settled_games": 0,
+        "net_paper_dollars": null
+      }
+    }
+  },
+  "games": []
+}
