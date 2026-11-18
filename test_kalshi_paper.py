@@ -75,3 +75,43 @@ class KalshiTests(unittest.TestCase):
             self.assertAlmostEqual(bench['kalshi_midpoint_brier'],.61**2)
             self.assertAlmostEqual(bench['model_advantage'],.61**2-.4**2)
             self.assertIsNone(k.yes_midpoint({'yes':{'ask':'.40'},'no':{'ask':'.40'}}))
+
+
+class ExactSpreadTests(unittest.TestCase):
+    def test_exact_home_and_away_and_never_round(self):
+        import exact_spread as x
+        event='KXNFLSPREAD-26NOV19INDHOU'
+        def market(team,line):
+            return dict(event_ticker=event,status='active',market_type='binary',strike_type='greater',
+                        notional_value_dollars='1',floor_strike=line,rules_primary='example',
+                        ticker=event+'-'+team+str(int(line+.5)))
+        markets=[market('IND',3.5),market('HOU',3.5),market('HOU',4.5)]
+        choice=x.choose({3.5:[1,2],-4.5:[3]},markets,'IND','HOU',event,-4.5)
+        self.assertEqual((choice[0]['ticker'],choice[1]),(event+'-IND4',-1))
+        self.assertEqual(x.choose({-3.5:[1]},markets,'IND','HOU',event,-3.5)[1],1)
+        self.assertIsNone(x.choose({-4:[1],-2.5:[2]},markets,'IND','HOU',event,-4))
+
+    def test_remove_vig_then_compare_full_cost(self):
+        import exact_spread as x
+        quotes=[dict(home_price_american=-120,away_price_american=100)]
+        book={'no_dollars':[['.49','2']], 'yes_dollars':[['.47','1']]}
+        arms=x.freeze(quotes,1,.60,book,Decimal('1'))
+        fair=(120/220)/(120/220+.5)
+        self.assertAlmostEqual(arms['sportsbooks']['p_yes'],fair)
+        self.assertEqual(arms['sportsbooks']['decision'],'pass')
+        self.assertEqual(arms['sportsbooks_epa_blend']['decision'],'yes')
+        self.assertAlmostEqual(x.freeze(quotes,-1,.4,book,Decimal('1'))['sportsbooks']['p_yes'],1-fair)
+
+    def test_exact_grading_counts_pass_and_cached_settlement(self):
+        import exact_spread as x
+        with tempfile.TemporaryDirectory() as d, patch.object(x,'ROOT',Path(d)):
+            q=[dict(home_price_american=-120,away_price_american=100)]
+            book={'no_dollars':[['.49','2']], 'yes_dollars':[['.47','1']]}
+            arms=x.freeze(q,1,.60,book,Decimal('1'))
+            k.save(x.ROOT/'decisions'/'A.json',dict(ticker='K',game='A',arms=arms))
+            k.save(x.ROOT/'settlements'/'K.json',dict(ticker='K',status='finalized',result='yes'))
+            x.grade()
+            report=json.loads((x.ROOT/'report.json').read_text())
+            self.assertEqual(report['games_with_positive_sportsbook_edge'],0)
+            self.assertEqual(report['paired']['sportsbooks']['passes'],1)
+            self.assertGreater(report['paired']['sportsbooks_epa_blend']['net_paper_dollars'],0)
