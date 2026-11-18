@@ -115,3 +115,32 @@ class ExactSpreadTests(unittest.TestCase):
             self.assertEqual(report['games_with_positive_sportsbook_edge'],0)
             self.assertEqual(report['paired']['sportsbooks']['passes'],1)
             self.assertGreater(report['paired']['sportsbooks_epa_blend']['net_paper_dollars'],0)
+
+
+class ClosingTests(unittest.TestCase):
+    def test_strict_pregame_quote_and_wide_flag(self):
+        import exact_close as c
+        def bar(end,bid,ask):
+            return dict(end_period_ts=end,yes_bid={'close_dollars':bid},yes_ask={'close_dollars':ask})
+        bars=[bar(999,'.51','.53'),bar(1000,'.80','.81'),bar(998,'.81','.80')]
+        self.assertEqual(c.closing_quote(bars,900,1000)['yes_midpoint'],'0.52')
+        self.assertEqual(c.closing_quote(bars,999,1000)['status'],'missing')
+        self.assertEqual(c.closing_quote([bar(699,'.4','.5')],500,1000)['status'],'missing')
+        self.assertEqual(c.closing_quote([bar(990,'.4','.5')],500,1000)['status'],'wide')
+
+    def test_side_costs_and_switch_groups(self):
+        import exact_close as c
+        self.assertEqual([c.group_for(a,b) for a,b in [('pass','yes'),('no','pass'),('pass','pass'),('yes','yes')]],
+                         ['EPA adds','EPA skips','both pass','same trade'])
+        arms={name:dict(decision=s,offers={s:dict(ask='.45',fee='.02',available='2')},p_yes=.5)
+              for name,s in zip(c.ARMS,['yes','no'])}
+        e=dict(ticker='X',game='A',arms=arms)
+        grades=[dict(ticker='X',comparison={name:dict(net_dollars=v) for name,v in zip(c.ARMS,[.53,-.47])})]
+        with patch.object(c,'get_close',return_value=dict(status='usable',yes_midpoint='.52')):
+            g=c.report([e],grades,Path('.'))['groups']['opposite sides']
+        self.assertEqual([g[n]['mean_advantage_cents'] for n in c.ARMS],[5,1])
+        self.assertEqual(g[c.ARMS[1]]['net_paper_dollars'],-.47)
+        with patch.object(c,'get_close',return_value=dict(status='wide',yes_midpoint='.52')):
+            g=c.report([e],grades,Path('.'))['groups']['opposite sides']
+        self.assertIsNone(g[c.ARMS[0]]['mean_advantage_cents'])
+        self.assertEqual(g[c.ARMS[0]]['net_paper_dollars'],.53)
