@@ -235,4 +235,10 @@ def grade():
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('mode',choices=['capture','grade'])
-    (capture if parser.parse_args().mode=='capture' else grade)()
+    import exact_spread
+    if parser.parse_args().mode=='capture':
+        capture()
+        exact_spread.capture()
+    else:
+        grade()
+        exact_spread.grade()
