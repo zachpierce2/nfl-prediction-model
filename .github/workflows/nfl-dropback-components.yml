@@ -1,0 +1,37 @@
+name: NFL Dropback Component Experiment
+on:
+  pull_request:
+    paths:
+      - market_dropback_components.py
+      - test_dropback_components.py
+      - DROPBACK_PROTOCOL.md
+      - .github/workflows/nfl-dropback-components.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  experiment:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-market.txt
+      - run: python -m pip install -r requirements-market.txt
+      - name: Validate play definitions and temporal isolation
+        run: python -m unittest -v test_dropback_components.FeatureTests test_dropback_components.FoldTests
+      - name: Run fixed all-game experiment
+        run: python market_dropback_components.py
+      - name: Verify equal coverage and frozen baseline
+        run: python -m unittest -v test_dropback_components.ResultTests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nfl-dropback-component-results
+          path: dropback_results/
+          if-no-files-found: warn
