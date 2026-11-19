@@ -144,7 +144,8 @@ def evaluate(pred):
                 fit=make_pipeline(StandardScaler(),Ridge(alpha=100)).fit(h[cols],np.abs(errors))
                 errors=errors/np.maximum(1,fit.predict(h[cols]))
                 widths=np.maximum(1,fit.predict(t[cols]))
-            residuals=np.sort(errors)
+            # Preserve the original replay's arithmetic order around integer ties.
+            simulated=np.floor(t[margin].to_numpy()[:,None]+widths[:,None]*errors[None,:]+.5)
             for key in [*OFFSETS,'favorite_7.5']:
                 if key=='favorite_7.5':
                     # Reverse orientation when the visitor is favored; omit pick'em.
@@ -153,9 +154,7 @@ def evaluate(pred):
                 else:
                     strikes=np.floor(t.spread_line)+.5+key
                     valid=np.ones(len(t),dtype=bool)
-                # Integer-rounded margin exceeds half-integer k iff margin >= k+0.5.
-                idx=np.searchsorted(residuals,(strikes+.5-t[margin])/widths,side='left')
-                probability=1-idx/len(errors)
+                probability=(simulated>np.asarray(strikes)[:,None]).mean(axis=1)
                 loss=(probability-t.actual_margin.gt(strikes).astype(float))**2
                 prices.append(dict(season=year,arm=arm,threshold=str(key),games=sum(valid),
                                    squared_error_sum=loss[valid].sum()))
