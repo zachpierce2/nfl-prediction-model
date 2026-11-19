@@ -144,3 +144,34 @@ class ClosingTests(unittest.TestCase):
             g=c.report([e],grades,Path('.'))['groups']['opposite sides']
         self.assertIsNone(g[c.ARMS[0]]['mean_advantage_cents'])
         self.assertEqual(g[c.ARMS[0]]['net_paper_dollars'],.53)
+
+
+class MovementTests(unittest.TestCase):
+    def test_three_book_move_and_orientation(self):
+        import spread_movement as m
+        def quotes(prices):
+            return [dict(bookmaker_key=key,home_price_american=price,away_price_american=-110,
+                         provider_event_id='1',home_team='HOU',away_team='IND',home_line=-3.5,
+                         kickoff_utc='kick',quote_id=key) for key,price in prices]
+        keys=['draftkings','caesars','fanduel']
+        old=quotes(zip(keys,[-110]*3))
+        new=quotes(zip(['draftkings','williamhill_us','fanduel'],[-120]*3))
+        self.assertEqual(m.compare(old,new,1)['direction'],'yes')
+        self.assertEqual(m.compare(old,new,-1)['direction'],'no')
+        self.assertIsNone(m.compare(old,old,1)['direction'])
+        new[-1]['home_line']=-4.5
+        self.assertEqual(m.compare(old,new,1)['status'],'insufficient_books')
+        new[-1]['home_line']=-3.5
+        new[-1]['home_price_american']=-110
+        self.assertIsNone(m.compare(old,new,1)['direction'])
+
+    def test_settled_filtered_pass_and_missing_close(self):
+        import spread_movement as m
+        r=m.report([dict(game='A',ticker='X',movement_v1=dict(status='comparable',decision='pass')),
+                    dict(game='B',ticker='Y')],
+            {'games':[dict(ticker='X',arms={'sportsbooks':dict(side='no',net_paper_dollars=-.48)},
+                           closing_quote={'status':'missing'})]})
+        self.assertEqual(r['coverage'],{'comparable':1,'pre_experiment':1})
+        self.assertEqual(r['three_book_pairs']['baseline']['net_paper_dollars'],-.48)
+        self.assertEqual(r['three_book_pairs']['filtered']['net_paper_dollars'],0)
+        self.assertIsNone(r['three_book_pairs']['baseline']['mean_advantage_cents'])

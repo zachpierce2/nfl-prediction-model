@@ -13,6 +13,7 @@ import pandas as pd
 import auto_market as auto
 import kalshi_paper as k
 import exact_close
+import spread_movement
 
 ROOT = k.ROOT/'exact_spread'
 ARMS = ('sportsbooks','sportsbooks_epa_blend')
@@ -145,6 +146,7 @@ def capture():
             reason,record=observe(f,lines,history,captured)
             status[f['game_id']]=reason
             if record:
+                record['movement_v1']=spread_movement.freeze(auto.ROOT,sid,record,sportsbook_lines)
                 k.save(dest,record)
         except (OSError,ValueError,KeyError,ArithmeticError) as exc:
             status[f['game_id']]='UNAVAILABLE: '+type(exc).__name__
@@ -169,6 +171,8 @@ def grade():
             k.save(path,market)
         results.append(dict(game=entry['game'],ticker=ticker,comparison=k.settle_comparison(entry['arms'],market['result'])))
     cheaper=sum(e['arms']['sportsbooks']['decision']!='pass' for e in entries)
-    k.save(ROOT/'closing_report.json',exact_close.report(entries,results,ROOT))
+    closing=exact_close.report(entries,results,ROOT)
+    k.save(ROOT/'closing_report.json',closing)
+    k.save(ROOT/'movement_report.json',spread_movement.report(entries,closing))
     k.save(ROOT/'report.json',dict(matched_games=len(entries),games_with_positive_sportsbook_edge=cheaper,
            awaiting_settlement=len(entries)-len(results),paired=k.summarize_comparison(results,ARMS),games=results))
