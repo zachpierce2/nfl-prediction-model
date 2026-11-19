@@ -1,0 +1,133 @@
+{
+  "game": "2026_11_IND_HOU",
+  "kickoff": "2026-11-20T01:15:00+00:00",
+  "minutes": 360,
+  "cutoff": "2026-11-19T19:15:00+00:00",
+  "observed": "2026-11-19T19:02:25.323576+00:00",
+  "qbs": {
+    "home": {
+      "qb_id": "00-0039163",
+      "evidence": [
+        {
+          "game_id": "2026_11_IND_HOU",
+          "team": "HOU",
+          "qb_id": "00-0039163",
+          "qb_name": "C.J. Stroud",
+          "status": "expected",
+          "reason": "DEPTH_CHART",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
+          "published_at_utc": "2026-11-19T16:30:49Z",
+          "observed_at_utc": "2026-11-19T19:02:24.021425+00:00",
+          "kickoff_utc": "2026-11-20T01:15:00+00:00",
+          "injury_status": "unknown",
+          "practice_status": "unknown",
+          "evidence_json": "[{\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-19T16:30:49Z\", \"qb_id\": \"00-0039163\", \"qb_name\": \"C.J. Stroud\", \"rank\": 1.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-19T16:30:49Z\", \"qb_id\": \"00-0036898\", \"qb_name\": \"Davis Mills\", \"rank\": 2.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-19T16:30:49Z\", \"qb_id\": \"00-0040211\", \"qb_name\": \"Graham Mertz\", \"rank\": 3.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"first_name\": \"Danielle\", \"full_name\": \"Danielle Hunter\", \"game_type\": \"REG\", \"gsis_id\": \"00-0031565\", \"kind\": \"injury_report\", \"last_name\": \"Hunter\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"DE\", \"practice_primary_injury\": \"Hamstring\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Hamstring\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"William\", \"full_name\": \"Wyatt Teller\", \"game_type\": \"REG\", \"gsis_id\": \"00-0034399\", \"kind\": \"injury_report\", \"last_name\": \"Teller\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Back\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"Back\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Azeez\", \"full_name\": \"Azeez Al-Shaair\", \"game_type\": \"REG\", \"gsis_id\": \"00-0035166\", \"kind\": \"injury_report\", \"last_name\": \"Al-Shaair\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Groin\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"David\", \"full_name\": \"David Montgomery\", \"game_type\": \"REG\", \"gsis_id\": \"00-0035685\", \"kind\": \"injury_report\", \"last_name\": \"Montgomery\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"RB\", \"practice_primary_injury\": \"Groin\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Brevin\", \"full_name\": \"Brevin Jordan\", \"game_type\": \"REG\", \"gsis_id\": \"00-0036556\", \"kind\": \"injury_report\", \"last_name\": \"Jordan\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"TE\", \"practice_primary_injury\": \"Foot\", \"practice_secondary_injury\": \"Illness\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Foot\", \"report_secondary_injury\": \"Illness\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Reed\", \"full_name\": \"Reed Blankenship\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037130\", \"kind\": \"injury_report\", \"last_name\": \"Blankenship\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"S\", \"practice_primary_injury\": \"Hand\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Jacob\", \"full_name\": \"Jacob Hummel\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037633\", \"kind\": \"injury_report\", \"last_name\": \"Hummel\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Groin\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"Groin\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Nathaniel\", \"full_name\": \"Tank Dell\", \"game_type\": \"REG\", \"gsis_id\": \"00-0038977\", \"kind\": \"injury_report\", \"last_name\": \"Dell\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"WR\", \"practice_primary_injury\": \"Hand\", \"practice_secondary_injury\": \"Shoulder\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Kamari\", \"full_name\": \"Kamari Lassiter\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039343\", \"kind\": \"injury_report\", \"last_name\": \"Lassiter\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"CB\", \"practice_primary_injury\": \"Wrist\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Marvin\", \"full_name\": \"Marvin Harrison Jr.\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039849\", \"kind\": \"injury_report\", \"last_name\": \"Harrison\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"WR\", \"practice_primary_injury\": \"Hamstring\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Hamstring\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Blake\", \"full_name\": \"Blake Fisher\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039857\", \"kind\": \"injury_report\", \"last_name\": \"Fisher\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"T\", \"practice_primary_injury\": \"Thumb\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Jaylin\", \"full_name\": \"Jaylin Smith\", \"game_type\": \"REG\", \"gsis_id\": \"00-0040149\", \"kind\": \"injury_report\", \"last_name\": \"Smith\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"CB\", \"practice_primary_injury\": \"Hamstring\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"Hamstring\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Jo'Quavious\", \"full_name\": \"Woody Marks\", \"game_type\": \"REG\", \"gsis_id\": \"00-0040583\", \"kind\": \"injury_report\", \"last_name\": \"Marks\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"RB\", \"practice_primary_injury\": \"Concussion\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Concussion\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Keylan\", \"full_name\": \"Keylan Rutledge\", \"game_type\": \"REG\", \"gsis_id\": \"00-0041532\", \"kind\": \"injury_report\", \"last_name\": \"Rutledge\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Shoulder\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}, {\"first_name\": \"Febechi\", \"full_name\": \"Febechi Nwaiwu\", \"game_type\": \"REG\", \"gsis_id\": \"00-0041559\", \"kind\": \"injury_report\", \"last_name\": \"Nwaiwu\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Knee\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"HOU\", \"week\": \"11\"}]"
+        }
+      ]
+    },
+    "away": {
+      "qb_id": "00-0035710",
+      "evidence": [
+        {
+          "game_id": "2026_11_IND_HOU",
+          "team": "IND",
+          "qb_id": "00-0035710",
+          "qb_name": "Daniel Jones",
+          "status": "expected",
+          "reason": "DEPTH_CHART",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
+          "published_at_utc": "2026-11-19T16:30:49Z",
+          "observed_at_utc": "2026-11-19T19:02:24.021425+00:00",
+          "kickoff_utc": "2026-11-20T01:15:00+00:00",
+          "injury_status": "unknown",
+          "practice_status": "unknown",
+          "evidence_json": "[{\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-19T16:30:49Z\", \"qb_id\": \"00-0035710\", \"qb_name\": \"Daniel Jones\", \"rank\": 1.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-19T16:30:49Z\", \"qb_id\": \"00-0039164\", \"qb_name\": \"Anthony Richardson Sr.\", \"rank\": 2.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-19T16:30:49Z\", \"qb_id\": \"00-0040206\", \"qb_name\": \"Riley Leonard\", \"rank\": 3.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"first_name\": \"Luke\", \"full_name\": \"Luke Rhodes\", \"game_type\": \"REG\", \"gsis_id\": \"00-0032753\", \"kind\": \"injury_report\", \"last_name\": \"Rhodes\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"LS\", \"practice_primary_injury\": \"Hamstring\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Hamstring\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Charvarius\", \"full_name\": \"Charvarius Ward\", \"game_type\": \"REG\", \"gsis_id\": \"00-0034573\", \"kind\": \"injury_report\", \"last_name\": \"Ward\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"CB\", \"practice_primary_injury\": \"Knee\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Knee\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Jerry\", \"full_name\": \"Jerry Tillery\", \"game_type\": \"REG\", \"gsis_id\": \"00-0035674\", \"kind\": \"injury_report\", \"last_name\": \"Tillery\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"DT\", \"practice_primary_injury\": \"Calf\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Calf\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Charlie\", \"full_name\": \"Charlie Heck\", \"game_type\": \"REG\", \"gsis_id\": \"00-0036195\", \"kind\": \"injury_report\", \"last_name\": \"Heck\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"T\", \"practice_primary_injury\": \"Not injury related - personal matter\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Ahmad\", \"full_name\": \"Sauce Gardner\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037190\", \"kind\": \"injury_report\", \"last_name\": \"Gardner\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"CB\", \"practice_primary_injury\": \"Calf\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Calf\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Bernhard\", \"full_name\": \"Bernhard Raimann\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037757\", \"kind\": \"injury_report\", \"last_name\": \"Raimann\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"T\", \"practice_primary_injury\": \"Concussion\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Concussion\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Will\", \"full_name\": \"Will Mallory\", \"game_type\": \"REG\", \"gsis_id\": \"00-0038394\", \"kind\": \"injury_report\", \"last_name\": \"Mallory\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"TE\", \"practice_primary_injury\": \"Hamstring\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Hamstring\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Jaylon\", \"full_name\": \"Jaylon Carlies\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039377\", \"kind\": \"injury_report\", \"last_name\": \"Carlies\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Neck\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Dalton\", \"full_name\": \"Dalton Tucker\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039578\", \"kind\": \"injury_report\", \"last_name\": \"Tucker\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Shoulder\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Anthony\", \"full_name\": \"Anthony Gould\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039816\", \"kind\": \"injury_report\", \"last_name\": \"Gould\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"WR\", \"practice_primary_injury\": \"Toe\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"Toe\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}, {\"first_name\": \"Jalen\", \"full_name\": \"Jalen Travis\", \"game_type\": \"REG\", \"gsis_id\": \"00-0040163\", \"kind\": \"injury_report\", \"last_name\": \"Travis\", \"observed_at_utc\": \"2026-11-19T19:02:23.400997+00:00\", \"position\": \"T\", \"practice_primary_injury\": \"Knee\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Knee\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"IND\", \"week\": \"11\"}]"
+        }
+      ]
+    }
+  },
+  "quote": {
+    "status": "OBSERVED",
+    "ticker": "KXNFLSPREAD-26NOV19INDHOU-HOU14",
+    "market": {
+      "can_close_early": true,
+      "close_time": "2026-11-22T01:15:00Z",
+      "created_time": "2026-11-13T02:01:30.398573Z",
+      "custom_strike": {
+        "football_team": "96edbad3-1be5-4528-a3ed-c6e0c28c5fa0"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNFLSPREAD-26NOV19INDHOU",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-11-20T04:15:00Z",
+      "expiration_value": "",
+      "floor_strike": 13.5,
+      "last_price_dollars": "0.4500",
+      "latest_expiration_time": "2026-11-22T01:15:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.5500",
+      "no_bid_dollars": "0.5400",
+      "no_sub_title": "Houston wins by over 13.5 points",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-20T04:15:00Z",
+      "open_interest_fp": "319491.91",
+      "open_time": "2026-11-13T02:06:00Z",
+      "previous_price_dollars": "0.4500",
+      "previous_yes_ask_dollars": "0.4600",
+      "previous_yes_bid_dollars": "0.4500",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Houston wins by more than 13.5 points in the Indianapolis vs Houston Pro Football game originally scheduled for Nov 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXNFLSPREAD-26NOV19INDHOU-HOU14",
+      "title": "Houston wins by over 13.5 points?",
+      "updated_time": "2026-11-13T02:06:00.675404Z",
+      "volume_24h_fp": "346493.91",
+      "volume_fp": "383401.03",
+      "yes_ask_dollars": "0.4600",
+      "yes_ask_size_fp": "1316862.65",
+      "yes_bid_dollars": "0.4500",
+      "yes_bid_size_fp": "1420173.83",
+      "yes_sub_title": "Houston wins by over 13.5 points"
+    },
+    "book": {
+      "no_dollars": [
+        [
+          "0.5400",
+          "1316862.65"
+        ]
+      ],
+      "yes_dollars": [
+        [
+          "0.4500",
+          "1420173.83"
+        ]
+      ]
+    },
+    "offers": {
+      "yes": {
+        "ask": "0.4600",
+        "available": "1316862.65",
+        "fee": "0.0174"
+      },
+      "no": {
+        "ask": "0.5500",
+        "available": "1420173.83",
+        "fee": "0.0174"
+      }
+    },
+    "fee_type": "quadratic_with_maker_fees",
+    "fee_multiplier": "1"
+  }
+}
