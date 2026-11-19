@@ -1,0 +1,82 @@
+{
+  "captured_at_utc": "2026-11-19T01:26:27.212712+00:00",
+  "snapshot_id": "20261119T012627212712Z",
+  "provider_events": 29,
+  "consensus_shadow": {
+    "primary_forecasts": 1,
+    "paired": 1
+  },
+  "total_shadow": {
+    "paired": 1,
+    "missing_total": 0
+  },
+  "eligible_quotes": 14,
+  "new_forecasts": 1,
+  "epa_shadow": {
+    "status": "PAIRED_PREGAME_FORECASTS_SAVED",
+    "new_epa_forecasts": 1,
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1"
+  },
+  "advanced_shadow": {
+    "status": "ADVANCED_SHADOW_RECORDED",
+    "feature_cutoff_utc": "2026-11-19T01:26:53.688790+00:00",
+    "arms": {
+      "epa_baseline": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_pressure": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_explosive": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_special": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_injury": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_all": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      }
+    }
+  },
+  "qb_shadow": {
+    "status": "MISSING_CONFIRMED_STARTERS",
+    "new_qb_forecasts": 0,
+    "missing_confirmation_games": [
+      "2026_11_IND_HOU"
+    ],
+    "confirmation_rows": 0
+  },
+  "qb_passing_shadow": {
+    "status": "MISSING_CONFIRMED_STARTERS",
+    "new_qb_forecasts": 0,
+    "confirmation_rows": 0,
+    "missing_confirmation_games": [
+      "2026_11_IND_HOU"
+    ]
+  },
+  "expected_qb_shadow": {
+    "control_comparison": {
+      "new_last_observed_forecasts": 1,
+      "missing_prior_identity_games": []
+    },
+    "status": "EXPECTED_QB_SHADOW_SAVED",
+    "new_qb_forecasts": 1,
+    "missing_confirmation_games": [],
+    "confirmation_rows": 34
+  },
+  "skipped": [],
+  "remaining_credits": "422",
+  "last_request_credits": "2",
+  "schedule_sha256": "47d843a599b7cf37181188bbbbc5bf8b2d37676b3dc177d78f8a975215c32a51",
+  "odds_sha256": "3fff68e99754dee757ef78d9c5b8fe99d3fb5b495a3823220d4582acb1c40b48",
+  "policy": "First automatic quote within 24h of kickoff; fixed bookmaker priority; same-day scores excluded"
+}
