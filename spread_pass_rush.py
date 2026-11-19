@@ -91,7 +91,7 @@ def main():
     old["home_field"] = old.location.eq("Home").astype(float)
     modern = base.read_games("strength_games_snapshot.csv")
     current = base.read_games(args.current_schedule)
-    schedule = pd.concat([old[old.season < 2017], modern, current[current.season == 2026]])
+    schedule = pd.concat([old[old.season < 2017], modern[modern.season <= 2025], current[current.season == 2026]])
     frames = []
     for year, games in schedule.groupby("season"):
         path = args.current_plays if year == 2026 else args.cache / f"play_by_play_{year}.csv.gz"
