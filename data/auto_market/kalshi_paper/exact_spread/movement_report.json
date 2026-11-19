@@ -1,0 +1,61 @@
+{
+  "coverage": {},
+  "all_entries": {
+    "games": 0,
+    "baseline": {
+      "trades": 0,
+      "usable_closes": 0,
+      "mean_advantage_cents": null,
+      "beat_close": 0,
+      "settled_games": 0,
+      "net_paper_dollars": null
+    },
+    "filtered": {
+      "trades": 0,
+      "usable_closes": 0,
+      "mean_advantage_cents": null,
+      "beat_close": 0,
+      "settled_games": 0,
+      "net_paper_dollars": null
+    }
+  },
+  "three_book_pairs": {
+    "games": 0,
+    "baseline": {
+      "trades": 0,
+      "usable_closes": 0,
+      "mean_advantage_cents": null,
+      "beat_close": 0,
+      "settled_games": 0,
+      "net_paper_dollars": null
+    },
+    "filtered": {
+      "trades": 0,
+      "usable_closes": 0,
+      "mean_advantage_cents": null,
+      "beat_close": 0,
+      "settled_games": 0,
+      "net_paper_dollars": null
+    }
+  },
+  "skipped_baseline_trades": {
+    "games": 0,
+    "baseline": {
+      "trades": 0,
+      "usable_closes": 0,
+      "mean_advantage_cents": null,
+      "beat_close": 0,
+      "settled_games": 0,
+      "net_paper_dollars": null
+    },
+    "filtered": {
+      "trades": 0,
+      "usable_closes": 0,
+      "mean_advantage_cents": null,
+      "beat_close": 0,
+      "settled_games": 0,
+      "net_paper_dollars": null
+    }
+  },
+  "games": []
+}

@@ -1,7 +1,7 @@
 {
-  "paired": 0,
+  "paired": 1,
   "graded": 0,
-  "pending": 0,
+  "pending": 1,
   "changed": 0,
   "primary": {
     "WIN": 0,
