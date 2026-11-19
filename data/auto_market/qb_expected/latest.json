@@ -1,39 +1,39 @@
 {
   "version": "expected_qb_v1",
   "code_sha256": "2dcd4d383ea9a368b9684b333489b4a416b3765b5f60d3f8b2333dc067d3ffb0",
-  "snapshot_sha256": "6b2a4189f2e7a322d189c2df9a91c3d35f61d0021ec1e3cd4de4b01f5789feae",
-  "observed_at_utc": "2026-11-19T04:08:39.457500+00:00",
+  "snapshot_sha256": "2ae8e35c8dd416f652467556b4790f9a6b9ca4e5887dd7f048b8230810b10863",
+  "observed_at_utc": "2026-11-19T07:29:57.169890+00:00",
   "upcoming_games": 17,
   "team_rows": 34,
   "status_counts": {
-    "expected": 34,
+    "expected": 32,
     "confirmed": 0,
-    "uncertain": 0,
+    "uncertain": 2,
     "unknown": 0
   },
-  "usable_both_sides": 17,
+  "usable_both_sides": 15,
   "sources": {
     "schedule": {
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
-      "observed_at_utc": "2026-11-19T04:08:35.520219+00:00",
-      "sha256": "bc9961d16925a435519f56dd38e894b157dd6f87f4f500c0b13ac9a6fa46ecc0",
+      "observed_at_utc": "2026-11-19T07:29:52.881521+00:00",
+      "sha256": "d3854e23de9af82dd5b4a00d5afb2aa14daad641a87545b41daab9509dcc4a2a",
       "last_modified_utc": null
     },
     "depth": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
-      "observed_at_utc": "2026-11-19T04:08:36.382633+00:00",
-      "sha256": "1a061344d967a299d2668f74aabeee9f452716242a209f3aab5e36855184301e",
-      "last_modified_utc": "2026-11-18T16:23:54+00:00"
+      "observed_at_utc": "2026-11-19T07:29:53.547048+00:00",
+      "sha256": "29cbd5c93accaed030f1e965e80981ff718514b4463a22b66eb7238368a391fd",
+      "last_modified_utc": "2026-11-19T07:13:00+00:00"
     },
     "injuries": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
-      "observed_at_utc": "2026-11-19T04:08:38.891981+00:00",
-      "sha256": "a334fa75f31fbc2037981efa0c0f5a4fcf9475077820f774124087d9ebe4c8e6",
-      "last_modified_utc": "2026-11-18T16:38:43+00:00"
+      "observed_at_utc": "2026-11-19T07:29:56.642546+00:00",
+      "sha256": "1acfe6897c455735a2995f5d6369031d9f00b64f8b42ed0908f8a8692693bdaf",
+      "last_modified_utc": "2026-11-19T07:11:21+00:00"
     },
     "players": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
-      "observed_at_utc": "2026-11-19T04:08:39.121067+00:00",
+      "observed_at_utc": "2026-11-19T07:29:56.738279+00:00",
       "sha256": "390fadc2fcc17e1fde080b75160e79487fd71fb13c5aff3f0cbe8c6766e2398f",
       "last_modified_utc": "2026-11-18T17:12:35+00:00"
     }
