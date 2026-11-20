@@ -17,9 +17,9 @@
       "correct": 0
     },
     "90": {
-      "due": 0,
-      "captured": 0,
-      "quoted": 0,
+      "due": 1,
+      "captured": 1,
+      "quoted": 1,
       "graded_teams": 0,
       "named": 0,
       "correct": 0
@@ -61,6 +61,86 @@
           "away": "00-0035710"
         },
         "360": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        }
+      }
+    },
+    {
+      "game": "2026_11_IND_HOU",
+      "ticker": "KXNFLSPREAD-26NOV19INDHOU-HOU14",
+      "side": "yes",
+      "earlier": 360,
+      "later": 90,
+      "earlier_cost": "0.4774",
+      "later_cost": "0.4774",
+      "cost_change": "0.0000",
+      "starters": {
+        "360": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        },
+        "90": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        }
+      }
+    },
+    {
+      "game": "2026_11_IND_HOU",
+      "ticker": "KXNFLSPREAD-26NOV19INDHOU-HOU14",
+      "side": "no",
+      "earlier": 360,
+      "later": 90,
+      "earlier_cost": "0.5674",
+      "later_cost": "0.5674",
+      "cost_change": "0.0000",
+      "starters": {
+        "360": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        },
+        "90": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        }
+      }
+    },
+    {
+      "game": "2026_11_IND_HOU",
+      "ticker": "KXNFLSPREAD-26NOV19INDHOU-HOU14",
+      "side": "yes",
+      "earlier": 1440,
+      "later": 90,
+      "earlier_cost": "0.4774",
+      "later_cost": "0.4774",
+      "cost_change": "0.0000",
+      "starters": {
+        "1440": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        },
+        "90": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        }
+      }
+    },
+    {
+      "game": "2026_11_IND_HOU",
+      "ticker": "KXNFLSPREAD-26NOV19INDHOU-HOU14",
+      "side": "no",
+      "earlier": 1440,
+      "later": 90,
+      "earlier_cost": "0.5674",
+      "later_cost": "0.5674",
+      "cost_change": "0.0000",
+      "starters": {
+        "1440": {
+          "home": "00-0039163",
+          "away": "00-0035710"
+        },
+        "90": {
           "home": "00-0039163",
           "away": "00-0035710"
         }
