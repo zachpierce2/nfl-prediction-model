@@ -1,8 +1,8 @@
 {
   "version": "expected_qb_v1",
   "code_sha256": "2dcd4d383ea9a368b9684b333489b4a416b3765b5f60d3f8b2333dc067d3ffb0",
-  "snapshot_sha256": "9eaffd303cfd738fb6304757f780f785170f77f4f2c4d31aa208ad49b1e046ab",
-  "observed_at_utc": "2026-11-20T16:07:27.869735+00:00",
+  "snapshot_sha256": "2dfbf8f3863a40eba2bc1d9d88f9956b9aa91fd11b15c72114e6aec186c4b1e4",
+  "observed_at_utc": "2026-11-20T19:13:10.483103+00:00",
   "upcoming_games": 17,
   "team_rows": 34,
   "status_counts": {
@@ -15,27 +15,27 @@
   "sources": {
     "schedule": {
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
-      "observed_at_utc": "2026-11-20T16:07:23.969230+00:00",
-      "sha256": "9216ab4d47923b6adf49e2dce6d3bbabcafaa819b060867ee9b40ef0840535bd",
+      "observed_at_utc": "2026-11-20T19:13:05.545041+00:00",
+      "sha256": "7c7ef28146bc72d7ba906df06e3cbd38c3e97f60f0c50e5d32e5a57571a0d8cd",
       "last_modified_utc": null
     },
     "depth": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
-      "observed_at_utc": "2026-11-20T16:07:24.629462+00:00",
+      "observed_at_utc": "2026-11-20T19:13:06.520937+00:00",
       "sha256": "4c00331535b8301aeaf3245c3de4718c7d10cc26f7fcc896207b801208417446",
       "last_modified_utc": "2026-11-20T16:05:17+00:00"
     },
     "injuries": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
-      "observed_at_utc": "2026-11-20T16:07:27.205490+00:00",
+      "observed_at_utc": "2026-11-20T19:13:09.861922+00:00",
       "sha256": "4e7d717efe51e2a9af143f40277126ab2718d291982f5049da197715d50c0d0c",
       "last_modified_utc": "2026-11-20T16:04:51+00:00"
     },
     "players": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
-      "observed_at_utc": "2026-11-20T16:07:27.532834+00:00",
-      "sha256": "390fadc2fcc17e1fde080b75160e79487fd71fb13c5aff3f0cbe8c6766e2398f",
-      "last_modified_utc": "2026-11-18T17:12:35+00:00"
+      "observed_at_utc": "2026-11-20T19:13:10.055402+00:00",
+      "sha256": "805e66dd84231004858d904c176583d56674099a7dd94ee3a16e39377b02ef1e",
+      "last_modified_utc": "2026-11-20T17:27:36+00:00"
     }
   },
   "limitations": [
