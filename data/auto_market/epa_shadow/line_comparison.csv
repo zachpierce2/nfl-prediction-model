@@ -1,2 +1,2 @@
 game_id,sportsbook,selected_side,forecast_quote_id,initial_home_line,initial_selected_line,initial_selected_price,forecast_created_at_utc,kickoff_utc,kickoff_source,status,latest_quote_id,latest_captured_at_utc,latest_provider_updated_at_utc,latest_selected_line,latest_selected_price,minutes_before_kickoff,line_value_points
-2026_11_IND_HOU,DraftKings,HOME,3216a1c0b63c658ea6918d54,-12.5,-12.5,-108,2026-11-19T01:26:30.123790+00:00,2026-11-20T01:15:00+00:00,FORECAST_SCHEDULE,PENDING_KICKOFF,,,,,,,
+2026_11_IND_HOU,DraftKings,HOME,3216a1c0b63c658ea6918d54,-12.5,-12.5,-108,2026-11-19T01:26:30.123790+00:00,2026-11-20T01:15:44+00:00,FINAL_PROVIDER,NEAR_KICKOFF_PROXY,099900dcc0a39b408c7130b2,2026-11-20T01:05:27.521862+00:00,2026-11-20T01:05:12+00:00,-12.5,-111,10.275,0.0

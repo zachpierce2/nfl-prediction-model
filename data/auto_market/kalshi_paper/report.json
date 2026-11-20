@@ -1,55 +1,93 @@
 {
   "agreement_vs_blend": {
-    "comparable": 0,
+    "comparable": 1,
     "excluded_settlements": 0,
     "agreement_v1": {
       "trades": 0,
-      "passes": 0,
-      "net_paper_dollars": null,
-      "brier": null
+      "passes": 1,
+      "net_paper_dollars": 0.0,
+      "brier": 0.2913592345976396
     },
     "blend": {
       "trades": 0,
-      "passes": 0,
-      "net_paper_dollars": null,
-      "brier": null
+      "passes": 1,
+      "net_paper_dollars": 0.0,
+      "brier": 0.2913592345976396
     }
   },
   "three_way": {
-    "comparable": 0,
+    "comparable": 1,
     "excluded_settlements": 0,
     "model": {
       "trades": 0,
-      "passes": 0,
-      "net_paper_dollars": null,
-      "brier": null
+      "passes": 1,
+      "net_paper_dollars": 0.0,
+      "brier": 0.2857480281720116
     },
     "market": {
       "trades": 0,
-      "passes": 0,
-      "net_paper_dollars": null,
-      "brier": null
+      "passes": 1,
+      "net_paper_dollars": 0.0,
+      "brier": 0.29702499999999993
     },
     "blend": {
       "trades": 0,
-      "passes": 0,
-      "net_paper_dollars": null,
-      "brier": null
+      "passes": 1,
+      "net_paper_dollars": 0.0,
+      "brier": 0.2913592345976396
     }
   },
   "probability_benchmark": {
-    "comparable": 0,
+    "comparable": 1,
     "excluded": 0,
-    "model_brier": null,
-    "kalshi_midpoint_brier": null,
-    "model_advantage": null
+    "model_brier": 0.2857480281720116,
+    "kalshi_midpoint_brier": 0.29702499999999993,
+    "model_advantage": 0.011276971827988314
   },
   "recorded": 1,
-  "graded": 0,
-  "awaiting_binary_settlement": 1,
+  "graded": 1,
+  "awaiting_binary_settlement": 0,
   "graded_paper_trades": 0,
-  "graded_passes": 0,
+  "graded_passes": 1,
   "net_paper_dollars": null,
-  "mean_brier": null,
-  "games": []
+  "mean_brier": 0.2857480281720116,
+  "games": [
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.4654459539279386,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2857480281720116
+        },
+        "market": {
+          "p_yes": 0.455,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.29702499999999993
+        },
+        "blend": {
+          "p_yes": 0.4602229769639693,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2913592345976396
+        },
+        "agreement_v1": {
+          "p_yes": 0.4602229769639693,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2913592345976396
+        }
+      },
+      "model_yes_probability": 0.4654459539279386,
+      "kalshi_yes_midpoint": 0.455,
+      "midpoint_brier": 0.29702499999999993,
+      "game": "2026_11_IND_HOU",
+      "ticker": "KXNFLSPREAD-26NOV19INDHOU-HOU14",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.2857480281720116
+    }
+  ]
 }

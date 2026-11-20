@@ -4,9 +4,9 @@ All three models use the same games and sportsbook quotes.
 
 | Model | Graded | W–L–P | ATS | MAE |
 |---|---:|---|---:|---:|
-| epa | 0 | 0–0–0 | N/A | N/A |
-| last_observed | 0 | 0–0–0 | N/A | N/A |
-| expected | 0 | 0–0–0 | N/A | N/A |
+| epa | 1 | 1–0–0 | 100.00% | 10.3613 |
+| last_observed | 1 | 1–0–0 | 100.00% | 10.3900 |
+| expected | 1 | 1–0–0 | 100.00% | 10.3900 |
 
 Complete forecast triples: 1. Starter identity changes: 0. Expected forecasts missing a control: 0. Controls missing EPA: 0.
 
