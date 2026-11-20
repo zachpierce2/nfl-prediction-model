@@ -1,6 +1,6 @@
 # NFL prospective grading
 
-Updated: 2026-11-20T10:35:38.844249+00:00
+Updated: 2026-11-20T21:25:55.807433+00:00
 
 | Metric | Result |
 |---|---:|
@@ -18,6 +18,16 @@ Updated: 2026-11-20T10:35:38.844249+00:00
 Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.
 
 Only provider-confirmed completed games are graded. Pending games are not losses. Scores are fetched daily with a three-day lookback; outages longer than that may leave missing results.
+
+## DraftKings opening-line comparison
+
+Matched finals: 0
+
+| Forecast | Wins | Losses | Pushes | No lean |
+|---|---:|---:|---:|---:|
+| opening | 0 | 0 | 0 | 0 |
+| regular | 0 | 0 | 0 | 0 |
+
 
 ## Line movement against later sportsbook prices
 

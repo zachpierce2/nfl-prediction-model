@@ -1,0 +1,21 @@
+{
+  "first_sightings": {},
+  "opening_forecasts": 0,
+  "paired_finals": 0,
+  "coverage": {},
+  "categories": {},
+  "opening": {
+    "WIN": 0,
+    "LOSS": 0,
+    "PUSH": 0,
+    "NO_LEAN": 0,
+    "ats_pct": null
+  },
+  "regular": {
+    "WIN": 0,
+    "LOSS": 0,
+    "PUSH": 0,
+    "NO_LEAN": 0,
+    "ats_pct": null
+  }
+}
