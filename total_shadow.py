@@ -39,6 +39,20 @@ def total_quote(events, quote):
     return matches[0] if len(matches) == 1 else None
 
 
+def predict_margin(games, q, total):
+    game = games[games.game_id.eq(q['game_id'])].copy()
+    train = games[games.season.lt(game.season.item())].dropna(subset=['actual_margin','spread_line'])
+    if not train.total_line.gt(0).all() or not np.isfinite(train[epa.ADJ+['total_line']]).all().all():
+        raise ValueError('Incomplete training inputs')
+    game['spread_line'] = -float(q['home_line'])
+    game['total_line'] = total
+    columns = model.INPUTS + epa.ADJ + ['total_line']
+    estimator = model.make_pipeline(model.SimpleImputer(strategy='median'), model.StandardScaler(), Ridge(alpha=1000))
+    estimator.fit(train[columns], train.actual_margin-train.spread_line)
+    margin = float(game.spread_line.item()+np.clip(.25*estimator.predict(game[columns])[0],-2,2))
+    return margin
+
+
 def record(schedule, quotes, events, folder):
     if not quotes or not (epa.ROOT/'forecasts.csv').exists():
         return {'paired': 0}
@@ -52,16 +66,7 @@ def record(schedule, quotes, events, folder):
     games = model.read_games(schedule).merge(features[['game_id']+epa.ADJ], on='game_id', how='left', validate='one_to_one')
     rows = []
     for q, b, (total, updated) in eligible:
-        game = games[games.game_id.eq(q['game_id'])].copy()
-        train = games[games.season.lt(game.season.item())].dropna(subset=['actual_margin','spread_line'])
-        if not train.total_line.gt(0).all() or not np.isfinite(train[epa.ADJ+['total_line']]).all().all():
-            raise ValueError('Incomplete training inputs')
-        game['spread_line'] = -float(q['home_line'])
-        game['total_line'] = total
-        columns = model.INPUTS + epa.ADJ + ['total_line']
-        estimator = model.make_pipeline(model.SimpleImputer(strategy='median'), model.StandardScaler(), Ridge(alpha=1000))
-        estimator.fit(train[columns], train.actual_margin-train.spread_line)
-        margin = float(game.spread_line.item()+np.clip(.25*estimator.predict(game[columns])[0],-2,2))
+        margin = predict_margin(games, q, total)
         now = datetime.now(timezone.utc)
         if not auto.utc(q['captured_at_utc']) <= auto.utc(b['forecast_created_at_utc']) <= now < auto.utc(q['kickoff_utc']):
             continue

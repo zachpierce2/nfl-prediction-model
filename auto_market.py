@@ -98,11 +98,11 @@ def archive_rows(path, fields, rows, unique_key):
             writer.writerows(fresh)
     return fresh
 
-def match_quotes(events, schedule, captured, snapshot_id):
+def match_quotes(events, schedule, captured, snapshot_id, max_days=7):
     rows=[]; skipped=[]
     for e in events:
         kickoff=utc(e['commence_time'])
-        if kickoff <= captured or kickoff > captured+timedelta(days=7): continue
+        if kickoff <= captured or (max_days is not None and kickoff > captured+timedelta(days=max_days)): continue
         home,away=NAMES.get(e.get('home_team')),NAMES.get(e.get('away_team'))
         if not home or not away:
             skipped.append('Unknown provider team name');continue
@@ -179,13 +179,7 @@ def main():
     if not key:raise ValueError('Add the ODDS_API_KEY repository Actions secret first')
     ROOT.mkdir(parents=True,exist_ok=True)
     raw_schedule,_=download(SCHEDULE_URL,'Schedule refresh')
-    # Request the second market only on days with games approaching the forecast window.
-    schedule_days = pd.read_csv(io.BytesIO(raw_schedule),usecols=['gameday','gametime','home_score'])
-    eastern = pd.to_datetime(schedule_days.gameday+' '+schedule_days.gametime,errors='coerce').dt.tz_localize(
-        'America/New_York',ambiguous='NaT',nonexistent='NaT').dt.tz_convert('UTC')
-    request_time = pd.Timestamp.now(tz='UTC')
-    near = schedule_days.home_score.isna() & eastern.between(request_time,request_time+pd.Timedelta(hours=25))
-    markets = 'spreads,totals' if near.any() else 'spreads'
+    markets = 'spreads,totals'
     params=urlencode(dict(apiKey=key,regions='us',markets=markets,oddsFormat='american',dateFormat='iso'))
     raw_odds,headers=download('https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds/?'+params,'Odds refresh')
     captured=datetime.now(timezone.utc)
@@ -231,6 +225,13 @@ def main():
     except Exception as exc:
         total_status = {'status':'TOTAL_UNAVAILABLE','error':type(exc).__name__}
     (folder/'total_status.json').write_text(json.dumps(total_status,indent=2))
+    import opening_tracker
+    try:
+        opening_status = opening_tracker.capture(events, schedule, schedule_path, captured, folder)
+    except Exception as exc:
+        opening_status = {'status': 'ERROR', 'error': type(exc).__name__}
+        print('::warning::Opening tracker failed: ' + type(exc).__name__)
+    (folder/'opening_status.json').write_text(json.dumps(opening_status, indent=2))
     # Reuse the existing timestamped starter-confirmation file in an independent candidate.
     import qb_market
     try:
@@ -267,7 +268,7 @@ def main():
     (folder/'advanced_status.json').write_text(json.dumps(advanced_status,indent=2))
     normalized_headers={k.lower():v for k,v in headers.items()}
     report=dict(captured_at_utc=stamp(captured),snapshot_id=sid,provider_events=len(events),
-        consensus_shadow=consensus_status,total_shadow=total_status,eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
+        opening_comparison=opening_status,consensus_shadow=consensus_status,total_shadow=total_status,eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),
