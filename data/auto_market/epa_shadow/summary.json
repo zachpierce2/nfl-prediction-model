@@ -1,9 +1,9 @@
 {
-  "updated_at_utc": "2026-11-20T21:25:55.807433+00:00",
+  "updated_at_utc": "2026-11-20T22:18:59.929899+00:00",
   "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
   "paired_forecasts": 1,
   "core": {
-    "updated_at_utc": "2026-11-20T21:25:55.807433+00:00",
+    "updated_at_utc": "2026-11-20T22:18:59.929899+00:00",
     "forecasts": 1,
     "graded_games": 1,
     "pending_games": 0,
@@ -19,7 +19,7 @@
     "mean_matched_line_value_points": 0.0
   },
   "epa": {
-    "updated_at_utc": "2026-11-20T21:25:55.807433+00:00",
+    "updated_at_utc": "2026-11-20T22:18:59.929899+00:00",
     "forecasts": 1,
     "graded_games": 1,
     "pending_games": 0,

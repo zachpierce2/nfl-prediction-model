@@ -1,5 +1,7 @@
 {
-  "first_sightings": {},
+  "first_sightings": {
+    "already_listed_at_start": 28
+  },
   "opening_forecasts": 0,
   "paired_finals": 0,
   "coverage": {},
