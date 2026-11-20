@@ -225,6 +225,12 @@ def main():
     except Exception as exc:
         total_status = {'status':'TOTAL_UNAVAILABLE','error':type(exc).__name__}
     (folder/'total_status.json').write_text(json.dumps(total_status,indent=2))
+    import exact_line_shadow
+    try:
+        exact_status = exact_line_shadow.capture(schedule_path, folder)
+    except Exception as exc:
+        exact_status = {'status': 'ERROR', 'error': type(exc).__name__}
+        print('::warning::Exact-line comparison failed: ' + type(exc).__name__)
     import opening_tracker
     try:
         opening_status = opening_tracker.capture(events, schedule, schedule_path, captured, folder)
@@ -268,7 +274,7 @@ def main():
     (folder/'advanced_status.json').write_text(json.dumps(advanced_status,indent=2))
     normalized_headers={k.lower():v for k,v in headers.items()}
     report=dict(captured_at_utc=stamp(captured),snapshot_id=sid,provider_events=len(events),
-        opening_comparison=opening_status,consensus_shadow=consensus_status,total_shadow=total_status,eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
+        exact_line_shadow=exact_status,opening_comparison=opening_status,consensus_shadow=consensus_status,total_shadow=total_status,eligible_quotes=len(quotes),new_forecasts=len(saved),epa_shadow=epa_status,advanced_shadow=advanced_status,qb_shadow=qb_status,qb_passing_shadow=passing_status,expected_qb_shadow=expected_status,skipped=skipped,
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),

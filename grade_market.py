@@ -282,6 +282,8 @@ def main():
     report['qb_starter_comparison'],starter_text=qb_starter_comparison.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     import total_shadow
     report['pregame_total']=total_shadow.grade(sys.modules[__name__],finals,now)
+    import exact_line_shadow
+    report["exact_line_shadow"] = exact_line_shadow.grade(finals)
     import opening_tracker
     report['opening_comparison'] = opening_tracker.report(sys.modules[__name__], finals, now)
     import consensus_shadow
