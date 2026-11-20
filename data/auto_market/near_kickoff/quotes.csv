@@ -1,0 +1,2 @@
+quote_id,provider_event_id,game_id,home_team,away_team,bookmaker_key,sportsbook,home_line,home_price_american,away_line,away_price_american,provider_updated_at_utc,captured_at_utc,kickoff_utc,snapshot_id,source
+099900dcc0a39b408c7130b2,66f9e83cf025d58acee12bce18661fb3,2026_11_IND_HOU,HOU,IND,draftkings,DraftKings,-12.5,-111,12.5,-108,2026-11-20T01:05:12+00:00,2026-11-20T01:05:27.521862+00:00,2026-11-20T01:15:00+00:00,20261120T010527521862Z,THE_ODDS_API_CURRENT_SPREADS
