@@ -282,6 +282,8 @@ def main():
     report['qb_starter_comparison'],starter_text=qb_starter_comparison.grade_shadow(sys.modules[__name__],rows,finals,quotes,now)
     import total_shadow
     report['pregame_total']=total_shadow.grade(sys.modules[__name__],finals,now)
+    import opening_tracker
+    report['opening_comparison'] = opening_tracker.report(sys.modules[__name__], finals, now)
     import consensus_shadow
     report['consensus_comparison']=consensus_shadow.grade(finals,now)
     report['line_comparison']=movement
@@ -296,6 +298,14 @@ def main():
         f'| Sportsbook MAE | {mae(report["market_mae"])} |\n| Model MAE | {mae(report["model_mae"])} |\n\n'
         'Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.\n\n'
         'Only provider-confirmed completed games are graded. Pending games are not losses. Scores are fetched daily with a three-day lookback; outages longer than that may leave missing results.\n')
+    comparison = report['opening_comparison']
+    text += '\n## DraftKings opening-line comparison\n\n'
+    text += f"Matched finals: {comparison['paired_finals']}\n\n"
+    text += '| Forecast | Wins | Losses | Pushes | No lean |\n|---|---:|---:|---:|---:|\n'
+    for arm in ('opening', 'regular'):
+        row = comparison[arm]
+        text += f"| {arm} | {row['WIN']} | {row['LOSS']} | {row['PUSH']} | {row['NO_LEAN']} |\n"
+    text += '\n'
     text+=movement_text+paired_text+starter_text
     (ROOT/'report.md').write_text(text)
     print(json.dumps(report,indent=2))
