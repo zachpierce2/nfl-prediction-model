@@ -65,3 +65,15 @@ class OpeningTest(unittest.TestCase):
         self.assertEqual(report['opening']['WIN'], 1)
         self.assertEqual(report['regular']['LOSS'], 1)
         self.assertEqual(report['categories'], {'same_team_line_changed_grade': 1})
+
+        # A valid 25h quote is closer than the first inside 24h (18h).
+        near = dict(late, snapshot_id='near', observation_id='near/g', home_line=-3,
+                    captured_at_utc=auto.stamp(self.kickoff-timedelta(hours=25)),
+                    forecast_created_at_utc=auto.stamp(self.kickoff-timedelta(hours=24,minutes=59)))
+        expired = dict(near, snapshot_id='expired', observation_id='expired/g',
+                       captured_at_utc=auto.stamp(self.kickoff-timedelta(hours=24)),
+                       forecast_created_at_utc=auto.stamp(self.kickoff))
+        auto.archive_rows(tracker.ROOT/'candidates.csv', list(near), [near, expired], 'observation_id')
+        report = tracker.report(grader,[final],self.kickoff+timedelta(days=1))
+        self.assertEqual(report['regular']['WIN'], 1)
+        self.assertEqual(float(tracker.read(tracker.ROOT/'grades.csv')[0]['regular_hours_before_kickoff']),25)
