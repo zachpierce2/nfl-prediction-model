@@ -1,6 +1,6 @@
 # NFL prospective grading
 
-Updated: 2026-11-20T22:18:59.929899+00:00
+Updated: 2026-11-21T10:27:19.771495+00:00
 
 | Metric | Result |
 |---|---:|
