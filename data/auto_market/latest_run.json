@@ -1,6 +1,6 @@
 {
-  "captured_at_utc": "2026-11-20T22:20:01.805882+00:00",
-  "snapshot_id": "20261120T222001805882Z",
+  "captured_at_utc": "2026-11-21T01:24:01.833065+00:00",
+  "snapshot_id": "20261121T012401833065Z",
   "provider_events": 28,
   "exact_line_shadow": {
     "eligible": 0,
@@ -42,9 +42,9 @@
     "new_qb_forecasts": 0
   },
   "skipped": [],
-  "remaining_credits": "388",
+  "remaining_credits": "386",
   "last_request_credits": "2",
-  "schedule_sha256": "a3c097219ce55eed2f017b770858faa3a3950d2b42f5390f41abac33737f7c37",
-  "odds_sha256": "258a6b49c5a37d270304dd637f8bdb810b2b51606d673975828d815b1d996c7c",
+  "schedule_sha256": "a485d7b5630178078a81c30ed6f8551ac020fcb8dbaccff477c4360a9f68b992",
+  "odds_sha256": "b8e3305627b931aad8ce4296b6ac8c81dbab0e763221bdb2e2d989b723aec02a",
   "policy": "First automatic quote within 24h of kickoff; fixed bookmaker priority; same-day scores excluded"
 }
