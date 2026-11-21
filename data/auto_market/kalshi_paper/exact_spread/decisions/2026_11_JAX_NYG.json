@@ -1,0 +1,238 @@
+{
+  "game": "2026_11_JAX_NYG",
+  "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
+  "forecast": {
+    "game_id": "2026_11_JAX_NYG",
+    "quote_id": "564f9836f84daaa8f369f342",
+    "home_team": "NYG",
+    "away_team": "JAX",
+    "sportsbook": "DraftKings",
+    "home_line": "6.0",
+    "home_price_american": "-110",
+    "away_line": "-6.0",
+    "away_price_american": "-109",
+    "adjustment": "-0.2005416544499983",
+    "predicted_home_margin": "-6.2005416544499985",
+    "home_model_spread": "6.2005416544499985",
+    "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+    "kickoff_utc": "2026-11-22T21:25:00+00:00",
+    "forecast_created_at_utc": "2026-11-21T21:53:13.751350+00:00",
+    "history_last_scored_date": "2026-11-19",
+    "snapshot_id": "20261121T215310512380Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "44953756477",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "29b397520e9bb73615161b2df91f78a12109dc44977da15970c36b46c6be143b",
+    "epa_inputs_sha256": "3c7eda072f6eda85605cc36975aba8ee0d5117774181b319fb763b2c7028b41c",
+    "adj_off_epa_diff": "-0.1037171982249702",
+    "adj_def_epa_diff": "-0.03361904017013205",
+    "adj_off_success_diff": "-0.05518195704379404",
+    "adj_def_success_diff": "-0.002915555274601564"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-24T21:25:00Z",
+    "created_time": "2026-11-15T23:05:29.259224Z",
+    "custom_strike": {
+      "football_team": "61a75ab7-eaf0-4601-b920-86b1e165007d"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV22JACNYG",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-23T00:25:00Z",
+    "expiration_value": "",
+    "floor_strike": 5.5,
+    "last_price_dollars": "0.5100",
+    "latest_expiration_time": "2026-11-24T21:25:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5000",
+    "no_bid_dollars": "0.4900",
+    "no_sub_title": "Jacksonville wins by over 5.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-23T00:25:00Z",
+    "open_interest_fp": "46855.47",
+    "open_time": "2026-11-15T23:06:00Z",
+    "previous_price_dollars": "0.5200",
+    "previous_yes_ask_dollars": "0.5200",
+    "previous_yes_bid_dollars": "0.5100",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Jacksonville wins by more than 5.5 points in the Jacksonville vs New York G Pro Football game originally scheduled for Nov 22, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
+    "title": "Jacksonville wins by over 5.5 points?",
+    "updated_time": "2026-11-15T23:06:00.726182Z",
+    "volume_24h_fp": "19907.02",
+    "volume_fp": "48342.18",
+    "yes_ask_dollars": "0.5100",
+    "yes_ask_size_fp": "453286.20",
+    "yes_bid_dollars": "0.5000",
+    "yes_bid_size_fp": "677909.82",
+    "yes_sub_title": "Jacksonville wins by over 5.5 points"
+  },
+  "sign": -1,
+  "sportsbooks": [
+    {
+      "provider_event_id": "8ba112fabf4e87639338a5f437c5abfe",
+      "game_id": "2026_11_JAX_NYG",
+      "home_team": "NYG",
+      "away_team": "JAX",
+      "bookmaker_key": "fanduel",
+      "sportsbook": "FanDuel",
+      "home_line": 5.5,
+      "home_price_american": 100,
+      "away_line": -5.5,
+      "away_price_american": -120,
+      "provider_updated_at_utc": "2026-11-21T21:52:47+00:00",
+      "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+      "kickoff_utc": "2026-11-22T21:25:00+00:00",
+      "snapshot_id": "20261121T215310512380Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "7ef9a7ac0cc5890a0b20b2ce"
+    },
+    {
+      "provider_event_id": "8ba112fabf4e87639338a5f437c5abfe",
+      "game_id": "2026_11_JAX_NYG",
+      "home_team": "NYG",
+      "away_team": "JAX",
+      "bookmaker_key": "bovada",
+      "sportsbook": "Bovada",
+      "home_line": 5.5,
+      "home_price_american": -108,
+      "away_line": -5.5,
+      "away_price_american": -112,
+      "provider_updated_at_utc": "2026-11-21T21:52:30+00:00",
+      "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+      "kickoff_utc": "2026-11-22T21:25:00+00:00",
+      "snapshot_id": "20261121T215310512380Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "e96c2eaac0856d2546a97226"
+    }
+  ],
+  "kalshi_book": {
+    "no_dollars": [
+      [
+        "0.4900",
+        "453286.20"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.5000",
+        "677909.82"
+      ]
+    ]
+  },
+  "kalshi_observed_at": "2026-11-21T21:54:39.465489+00:00",
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "model_yes_probability": 0.5310100413467218,
+  "arms": {
+    "sportsbooks": {
+      "p_yes": 0.5130344422523757,
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "453286.20",
+          "fee": "0.0175",
+          "probability": 0.5130344422523757,
+          "net_expected_dollars": -0.014465557747624258
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "677909.82",
+          "fee": "0.0175",
+          "probability": 0.4869655577476243,
+          "net_expected_dollars": -0.03053444225237567
+        }
+      },
+      "decision": "pass"
+    },
+    "sportsbooks_epa_blend": {
+      "p_yes": 0.5220222417995488,
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "453286.20",
+          "fee": "0.0175",
+          "probability": 0.5220222417995488,
+          "net_expected_dollars": -0.005477758200451155
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "677909.82",
+          "fee": "0.0175",
+          "probability": 0.4779777582004512,
+          "net_expected_dollars": -0.039522241799548774
+        }
+      },
+      "decision": "pass"
+    }
+  },
+  "movement_v1": {
+    "status": "insufficient_books",
+    "direction": null,
+    "common_books": 2,
+    "up": 0,
+    "down": 0,
+    "median_change_pp": 0.0,
+    "previous_quotes": [
+      {
+        "provider_event_id": "8ba112fabf4e87639338a5f437c5abfe",
+        "game_id": "2026_11_JAX_NYG",
+        "home_team": "NYG",
+        "away_team": "JAX",
+        "bookmaker_key": "fanduel",
+        "sportsbook": "FanDuel",
+        "home_line": 5.5,
+        "home_price_american": 100,
+        "away_line": -5.5,
+        "away_price_american": -120,
+        "provider_updated_at_utc": "2026-11-21T18:58:41+00:00",
+        "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+        "kickoff_utc": "2026-11-22T21:25:00+00:00",
+        "snapshot_id": "20261121T185914643499Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "51f28504998d473f8e49ede3"
+      },
+      {
+        "provider_event_id": "8ba112fabf4e87639338a5f437c5abfe",
+        "game_id": "2026_11_JAX_NYG",
+        "home_team": "NYG",
+        "away_team": "JAX",
+        "bookmaker_key": "bovada",
+        "sportsbook": "Bovada",
+        "home_line": 5.5,
+        "home_price_american": -108,
+        "away_line": -5.5,
+        "away_price_american": -112,
+        "provider_updated_at_utc": "2026-11-21T18:57:32+00:00",
+        "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+        "kickoff_utc": "2026-11-22T21:25:00+00:00",
+        "snapshot_id": "20261121T185914643499Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "db7f100b9fb3d413d14c7e07"
+      }
+    ],
+    "current_quote_ids": [
+      "7ef9a7ac0cc5890a0b20b2ce",
+      "e96c2eaac0856d2546a97226"
+    ],
+    "previous_snapshot": "20261121T185914643499Z",
+    "current_snapshot": "20261121T215310512380Z",
+    "decision": "pass"
+  }
+}

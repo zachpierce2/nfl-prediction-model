@@ -1,0 +1,302 @@
+[
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "c1598a120a3178ca637bf4c059c62b14c8aa09fe42f4fa5455117d428e2ff6a9",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2017.parquet",
+        "sha256": "21ff41abc6043cce68829bad2f2cbae100cb41aa106ca6cf9c93b35856e51ab6",
+        "captured_at_utc": "2026-11-19T01:26:44.545367+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:43:56 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2017.csv",
+    "sha256": "0d5139fbf41b0866517bd2bd5fd85bb20dbd4dd9bc36a706fed030a88731de6f",
+    "captured_at_utc": "2026-11-19T01:26:44.768528+00:00",
+    "last_modified": "Tue, 26 Jul 2022 05:23:10 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2017.csv",
+    "sha256": "eab2fad2df99249d4061ed9c5c34d312cdba07cf3159d027d255bdc9b6526917",
+    "captured_at_utc": "2026-11-19T01:26:44.884994+00:00",
+    "last_modified": "Mon, 06 Oct 2025 06:50:57 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "7ab809a000656a14e8446a2ca8ed56ebbe852f224ce08d9e153997dd6cc360d3",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2018.parquet",
+        "sha256": "f04d65f5993a0a982de4de5fbafd2fbf7c1649470f59de128fd17d924d38c5d3",
+        "captured_at_utc": "2026-11-19T01:26:45.245477+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:45:27 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2018.csv",
+        "sha256": "f4c376cf515deb38fa1d0e516770bea242a30055be1e9c5657129971ba0523a9",
+        "captured_at_utc": "2026-11-19T01:26:45.473079+00:00",
+        "last_modified": "Tue, 08 Mar 2022 18:20:04 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2018.csv",
+    "sha256": "4724e1f37cc3076f564e997fbf269190e7dbe795a39315b903788e0a9c40065e",
+    "captured_at_utc": "2026-11-19T01:26:45.619858+00:00",
+    "last_modified": "Tue, 26 Jul 2022 05:23:16 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2018.csv",
+    "sha256": "9a408b78a55f799110aed70de3564e157faf089ce9bed780d0368bf49ae13e0b",
+    "captured_at_utc": "2026-11-19T01:26:45.770986+00:00",
+    "last_modified": "Mon, 06 Oct 2025 06:51:00 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "17ab97c4d9776158cdb1f033d4d9755a8fec3cef15ccb6b1784a6f05accaa046",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2019.parquet",
+        "sha256": "54396ede038f0b2c43f17be2ac550ac06ba21e4317f0da64c99e1e3bd4117681",
+        "captured_at_utc": "2026-11-19T01:26:46.045826+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:46:55 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2019.csv",
+        "sha256": "a585b3cf16823aa949e0cfac1fd44c2ea8289c71c4a241c740f9ad93aa12511e",
+        "captured_at_utc": "2026-11-19T01:26:46.271870+00:00",
+        "last_modified": "Tue, 08 Mar 2022 18:20:22 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2019.csv",
+    "sha256": "daddfe8e04ddc3a29bce14f362e774fbadfb274c807f1f0fde7b5bf32aaf6cdf",
+    "captured_at_utc": "2026-11-19T01:26:46.414872+00:00",
+    "last_modified": "Tue, 26 Jul 2022 05:23:22 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2019.csv",
+    "sha256": "0cd52be8fa57f18503b670cb8263246c4f548375b768cbcad1c7a7462c98970d",
+    "captured_at_utc": "2026-11-19T01:26:46.586027+00:00",
+    "last_modified": "Mon, 06 Oct 2025 06:51:03 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "af0d5800eedc25355139e05b7c287b18cb643b5a3aa1e72d735b3d0133f5946d",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2020.parquet",
+        "sha256": "13704b508fcef4a127e363c7f280b04ea7b41efe2002e238d0a0de1ce1b7ef76",
+        "captured_at_utc": "2026-11-19T01:26:47.066537+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:48:16 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2020.csv",
+        "sha256": "fa469611e88bd4006d108a29724dabe07f2d2c91e863ad28fbc66671c9c750d4",
+        "captured_at_utc": "2026-11-19T01:26:47.297087+00:00",
+        "last_modified": "Tue, 08 Mar 2022 18:20:40 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2020.csv",
+    "sha256": "706cca82824214f6b73ba0c6e537d3ee39766a50c644b8974b9fc28d7518de90",
+    "captured_at_utc": "2026-11-19T01:26:47.516769+00:00",
+    "last_modified": "Tue, 26 Jul 2022 05:23:28 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2020.csv",
+    "sha256": "512e35f17d076eb5d99b933c4a144eb95dcddf40c0320dbb397cae3c35683716",
+    "captured_at_utc": "2026-11-19T01:26:47.694203+00:00",
+    "last_modified": "Thu, 24 Sep 2026 12:50:26 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "f52450bb8813c4a3492887e29c113719eff24140140e84706ce48c13871aea40",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2021.parquet",
+        "sha256": "0d0222bdfc56af39e43f82cff0d02f47e2b5311776daf59a89254dd12e5e9f20",
+        "captured_at_utc": "2026-11-19T01:26:48.024778+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:49:44 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2021.csv",
+        "sha256": "e7ccb91d7c52d324303d3a8330e0b6edece87699cd0b5e83ebcb31734a6b9be5",
+        "captured_at_utc": "2026-11-19T01:26:48.298769+00:00",
+        "last_modified": "Tue, 08 Mar 2022 18:19:37 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2021.csv",
+    "sha256": "1049fb9ff0fe7cfcf3ba8bfe1f5a35d3aba985c461c8fb7bf5201735b6d34254",
+    "captured_at_utc": "2026-11-19T01:26:48.475055+00:00",
+    "last_modified": "Wed, 31 Aug 2022 07:37:30 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2021.csv",
+    "sha256": "8e4dae054a4749cf2d4919508d9161a6068fd67509979aefa385bfb3803d0ee5",
+    "captured_at_utc": "2026-11-19T01:26:48.624390+00:00",
+    "last_modified": "Mon, 06 Oct 2025 06:51:11 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "482071504f8388cffe41b374305f570c40dc5ff5341a8fc1f60b87af68c9fe1b",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2022.parquet",
+        "sha256": "167dff9290b11a47822157443af586877b38de1b6a90e41f95ac52e524cf4bb3",
+        "captured_at_utc": "2026-11-19T01:26:48.981512+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:51:10 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2022.csv",
+        "sha256": "cb4c9703ea178f42cb2ea8c0cf7eba02817fa47c52921399bc60a5802840b385",
+        "captured_at_utc": "2026-11-19T01:26:49.214077+00:00",
+        "last_modified": "Mon, 28 Aug 2023 08:28:37 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2022.csv",
+    "sha256": "5f0d60324e597edd1a2ced8540b04e40b51dd440591dd1df11b8d96343387c9e",
+    "captured_at_utc": "2026-11-19T01:26:49.350550+00:00",
+    "last_modified": "Thu, 31 Aug 2023 07:14:24 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2022.csv",
+    "sha256": "0018a4833fbf0f825286c1c27450c6254391b548d6c55bcde728e93e4816815a",
+    "captured_at_utc": "2026-11-19T01:26:49.748115+00:00",
+    "last_modified": "Mon, 06 Oct 2025 06:51:14 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "f358bd4b8c98978be8488615d0092d03c52744c4d8fb2dad9949c36a32a9c5e0",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2023.parquet",
+        "sha256": "e8200fde627d460975cfe5d91c355702fcf931b747671d4e5eb972270265ec88",
+        "captured_at_utc": "2026-11-19T01:26:50.439172+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:52:26 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2023.csv",
+        "sha256": "49c06072012f206781838c4af18d5eba988f716c059009714de51e3c9a59f070",
+        "captured_at_utc": "2026-11-19T01:26:50.627086+00:00",
+        "last_modified": "Thu, 15 Feb 2024 07:13:05 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2023.csv",
+    "sha256": "16b04e21da5aa3944cfa9c22cafcc84ed7e6d9866eaddf0344e9b8cbf2f63afe",
+    "captured_at_utc": "2026-11-19T01:26:50.789597+00:00",
+    "last_modified": "Wed, 04 Sep 2024 07:15:42 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2023.csv",
+    "sha256": "303b61aa5c33ffda863f93a750fc14483f397f9187ad502b1ce71e9b516a64c0",
+    "captured_at_utc": "2026-11-19T01:26:50.918461+00:00",
+    "last_modified": "Mon, 06 Oct 2025 06:51:17 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "95d326d8f62f8bab3e3f3e5c94529c2cddc6473251e7a7ef169567f7815b6baf",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.parquet",
+        "sha256": "6e6996601f9c29dd10c8d6a15eca255b836ba1dd4718f12bfb69137da1e07c1e",
+        "captured_at_utc": "2026-11-19T01:26:51.303330+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:54:12 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2024.csv",
+        "sha256": "64f466fdf19d7da0e6c2057c758d1709fd23666a3a07941c709f40680b112033",
+        "captured_at_utc": "2026-11-19T01:26:51.543643+00:00",
+        "last_modified": "Thu, 13 Feb 2025 07:17:28 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2024.csv",
+    "sha256": "498bce8e13cb64b2ab9bb0ad6cb81d0a63c2ddb24016c9fc90c2de2126fae449",
+    "captured_at_utc": "2026-11-19T01:26:51.671148+00:00",
+    "last_modified": "Thu, 13 Feb 2025 07:16:35 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2024.csv",
+    "sha256": "a2aa58efe093f8aa0ad5aadf09f81d8ec690a1183bd2dde68d20e7f109a9c335",
+    "captured_at_utc": "2026-11-19T01:26:51.833367+00:00",
+    "last_modified": "Mon, 06 Oct 2025 06:51:21 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "37a30a139468194dc72b35b26ea33c18e2a0398e6884f7d358d605ee8e90d5c9",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.parquet",
+        "sha256": "6b7f629136def21702592bf7d70876d746aafe3207c675d9920632e9d7fd6d2d",
+        "captured_at_utc": "2026-11-19T01:26:52.144970+00:00",
+        "last_modified": "Tue, 17 Nov 2026 19:55:50 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2025.csv",
+        "sha256": "79cd92f9a3b46a3fcc50904b3199b39303f7cab8b484040a1cb2b2c3bf51bd40",
+        "captured_at_utc": "2026-11-19T01:26:52.361775+00:00",
+        "last_modified": "Wed, 11 Feb 2026 13:24:09 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2025.csv",
+    "sha256": "873ca1606dd575bd01152508a243ef6b3a0f8f97b90b707217e62ee8c7ceb735",
+    "captured_at_utc": "2026-11-19T01:26:52.527505+00:00",
+    "last_modified": "Mon, 07 Sep 2026 12:23:41 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2025.csv",
+    "sha256": "3fc2deb0e9ad86d34d4578cb80bb21c95253e088ee22ca028adf46f7485eff1f",
+    "captured_at_utc": "2026-11-19T01:26:52.693996+00:00",
+    "last_modified": "Thu, 24 Sep 2026 12:50:32 GMT"
+  },
+  {
+    "code_sha256": "61a9d9a3221ea7ba54e594c80f782a6eb9c2587dd86e07516a973ea177666976",
+    "aggregate_sha256": "3dccffe89a5cdf0a2ef49dd1d34a27c5d5a725d194947be77873722624b133b0",
+    "sources": [
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.parquet",
+        "sha256": "a2bfcd8abcec780fe42161cda929f15a1ee1e38736c30f92856d54f42e3951ed",
+        "captured_at_utc": "2026-11-21T21:53:15.654921+00:00",
+        "last_modified": "Sat, 21 Nov 2026 16:46:05 GMT"
+      },
+      {
+        "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_week_pass_2026.csv",
+        "sha256": "28119764c6cf543126024e1619fc64f29cac254a45e183a0da199d055f666ecf",
+        "captured_at_utc": "2026-11-21T21:53:15.884787+00:00",
+        "last_modified": "Thu, 19 Nov 2026 18:01:58 GMT"
+      }
+    ]
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
+    "sha256": "aa2ea2be0697d9b20de621ecc11a1b198dc66e7d8ad968a002cb005f935eabf1",
+    "captured_at_utc": "2026-11-21T21:53:16.003702+00:00",
+    "last_modified": "Sat, 21 Nov 2026 15:16:44 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2026.csv",
+    "sha256": "8edf289248edf61d45c2bb15583e29eb9bb777b63ea0c0212cdc55ddb7631408",
+    "captured_at_utc": "2026-11-21T21:53:16.230411+00:00",
+    "last_modified": "Fri, 20 Nov 2026 12:01:47 GMT"
+  },
+  {
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
+    "sha256": "390fadc2fcc17e1fde080b75160e79487fd71fb13c5aff3f0cbe8c6766e2398f",
+    "captured_at_utc": "2026-11-19T01:26:53.557101+00:00",
+    "last_modified": "Wed, 18 Nov 2026 17:12:35 GMT"
+  }
+]
