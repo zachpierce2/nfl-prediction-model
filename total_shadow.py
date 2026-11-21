@@ -39,14 +39,14 @@ def total_quote(events, quote):
     return matches[0] if len(matches) == 1 else None
 
 
-def predict_margin(games, q, total):
+def predict_margin(games, q, total, extra_columns=()):
     game = games[games.game_id.eq(q['game_id'])].copy()
     train = games[games.season.lt(game.season.item())].dropna(subset=['actual_margin','spread_line'])
     if not train.total_line.gt(0).all() or not np.isfinite(train[epa.ADJ+['total_line']]).all().all():
         raise ValueError('Incomplete training inputs')
     game['spread_line'] = -float(q['home_line'])
     game['total_line'] = total
-    columns = model.INPUTS + epa.ADJ + ['total_line']
+    columns = model.INPUTS + epa.ADJ + ['total_line'] + list(extra_columns)
     estimator = model.make_pipeline(model.SimpleImputer(strategy='median'), model.StandardScaler(), Ridge(alpha=1000))
     estimator.fit(train[columns], train.actual_margin-train.spread_line)
     margin = float(game.spread_line.item()+np.clip(.25*estimator.predict(game[columns])[0],-2,2))
@@ -74,11 +74,33 @@ def record(schedule, quotes, events, folder):
                          predicted_home_margin=margin,forecast_created_at_utc=auto.stamp(now)))
     if rows:
         auto.archive_rows(ROOT/'pairs.csv',list(rows[0]),rows,'game_id')
-    return {'paired':len(rows),'missing_total':len(pairs)-len(eligible)}
+    status = {'paired': len(rows), 'missing_total': len(pairs)-len(eligible)}
+    if rows:
+        from overtime_comparison import recent_overtime
+        try:
+            games["recent_ot"] = games.game_id.map(recent_overtime(games))
+            challengers = []
+            for row in rows:
+                margin = predict_margin(games, row, row["total_line"], ["recent_ot"])
+                now = datetime.now(timezone.utc)
+                if now < auto.utc(row["kickoff_utc"]):
+                    challengers.append(dict(row, baseline_margin=row["predicted_home_margin"],
+                                            predicted_home_margin=margin, forecast_created_at_utc=auto.stamp(now)))
+            saved = auto.archive_rows(ROOT/'overtime'/'pairs.csv', list(rows[0]), challengers, 'game_id')
+            status["new_overtime_pairs"] = len(saved)
+        except (KeyError, ValueError) as exc:
+            status["overtime_error"] = str(exc)
+    return status
 
 
 def grade(grader, finals, now):
-    rows = grader.read_rows(ROOT/'pairs.csv')
+    report = grade_pairs(grader, finals, now, ROOT, "with_total")
+    grade_pairs(grader, finals, now, ROOT/"overtime", "with_overtime")
+    return report
+
+
+def grade_pairs(grader, finals, now, folder, candidate_name):
+    rows = grader.read_rows(folder/'pairs.csv')
     graded = []
     for r in rows:
         final = grader.match(r,finals,[r])
@@ -86,14 +108,14 @@ def grade(grader, finals, now):
             continue
         original = grader.grade(dict(r,predicted_home_margin=r['baseline_margin']),final,now)
         candidate = grader.grade(r,final,now)
-        graded.append(dict(game_id=r['game_id'], baseline=original['ats_result'], with_total=candidate['ats_result'],
+        graded.append(dict(game_id=r['game_id'], baseline=original['ats_result'], **{candidate_name: candidate['ats_result']},
                            disagreement=original['selected_side']!=candidate['selected_side']))
-    ROOT.mkdir(parents=True,exist_ok=True)
-    pd.DataFrame(graded,columns=['game_id','baseline','with_total','disagreement']).to_csv(ROOT/'grades.csv',index=False)
+    folder.mkdir(parents=True,exist_ok=True)
+    pd.DataFrame(graded,columns=['game_id','baseline',candidate_name,'disagreement']).to_csv(folder/'grades.csv',index=False)
     report = {'paired':len(rows),'graded':len(graded),'pending':len(rows)-len(graded),
               'disagreements':sum(g['disagreement'] for g in graded)}
-    for arm in ['baseline','with_total']:
+    for arm in ['baseline',candidate_name]:
         report[arm] = {s:sum(g[arm]==s for g in graded) for s in ['WIN','LOSS','PUSH','NO_LEAN']}
         report[arm]['wins_on_disagreements'] = sum(g['disagreement'] and g[arm]=='WIN' for g in graded)
-    (ROOT/'summary.json').write_text(json.dumps(report,indent=2))
+    (folder/'summary.json').write_text(json.dumps(report,indent=2))
     return report
