@@ -1,9 +1,9 @@
 {
   "cutoffs": {
     "1440": {
-      "due": 1,
-      "captured": 1,
-      "quoted": 1,
+      "due": 8,
+      "captured": 8,
+      "quoted": 8,
       "graded_teams": 2,
       "named": 2,
       "correct": 2
