@@ -90,23 +90,33 @@ def record(schedule, quotes, events, folder):
             status["new_overtime_pairs"] = len(saved)
         except (KeyError, ValueError) as exc:
             status["overtime_error"] = str(exc)
+    if rows:
+        try:
+            import game_state_shadow
+            status["new_game_state_pairs"] = game_state_shadow.record(games, rows, folder, ROOT/"game_state")
+        except (ValueError, KeyError, RuntimeError, OSError) as exc:
+            status["game_state_error"] = str(exc)
     return status
 
 
 def grade(grader, finals, now):
     report = grade_pairs(grader, finals, now, ROOT, "with_total")
     grade_pairs(grader, finals, now, ROOT/"overtime", "with_overtime")
+    grade_pairs(grader, finals, now, ROOT/"game_state", "game_state_weighted")
+    grade_pairs(grader, finals, now, ROOT/"game_state", "game_state_weighted", "frozen_total_margin")
     return report
 
 
-def grade_pairs(grader, finals, now, folder, candidate_name):
+def grade_pairs(grader, finals, now, folder, candidate_name, reference="baseline_margin"):
     rows = grader.read_rows(folder/'pairs.csv')
+    if reference == "frozen_total_margin":
+        folder = folder/"versus_frozen_total"
     graded = []
     for r in rows:
         final = grader.match(r,finals,[r])
         if final is None:
             continue
-        original = grader.grade(dict(r,predicted_home_margin=r['baseline_margin']),final,now)
+        original = grader.grade(dict(r,predicted_home_margin=r[reference]),final,now)
         candidate = grader.grade(r,final,now)
         graded.append(dict(game_id=r['game_id'], baseline=original['ats_result'], **{candidate_name: candidate['ats_result']},
                            disagreement=original['selected_side']!=candidate['selected_side']))
