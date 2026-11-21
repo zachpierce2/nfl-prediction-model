@@ -1,0 +1,14 @@
+{
+  "status": "MISSING_CONFIRMED_STARTERS",
+  "new_qb_forecasts": 0,
+  "missing_confirmation_games": [
+    "2026_11_ARI_KC",
+    "2026_11_BAL_CAR",
+    "2026_11_MIA_BUF",
+    "2026_11_NO_CHI",
+    "2026_11_PIT_PHI",
+    "2026_11_TB_DET",
+    "2026_11_TEN_DAL"
+  ],
+  "confirmation_rows": 0
+}

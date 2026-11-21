@@ -1,0 +1,349 @@
+{
+  "game": "2026_11_BAL_CAR",
+  "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
+  "forecast": {
+    "game_id": "2026_11_BAL_CAR",
+    "quote_id": "fced97b59a41a937b4935a0a",
+    "home_team": "CAR",
+    "away_team": "BAL",
+    "sportsbook": "DraftKings",
+    "home_line": "-3.0",
+    "home_price_american": "-104",
+    "away_line": "3.0",
+    "away_price_american": "-115",
+    "adjustment": "-0.029660878636783954",
+    "predicted_home_margin": "2.970339121363216",
+    "home_model_spread": "-2.970339121363216",
+    "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+    "kickoff_utc": "2026-11-22T18:00:00+00:00",
+    "forecast_created_at_utc": "2026-11-21T18:59:17.578633+00:00",
+    "history_last_scored_date": "2026-11-19",
+    "snapshot_id": "20261121T185914643499Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "44938384312",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "c69ee03acb4882aba73b06cf9c3b774a577eff562ba28d75eb0c64f8bf90fb05",
+    "epa_inputs_sha256": "eb0492acc019e53eaff0d41a1dada2e1793053530e828e116d237c93632bbcbe",
+    "adj_off_epa_diff": "0.060238555735101056",
+    "adj_def_epa_diff": "0.005067868423331233",
+    "adj_off_success_diff": "0.006060339043559827",
+    "adj_def_success_diff": "0.004855830140130518"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-24T18:00:00Z",
+    "created_time": "2026-11-15T23:03:01.232532Z",
+    "custom_strike": {
+      "football_team": "e37050ce-354f-4dd0-b2d8-0bd1e9650eb7"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV22BALCAR",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-22T21:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 2.5,
+    "last_price_dollars": "0.5300",
+    "latest_expiration_time": "2026-11-24T18:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.4800",
+    "no_bid_dollars": "0.4700",
+    "no_sub_title": "Carolina wins by over 2.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-22T21:00:00Z",
+    "open_interest_fp": "39505.63",
+    "open_time": "2026-11-15T23:05:00Z",
+    "previous_price_dollars": "0.5200",
+    "previous_yes_ask_dollars": "0.5300",
+    "previous_yes_bid_dollars": "0.5200",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Carolina wins by more than 2.5 points in the Baltimore vs Carolina Pro Football game originally scheduled for Nov 22, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
+    "title": "Carolina wins by over 2.5 points?",
+    "updated_time": "2026-11-15T23:05:00.727722Z",
+    "volume_24h_fp": "12063.94",
+    "volume_fp": "42338.98",
+    "yes_ask_dollars": "0.5300",
+    "yes_ask_size_fp": "920692.57",
+    "yes_bid_dollars": "0.5200",
+    "yes_bid_size_fp": "21.95",
+    "yes_sub_title": "Carolina wins by over 2.5 points"
+  },
+  "sign": 1,
+  "sportsbooks": [
+    {
+      "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+      "game_id": "2026_11_BAL_CAR",
+      "home_team": "CAR",
+      "away_team": "BAL",
+      "bookmaker_key": "fanduel",
+      "sportsbook": "FanDuel",
+      "home_line": -2.5,
+      "home_price_american": -116,
+      "away_line": 2.5,
+      "away_price_american": -104,
+      "provider_updated_at_utc": "2026-11-21T18:58:41+00:00",
+      "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+      "kickoff_utc": "2026-11-22T18:00:00+00:00",
+      "snapshot_id": "20261121T185914643499Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "76e56da222908beb618207f4"
+    },
+    {
+      "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+      "game_id": "2026_11_BAL_CAR",
+      "home_team": "CAR",
+      "away_team": "BAL",
+      "bookmaker_key": "betonlineag",
+      "sportsbook": "BetOnline.ag",
+      "home_line": -2.5,
+      "home_price_american": -119,
+      "away_line": 2.5,
+      "away_price_american": -101,
+      "provider_updated_at_utc": "2026-11-21T18:58:03+00:00",
+      "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+      "kickoff_utc": "2026-11-22T18:00:00+00:00",
+      "snapshot_id": "20261121T185914643499Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "af63698fad734cf29ce79935"
+    },
+    {
+      "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+      "game_id": "2026_11_BAL_CAR",
+      "home_team": "CAR",
+      "away_team": "BAL",
+      "bookmaker_key": "betrivers",
+      "sportsbook": "BetRivers",
+      "home_line": -2.5,
+      "home_price_american": -121,
+      "away_line": 2.5,
+      "away_price_american": -103,
+      "provider_updated_at_utc": "2026-11-21T18:58:03+00:00",
+      "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+      "kickoff_utc": "2026-11-22T18:00:00+00:00",
+      "snapshot_id": "20261121T185914643499Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "70a108430eff1249ac96155b"
+    },
+    {
+      "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+      "game_id": "2026_11_BAL_CAR",
+      "home_team": "CAR",
+      "away_team": "BAL",
+      "bookmaker_key": "betmgm",
+      "sportsbook": "BetMGM",
+      "home_line": -2.5,
+      "home_price_american": -118,
+      "away_line": 2.5,
+      "away_price_american": -102,
+      "provider_updated_at_utc": "2026-11-21T18:57:13+00:00",
+      "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+      "kickoff_utc": "2026-11-22T18:00:00+00:00",
+      "snapshot_id": "20261121T185914643499Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "1f404f96ecc76c1986ea02f5"
+    },
+    {
+      "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+      "game_id": "2026_11_BAL_CAR",
+      "home_team": "CAR",
+      "away_team": "BAL",
+      "bookmaker_key": "bovada",
+      "sportsbook": "Bovada",
+      "home_line": -2.5,
+      "home_price_american": -117,
+      "away_line": 2.5,
+      "away_price_american": -103,
+      "provider_updated_at_utc": "2026-11-21T18:57:32+00:00",
+      "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+      "kickoff_utc": "2026-11-22T18:00:00+00:00",
+      "snapshot_id": "20261121T185914643499Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "106075c73a74b8a62c7fbd76"
+    }
+  ],
+  "kalshi_book": {
+    "no_dollars": [
+      [
+        "0.4700",
+        "920692.57"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.5200",
+        "21.95"
+      ]
+    ]
+  },
+  "kalshi_observed_at": "2026-11-21T19:00:38.505968+00:00",
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "model_yes_probability": 0.5221500295333728,
+  "arms": {
+    "sportsbooks": {
+      "p_yes": 0.5173641257162701,
+      "offers": {
+        "yes": {
+          "ask": "0.5300",
+          "available": "920692.57",
+          "fee": "0.0175",
+          "probability": 0.5173641257162701,
+          "net_expected_dollars": -0.03013587428372988
+        },
+        "no": {
+          "ask": "0.4800",
+          "available": "21.95",
+          "fee": "0.0175",
+          "probability": 0.4826358742837299,
+          "net_expected_dollars": -0.014864125716270105
+        }
+      },
+      "decision": "pass"
+    },
+    "sportsbooks_epa_blend": {
+      "p_yes": 0.5197570776248215,
+      "offers": {
+        "yes": {
+          "ask": "0.5300",
+          "available": "920692.57",
+          "fee": "0.0175",
+          "probability": 0.5197570776248215,
+          "net_expected_dollars": -0.027742922375178503
+        },
+        "no": {
+          "ask": "0.4800",
+          "available": "21.95",
+          "fee": "0.0175",
+          "probability": 0.4802429223751785,
+          "net_expected_dollars": -0.017257077624821482
+        }
+      },
+      "decision": "pass"
+    }
+  },
+  "movement_v1": {
+    "status": "comparable",
+    "direction": null,
+    "common_books": 5,
+    "up": 0,
+    "down": 2,
+    "median_change_pp": -0.21849424448141358,
+    "previous_quotes": [
+      {
+        "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+        "game_id": "2026_11_BAL_CAR",
+        "home_team": "CAR",
+        "away_team": "BAL",
+        "bookmaker_key": "fanduel",
+        "sportsbook": "FanDuel",
+        "home_line": -2.5,
+        "home_price_american": -116,
+        "away_line": 2.5,
+        "away_price_american": -104,
+        "provider_updated_at_utc": "2026-11-21T15:55:48+00:00",
+        "captured_at_utc": "2026-11-21T15:56:10.947026+00:00",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "snapshot_id": "20261121T155610947026Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "de55eeb77f6bca2b139b745d"
+      },
+      {
+        "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+        "game_id": "2026_11_BAL_CAR",
+        "home_team": "CAR",
+        "away_team": "BAL",
+        "bookmaker_key": "betonlineag",
+        "sportsbook": "BetOnline.ag",
+        "home_line": -2.5,
+        "home_price_american": -119,
+        "away_line": 2.5,
+        "away_price_american": -101,
+        "provider_updated_at_utc": "2026-11-21T15:55:48+00:00",
+        "captured_at_utc": "2026-11-21T15:56:10.947026+00:00",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "snapshot_id": "20261121T155610947026Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "5db8e7eae01d457d54b3b21d"
+      },
+      {
+        "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+        "game_id": "2026_11_BAL_CAR",
+        "home_team": "CAR",
+        "away_team": "BAL",
+        "bookmaker_key": "betrivers",
+        "sportsbook": "BetRivers",
+        "home_line": -2.5,
+        "home_price_american": -121,
+        "away_line": 2.5,
+        "away_price_american": -103,
+        "provider_updated_at_utc": "2026-11-21T15:55:49+00:00",
+        "captured_at_utc": "2026-11-21T15:56:10.947026+00:00",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "snapshot_id": "20261121T155610947026Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "c8c610c063ed6042500ae55e"
+      },
+      {
+        "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+        "game_id": "2026_11_BAL_CAR",
+        "home_team": "CAR",
+        "away_team": "BAL",
+        "bookmaker_key": "betmgm",
+        "sportsbook": "BetMGM",
+        "home_line": -2.5,
+        "home_price_american": -120,
+        "away_line": 2.5,
+        "away_price_american": 100,
+        "provider_updated_at_utc": "2026-11-21T15:55:48+00:00",
+        "captured_at_utc": "2026-11-21T15:56:10.947026+00:00",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "snapshot_id": "20261121T155610947026Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "b5ec892dafd976b6043c9e26"
+      },
+      {
+        "provider_event_id": "4527f57f5bc32742d8194af1ccf7da7e",
+        "game_id": "2026_11_BAL_CAR",
+        "home_team": "CAR",
+        "away_team": "BAL",
+        "bookmaker_key": "bovada",
+        "sportsbook": "Bovada",
+        "home_line": -2.5,
+        "home_price_american": -120,
+        "away_line": 2.5,
+        "away_price_american": 100,
+        "provider_updated_at_utc": "2026-11-21T15:55:25+00:00",
+        "captured_at_utc": "2026-11-21T15:56:10.947026+00:00",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "snapshot_id": "20261121T155610947026Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "065dc11c6dc9cf1b4d434c96"
+      }
+    ],
+    "current_quote_ids": [
+      "76e56da222908beb618207f4",
+      "af63698fad734cf29ce79935",
+      "70a108430eff1249ac96155b",
+      "1f404f96ecc76c1986ea02f5",
+      "106075c73a74b8a62c7fbd76"
+    ],
+    "previous_snapshot": "20261121T155610947026Z",
+    "current_snapshot": "20261121T185914643499Z",
+    "decision": "pass"
+  }
+}

@@ -1,4 +1,12 @@
 {
-  "snapshot": "20261121T155610947026Z",
-  "games": {}
+  "snapshot": "20261121T185914643499Z",
+  "games": {
+    "2026_11_ARI_KC": "RECORDED",
+    "2026_11_BAL_CAR": "RECORDED",
+    "2026_11_MIA_BUF": "RECORDED",
+    "2026_11_NO_CHI": "RECORDED",
+    "2026_11_PIT_PHI": "RECORDED",
+    "2026_11_TB_DET": "RECORDED",
+    "2026_11_TEN_DAL": "RECORDED"
+  }
 }

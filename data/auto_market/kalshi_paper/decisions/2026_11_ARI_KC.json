@@ -1,0 +1,205 @@
+{
+  "comparison": {
+    "model": {
+      "p_yes": 0.5522740696987596,
+      "decision": "yes",
+      "offers": {
+        "yes": {
+          "ask": "0.5300",
+          "available": "322270.74",
+          "fee": "0.0175",
+          "probability": 0.5522740696987596,
+          "net_expected_dollars": 0.004774069698759598
+        },
+        "no": {
+          "ask": "0.4800",
+          "available": "485117.63",
+          "fee": "0.0175",
+          "probability": 0.4477259303012404,
+          "net_expected_dollars": -0.04977406969875958
+        }
+      }
+    },
+    "market": {
+      "p_yes": 0.525,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5300",
+          "available": "322270.74",
+          "fee": "0.0175",
+          "probability": 0.525,
+          "net_expected_dollars": -0.022499999999999964
+        },
+        "no": {
+          "ask": "0.4800",
+          "available": "485117.63",
+          "fee": "0.0175",
+          "probability": 0.475,
+          "net_expected_dollars": -0.02250000000000002
+        }
+      }
+    },
+    "blend": {
+      "p_yes": 0.5386370348493799,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5300",
+          "available": "322270.74",
+          "fee": "0.0175",
+          "probability": 0.5386370348493799,
+          "net_expected_dollars": -0.008862965150620128
+        },
+        "no": {
+          "ask": "0.4800",
+          "available": "485117.63",
+          "fee": "0.0175",
+          "probability": 0.46136296515062014,
+          "net_expected_dollars": -0.03613703484937986
+        }
+      }
+    },
+    "agreement_v1": {
+      "p_yes": 0.5386370348493799,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5300",
+          "available": "322270.74",
+          "fee": "0.0175",
+          "probability": 0.5386370348493799,
+          "net_expected_dollars": -0.008862965150620128
+        },
+        "no": {
+          "ask": "0.4800",
+          "available": "485117.63",
+          "fee": "0.0175",
+          "probability": 0.46136296515062014,
+          "net_expected_dollars": -0.03613703484937986
+        }
+      }
+    }
+  },
+  "status": "RECORDED",
+  "captured_at": "2026-11-21T19:00:35.992200+00:00",
+  "forecast": {
+    "game_id": "2026_11_ARI_KC",
+    "quote_id": "b1f2d2203cb51080c2f42836",
+    "home_team": "KC",
+    "away_team": "ARI",
+    "sportsbook": "DraftKings",
+    "home_line": "-15.5",
+    "home_price_american": "-111",
+    "away_line": "15.5",
+    "away_price_american": "-108",
+    "adjustment": "0.18389500024841698",
+    "predicted_home_margin": "15.683895000248416",
+    "home_model_spread": "-15.683895000248416",
+    "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+    "kickoff_utc": "2026-11-22T18:00:00+00:00",
+    "forecast_created_at_utc": "2026-11-21T18:59:17.578633+00:00",
+    "history_last_scored_date": "2026-11-19",
+    "snapshot_id": "20261121T185914643499Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "44938384312",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "5d47697d2beec230d8682224314928a183a90bce7b8eaba41b304d907170d6e6",
+    "epa_inputs_sha256": "eb0492acc019e53eaff0d41a1dada2e1793053530e828e116d237c93632bbcbe",
+    "adj_off_epa_diff": "0.10843656176447025",
+    "adj_def_epa_diff": "0.10048846621488713",
+    "adj_off_success_diff": "0.034051777750202364",
+    "adj_def_success_diff": "0.023420900266140528"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-24T18:00:00Z",
+    "created_time": "2026-11-15T23:02:02.244856Z",
+    "custom_strike": {
+      "football_team": "64f72720-2e4a-4cc8-a39b-ca148aecb389"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV22ARIKC",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-22T21:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 14.5,
+    "last_price_dollars": "0.5200",
+    "latest_expiration_time": "2026-11-24T18:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.4800",
+    "no_bid_dollars": "0.4700",
+    "no_sub_title": "Kansas City wins by over 14.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-22T21:00:00Z",
+    "open_interest_fp": "1611.27",
+    "open_time": "2026-11-15T23:05:00Z",
+    "previous_price_dollars": "0.5500",
+    "previous_yes_ask_dollars": "0.5500",
+    "previous_yes_bid_dollars": "0.5300",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Kansas City wins by more than 14.5 points in the Arizona vs Kansas City Pro Football game originally scheduled for Nov 22, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC15",
+    "title": "Kansas City wins by over 14.5 points?",
+    "updated_time": "2026-11-15T23:05:00.727722Z",
+    "volume_24h_fp": "1086.93",
+    "volume_fp": "1764.50",
+    "yes_ask_dollars": "0.5300",
+    "yes_ask_size_fp": "322270.74",
+    "yes_bid_dollars": "0.5200",
+    "yes_bid_size_fp": "485117.63",
+    "yes_sub_title": "Kansas City wins by over 14.5 points"
+  },
+  "book": {
+    "no_dollars": [
+      [
+        "0.4700",
+        "322270.74"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.5200",
+        "485117.63"
+      ]
+    ]
+  },
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "residual_games": 1693,
+  "source_sha256": "b6e978b5ccac305732e63d972d9b99216acbb3f7e14e597dce37627b9c853b72",
+  "p_yes": 0.5522740696987596,
+  "offers": {
+    "yes": {
+      "ask": "0.5300",
+      "available": "322270.74",
+      "fee": "0.0175",
+      "probability": 0.5522740696987596,
+      "net_expected_dollars": 0.004774069698759598
+    },
+    "no": {
+      "ask": "0.4800",
+      "available": "485117.63",
+      "fee": "0.0175",
+      "probability": 0.4477259303012404,
+      "net_expected_dollars": -0.04977406969875958
+    }
+  },
+  "decision": "yes",
+  "contracts": 1
+}

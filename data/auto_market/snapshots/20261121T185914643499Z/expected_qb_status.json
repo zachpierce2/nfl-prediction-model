@@ -1,0 +1,6 @@
+{
+  "status": "EXPECTED_QB_UNAVAILABLE_AT_FORECAST",
+  "new_qb_forecasts": 0,
+  "error_type": "ValueError",
+  "reason": "Expected starter kickoff changed"
+}

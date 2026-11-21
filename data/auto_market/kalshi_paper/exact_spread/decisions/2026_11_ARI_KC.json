@@ -1,0 +1,238 @@
+{
+  "game": "2026_11_ARI_KC",
+  "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC17",
+  "forecast": {
+    "game_id": "2026_11_ARI_KC",
+    "quote_id": "b1f2d2203cb51080c2f42836",
+    "home_team": "KC",
+    "away_team": "ARI",
+    "sportsbook": "DraftKings",
+    "home_line": "-15.5",
+    "home_price_american": "-111",
+    "away_line": "15.5",
+    "away_price_american": "-108",
+    "adjustment": "0.18389500024841698",
+    "predicted_home_margin": "15.683895000248416",
+    "home_model_spread": "-15.683895000248416",
+    "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+    "kickoff_utc": "2026-11-22T18:00:00+00:00",
+    "forecast_created_at_utc": "2026-11-21T18:59:17.578633+00:00",
+    "history_last_scored_date": "2026-11-19",
+    "snapshot_id": "20261121T185914643499Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "44938384312",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "5d47697d2beec230d8682224314928a183a90bce7b8eaba41b304d907170d6e6",
+    "epa_inputs_sha256": "eb0492acc019e53eaff0d41a1dada2e1793053530e828e116d237c93632bbcbe",
+    "adj_off_epa_diff": "0.10843656176447025",
+    "adj_def_epa_diff": "0.10048846621488713",
+    "adj_off_success_diff": "0.034051777750202364",
+    "adj_def_success_diff": "0.023420900266140528"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-24T18:00:00Z",
+    "created_time": "2026-11-15T23:02:02.244856Z",
+    "custom_strike": {
+      "football_team": "64f72720-2e4a-4cc8-a39b-ca148aecb389"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV22ARIKC",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-22T21:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 16.5,
+    "last_price_dollars": "0.4800",
+    "latest_expiration_time": "2026-11-24T18:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5300",
+    "no_bid_dollars": "0.5200",
+    "no_sub_title": "Kansas City wins by over 16.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-22T21:00:00Z",
+    "open_interest_fp": "460786.73",
+    "open_time": "2026-11-15T23:05:00Z",
+    "previous_price_dollars": "0.5000",
+    "previous_yes_ask_dollars": "0.5000",
+    "previous_yes_bid_dollars": "0.4900",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Kansas City wins by more than 16.5 points in the Arizona vs Kansas City Pro Football game originally scheduled for Nov 22, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC17",
+    "title": "Kansas City wins by over 16.5 points?",
+    "updated_time": "2026-11-15T23:05:00.727722Z",
+    "volume_24h_fp": "417742.49",
+    "volume_fp": "486834.39",
+    "yes_ask_dollars": "0.4800",
+    "yes_ask_size_fp": "1072980.46",
+    "yes_bid_dollars": "0.4700",
+    "yes_bid_size_fp": "777597.57",
+    "yes_sub_title": "Kansas City wins by over 16.5 points"
+  },
+  "sign": 1,
+  "sportsbooks": [
+    {
+      "provider_event_id": "403a88701352da05b0710a9e883b803e",
+      "game_id": "2026_11_ARI_KC",
+      "home_team": "KC",
+      "away_team": "ARI",
+      "bookmaker_key": "fanduel",
+      "sportsbook": "FanDuel",
+      "home_line": -16.5,
+      "home_price_american": -105,
+      "away_line": 16.5,
+      "away_price_american": -115,
+      "provider_updated_at_utc": "2026-11-21T18:58:41+00:00",
+      "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+      "kickoff_utc": "2026-11-22T18:00:00+00:00",
+      "snapshot_id": "20261121T185914643499Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "146c7c8da942bff46c86a7af"
+    },
+    {
+      "provider_event_id": "403a88701352da05b0710a9e883b803e",
+      "game_id": "2026_11_ARI_KC",
+      "home_team": "KC",
+      "away_team": "ARI",
+      "bookmaker_key": "betonlineag",
+      "sportsbook": "BetOnline.ag",
+      "home_line": -16.5,
+      "home_price_american": -105,
+      "away_line": 16.5,
+      "away_price_american": -115,
+      "provider_updated_at_utc": "2026-11-21T18:58:03+00:00",
+      "captured_at_utc": "2026-11-21T18:59:14.643499+00:00",
+      "kickoff_utc": "2026-11-22T18:00:00+00:00",
+      "snapshot_id": "20261121T185914643499Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "8b92ff3b37dc1324c275edc5"
+    }
+  ],
+  "kalshi_book": {
+    "no_dollars": [
+      [
+        "0.5200",
+        "1072980.46"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.4700",
+        "777597.57"
+      ]
+    ]
+  },
+  "kalshi_observed_at": "2026-11-21T19:00:38.196616+00:00",
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "model_yes_probability": 0.46603662138216184,
+  "arms": {
+    "sportsbooks": {
+      "p_yes": 0.4891657638136511,
+      "offers": {
+        "yes": {
+          "ask": "0.4800",
+          "available": "1072980.46",
+          "fee": "0.0175",
+          "probability": 0.4891657638136511,
+          "net_expected_dollars": -0.008334236186348876
+        },
+        "no": {
+          "ask": "0.5300",
+          "available": "777597.57",
+          "fee": "0.0175",
+          "probability": 0.5108342361863489,
+          "net_expected_dollars": -0.03666576381365105
+        }
+      },
+      "decision": "pass"
+    },
+    "sportsbooks_epa_blend": {
+      "p_yes": 0.47760119259790645,
+      "offers": {
+        "yes": {
+          "ask": "0.4800",
+          "available": "1072980.46",
+          "fee": "0.0175",
+          "probability": 0.47760119259790645,
+          "net_expected_dollars": -0.019898807402093543
+        },
+        "no": {
+          "ask": "0.5300",
+          "available": "777597.57",
+          "fee": "0.0175",
+          "probability": 0.5223988074020935,
+          "net_expected_dollars": -0.02510119259790644
+        }
+      },
+      "decision": "pass"
+    }
+  },
+  "movement_v1": {
+    "status": "insufficient_books",
+    "direction": null,
+    "common_books": 2,
+    "up": 0,
+    "down": 0,
+    "median_change_pp": 0.0,
+    "previous_quotes": [
+      {
+        "provider_event_id": "403a88701352da05b0710a9e883b803e",
+        "game_id": "2026_11_ARI_KC",
+        "home_team": "KC",
+        "away_team": "ARI",
+        "bookmaker_key": "fanduel",
+        "sportsbook": "FanDuel",
+        "home_line": -16.5,
+        "home_price_american": -105,
+        "away_line": 16.5,
+        "away_price_american": -115,
+        "provider_updated_at_utc": "2026-11-21T15:55:48+00:00",
+        "captured_at_utc": "2026-11-21T15:56:10.947026+00:00",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "snapshot_id": "20261121T155610947026Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "1dc493303b93711472a53e72"
+      },
+      {
+        "provider_event_id": "403a88701352da05b0710a9e883b803e",
+        "game_id": "2026_11_ARI_KC",
+        "home_team": "KC",
+        "away_team": "ARI",
+        "bookmaker_key": "betonlineag",
+        "sportsbook": "BetOnline.ag",
+        "home_line": -16.5,
+        "home_price_american": -105,
+        "away_line": 16.5,
+        "away_price_american": -115,
+        "provider_updated_at_utc": "2026-11-21T15:55:49+00:00",
+        "captured_at_utc": "2026-11-21T15:56:10.947026+00:00",
+        "kickoff_utc": "2026-11-22T18:00:00+00:00",
+        "snapshot_id": "20261121T155610947026Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "7022d476360802f4d8817766"
+      }
+    ],
+    "current_quote_ids": [
+      "146c7c8da942bff46c86a7af",
+      "8b92ff3b37dc1324c275edc5"
+    ],
+    "previous_snapshot": "20261121T155610947026Z",
+    "current_snapshot": "20261121T185914643499Z",
+    "decision": "pass"
+  }
+}
