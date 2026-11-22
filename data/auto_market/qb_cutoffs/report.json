@@ -17,9 +17,9 @@
       "correct": 2
     },
     "90": {
-      "due": 9,
-      "captured": 1,
-      "quoted": 1,
+      "due": 11,
+      "captured": 3,
+      "quoted": 3,
       "graded_teams": 2,
       "named": 2,
       "correct": 2
@@ -183,6 +183,46 @@
         "360": {
           "home": "00-0036355",
           "away": "00-0030565"
+        }
+      }
+    },
+    {
+      "game": "2026_11_LV_DEN",
+      "ticker": "KXNFLSPREAD-26NOV22LVDEN-DEN11",
+      "side": "yes",
+      "earlier": 360,
+      "later": 90,
+      "earlier_cost": "0.5175",
+      "later_cost": "0.5475",
+      "cost_change": "0.0300",
+      "starters": {
+        "360": {
+          "home": "00-0039732",
+          "away": "00-0041562"
+        },
+        "90": {
+          "home": "00-0039732",
+          "away": "00-0041562"
+        }
+      }
+    },
+    {
+      "game": "2026_11_LV_DEN",
+      "ticker": "KXNFLSPREAD-26NOV22LVDEN-DEN11",
+      "side": "no",
+      "earlier": 360,
+      "later": 90,
+      "earlier_cost": "0.5275",
+      "later_cost": "0.4975",
+      "cost_change": "-0.0300",
+      "starters": {
+        "360": {
+          "home": "00-0039732",
+          "away": "00-0041562"
+        },
+        "90": {
+          "home": "00-0039732",
+          "away": "00-0041562"
         }
       }
     },
