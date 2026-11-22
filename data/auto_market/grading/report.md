@@ -1,12 +1,12 @@
 # NFL prospective grading
 
-Updated: 2026-11-21T10:27:19.771495+00:00
+Updated: 2026-11-22T10:26:58.598106+00:00
 
 | Metric | Result |
 |---|---:|
-| Forecasts | 3 |
+| Forecasts | 14 |
 | Graded games | 3 |
-| Pending | 0 |
+| Pending | 11 |
 | Hypothetical wins | 1 |
 | Hypothetical losses | 2 |
 | Pushes | 0 |
@@ -37,11 +37,11 @@ Earlier last observations: 0 (excluded from that average).
 
 Positive means the saved pick had a better spread than the later same-book quote. Each CSV row shows the quote time and minutes before kickoff. Three-hour polling may miss the closing price. These are proxies, not certified closing lines; odds/juice are shown separately and are not included in point value.
 
-Status counts: {"NEAR_KICKOFF_PROXY": 2, "NO_LATER_SAME_BOOK_QUOTE": 1}
+Status counts: {"NEAR_KICKOFF_PROXY": 2, "NO_LATER_SAME_BOOK_QUOTE": 1, "PENDING_KICKOFF": 11}
 
 ## Prospective core versus EPA (paired games only)
 
-Paired pregame forecasts: 1. Historical predictions are not backfilled.
+Paired pregame forecasts: 12. Historical predictions are not backfilled.
 
 | Model | Graded | Wins | Losses | Pushes | ATS win rate | MAE |
 |---|---:|---:|---:|---:|---:|---:|
@@ -59,6 +59,6 @@ All three models use the same games and sportsbook quotes.
 | last_observed | 1 | 1–0–0 | 100.00% | 10.3900 |
 | expected | 1 | 1–0–0 | 100.00% | 10.3900 |
 
-Complete forecast triples: 1. Starter identity changes: 0. Expected forecasts missing a control: 0. Controls missing EPA: 0.
+Complete forecast triples: 2. Starter identity changes: 0. Expected forecasts missing a control: 0. Controls missing EPA: 0.
 
 The changed-starter subgroup and pairwise disagreements are in summary.json; per-game IDs, picks, results and errors are in changed_picks.csv. A small early sample does not establish improvement.

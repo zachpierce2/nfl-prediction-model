@@ -1,7 +1,7 @@
 
 ## Prospective core versus EPA (paired games only)
 
-Paired pregame forecasts: 1. Historical predictions are not backfilled.
+Paired pregame forecasts: 12. Historical predictions are not backfilled.
 
 | Model | Graded | Wins | Losses | Pushes | ATS win rate | MAE |
 |---|---:|---:|---:|---:|---:|---:|

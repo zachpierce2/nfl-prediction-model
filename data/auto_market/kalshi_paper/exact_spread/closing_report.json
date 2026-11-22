@@ -61,10 +61,12 @@
       }
     },
     "same trade": {
-      "games": 0,
-      "closing_coverage": {},
+      "games": 1,
+      "closing_coverage": {
+        "pending": 1
+      },
       "sportsbooks": {
-        "trades": 0,
+        "trades": 1,
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
@@ -72,7 +74,7 @@
         "net_paper_dollars": null
       },
       "sportsbooks_epa_blend": {
-        "trades": 0,
+        "trades": 1,
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
@@ -81,8 +83,10 @@
       }
     },
     "both pass": {
-      "games": 0,
-      "closing_coverage": {},
+      "games": 9,
+      "closing_coverage": {
+        "pending": 9
+      },
       "sportsbooks": {
         "trades": 0,
         "usable_closes": 0,
@@ -101,5 +105,202 @@
       }
     }
   },
-  "games": []
+  "games": [
+    {
+      "game": "2026_11_ARI_KC",
+      "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC17",
+      "entry_time": "2026-11-21T19:00:38.196616+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_BAL_CAR",
+      "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
+      "entry_time": "2026-11-21T19:00:38.505968+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_JAX_NYG",
+      "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
+      "entry_time": "2026-11-21T21:54:39.465489+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_LV_DEN",
+      "ticker": "KXNFLSPREAD-26NOV22LVDEN-DEN11",
+      "entry_time": "2026-11-21T21:54:39.939038+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_MIA_BUF",
+      "ticker": "KXNFLSPREAD-26NOV22MIABUF-BUF17",
+      "entry_time": "2026-11-21T19:00:38.806428+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_MIN_SF",
+      "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+      "entry_time": "2026-11-22T01:22:39.194922+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_NYJ_LAC",
+      "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC4",
+      "entry_time": "2026-11-22T04:04:25.977074+00:00",
+      "group": "same trade",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "yes",
+          "net_paper_dollars": null,
+          "entry_cost": 0.4774,
+          "available": "468236.31",
+          "p_yes": 0.4809829691924101
+        },
+        "sportsbooks_epa_blend": {
+          "side": "yes",
+          "net_paper_dollars": null,
+          "entry_cost": 0.4774,
+          "available": "468236.31",
+          "p_yes": 0.4794164698295187
+        }
+      }
+    },
+    {
+      "game": "2026_11_PIT_PHI",
+      "ticker": "KXNFLSPREAD-26NOV22PITPHI-PIT4",
+      "entry_time": "2026-11-21T19:00:39.188093+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_TB_DET",
+      "ticker": "KXNFLSPREAD-26NOV22TBDET-DET5",
+      "entry_time": "2026-11-21T19:00:39.527958+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_11_TEN_DAL",
+      "ticker": "KXNFLSPREAD-26NOV22TENDAL-DAL8",
+      "entry_time": "2026-11-21T19:00:40.026204+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    }
+  ]
 }

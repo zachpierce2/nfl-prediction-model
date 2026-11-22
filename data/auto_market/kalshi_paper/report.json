@@ -44,9 +44,9 @@
     "kalshi_midpoint_brier": 0.29702499999999993,
     "model_advantage": 0.011276971827988314
   },
-  "recorded": 1,
+  "recorded": 12,
   "graded": 1,
-  "awaiting_binary_settlement": 0,
+  "awaiting_binary_settlement": 11,
   "graded_paper_trades": 0,
   "graded_passes": 1,
   "net_paper_dollars": null,
