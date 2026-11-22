@@ -1,0 +1,349 @@
+{
+  "game": "2026_11_MIN_SF",
+  "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+  "forecast": {
+    "game_id": "2026_11_MIN_SF",
+    "quote_id": "aa2dbc95d4b01170fc7475a9",
+    "home_team": "SF",
+    "away_team": "MIN",
+    "sportsbook": "DraftKings",
+    "home_line": "-3.5",
+    "home_price_american": "-101",
+    "away_line": "3.5",
+    "away_price_american": "-118",
+    "adjustment": "0.4923612309754477",
+    "predicted_home_margin": "3.9923612309754475",
+    "home_model_spread": "-3.9923612309754475",
+    "captured_at_utc": "2026-11-22T01:21:07.049004+00:00",
+    "kickoff_utc": "2026-11-23T01:20:00+00:00",
+    "forecast_created_at_utc": "2026-11-22T01:21:09.866011+00:00",
+    "history_last_scored_date": "2026-11-19",
+    "snapshot_id": "20261122T012107049004Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "44970987657",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "ca2f665e4216f6fc0bb2a0e869a851c24884ff2a45f2b548b14085fbc69fee35",
+    "epa_inputs_sha256": "1c7aae2b064d211897b24151d549091acad5eb42a3fa8b32122f2c4e62fb3ce7",
+    "adj_off_epa_diff": "0.1950594639683349",
+    "adj_def_epa_diff": "-0.09195158698913065",
+    "adj_off_success_diff": "0.09341110426730406",
+    "adj_def_success_diff": "-0.04429737835163622"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-25T01:20:00Z",
+    "created_time": "2026-11-16T02:01:24.035369Z",
+    "custom_strike": {
+      "football_team": "bfaa7639-8bdf-47b2-8d28-98d2cdbefbcb"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV22MINSF",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-23T04:20:00Z",
+    "expiration_value": "",
+    "floor_strike": 3.5,
+    "last_price_dollars": "0.4900",
+    "latest_expiration_time": "2026-11-25T01:20:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5300",
+    "no_bid_dollars": "0.5100",
+    "no_sub_title": "San Francisco wins by over 3.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-23T04:20:00Z",
+    "open_interest_fp": "110978.86",
+    "open_time": "2026-11-16T02:06:00Z",
+    "previous_price_dollars": "0.4900",
+    "previous_yes_ask_dollars": "0.4900",
+    "previous_yes_bid_dollars": "0.4700",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If San Francisco wins by more than 3.5 points in the Minnesota vs San Francisco Pro Football game originally scheduled for Nov 22, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+    "title": "San Francisco wins by over 3.5 points?",
+    "updated_time": "2026-11-16T02:06:00.799593Z",
+    "volume_24h_fp": "26767.75",
+    "volume_fp": "123497.33",
+    "yes_ask_dollars": "0.4900",
+    "yes_ask_size_fp": "744623.94",
+    "yes_bid_dollars": "0.4700",
+    "yes_bid_size_fp": "761379.18",
+    "yes_sub_title": "San Francisco wins by over 3.5 points"
+  },
+  "sign": 1,
+  "sportsbooks": [
+    {
+      "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+      "game_id": "2026_11_MIN_SF",
+      "home_team": "SF",
+      "away_team": "MIN",
+      "bookmaker_key": "draftkings",
+      "sportsbook": "DraftKings",
+      "home_line": -3.5,
+      "home_price_american": -101,
+      "away_line": 3.5,
+      "away_price_american": -118,
+      "provider_updated_at_utc": "2026-11-22T01:20:52+00:00",
+      "captured_at_utc": "2026-11-22T01:21:07.049004+00:00",
+      "kickoff_utc": "2026-11-23T01:20:00+00:00",
+      "snapshot_id": "20261122T012107049004Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "aa2dbc95d4b01170fc7475a9"
+    },
+    {
+      "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+      "game_id": "2026_11_MIN_SF",
+      "home_team": "SF",
+      "away_team": "MIN",
+      "bookmaker_key": "fanduel",
+      "sportsbook": "FanDuel",
+      "home_line": -3.5,
+      "home_price_american": 100,
+      "away_line": 3.5,
+      "away_price_american": -120,
+      "provider_updated_at_utc": "2026-11-22T01:20:38+00:00",
+      "captured_at_utc": "2026-11-22T01:21:07.049004+00:00",
+      "kickoff_utc": "2026-11-23T01:20:00+00:00",
+      "snapshot_id": "20261122T012107049004Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "e5f55d8d603894fcd3a8615f"
+    },
+    {
+      "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+      "game_id": "2026_11_MIN_SF",
+      "home_team": "SF",
+      "away_team": "MIN",
+      "bookmaker_key": "betonlineag",
+      "sportsbook": "BetOnline.ag",
+      "home_line": -3.5,
+      "home_price_american": -102,
+      "away_line": 3.5,
+      "away_price_american": -118,
+      "provider_updated_at_utc": "2026-11-22T01:20:53+00:00",
+      "captured_at_utc": "2026-11-22T01:21:07.049004+00:00",
+      "kickoff_utc": "2026-11-23T01:20:00+00:00",
+      "snapshot_id": "20261122T012107049004Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "3b5b215af793350cfed28064"
+    },
+    {
+      "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+      "game_id": "2026_11_MIN_SF",
+      "home_team": "SF",
+      "away_team": "MIN",
+      "bookmaker_key": "betrivers",
+      "sportsbook": "BetRivers",
+      "home_line": -3.5,
+      "home_price_american": -103,
+      "away_line": 3.5,
+      "away_price_american": -120,
+      "provider_updated_at_utc": "2026-11-22T01:20:52+00:00",
+      "captured_at_utc": "2026-11-22T01:21:07.049004+00:00",
+      "kickoff_utc": "2026-11-23T01:20:00+00:00",
+      "snapshot_id": "20261122T012107049004Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "30bc752c33e887aaabe87413"
+    },
+    {
+      "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+      "game_id": "2026_11_MIN_SF",
+      "home_team": "SF",
+      "away_team": "MIN",
+      "bookmaker_key": "bovada",
+      "sportsbook": "Bovada",
+      "home_line": -3.5,
+      "home_price_american": 100,
+      "away_line": 3.5,
+      "away_price_american": -120,
+      "provider_updated_at_utc": "2026-11-22T01:19:39+00:00",
+      "captured_at_utc": "2026-11-22T01:21:07.049004+00:00",
+      "kickoff_utc": "2026-11-23T01:20:00+00:00",
+      "snapshot_id": "20261122T012107049004Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "9d6a5eb815aed9efb8cb2035"
+    }
+  ],
+  "kalshi_book": {
+    "no_dollars": [
+      [
+        "0.5100",
+        "744623.94"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.4700",
+        "761379.18"
+      ]
+    ]
+  },
+  "kalshi_observed_at": "2026-11-22T01:22:39.194922+00:00",
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "model_yes_probability": 0.5221500295333728,
+  "arms": {
+    "sportsbooks": {
+      "p_yes": 0.4814150778380269,
+      "offers": {
+        "yes": {
+          "ask": "0.4900",
+          "available": "744623.94",
+          "fee": "0.0175",
+          "probability": 0.4814150778380269,
+          "net_expected_dollars": -0.026084922161973056
+        },
+        "no": {
+          "ask": "0.5300",
+          "available": "761379.18",
+          "fee": "0.0175",
+          "probability": 0.5185849221619732,
+          "net_expected_dollars": -0.028915077838026826
+        }
+      },
+      "decision": "pass"
+    },
+    "sportsbooks_epa_blend": {
+      "p_yes": 0.5017825536856998,
+      "offers": {
+        "yes": {
+          "ask": "0.4900",
+          "available": "744623.94",
+          "fee": "0.0175",
+          "probability": 0.5017825536856998,
+          "net_expected_dollars": -0.005717446314300156
+        },
+        "no": {
+          "ask": "0.5300",
+          "available": "761379.18",
+          "fee": "0.0175",
+          "probability": 0.4982174463143002,
+          "net_expected_dollars": -0.04928255368569978
+        }
+      },
+      "decision": "pass"
+    }
+  },
+  "movement_v1": {
+    "status": "comparable",
+    "direction": null,
+    "common_books": 5,
+    "up": 0,
+    "down": 0,
+    "median_change_pp": 0.0,
+    "previous_quotes": [
+      {
+        "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+        "game_id": "2026_11_MIN_SF",
+        "home_team": "SF",
+        "away_team": "MIN",
+        "bookmaker_key": "draftkings",
+        "sportsbook": "DraftKings",
+        "home_line": -3.5,
+        "home_price_american": -101,
+        "away_line": 3.5,
+        "away_price_american": -118,
+        "provider_updated_at_utc": "2026-11-21T21:52:26+00:00",
+        "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+        "kickoff_utc": "2026-11-23T01:20:00+00:00",
+        "snapshot_id": "20261121T215310512380Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "eb47e71f6485dce0e98212d4"
+      },
+      {
+        "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+        "game_id": "2026_11_MIN_SF",
+        "home_team": "SF",
+        "away_team": "MIN",
+        "bookmaker_key": "fanduel",
+        "sportsbook": "FanDuel",
+        "home_line": -3.5,
+        "home_price_american": 100,
+        "away_line": 3.5,
+        "away_price_american": -120,
+        "provider_updated_at_utc": "2026-11-21T21:52:47+00:00",
+        "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+        "kickoff_utc": "2026-11-23T01:20:00+00:00",
+        "snapshot_id": "20261121T215310512380Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "7534d7fb7716374b244d2815"
+      },
+      {
+        "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+        "game_id": "2026_11_MIN_SF",
+        "home_team": "SF",
+        "away_team": "MIN",
+        "bookmaker_key": "betonlineag",
+        "sportsbook": "BetOnline.ag",
+        "home_line": -3.5,
+        "home_price_american": -102,
+        "away_line": 3.5,
+        "away_price_american": -118,
+        "provider_updated_at_utc": "2026-11-21T21:52:46+00:00",
+        "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+        "kickoff_utc": "2026-11-23T01:20:00+00:00",
+        "snapshot_id": "20261121T215310512380Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "9c646e30c9c0fcbb960672a7"
+      },
+      {
+        "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+        "game_id": "2026_11_MIN_SF",
+        "home_team": "SF",
+        "away_team": "MIN",
+        "bookmaker_key": "betrivers",
+        "sportsbook": "BetRivers",
+        "home_line": -3.5,
+        "home_price_american": -103,
+        "away_line": 3.5,
+        "away_price_american": -120,
+        "provider_updated_at_utc": "2026-11-21T21:52:10+00:00",
+        "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+        "kickoff_utc": "2026-11-23T01:20:00+00:00",
+        "snapshot_id": "20261121T215310512380Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "606420a843f4639f23bc9784"
+      },
+      {
+        "provider_event_id": "60e1d27b083a335b722c2c852ea85612",
+        "game_id": "2026_11_MIN_SF",
+        "home_team": "SF",
+        "away_team": "MIN",
+        "bookmaker_key": "bovada",
+        "sportsbook": "Bovada",
+        "home_line": -3.5,
+        "home_price_american": 100,
+        "away_line": 3.5,
+        "away_price_american": -120,
+        "provider_updated_at_utc": "2026-11-21T21:52:30+00:00",
+        "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+        "kickoff_utc": "2026-11-23T01:20:00+00:00",
+        "snapshot_id": "20261121T215310512380Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "2b188551736bd21747eded0a"
+      }
+    ],
+    "current_quote_ids": [
+      "aa2dbc95d4b01170fc7475a9",
+      "e5f55d8d603894fcd3a8615f",
+      "3b5b215af793350cfed28064",
+      "30bc752c33e887aaabe87413",
+      "9d6a5eb815aed9efb8cb2035"
+    ],
+    "previous_snapshot": "20261121T215310512380Z",
+    "current_snapshot": "20261122T012107049004Z",
+    "decision": "pass"
+  }
+}

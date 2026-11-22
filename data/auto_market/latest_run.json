@@ -1,58 +1,58 @@
 {
-  "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
-  "snapshot_id": "20261121T215310512380Z",
+  "captured_at_utc": "2026-11-22T01:21:07.049004+00:00",
+  "snapshot_id": "20261122T012107049004Z",
   "provider_events": 28,
   "exact_line_shadow": {
-    "eligible": 3,
-    "saved": 3
+    "eligible": 1,
+    "saved": 1
   },
   "opening_comparison": {
     "first_seen": 0,
     "saved": 0
   },
   "consensus_shadow": {
-    "primary_forecasts": 3,
-    "paired": 3
+    "primary_forecasts": 1,
+    "paired": 1
   },
   "total_shadow": {
-    "paired": 3,
+    "paired": 1,
     "missing_total": 0,
-    "new_overtime_pairs": 3,
-    "new_game_state_pairs": 3
+    "new_overtime_pairs": 1,
+    "new_game_state_pairs": 1
   },
   "eligible_quotes": 17,
-  "new_forecasts": 3,
+  "new_forecasts": 1,
   "epa_shadow": {
     "status": "PAIRED_PREGAME_FORECASTS_SAVED",
-    "new_epa_forecasts": 3,
+    "new_epa_forecasts": 1,
     "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1"
   },
   "advanced_shadow": {
     "status": "ADVANCED_SHADOW_RECORDED",
-    "feature_cutoff_utc": "2026-11-21T21:53:16.369214+00:00",
+    "feature_cutoff_utc": "2026-11-22T01:21:22.782703+00:00",
     "arms": {
       "epa_baseline": {
-        "new_forecasts": 3,
+        "new_forecasts": 1,
         "missing_feature_games": []
       },
       "epa_pressure": {
-        "new_forecasts": 3,
+        "new_forecasts": 1,
         "missing_feature_games": []
       },
       "epa_explosive": {
-        "new_forecasts": 3,
+        "new_forecasts": 1,
         "missing_feature_games": []
       },
       "epa_special": {
-        "new_forecasts": 3,
+        "new_forecasts": 1,
         "missing_feature_games": []
       },
       "epa_injury": {
-        "new_forecasts": 3,
+        "new_forecasts": 1,
         "missing_feature_games": []
       },
       "epa_all": {
-        "new_forecasts": 3,
+        "new_forecasts": 1,
         "missing_feature_games": []
       }
     }
@@ -61,9 +61,7 @@
     "status": "MISSING_CONFIRMED_STARTERS",
     "new_qb_forecasts": 0,
     "missing_confirmation_games": [
-      "2026_11_JAX_NYG",
-      "2026_11_LV_DEN",
-      "2026_11_NYJ_LAC"
+      "2026_11_MIN_SF"
     ],
     "confirmation_rows": 0
   },
@@ -72,21 +70,23 @@
     "new_qb_forecasts": 0,
     "confirmation_rows": 0,
     "missing_confirmation_games": [
-      "2026_11_JAX_NYG",
-      "2026_11_LV_DEN",
-      "2026_11_NYJ_LAC"
+      "2026_11_MIN_SF"
     ]
   },
   "expected_qb_shadow": {
-    "status": "EXPECTED_QB_UNAVAILABLE_AT_FORECAST",
-    "new_qb_forecasts": 0,
-    "error_type": "ValueError",
-    "reason": "Expected starter kickoff changed"
+    "control_comparison": {
+      "new_last_observed_forecasts": 1,
+      "missing_prior_identity_games": []
+    },
+    "status": "EXPECTED_QB_SHADOW_SAVED",
+    "new_qb_forecasts": 1,
+    "missing_confirmation_games": [],
+    "confirmation_rows": 54
   },
   "skipped": [],
-  "remaining_credits": "370",
+  "remaining_credits": "368",
   "last_request_credits": "2",
-  "schedule_sha256": "881d5134254c608633fbaae4753374b86a9b95b0e1cccb2c452f2fb9b5421f6f",
-  "odds_sha256": "a101760ea3bcafda443c0c789e35bcbf54e965c8eb8adc342fc0b1ba8c97d91b",
+  "schedule_sha256": "5d8bbb64e07bace551ec4d74282a576b333e3d3228ef89a4e1c9c8435c76f368",
+  "odds_sha256": "415f9566b1baa5de02a5c55a09da39bca058503c1e98a18b5349cbcd2abaee73",
   "policy": "First automatic quote within 24h of kickoff; fixed bookmaker priority; same-day scores excluded"
 }
