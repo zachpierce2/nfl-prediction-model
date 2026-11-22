@@ -1,0 +1,180 @@
+{
+  "game": "2026_11_NYJ_LAC",
+  "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC4",
+  "forecast": {
+    "game_id": "2026_11_NYJ_LAC",
+    "quote_id": "9396af49beb32be1604294de",
+    "home_team": "LAC",
+    "away_team": "NYJ",
+    "sportsbook": "DraftKings",
+    "home_line": "-3.0",
+    "home_price_american": "-115",
+    "away_line": "3.0",
+    "away_price_american": "-105",
+    "adjustment": "-0.030561292519742253",
+    "predicted_home_margin": "2.9694387074802577",
+    "home_model_spread": "-2.9694387074802577",
+    "captured_at_utc": "2026-11-21T21:53:10.512380+00:00",
+    "kickoff_utc": "2026-11-22T21:05:00+00:00",
+    "forecast_created_at_utc": "2026-11-21T21:53:13.751350+00:00",
+    "history_last_scored_date": "2026-11-19",
+    "snapshot_id": "20261121T215310512380Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "44953756477",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "67806b9b3c391cf83d8296ed55c30a49448695262db4037b1c1756f08276a13a",
+    "epa_inputs_sha256": "3c7eda072f6eda85605cc36975aba8ee0d5117774181b319fb763b2c7028b41c",
+    "adj_off_epa_diff": "-0.09298832767512674",
+    "adj_def_epa_diff": "0.07927523429501207",
+    "adj_off_success_diff": "-0.06704846307808057",
+    "adj_def_success_diff": "0.027509467109098747"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-24T21:05:00Z",
+    "created_time": "2026-11-15T23:04:29.90391Z",
+    "custom_strike": {
+      "football_team": "611e3786-3bfe-4919-bbd5-bc70fc13d827"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV22NYJLAC",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-23T00:05:00Z",
+    "expiration_value": "",
+    "floor_strike": 3.5,
+    "last_price_dollars": "0.4600",
+    "latest_expiration_time": "2026-11-24T21:05:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5500",
+    "no_bid_dollars": "0.5400",
+    "no_sub_title": "Los Angeles C wins by over 3.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-23T00:05:00Z",
+    "open_interest_fp": "40238.20",
+    "open_time": "2026-11-15T23:05:00Z",
+    "previous_price_dollars": "0.4500",
+    "previous_yes_ask_dollars": "0.4600",
+    "previous_yes_bid_dollars": "0.4500",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Los Angeles C wins by more than 3.5 points in the New York J vs Los Angeles C Pro Football game originally scheduled for Nov 22, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC4",
+    "title": "Los Angeles C wins by over 3.5 points?",
+    "updated_time": "2026-11-15T23:05:00.727722Z",
+    "volume_24h_fp": "7527.02",
+    "volume_fp": "54738.64",
+    "yes_ask_dollars": "0.4600",
+    "yes_ask_size_fp": "468236.31",
+    "yes_bid_dollars": "0.4500",
+    "yes_bid_size_fp": "813006.56",
+    "yes_sub_title": "Los Angeles C wins by over 3.5 points"
+  },
+  "sign": 1,
+  "sportsbooks": [
+    {
+      "provider_event_id": "4b20b742b6168aaca4f25d87f11b1526",
+      "game_id": "2026_11_NYJ_LAC",
+      "home_team": "LAC",
+      "away_team": "NYJ",
+      "bookmaker_key": "betrivers",
+      "sportsbook": "BetRivers",
+      "home_line": -3.5,
+      "home_price_american": -103,
+      "away_line": 3.5,
+      "away_price_american": -121,
+      "provider_updated_at_utc": "2026-11-22T04:03:16+00:00",
+      "captured_at_utc": "2026-11-22T04:04:22.208872+00:00",
+      "kickoff_utc": "2026-11-22T21:05:00+00:00",
+      "snapshot_id": "20261122T040422208872Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "72cddcb177a2a7efb6b5bce9"
+    }
+  ],
+  "kalshi_book": {
+    "no_dollars": [
+      [
+        "0.5400",
+        "468236.31"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.4500",
+        "813006.56"
+      ]
+    ]
+  },
+  "kalshi_observed_at": "2026-11-22T04:04:25.977074+00:00",
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "model_yes_probability": 0.4778499704666273,
+  "arms": {
+    "sportsbooks": {
+      "p_yes": 0.4809829691924101,
+      "offers": {
+        "yes": {
+          "ask": "0.4600",
+          "available": "468236.31",
+          "fee": "0.0174",
+          "probability": 0.4809829691924101,
+          "net_expected_dollars": 0.003582969192410135
+        },
+        "no": {
+          "ask": "0.5500",
+          "available": "813006.56",
+          "fee": "0.0174",
+          "probability": 0.5190170308075899,
+          "net_expected_dollars": -0.04838296919241014
+        }
+      },
+      "decision": "yes"
+    },
+    "sportsbooks_epa_blend": {
+      "p_yes": 0.4794164698295187,
+      "offers": {
+        "yes": {
+          "ask": "0.4600",
+          "available": "468236.31",
+          "fee": "0.0174",
+          "probability": 0.4794164698295187,
+          "net_expected_dollars": 0.0020164698295186967
+        },
+        "no": {
+          "ask": "0.5500",
+          "available": "813006.56",
+          "fee": "0.0174",
+          "probability": 0.5205835301704813,
+          "net_expected_dollars": -0.0468164698295187
+        }
+      },
+      "decision": "yes"
+    }
+  },
+  "movement_v1": {
+    "status": "insufficient_books",
+    "direction": null,
+    "common_books": 0,
+    "up": 0,
+    "down": 0,
+    "median_change_pp": null,
+    "previous_quotes": [],
+    "current_quote_ids": [],
+    "previous_snapshot": "20261122T012107049004Z",
+    "current_snapshot": "20261122T040422208872Z",
+    "decision": "pass"
+  }
+}
