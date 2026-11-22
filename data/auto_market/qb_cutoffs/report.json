@@ -9,9 +9,9 @@
       "correct": 2
     },
     "360": {
-      "due": 8,
-      "captured": 1,
-      "quoted": 1,
+      "due": 11,
+      "captured": 4,
+      "quoted": 4,
       "graded_teams": 2,
       "named": 2,
       "correct": 2
@@ -143,6 +143,46 @@
         "90": {
           "home": "00-0039163",
           "away": "00-0035710"
+        }
+      }
+    },
+    {
+      "game": "2026_11_NYJ_LAC",
+      "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC3",
+      "side": "yes",
+      "earlier": 1440,
+      "later": 360,
+      "earlier_cost": "0.5773",
+      "later_cost": "0.5773",
+      "cost_change": "0.0000",
+      "starters": {
+        "1440": {
+          "home": "00-0036355",
+          "away": "00-0030565"
+        },
+        "360": {
+          "home": "00-0036355",
+          "away": "00-0030565"
+        }
+      }
+    },
+    {
+      "game": "2026_11_NYJ_LAC",
+      "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC3",
+      "side": "no",
+      "earlier": 1440,
+      "later": 360,
+      "earlier_cost": "0.4674",
+      "later_cost": "0.4674",
+      "cost_change": "0.0000",
+      "starters": {
+        "1440": {
+          "home": "00-0036355",
+          "away": "00-0030565"
+        },
+        "360": {
+          "home": "00-0036355",
+          "away": "00-0030565"
         }
       }
     }
