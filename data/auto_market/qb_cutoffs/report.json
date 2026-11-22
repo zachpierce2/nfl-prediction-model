@@ -9,15 +9,15 @@
       "correct": 2
     },
     "360": {
-      "due": 11,
-      "captured": 3,
-      "quoted": 3,
+      "due": 12,
+      "captured": 4,
+      "quoted": 4,
       "graded_teams": 2,
       "named": 2,
       "correct": 2
     },
     "90": {
-      "due": 8,
+      "due": 9,
       "captured": 1,
       "quoted": 1,
       "graded_teams": 2,
@@ -183,6 +183,46 @@
         "360": {
           "home": "00-0036355",
           "away": "00-0030565"
+        }
+      }
+    },
+    {
+      "game": "2026_11_MIN_SF",
+      "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+      "side": "yes",
+      "earlier": 1440,
+      "later": 360,
+      "earlier_cost": "0.5075",
+      "later_cost": "0.5275",
+      "cost_change": "0.0200",
+      "starters": {
+        "1440": {
+          "home": "00-0037834",
+          "away": "00-0029604"
+        },
+        "360": {
+          "home": "00-0037834",
+          "away": "00-0029604"
+        }
+      }
+    },
+    {
+      "game": "2026_11_MIN_SF",
+      "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+      "side": "no",
+      "earlier": 1440,
+      "later": 360,
+      "earlier_cost": "0.5475",
+      "later_cost": "0.5175",
+      "cost_change": "-0.0300",
+      "starters": {
+        "1440": {
+          "home": "00-0037834",
+          "away": "00-0029604"
+        },
+        "360": {
+          "home": "00-0037834",
+          "away": "00-0029604"
         }
       }
     }
