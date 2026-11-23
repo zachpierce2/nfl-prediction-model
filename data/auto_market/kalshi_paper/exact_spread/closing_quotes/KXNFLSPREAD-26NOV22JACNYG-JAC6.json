@@ -1,0 +1,10 @@
+{
+  "status": "usable",
+  "end_period_ts": 1795382640,
+  "yes_bid": "0.5400",
+  "yes_ask": "0.5500",
+  "yes_midpoint": "0.5450",
+  "seconds_before_kickoff": 60.0,
+  "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
+  "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22JACNYG-JAC6/candlesticks?start_ts=1795382400&end_ts=1795382699&period_interval=1"
+}

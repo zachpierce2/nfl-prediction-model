@@ -1,25 +1,25 @@
 {
   "coverage": {
-    "insufficient_books": 3,
+    "insufficient_books": 5,
     "comparable": 7
   },
   "all_entries": {
-    "games": 10,
+    "games": 12,
     "baseline": {
       "trades": 1,
-      "usable_closes": 0,
-      "mean_advantage_cents": null,
+      "usable_closes": 1,
+      "mean_advantage_cents": -2.24,
       "beat_close": 0,
-      "settled_games": 0,
-      "net_paper_dollars": null
+      "settled_games": 11,
+      "net_paper_dollars": -0.4774
     },
     "filtered": {
       "trades": 0,
       "usable_closes": 0,
       "mean_advantage_cents": null,
       "beat_close": 0,
-      "settled_games": 0,
-      "net_paper_dollars": null
+      "settled_games": 11,
+      "net_paper_dollars": 0
     }
   },
   "three_book_pairs": {
@@ -29,16 +29,16 @@
       "usable_closes": 0,
       "mean_advantage_cents": null,
       "beat_close": 0,
-      "settled_games": 0,
-      "net_paper_dollars": null
+      "settled_games": 7,
+      "net_paper_dollars": 0
     },
     "filtered": {
       "trades": 0,
       "usable_closes": 0,
       "mean_advantage_cents": null,
       "beat_close": 0,
-      "settled_games": 0,
-      "net_paper_dollars": null
+      "settled_games": 7,
+      "net_paper_dollars": 0
     }
   },
   "skipped_baseline_trades": {
@@ -65,15 +65,15 @@
       "game": "2026_11_ARI_KC",
       "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC17",
       "status": "insufficient_books",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -81,6 +81,22 @@
       "game": "2026_11_BAL_CAR",
       "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
       "status": "comparable",
+      "close_status": "usable",
+      "baseline": {
+        "side": "pass",
+        "net_dollars": 0,
+        "advantage_cents": null
+      },
+      "filtered": {
+        "side": "pass",
+        "net_dollars": 0,
+        "advantage_cents": null
+      }
+    },
+    {
+      "game": "2026_11_CIN_WAS",
+      "ticker": "KXNFLSPREAD-26NOV23CINWAS-CIN6",
+      "status": "insufficient_books",
       "close_status": "pending",
       "baseline": {
         "side": "pass",
@@ -97,15 +113,15 @@
       "game": "2026_11_JAX_NYG",
       "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
       "status": "insufficient_books",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -113,15 +129,15 @@
       "game": "2026_11_LV_DEN",
       "ticker": "KXNFLSPREAD-26NOV22LVDEN-DEN11",
       "status": "comparable",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -129,15 +145,15 @@
       "game": "2026_11_MIA_BUF",
       "ticker": "KXNFLSPREAD-26NOV22MIABUF-BUF17",
       "status": "comparable",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -145,15 +161,31 @@
       "game": "2026_11_MIN_SF",
       "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
       "status": "comparable",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
+        "advantage_cents": null
+      }
+    },
+    {
+      "game": "2026_11_NO_CHI",
+      "ticker": "KXNFLSPREAD-26NOV22NOCHI-CHI11",
+      "status": "insufficient_books",
+      "close_status": "usable",
+      "baseline": {
+        "side": "pass",
+        "net_dollars": 0,
+        "advantage_cents": null
+      },
+      "filtered": {
+        "side": "pass",
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -161,15 +193,15 @@
       "game": "2026_11_NYJ_LAC",
       "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC4",
       "status": "insufficient_books",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "yes",
-        "net_dollars": null,
-        "advantage_cents": null
+        "net_dollars": -0.4774,
+        "advantage_cents": -2.24
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -177,15 +209,15 @@
       "game": "2026_11_PIT_PHI",
       "ticker": "KXNFLSPREAD-26NOV22PITPHI-PIT4",
       "status": "comparable",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -193,15 +225,15 @@
       "game": "2026_11_TB_DET",
       "ticker": "KXNFLSPREAD-26NOV22TBDET-DET5",
       "status": "comparable",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },
@@ -209,15 +241,15 @@
       "game": "2026_11_TEN_DAL",
       "ticker": "KXNFLSPREAD-26NOV22TENDAL-DAL8",
       "status": "comparable",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     }

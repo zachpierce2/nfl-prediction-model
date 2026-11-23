@@ -1,57 +1,131 @@
 {
   "agreement_vs_blend": {
-    "comparable": 1,
+    "comparable": 12,
     "excluded_settlements": 0,
     "agreement_v1": {
       "trades": 0,
-      "passes": 1,
+      "passes": 12,
       "net_paper_dollars": 0.0,
-      "brier": 0.2913592345976396
+      "brier": 0.26189368808109487
     },
     "blend": {
       "trades": 0,
-      "passes": 1,
+      "passes": 12,
       "net_paper_dollars": 0.0,
-      "brier": 0.2913592345976396
+      "brier": 0.2591050112161327
     }
   },
   "three_way": {
-    "comparable": 1,
+    "comparable": 12,
     "excluded_settlements": 0,
     "model": {
-      "trades": 0,
-      "passes": 1,
-      "net_paper_dollars": 0.0,
-      "brier": 0.2857480281720116
+      "trades": 4,
+      "passes": 8,
+      "net_paper_dollars": 0.9501,
+      "brier": 0.25489027645539525
     },
     "market": {
       "trades": 0,
-      "passes": 1,
+      "passes": 12,
       "net_paper_dollars": 0.0,
-      "brier": 0.29702499999999993
+      "brier": 0.26355625000000005
     },
     "blend": {
       "trades": 0,
-      "passes": 1,
+      "passes": 12,
       "net_paper_dollars": 0.0,
-      "brier": 0.2913592345976396
+      "brier": 0.2591050112161327
     }
   },
   "probability_benchmark": {
-    "comparable": 1,
+    "comparable": 12,
     "excluded": 0,
-    "model_brier": 0.2857480281720116,
-    "kalshi_midpoint_brier": 0.29702499999999993,
-    "model_advantage": 0.011276971827988314
+    "model_brier": 0.25489027645539525,
+    "kalshi_midpoint_brier": 0.26355625000000005,
+    "model_advantage": 0.0086659735446048
   },
-  "recorded": 12,
-  "graded": 1,
-  "awaiting_binary_settlement": 11,
-  "graded_paper_trades": 0,
-  "graded_passes": 1,
-  "net_paper_dollars": null,
-  "mean_brier": 0.2857480281720116,
+  "recorded": 13,
+  "graded": 12,
+  "awaiting_binary_settlement": 1,
+  "graded_paper_trades": 4,
+  "graded_passes": 8,
+  "net_paper_dollars": 0.9501,
+  "mean_brier": 0.25489027645539525,
   "games": [
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5522740696987596,
+          "decision": "yes",
+          "net_dollars": 0.4525,
+          "brier": 0.2004585086641112
+        },
+        "market": {
+          "p_yes": 0.525,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.225625
+        },
+        "blend": {
+          "p_yes": 0.5386370348493799,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.21285578561257235
+        },
+        "agreement_v1": {
+          "p_yes": 0.5386370348493799,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.21285578561257235
+        }
+      },
+      "model_yes_probability": 0.5522740696987596,
+      "kalshi_yes_midpoint": 0.525,
+      "midpoint_brier": 0.225625,
+      "game": "2026_11_ARI_KC",
+      "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC15",
+      "decision": "yes",
+      "result": "yes",
+      "net_dollars": 0.4525,
+      "brier": 0.2004585086641112
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5221500295333728,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.272640653341702
+        },
+        "market": {
+          "p_yes": 0.525,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.275625
+        },
+        "blend": {
+          "p_yes": 0.5235750147666864,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.27413079608793595
+        },
+        "agreement_v1": {
+          "p_yes": 0.5235750147666864,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.27413079608793595
+        }
+      },
+      "model_yes_probability": 0.5221500295333728,
+      "kalshi_yes_midpoint": 0.525,
+      "midpoint_brier": 0.275625,
+      "game": "2026_11_BAL_CAR",
+      "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
+      "decision": "pass",
+      "result": "no",
+      "net_dollars": 0.0,
+      "brier": 0.272640653341702
+    },
     {
       "comparison": {
         "model": {
@@ -88,6 +162,339 @@
       "result": "yes",
       "net_dollars": 0.0,
       "brier": 0.2857480281720116
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5310100413467218,
+          "decision": "yes",
+          "net_dollars": -0.5275,
+          "brier": 0.28197166401104723
+        },
+        "market": {
+          "p_yes": 0.505,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.255025
+        },
+        "blend": {
+          "p_yes": 0.5180050206733608,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26832920144280903
+        },
+        "agreement_v1": {
+          "p_yes": 0.5180050206733608,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26832920144280903
+        }
+      },
+      "model_yes_probability": 0.5310100413467218,
+      "kalshi_yes_midpoint": 0.505,
+      "midpoint_brier": 0.255025,
+      "game": "2026_11_JAX_NYG",
+      "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
+      "decision": "yes",
+      "result": "no",
+      "net_dollars": -0.5275,
+      "brier": 0.28197166401104723
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5008860011813349,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24911478381675847
+        },
+        "market": {
+          "p_yes": 0.485,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.265225
+        },
+        "blend": {
+          "p_yes": 0.4929430005906674,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2571068006499959
+        },
+        "agreement_v1": {
+          "p_yes": 0.485,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.265225
+        }
+      },
+      "model_yes_probability": 0.5008860011813349,
+      "kalshi_yes_midpoint": 0.485,
+      "midpoint_brier": 0.265225,
+      "game": "2026_11_LV_DEN",
+      "ticker": "KXNFLSPREAD-26NOV22LVDEN-DEN11",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.24911478381675847
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5132900177200236,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.23688660685097496
+        },
+        "market": {
+          "p_yes": 0.495,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.255025
+        },
+        "blend": {
+          "p_yes": 0.5041450088600118,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2458721722384378
+        },
+        "agreement_v1": {
+          "p_yes": 0.495,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.255025
+        }
+      },
+      "model_yes_probability": 0.5132900177200236,
+      "kalshi_yes_midpoint": 0.495,
+      "midpoint_brier": 0.255025,
+      "game": "2026_11_MIA_BUF",
+      "ticker": "KXNFLSPREAD-26NOV22MIABUF-BUF17",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.23688660685097496
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5221500295333728,
+          "decision": "yes",
+          "net_dollars": 0.4925,
+          "brier": 0.22834059427495654
+        },
+        "market": {
+          "p_yes": 0.48,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.27040000000000003
+        },
+        "blend": {
+          "p_yes": 0.5010750147666864,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24892614089006224
+        },
+        "agreement_v1": {
+          "p_yes": 0.48,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.27040000000000003
+        }
+      },
+      "model_yes_probability": 0.5221500295333728,
+      "kalshi_yes_midpoint": 0.48,
+      "midpoint_brier": 0.27040000000000003,
+      "game": "2026_11_MIN_SF",
+      "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+      "decision": "yes",
+      "result": "yes",
+      "net_dollars": 0.4925,
+      "brier": 0.22834059427495654
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5469580626107502,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2991631222549053
+        },
+        "market": {
+          "p_yes": 0.525,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.275625
+        },
+        "blend": {
+          "p_yes": 0.5359790313053752,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2872735219990483
+        },
+        "agreement_v1": {
+          "p_yes": 0.5359790313053752,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2872735219990483
+        }
+      },
+      "model_yes_probability": 0.5469580626107502,
+      "kalshi_yes_midpoint": 0.525,
+      "midpoint_brier": 0.275625,
+      "game": "2026_11_NO_CHI",
+      "ticker": "KXNFLSPREAD-26NOV22NOCHI-CHI11",
+      "decision": "pass",
+      "result": "no",
+      "net_dollars": 0.0,
+      "brier": 0.2991631222549053
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5221500295333728,
+          "decision": "no",
+          "net_dollars": 0.5326,
+          "brier": 0.272640653341702
+        },
+        "market": {
+          "p_yes": 0.555,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.30802500000000005
+        },
+        "blend": {
+          "p_yes": 0.5385750147666863,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2900630465309364
+        },
+        "agreement_v1": {
+          "p_yes": 0.5385750147666863,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2900630465309364
+        }
+      },
+      "model_yes_probability": 0.5221500295333728,
+      "kalshi_yes_midpoint": 0.555,
+      "midpoint_brier": 0.30802500000000005,
+      "game": "2026_11_NYJ_LAC",
+      "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC3",
+      "decision": "no",
+      "result": "no",
+      "net_dollars": 0.5326,
+      "brier": 0.272640653341702
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.505611340815121,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2556428279608645
+        },
+        "market": {
+          "p_yes": 0.495,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.245025
+        },
+        "blend": {
+          "p_yes": 0.5003056704075606,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25030576384195863
+        },
+        "agreement_v1": {
+          "p_yes": 0.495,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.245025
+        }
+      },
+      "model_yes_probability": 0.505611340815121,
+      "kalshi_yes_midpoint": 0.495,
+      "midpoint_brier": 0.245025,
+      "game": "2026_11_PIT_PHI",
+      "ticker": "KXNFLSPREAD-26NOV22PITPHI-PIT4",
+      "decision": "pass",
+      "result": "no",
+      "net_dollars": 0.0,
+      "brier": 0.2556428279608645
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5121086828115771,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2380379373878543
+        },
+        "market": {
+          "p_yes": 0.505,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.245025
+        },
+        "blend": {
+          "p_yes": 0.5085543414057885,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2415188353510983
+        },
+        "agreement_v1": {
+          "p_yes": 0.5085543414057885,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2415188353510983
+        }
+      },
+      "model_yes_probability": 0.5121086828115771,
+      "kalshi_yes_midpoint": 0.505,
+      "midpoint_brier": 0.245025,
+      "game": "2026_11_TB_DET",
+      "ticker": "KXNFLSPREAD-26NOV22TBDET-DET5",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.2380379373878543
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5121086828115771,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2380379373878543
+        },
+        "market": {
+          "p_yes": 0.505,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.245025
+        },
+        "blend": {
+          "p_yes": 0.5085543414057885,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2415188353510983
+        },
+        "agreement_v1": {
+          "p_yes": 0.5085543414057885,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2415188353510983
+        }
+      },
+      "model_yes_probability": 0.5121086828115771,
+      "kalshi_yes_midpoint": 0.505,
+      "midpoint_brier": 0.245025,
+      "game": "2026_11_TEN_DAL",
+      "ticker": "KXNFLSPREAD-26NOV22TENDAL-DAL8",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.2380379373878543
     }
   ]
 }

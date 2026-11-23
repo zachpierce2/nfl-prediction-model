@@ -1,22 +1,221 @@
 {
-  "matched_games": 10,
+  "matched_games": 12,
   "games_with_positive_sportsbook_edge": 1,
-  "awaiting_settlement": 10,
+  "awaiting_settlement": 1,
   "paired": {
-    "comparable": 0,
+    "comparable": 11,
     "excluded_settlements": 0,
     "sportsbooks": {
-      "trades": 0,
-      "passes": 0,
-      "net_paper_dollars": null,
-      "brier": null
+      "trades": 1,
+      "passes": 10,
+      "net_paper_dollars": -0.4774,
+      "brier": 0.25561241898100306
     },
     "sportsbooks_epa_blend": {
-      "trades": 0,
-      "passes": 0,
-      "net_paper_dollars": null,
-      "brier": null
+      "trades": 1,
+      "passes": 10,
+      "net_paper_dollars": -0.4774,
+      "brier": 0.2555787201630038
     }
   },
-  "games": []
+  "games": [
+    {
+      "game": "2026_11_ARI_KC",
+      "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC17",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.4891657638136511,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26095161686009055
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.47760119259790645,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2729005139751296
+        }
+      }
+    },
+    {
+      "game": "2026_11_BAL_CAR",
+      "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5173641257162701,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26766563857816056
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5197570776248215,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2701474197410947
+        }
+      }
+    },
+    {
+      "game": "2026_11_JAX_NYG",
+      "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5130344422523757,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26320433893720624
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5220222417995488,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2725072209334266
+        }
+      }
+    },
+    {
+      "game": "2026_11_LV_DEN",
+      "ticker": "KXNFLSPREAD-26NOV22LVDEN-DEN11",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.49188813764454264,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25817766466633124
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.49638706941293875,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25362598385448815
+        }
+      }
+    },
+    {
+      "game": "2026_11_MIA_BUF",
+      "ticker": "KXNFLSPREAD-26NOV22MIABUF-BUF17",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.49890254609306406,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2510986583120138
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5060962819065438,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2439408827465403
+        }
+      }
+    },
+    {
+      "game": "2026_11_MIN_SF",
+      "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.4814150778380269,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26893032149373974
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5017825536856998,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2482206238119426
+        }
+      }
+    },
+    {
+      "game": "2026_11_NO_CHI",
+      "ticker": "KXNFLSPREAD-26NOV22NOCHI-CHI11",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5086640097036909,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25873907476783653
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5278110361572206,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2785844898893588
+        }
+      }
+    },
+    {
+      "game": "2026_11_NYJ_LAC",
+      "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC4",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.4809829691924101,
+          "decision": "yes",
+          "net_dollars": -0.4774,
+          "brier": 0.23134461665314696
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.4794164698295187,
+          "decision": "yes",
+          "net_dollars": -0.4774,
+          "brier": 0.2298401515437978
+        }
+      }
+    },
+    {
+      "game": "2026_11_PIT_PHI",
+      "ticker": "KXNFLSPREAD-26NOV22PITPHI-PIT4",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5021645958699511,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2521692813452313
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5038879683425361,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2539030846403687
+        }
+      }
+    },
+    {
+      "game": "2026_11_TB_DET",
+      "ticker": "KXNFLSPREAD-26NOV22TBDET-DET5",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5005448997384481,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24945539717727688
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5063267912750126,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24371323701282502
+        }
+      }
+    },
+    {
+      "game": "2026_11_TEN_DAL",
+      "ticker": "KXNFLSPREAD-26NOV22TENDAL-DAL8",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5060543414057885,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2439823136440693
+        }
+      }
+    }
+  ]
 }

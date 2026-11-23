@@ -1,29 +1,29 @@
 {
   "version": "signed_home_margin_gaussian_3pt_mean_tilt_v1",
-  "paired": 11,
-  "graded": 0,
-  "pending": 11,
+  "paired": 12,
+  "graded": 11,
+  "pending": 1,
   "primary": {
-    "WIN": 0,
-    "LOSS": 0,
+    "WIN": 7,
+    "LOSS": 4,
     "PUSH": 0,
     "NO_LEAN": 0
   },
   "primary_on_changed": {
-    "WIN": 0,
-    "LOSS": 0,
+    "WIN": 4,
+    "LOSS": 2,
     "PUSH": 0,
     "NO_LEAN": 0
   },
   "exact": {
-    "WIN": 0,
-    "LOSS": 0,
+    "WIN": 5,
+    "LOSS": 6,
     "PUSH": 0,
     "NO_LEAN": 0
   },
   "exact_on_changed": {
-    "WIN": 0,
-    "LOSS": 0,
+    "WIN": 2,
+    "LOSS": 4,
     "PUSH": 0,
     "NO_LEAN": 0
   }

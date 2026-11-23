@@ -1,20 +1,20 @@
 {
-  "paired": 12,
-  "graded": 1,
-  "pending": 11,
-  "disagreements": 0,
+  "paired": 13,
+  "graded": 12,
+  "pending": 1,
+  "disagreements": 2,
   "baseline": {
-    "WIN": 1,
-    "LOSS": 0,
+    "WIN": 8,
+    "LOSS": 4,
     "PUSH": 0,
     "NO_LEAN": 0,
-    "wins_on_disagreements": 0
+    "wins_on_disagreements": 1
   },
   "with_total": {
-    "WIN": 1,
-    "LOSS": 0,
+    "WIN": 8,
+    "LOSS": 4,
     "PUSH": 0,
     "NO_LEAN": 0,
-    "wins_on_disagreements": 0
+    "wins_on_disagreements": 1
   }
 }

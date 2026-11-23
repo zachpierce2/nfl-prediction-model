@@ -1,11 +1,11 @@
 
 ## Prospective core versus EPA (paired games only)
 
-Paired pregame forecasts: 12. Historical predictions are not backfilled.
+Paired pregame forecasts: 13. Historical predictions are not backfilled.
 
 | Model | Graded | Wins | Losses | Pushes | ATS win rate | MAE |
 |---|---:|---:|---:|---:|---:|---:|
-| core | 1 | 1 | 0 | 0 | 100.00% | 10.3047 |
-| epa | 1 | 1 | 0 | 0 | 100.00% | 10.3613 |
+| core | 12 | 8 | 4 | 0 | 66.67% | 7.8044 |
+| epa | 12 | 8 | 4 | 0 | 66.67% | 7.7980 |
 
-Matched same-book near-kickoff comparisons: 1. Separate line-value means are in epa_shadow/summary.json. These are point-spread proxies, not certified closing prices or profit.
+Matched same-book near-kickoff comparisons: 12. Separate line-value means are in epa_shadow/summary.json. These are point-spread proxies, not certified closing prices or profit.

@@ -63,45 +63,46 @@
     "same trade": {
       "games": 1,
       "closing_coverage": {
-        "pending": 1
+        "usable": 1
       },
       "sportsbooks": {
         "trades": 1,
-        "usable_closes": 0,
+        "usable_closes": 1,
         "beat_close": 0,
-        "mean_advantage_cents": null,
-        "settled_games": 0,
-        "net_paper_dollars": null
+        "mean_advantage_cents": -2.24,
+        "settled_games": 1,
+        "net_paper_dollars": -0.4774
       },
       "sportsbooks_epa_blend": {
         "trades": 1,
-        "usable_closes": 0,
+        "usable_closes": 1,
         "beat_close": 0,
-        "mean_advantage_cents": null,
-        "settled_games": 0,
-        "net_paper_dollars": null
+        "mean_advantage_cents": -2.24,
+        "settled_games": 1,
+        "net_paper_dollars": -0.4774
       }
     },
     "both pass": {
-      "games": 9,
+      "games": 11,
       "closing_coverage": {
-        "pending": 9
+        "usable": 10,
+        "pending": 1
       },
       "sportsbooks": {
         "trades": 0,
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
-        "settled_games": 0,
-        "net_paper_dollars": null
+        "settled_games": 10,
+        "net_paper_dollars": 0.0
       },
       "sportsbooks_epa_blend": {
         "trades": 0,
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
-        "settled_games": 0,
-        "net_paper_dollars": null
+        "settled_games": 10,
+        "net_paper_dollars": 0.0
       }
     }
   },
@@ -112,16 +113,23 @@
       "entry_time": "2026-11-21T19:00:38.196616+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795370340,
+        "yes_bid": "0.4700",
+        "yes_ask": "0.4800",
+        "yes_midpoint": "0.4750",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22ARIKC-KC17",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22ARIKC-KC17/candlesticks?start_ts=1795370100&end_ts=1795370399&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     },
@@ -129,6 +137,32 @@
       "game": "2026_11_BAL_CAR",
       "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
       "entry_time": "2026-11-21T19:00:38.505968+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "usable",
+        "end_period_ts": 1795370340,
+        "yes_bid": "0.5000",
+        "yes_ask": "0.5100",
+        "yes_midpoint": "0.5050",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22BALCAR-CAR3",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22BALCAR-CAR3/candlesticks?start_ts=1795370100&end_ts=1795370399&period_interval=1"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": 0.0
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": 0.0
+        }
+      }
+    },
+    {
+      "game": "2026_11_CIN_WAS",
+      "ticker": "KXNFLSPREAD-26NOV23CINWAS-CIN6",
+      "entry_time": "2026-11-23T01:29:44.145960+00:00",
       "group": "both pass",
       "closing_quote": {
         "status": "pending"
@@ -150,16 +184,23 @@
       "entry_time": "2026-11-21T21:54:39.465489+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795382640,
+        "yes_bid": "0.5400",
+        "yes_ask": "0.5500",
+        "yes_midpoint": "0.5450",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22JACNYG-JAC6",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22JACNYG-JAC6/candlesticks?start_ts=1795382400&end_ts=1795382699&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     },
@@ -169,16 +210,23 @@
       "entry_time": "2026-11-21T21:54:39.939038+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795382640,
+        "yes_bid": "0.5300",
+        "yes_ask": "0.5400",
+        "yes_midpoint": "0.5350",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22LVDEN-DEN11",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22LVDEN-DEN11/candlesticks?start_ts=1795382400&end_ts=1795382699&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     },
@@ -188,16 +236,23 @@
       "entry_time": "2026-11-21T19:00:38.806428+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795370340,
+        "yes_bid": "0.5100",
+        "yes_ask": "0.5200",
+        "yes_midpoint": "0.5150",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22MIABUF-BUF17",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22MIABUF-BUF17/candlesticks?start_ts=1795370100&end_ts=1795370399&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     },
@@ -207,16 +262,49 @@
       "entry_time": "2026-11-22T01:22:39.194922+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795396740,
+        "yes_bid": "0.5300",
+        "yes_ask": "0.5400",
+        "yes_midpoint": "0.5350",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22MINSF-SF4/candlesticks?start_ts=1795396500&end_ts=1795396799&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
+        }
+      }
+    },
+    {
+      "game": "2026_11_NO_CHI",
+      "ticker": "KXNFLSPREAD-26NOV22NOCHI-CHI11",
+      "entry_time": "2026-11-22T15:55:27.766964+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "usable",
+        "end_period_ts": 1795370340,
+        "yes_bid": "0.5500",
+        "yes_ask": "0.5600",
+        "yes_midpoint": "0.5550",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22NOCHI-CHI11",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22NOCHI-CHI11/candlesticks?start_ts=1795370100&end_ts=1795370399&period_interval=1"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": 0.0
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": 0.0
         }
       }
     },
@@ -226,22 +314,31 @@
       "entry_time": "2026-11-22T04:04:25.977074+00:00",
       "group": "same trade",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795381440,
+        "yes_bid": "0.4500",
+        "yes_ask": "0.4600",
+        "yes_midpoint": "0.4550",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC4",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22NYJLAC-LAC4/candlesticks?start_ts=1795381200&end_ts=1795381499&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "yes",
-          "net_paper_dollars": null,
+          "net_paper_dollars": -0.4774,
           "entry_cost": 0.4774,
           "available": "468236.31",
-          "p_yes": 0.4809829691924101
+          "p_yes": 0.4809829691924101,
+          "advantage_cents": -2.24
         },
         "sportsbooks_epa_blend": {
           "side": "yes",
-          "net_paper_dollars": null,
+          "net_paper_dollars": -0.4774,
           "entry_cost": 0.4774,
           "available": "468236.31",
-          "p_yes": 0.4794164698295187
+          "p_yes": 0.4794164698295187,
+          "advantage_cents": -2.24
         }
       }
     },
@@ -251,16 +348,23 @@
       "entry_time": "2026-11-21T19:00:39.188093+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795370340,
+        "yes_bid": "0.4900",
+        "yes_ask": "0.5000",
+        "yes_midpoint": "0.4950",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22PITPHI-PIT4",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22PITPHI-PIT4/candlesticks?start_ts=1795370100&end_ts=1795370399&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     },
@@ -270,16 +374,23 @@
       "entry_time": "2026-11-21T19:00:39.527958+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795370340,
+        "yes_bid": "0.4600",
+        "yes_ask": "0.4700",
+        "yes_midpoint": "0.4650",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22TBDET-DET5",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22TBDET-DET5/candlesticks?start_ts=1795370100&end_ts=1795370399&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     },
@@ -289,16 +400,23 @@
       "entry_time": "2026-11-21T19:00:40.026204+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795370340,
+        "yes_bid": "0.5000",
+        "yes_ask": "0.5100",
+        "yes_midpoint": "0.5050",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV22TENDAL-DAL8",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22TENDAL-DAL8/candlesticks?start_ts=1795370100&end_ts=1795370399&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     }

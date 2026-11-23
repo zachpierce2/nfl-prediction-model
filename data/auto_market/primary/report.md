@@ -1,7 +1,7 @@
 # Primary NFL model — market + EPA
 
-Forecasts: 12. Graded: 1. Record: 1 wins, 0 losses, 0 pushes.
+Forecasts: 13. Graded: 12. Record: 8 wins, 4 losses, 0 pushes.
 
-Pregame-total comparison: 12 pairs, 1 graded, 0 graded disagreements. Market + EPA won 0 disagreements and the total model won 0.
+Pregame-total comparison: 13 pairs, 12 graded, 2 graded disagreements. Market + EPA won 1 disagreements and the total model won 1.
 
-Same-book spread within 60 minutes of kickoff, at the original price: 0 better, 0 equal, 0 worse. 0 comparable games across 12 primary forecasts. Different price: 1. Unavailable price: 0.
+Same-book spread within 60 minutes of kickoff, at the original price: 0 better, 0 equal, 0 worse. 0 comparable games across 13 primary forecasts. Different price: 12. Unavailable price: 0.

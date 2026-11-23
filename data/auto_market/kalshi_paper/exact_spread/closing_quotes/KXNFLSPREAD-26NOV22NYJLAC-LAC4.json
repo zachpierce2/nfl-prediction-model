@@ -1,0 +1,10 @@
+{
+  "status": "usable",
+  "end_period_ts": 1795381440,
+  "yes_bid": "0.4500",
+  "yes_ask": "0.4600",
+  "yes_midpoint": "0.4550",
+  "seconds_before_kickoff": 60.0,
+  "ticker": "KXNFLSPREAD-26NOV22NYJLAC-LAC4",
+  "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22NYJLAC-LAC4/candlesticks?start_ts=1795381200&end_ts=1795381499&period_interval=1"
+}

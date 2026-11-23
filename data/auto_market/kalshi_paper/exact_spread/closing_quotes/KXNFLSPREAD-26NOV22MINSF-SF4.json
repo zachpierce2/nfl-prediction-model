@@ -1,0 +1,10 @@
+{
+  "status": "usable",
+  "end_period_ts": 1795396740,
+  "yes_bid": "0.5300",
+  "yes_ask": "0.5400",
+  "yes_midpoint": "0.5350",
+  "seconds_before_kickoff": 60.0,
+  "ticker": "KXNFLSPREAD-26NOV22MINSF-SF4",
+  "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV22MINSF-SF4/candlesticks?start_ts=1795396500&end_ts=1795396799&period_interval=1"
+}
