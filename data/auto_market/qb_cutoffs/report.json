@@ -4,25 +4,25 @@
       "due": 13,
       "captured": 10,
       "quoted": 10,
-      "graded_teams": 16,
-      "named": 14,
-      "correct": 14
+      "graded_teams": 18,
+      "named": 16,
+      "correct": 16
     },
     "360": {
       "due": 12,
       "captured": 4,
       "quoted": 4,
-      "graded_teams": 6,
-      "named": 6,
-      "correct": 6
+      "graded_teams": 8,
+      "named": 8,
+      "correct": 8
     },
     "90": {
       "due": 12,
       "captured": 4,
       "quoted": 4,
-      "graded_teams": 6,
-      "named": 6,
-      "correct": 6
+      "graded_teams": 8,
+      "named": 8,
+      "correct": 8
     }
   },
   "paired_one_contract_costs": [
