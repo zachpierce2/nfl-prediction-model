@@ -1,0 +1,92 @@
+{
+  "captured_at_utc": "2026-11-23T01:27:25.113122+00:00",
+  "snapshot_id": "20261123T012725113122Z",
+  "provider_events": 18,
+  "exact_line_shadow": {
+    "eligible": 1,
+    "saved": 1
+  },
+  "opening_comparison": {
+    "first_seen": 0,
+    "saved": 0
+  },
+  "consensus_shadow": {
+    "primary_forecasts": 1,
+    "paired": 1
+  },
+  "total_shadow": {
+    "paired": 1,
+    "missing_total": 0,
+    "new_overtime_pairs": 1,
+    "new_game_state_pairs": 1
+  },
+  "eligible_quotes": 16,
+  "new_forecasts": 1,
+  "epa_shadow": {
+    "status": "PAIRED_PREGAME_FORECASTS_SAVED",
+    "new_epa_forecasts": 1,
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1"
+  },
+  "advanced_shadow": {
+    "status": "ADVANCED_SHADOW_RECORDED",
+    "feature_cutoff_utc": "2026-11-23T01:27:52.225089+00:00",
+    "arms": {
+      "epa_baseline": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_pressure": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_explosive": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_special": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_injury": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      },
+      "epa_all": {
+        "new_forecasts": 1,
+        "missing_feature_games": []
+      }
+    }
+  },
+  "qb_shadow": {
+    "status": "MISSING_CONFIRMED_STARTERS",
+    "new_qb_forecasts": 0,
+    "missing_confirmation_games": [
+      "2026_11_CIN_WAS"
+    ],
+    "confirmation_rows": 0
+  },
+  "qb_passing_shadow": {
+    "status": "MISSING_CONFIRMED_STARTERS",
+    "new_qb_forecasts": 0,
+    "confirmation_rows": 0,
+    "missing_confirmation_games": [
+      "2026_11_CIN_WAS"
+    ]
+  },
+  "expected_qb_shadow": {
+    "control_comparison": {
+      "new_last_observed_forecasts": 1,
+      "missing_prior_identity_games": []
+    },
+    "status": "EXPECTED_QB_SHADOW_SAVED",
+    "new_qb_forecasts": 1,
+    "missing_confirmation_games": [],
+    "confirmation_rows": 34
+  },
+  "skipped": [],
+  "remaining_credits": "347",
+  "last_request_credits": "2",
+  "schedule_sha256": "3f8d85c5aa706dd34d8463b4527aef112089ca088926d23f2697e2f15c735add",
+  "odds_sha256": "84881e6d91c78570f1176556611fe8d96455e0eed65a3adf72f3bd1529f87b11",
+  "policy": "First automatic quote within 24h of kickoff; fixed bookmaker priority; same-day scores excluded"
+}

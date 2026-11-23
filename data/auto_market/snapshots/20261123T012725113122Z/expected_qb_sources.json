@@ -1,0 +1,82 @@
+[
+  {
+    "season": 2017,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2017.parquet",
+    "raw_sha256": "21ff41abc6043cce68829bad2f2cbae100cb41aa106ca6cf9c93b35856e51ab6",
+    "aggregate_sha256": "998ca2e986b4af14bcbfd98b7333ab34bd11e497ecb3eb089473907fe6fe0864",
+    "captured_at_utc": "2026-11-19T01:26:31.505288+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2018,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2018.parquet",
+    "raw_sha256": "f04d65f5993a0a982de4de5fbafd2fbf7c1649470f59de128fd17d924d38c5d3",
+    "aggregate_sha256": "daa155b209cfc9cfccdb97ba060229c03c09cc67f69b92fc96414e0745fc5763",
+    "captured_at_utc": "2026-11-19T01:26:31.842389+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2019,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2019.parquet",
+    "raw_sha256": "54396ede038f0b2c43f17be2ac550ac06ba21e4317f0da64c99e1e3bd4117681",
+    "aggregate_sha256": "a463ae0f1a0223bd0a7f6eb07dd810093d459a3bd00890dd49b941357b6586a0",
+    "captured_at_utc": "2026-11-19T01:26:32.121604+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2020,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2020.parquet",
+    "raw_sha256": "13704b508fcef4a127e363c7f280b04ea7b41efe2002e238d0a0de1ce1b7ef76",
+    "aggregate_sha256": "ec99eb3e75005be102c939aaa182d5d8b28efa510ae809ef2e744b0c68e9bf5d",
+    "captured_at_utc": "2026-11-19T01:26:32.451131+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2021,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2021.parquet",
+    "raw_sha256": "0d0222bdfc56af39e43f82cff0d02f47e2b5311776daf59a89254dd12e5e9f20",
+    "aggregate_sha256": "cb1d1157b5088703008c2170d26accd07df469d28dfeb9986543f8e0a6adff12",
+    "captured_at_utc": "2026-11-19T01:26:32.694746+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2022,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2022.parquet",
+    "raw_sha256": "167dff9290b11a47822157443af586877b38de1b6a90e41f95ac52e524cf4bb3",
+    "aggregate_sha256": "86c9d1f1bf72c27c65708789fe34747f1a4a932e868d84cc193d0179cd11e9d3",
+    "captured_at_utc": "2026-11-19T01:26:33.067827+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2023,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2023.parquet",
+    "raw_sha256": "e8200fde627d460975cfe5d91c355702fcf931b747671d4e5eb972270265ec88",
+    "aggregate_sha256": "dfccc4b83ba449d375cc781a03833b95f7fe611a12692dda1c6edf3a596b11b5",
+    "captured_at_utc": "2026-11-19T01:26:33.351890+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2024,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.parquet",
+    "raw_sha256": "6e6996601f9c29dd10c8d6a15eca255b836ba1dd4718f12bfb69137da1e07c1e",
+    "aggregate_sha256": "78159500b603ecdb58c23304e2a7724043886cab2866c0cdd14e9d1fafc4a8f6",
+    "captured_at_utc": "2026-11-19T01:26:33.669297+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2025,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.parquet",
+    "raw_sha256": "6b7f629136def21702592bf7d70876d746aafe3207c675d9920632e9d7fd6d2d",
+    "aggregate_sha256": "87208290d5384b7c45e4931700ecb2771035f17fb022cd45798d25da72170297",
+    "captured_at_utc": "2026-11-19T01:26:33.985979+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  },
+  {
+    "season": 2026,
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.parquet",
+    "raw_sha256": "a9aa759836599f6b3de57bab21ca71c824c6dd45aa5853af7e489c1a5b26675f",
+    "aggregate_sha256": "b0ccdec1ee4b8453f783fb0bc83da0472766d391a777ebf9b5aecf83cce49f8d",
+    "captured_at_utc": "2026-11-23T01:27:33.146058+00:00",
+    "aggregation_code_sha256": "c65c20d05a1e9bca3524a8dd52e11e7c083a50d740078b68ac75baa1bb96a204"
+  }
+]
