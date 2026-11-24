@@ -145,7 +145,7 @@ def match_quotes(events, schedule, captured, snapshot_id, max_days=7):
 def predict(schedule_path, quotes, snapshot_id, captured):
     f=model.read_games(schedule_path)
     cutoff=pd.Timestamp(captured)
-    pending=[q for q in quotes if utc(q['kickoff_utc'])<=captured+timedelta(hours=24)]
+    pending=[q for q in quotes if captured < utc(q['kickoff_utc']) <= captured + timedelta(days=7)]
     if not pending:return []
     q=pd.DataFrame(pending)
     live=f.merge(q,on='game_id',validate='one_to_one',suffixes=('','_quote'))
@@ -278,7 +278,7 @@ def main():
         remaining_credits=normalized_headers.get('x-requests-remaining','unknown'),
         last_request_credits=normalized_headers.get('x-requests-last','unknown'),
         schedule_sha256=digest(raw_schedule),odds_sha256=digest(raw_odds),
-        policy='First automatic quote within 24h of kickoff; fixed bookmaker priority; same-day scores excluded')
+        policy='First automatic quote within 7 days of kickoff; fixed bookmaker priority; same-day scores excluded')
     (folder/'run.json').write_text(json.dumps(report,indent=2))
     (ROOT/'latest_run.json').write_text(json.dumps(report,indent=2))
     print(json.dumps(report,indent=2))
