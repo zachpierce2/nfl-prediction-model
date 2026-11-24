@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/nfl-auto-market.yml
+      - auto_market.py
   schedule:
     - cron: '17 */3 * * *'
 
