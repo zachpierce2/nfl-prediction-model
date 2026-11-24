@@ -1,0 +1,156 @@
+{
+  "captured_at_utc": "2026-11-24T19:56:45.641178+00:00",
+  "snapshot_id": "20261124T195645641178Z",
+  "provider_events": 16,
+  "exact_line_shadow": {
+    "eligible": 16,
+    "saved": 16
+  },
+  "opening_comparison": {
+    "first_seen": 0,
+    "saved": 0
+  },
+  "consensus_shadow": {
+    "primary_forecasts": 16,
+    "paired": 16
+  },
+  "total_shadow": {
+    "paired": 16,
+    "missing_total": 0,
+    "new_overtime_pairs": 16,
+    "new_game_state_pairs": 16
+  },
+  "eligible_quotes": 16,
+  "new_forecasts": 16,
+  "epa_shadow": {
+    "status": "PAIRED_PREGAME_FORECASTS_SAVED",
+    "new_epa_forecasts": 16,
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1"
+  },
+  "advanced_shadow": {
+    "status": "ADVANCED_SHADOW_RECORDED",
+    "feature_cutoff_utc": "2026-11-24T19:57:02.097981+00:00",
+    "arms": {
+      "epa_baseline": {
+        "new_forecasts": 16,
+        "missing_feature_games": []
+      },
+      "epa_pressure": {
+        "new_forecasts": 16,
+        "missing_feature_games": []
+      },
+      "epa_explosive": {
+        "new_forecasts": 16,
+        "missing_feature_games": []
+      },
+      "epa_special": {
+        "new_forecasts": 16,
+        "missing_feature_games": []
+      },
+      "epa_injury": {
+        "new_forecasts": 0,
+        "missing_feature_games": [
+          "2026_12_GB_LA",
+          "2026_12_CHI_DET",
+          "2026_12_KC_BUF",
+          "2026_12_PHI_DAL",
+          "2026_12_DEN_PIT",
+          "2026_12_ATL_MIN",
+          "2026_12_BAL_HOU",
+          "2026_12_LV_CLE",
+          "2026_12_NE_LAC",
+          "2026_12_NO_CIN",
+          "2026_12_NYG_IND",
+          "2026_12_NYJ_MIA",
+          "2026_12_SEA_SF",
+          "2026_12_TEN_JAX",
+          "2026_12_WAS_ARI",
+          "2026_12_CAR_TB"
+        ]
+      },
+      "epa_all": {
+        "new_forecasts": 0,
+        "missing_feature_games": [
+          "2026_12_GB_LA",
+          "2026_12_CHI_DET",
+          "2026_12_KC_BUF",
+          "2026_12_PHI_DAL",
+          "2026_12_DEN_PIT",
+          "2026_12_ATL_MIN",
+          "2026_12_BAL_HOU",
+          "2026_12_LV_CLE",
+          "2026_12_NE_LAC",
+          "2026_12_NO_CIN",
+          "2026_12_NYG_IND",
+          "2026_12_NYJ_MIA",
+          "2026_12_SEA_SF",
+          "2026_12_TEN_JAX",
+          "2026_12_WAS_ARI",
+          "2026_12_CAR_TB"
+        ]
+      }
+    }
+  },
+  "qb_shadow": {
+    "status": "MISSING_CONFIRMED_STARTERS",
+    "new_qb_forecasts": 0,
+    "missing_confirmation_games": [
+      "2026_12_GB_LA",
+      "2026_12_CHI_DET",
+      "2026_12_KC_BUF",
+      "2026_12_PHI_DAL",
+      "2026_12_DEN_PIT",
+      "2026_12_ATL_MIN",
+      "2026_12_BAL_HOU",
+      "2026_12_LV_CLE",
+      "2026_12_NE_LAC",
+      "2026_12_NO_CIN",
+      "2026_12_NYG_IND",
+      "2026_12_NYJ_MIA",
+      "2026_12_SEA_SF",
+      "2026_12_TEN_JAX",
+      "2026_12_WAS_ARI",
+      "2026_12_CAR_TB"
+    ],
+    "confirmation_rows": 0
+  },
+  "qb_passing_shadow": {
+    "status": "MISSING_CONFIRMED_STARTERS",
+    "new_qb_forecasts": 0,
+    "confirmation_rows": 0,
+    "missing_confirmation_games": [
+      "2026_12_GB_LA",
+      "2026_12_CHI_DET",
+      "2026_12_KC_BUF",
+      "2026_12_PHI_DAL",
+      "2026_12_DEN_PIT",
+      "2026_12_ATL_MIN",
+      "2026_12_BAL_HOU",
+      "2026_12_LV_CLE",
+      "2026_12_NE_LAC",
+      "2026_12_NO_CIN",
+      "2026_12_NYG_IND",
+      "2026_12_NYJ_MIA",
+      "2026_12_SEA_SF",
+      "2026_12_TEN_JAX",
+      "2026_12_WAS_ARI",
+      "2026_12_CAR_TB"
+    ]
+  },
+  "expected_qb_shadow": {
+    "control_comparison": {
+      "new_last_observed_forecasts": 16,
+      "missing_prior_identity_games": []
+    },
+    "status": "EXPECTED_QB_SHADOW_SAVED",
+    "new_qb_forecasts": 16,
+    "missing_confirmation_games": [],
+    "confirmation_rows": 32
+  },
+  "skipped": [],
+  "remaining_credits": "312",
+  "last_request_credits": "2",
+  "schedule_sha256": "8aee6338c4d92e535935f360d7b2d5f80a559a6c23f7eacad505be59dfb853ad",
+  "odds_sha256": "838dad09dbd860d7c4378c9e46ed72c53864deaf85839aa9dd3427cde05acfd1",
+  "policy": "First automatic quote within 7 days of kickoff; fixed bookmaker priority; same-day scores excluded"
+}

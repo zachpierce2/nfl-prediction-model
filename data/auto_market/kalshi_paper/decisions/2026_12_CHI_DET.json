@@ -1,0 +1,205 @@
+{
+  "comparison": {
+    "model": {
+      "p_yes": 0.48670998227997636,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "1109260.35",
+          "fee": "0.0175",
+          "probability": 0.48670998227997636,
+          "net_expected_dollars": -0.04079001772002361
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "614609.68",
+          "fee": "0.0175",
+          "probability": 0.5132900177200237,
+          "net_expected_dollars": -0.004209982279976265
+        }
+      }
+    },
+    "market": {
+      "p_yes": 0.505,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "1109260.35",
+          "fee": "0.0175",
+          "probability": 0.505,
+          "net_expected_dollars": -0.022499999999999964
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "614609.68",
+          "fee": "0.0175",
+          "probability": 0.495,
+          "net_expected_dollars": -0.022499999999999964
+        }
+      }
+    },
+    "blend": {
+      "p_yes": 0.4958549911399882,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "1109260.35",
+          "fee": "0.0175",
+          "probability": 0.4958549911399882,
+          "net_expected_dollars": -0.03164500886001176
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "614609.68",
+          "fee": "0.0175",
+          "probability": 0.5041450088600118,
+          "net_expected_dollars": -0.01335499113998817
+        }
+      }
+    },
+    "agreement_v1": {
+      "p_yes": 0.505,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "1109260.35",
+          "fee": "0.0175",
+          "probability": 0.505,
+          "net_expected_dollars": -0.022499999999999964
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "614609.68",
+          "fee": "0.0175",
+          "probability": 0.495,
+          "net_expected_dollars": -0.022499999999999964
+        }
+      }
+    }
+  },
+  "status": "RECORDED",
+  "captured_at": "2026-11-24T19:58:19.207483+00:00",
+  "forecast": {
+    "game_id": "2026_12_CHI_DET",
+    "quote_id": "e34cae6559e68b35c0dc9676",
+    "home_team": "DET",
+    "away_team": "CHI",
+    "sportsbook": "DraftKings",
+    "home_line": "2.5",
+    "home_price_american": "-106",
+    "away_line": "-2.5",
+    "away_price_american": "-114",
+    "adjustment": "0.22463886858511495",
+    "predicted_home_margin": "-2.275361131414885",
+    "home_model_spread": "2.275361131414885",
+    "captured_at_utc": "2026-11-24T19:56:45.641178+00:00",
+    "kickoff_utc": "2026-11-26T18:00:00+00:00",
+    "forecast_created_at_utc": "2026-11-24T19:56:48.493664+00:00",
+    "history_last_scored_date": "2026-11-23",
+    "snapshot_id": "20261124T195645641178Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "45475411527",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "2cafdb899826b523594931903e55b99b8ef52dd09468a47537fffbedc278e624",
+    "epa_inputs_sha256": "728d66749a58a29abd49fcd352b474bbe71dcafb58020632204c150b4e624d56",
+    "adj_off_epa_diff": "0.10047341205076048",
+    "adj_def_epa_diff": "-0.04407451789343932",
+    "adj_off_success_diff": "0.032337874704413155",
+    "adj_def_success_diff": "-0.02131212363460537"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-28T18:00:00Z",
+    "created_time": "2026-11-19T20:01:14.381593Z",
+    "custom_strike": {
+      "football_team": "9a77500a-1945-495e-b6f5-5c35bedaa8b9"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV26CHIDET",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-26T21:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 2.5,
+    "last_price_dollars": "0.5100",
+    "latest_expiration_time": "2026-11-28T18:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5000",
+    "no_bid_dollars": "0.4900",
+    "no_sub_title": "Chicago wins by over 2.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-26T21:00:00Z",
+    "open_interest_fp": "31204.07",
+    "open_time": "2026-11-19T20:05:00Z",
+    "previous_price_dollars": "0.5100",
+    "previous_yes_ask_dollars": "0.5100",
+    "previous_yes_bid_dollars": "0.4900",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Chicago wins by more than 2.5 points in the Chicago vs Detroit Pro Football game originally scheduled for Nov 26, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI3",
+    "title": "Chicago wins by over 2.5 points?",
+    "updated_time": "2026-11-19T20:05:01.156551Z",
+    "volume_24h_fp": "19330.75",
+    "volume_fp": "38367.57",
+    "yes_ask_dollars": "0.5100",
+    "yes_ask_size_fp": "1109260.35",
+    "yes_bid_dollars": "0.5000",
+    "yes_bid_size_fp": "614609.68",
+    "yes_sub_title": "Chicago wins by over 2.5 points"
+  },
+  "book": {
+    "no_dollars": [
+      [
+        "0.4900",
+        "1109260.35"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.5000",
+        "614609.68"
+      ]
+    ]
+  },
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "residual_games": 1693,
+  "source_sha256": "b6e978b5ccac305732e63d972d9b99216acbb3f7e14e597dce37627b9c853b72",
+  "p_yes": 0.48670998227997636,
+  "offers": {
+    "yes": {
+      "ask": "0.5100",
+      "available": "1109260.35",
+      "fee": "0.0175",
+      "probability": 0.48670998227997636,
+      "net_expected_dollars": -0.04079001772002361
+    },
+    "no": {
+      "ask": "0.5000",
+      "available": "614609.68",
+      "fee": "0.0175",
+      "probability": 0.5132900177200237,
+      "net_expected_dollars": -0.004209982279976265
+    }
+  },
+  "decision": "pass",
+  "contracts": 0
+}

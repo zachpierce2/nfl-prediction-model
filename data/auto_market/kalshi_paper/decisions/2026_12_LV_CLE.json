@@ -1,0 +1,205 @@
+{
+  "comparison": {
+    "model": {
+      "p_yes": 0.4949793266391022,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5200",
+          "available": "5244.80",
+          "fee": "0.0175",
+          "probability": 0.4949793266391022,
+          "net_expected_dollars": -0.042520673360897765
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "302858.00",
+          "fee": "0.0175",
+          "probability": 0.5050206733608977,
+          "net_expected_dollars": -0.012479326639102228
+        }
+      }
+    },
+    "market": {
+      "p_yes": 0.51,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5200",
+          "available": "5244.80",
+          "fee": "0.0175",
+          "probability": 0.51,
+          "net_expected_dollars": -0.02749999999999997
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "302858.00",
+          "fee": "0.0175",
+          "probability": 0.49,
+          "net_expected_dollars": -0.02749999999999997
+        }
+      }
+    },
+    "blend": {
+      "p_yes": 0.5024896633195511,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5200",
+          "available": "5244.80",
+          "fee": "0.0175",
+          "probability": 0.5024896633195511,
+          "net_expected_dollars": -0.03501033668044884
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "302858.00",
+          "fee": "0.0175",
+          "probability": 0.49751033668044886,
+          "net_expected_dollars": -0.0199896633195511
+        }
+      }
+    },
+    "agreement_v1": {
+      "p_yes": 0.51,
+      "decision": "pass",
+      "offers": {
+        "yes": {
+          "ask": "0.5200",
+          "available": "5244.80",
+          "fee": "0.0175",
+          "probability": 0.51,
+          "net_expected_dollars": -0.02749999999999997
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "302858.00",
+          "fee": "0.0175",
+          "probability": 0.49,
+          "net_expected_dollars": -0.02749999999999997
+        }
+      }
+    }
+  },
+  "status": "RECORDED",
+  "captured_at": "2026-11-24T19:58:19.976957+00:00",
+  "forecast": {
+    "game_id": "2026_12_LV_CLE",
+    "quote_id": "f6c6a61068aa23d276a22a8b",
+    "home_team": "CLE",
+    "away_team": "LV",
+    "sportsbook": "DraftKings",
+    "home_line": "-4.5",
+    "home_price_american": "-105",
+    "away_line": "4.5",
+    "away_price_american": "-114",
+    "adjustment": "-0.17680775429094825",
+    "predicted_home_margin": "4.323192245709052",
+    "home_model_spread": "-4.323192245709052",
+    "captured_at_utc": "2026-11-24T19:56:45.641178+00:00",
+    "kickoff_utc": "2026-11-30T01:20:00+00:00",
+    "forecast_created_at_utc": "2026-11-24T19:56:48.493664+00:00",
+    "history_last_scored_date": "2026-11-23",
+    "snapshot_id": "20261124T195645641178Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "45475411527",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "746dca187ca72a2487e357322bf08f024e4a4898038258af5042da788db1886f",
+    "epa_inputs_sha256": "728d66749a58a29abd49fcd352b474bbe71dcafb58020632204c150b4e624d56",
+    "adj_off_epa_diff": "-0.05591459824205698",
+    "adj_def_epa_diff": "0.10906919720823977",
+    "adj_off_success_diff": "-0.024110577037930778",
+    "adj_def_success_diff": "0.08177544133557342"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-12-02T01:20:00Z",
+    "created_time": "2026-11-23T02:01:40.351596Z",
+    "custom_strike": {
+      "football_team": "05cc62a4-bd74-4b2c-ab7b-1b177b9f6790"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV29LVCLE",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-30T04:20:00Z",
+    "expiration_value": "",
+    "floor_strike": 4.5,
+    "last_price_dollars": "0.5100",
+    "latest_expiration_time": "2026-12-02T01:20:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5000",
+    "no_bid_dollars": "0.4800",
+    "no_sub_title": "Cleveland wins by over 4.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-30T04:20:00Z",
+    "open_interest_fp": "1797.66",
+    "open_time": "2026-11-23T02:05:00Z",
+    "previous_price_dollars": "0.4900",
+    "previous_yes_ask_dollars": "0.5100",
+    "previous_yes_bid_dollars": "0.4900",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Cleveland wins by more than 4.5 points in the Las Vegas vs Cleveland Pro Football game originally scheduled for Nov 29, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV29LVCLE-CLE5",
+    "title": "Cleveland wins by over 4.5 points?",
+    "updated_time": "2026-11-23T02:05:01.102548Z",
+    "volume_24h_fp": "492.47",
+    "volume_fp": "2240.49",
+    "yes_ask_dollars": "0.5200",
+    "yes_ask_size_fp": "5244.80",
+    "yes_bid_dollars": "0.5000",
+    "yes_bid_size_fp": "302858.00",
+    "yes_sub_title": "Cleveland wins by over 4.5 points"
+  },
+  "book": {
+    "no_dollars": [
+      [
+        "0.4800",
+        "5244.80"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.5000",
+        "302858.00"
+      ]
+    ]
+  },
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "residual_games": 1693,
+  "source_sha256": "b6e978b5ccac305732e63d972d9b99216acbb3f7e14e597dce37627b9c853b72",
+  "p_yes": 0.4949793266391022,
+  "offers": {
+    "yes": {
+      "ask": "0.5200",
+      "available": "5244.80",
+      "fee": "0.0175",
+      "probability": 0.4949793266391022,
+      "net_expected_dollars": -0.042520673360897765
+    },
+    "no": {
+      "ask": "0.5000",
+      "available": "302858.00",
+      "fee": "0.0175",
+      "probability": 0.5050206733608977,
+      "net_expected_dollars": -0.012479326639102228
+    }
+  },
+  "decision": "pass",
+  "contracts": 0
+}
