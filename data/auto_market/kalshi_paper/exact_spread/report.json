@@ -1,21 +1,21 @@
 {
   "matched_games": 12,
   "games_with_positive_sportsbook_edge": 1,
-  "awaiting_settlement": 1,
+  "awaiting_settlement": 0,
   "paired": {
-    "comparable": 11,
+    "comparable": 12,
     "excluded_settlements": 0,
     "sportsbooks": {
       "trades": 1,
-      "passes": 10,
+      "passes": 11,
       "net_paper_dollars": -0.4774,
-      "brier": 0.25561241898100306
+      "brier": 0.2569956940848231
     },
     "sportsbooks_epa_blend": {
       "trades": 1,
-      "passes": 10,
+      "passes": 11,
       "net_paper_dollars": -0.4774,
-      "brier": 0.2555787201630038
+      "brier": 0.25726615605586706
     }
   },
   "games": [
@@ -52,6 +52,24 @@
           "decision": "pass",
           "net_dollars": 0.0,
           "brier": 0.2701474197410947
+        }
+      }
+    },
+    {
+      "game": "2026_11_CIN_WAS",
+      "ticker": "KXNFLSPREAD-26NOV23CINWAS-CIN6",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5217391304347826,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2722117202268431
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5251932509823056,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.27582795087736306
         }
       }
     },

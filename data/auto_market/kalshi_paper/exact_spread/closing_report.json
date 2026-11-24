@@ -85,15 +85,14 @@
     "both pass": {
       "games": 11,
       "closing_coverage": {
-        "usable": 10,
-        "pending": 1
+        "usable": 11
       },
       "sportsbooks": {
         "trades": 0,
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
-        "settled_games": 10,
+        "settled_games": 11,
         "net_paper_dollars": 0.0
       },
       "sportsbooks_epa_blend": {
@@ -101,7 +100,7 @@
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
-        "settled_games": 10,
+        "settled_games": 11,
         "net_paper_dollars": 0.0
       }
     }
@@ -165,16 +164,23 @@
       "entry_time": "2026-11-23T01:29:44.145960+00:00",
       "group": "both pass",
       "closing_quote": {
-        "status": "pending"
+        "status": "usable",
+        "end_period_ts": 1795482840,
+        "yes_bid": "0.5400",
+        "yes_ask": "0.5500",
+        "yes_midpoint": "0.5450",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV23CINWAS-CIN6",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV23CINWAS-CIN6/candlesticks?start_ts=1795482600&end_ts=1795482899&period_interval=1"
       },
       "arms": {
         "sportsbooks": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         },
         "sportsbooks_epa_blend": {
           "side": "pass",
-          "net_paper_dollars": null
+          "net_paper_dollars": 0.0
         }
       }
     },

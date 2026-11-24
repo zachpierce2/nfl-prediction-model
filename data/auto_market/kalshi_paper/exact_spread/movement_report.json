@@ -10,7 +10,7 @@
       "usable_closes": 1,
       "mean_advantage_cents": -2.24,
       "beat_close": 0,
-      "settled_games": 11,
+      "settled_games": 12,
       "net_paper_dollars": -0.4774
     },
     "filtered": {
@@ -18,7 +18,7 @@
       "usable_closes": 0,
       "mean_advantage_cents": null,
       "beat_close": 0,
-      "settled_games": 11,
+      "settled_games": 12,
       "net_paper_dollars": 0
     }
   },
@@ -97,15 +97,15 @@
       "game": "2026_11_CIN_WAS",
       "ticker": "KXNFLSPREAD-26NOV23CINWAS-CIN6",
       "status": "insufficient_books",
-      "close_status": "pending",
+      "close_status": "usable",
       "baseline": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       },
       "filtered": {
         "side": "pass",
-        "net_dollars": null,
+        "net_dollars": 0,
         "advantage_cents": null
       }
     },

@@ -1,22 +1,22 @@
 {
   "paired": 13,
-  "graded": 12,
-  "pending": 1,
+  "graded": 13,
+  "pending": 0,
   "changed": 0,
   "primary": {
     "WIN": 8,
-    "LOSS": 4,
+    "LOSS": 5,
     "PUSH": 0,
     "NO_LEAN": 0,
     "changed_wins": 0,
-    "hypothetical_net_units": 3.425938581258414
+    "hypothetical_net_units": 2.425938581258414
   },
   "consensus": {
     "WIN": 8,
-    "LOSS": 4,
+    "LOSS": 5,
     "PUSH": 0,
     "NO_LEAN": 0,
     "changed_wins": 0,
-    "hypothetical_net_units": 3.425938581258414
+    "hypothetical_net_units": 2.425938581258414
   }
 }
