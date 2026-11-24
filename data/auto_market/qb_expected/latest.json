@@ -1,8 +1,8 @@
 {
   "version": "expected_qb_v1",
   "code_sha256": "2dcd4d383ea9a368b9684b333489b4a416b3765b5f60d3f8b2333dc067d3ffb0",
-  "snapshot_sha256": "5ab79711504f6db2393867c4cfb4249aca634dd764c619ba119254159f8082b7",
-  "observed_at_utc": "2026-11-24T13:29:24.434492+00:00",
+  "snapshot_sha256": "f4ad1721bbcb09798653637fd1cac3d9419535e9b11cf9d09ae72142ba8cd8af",
+  "observed_at_utc": "2026-11-24T16:24:13.233447+00:00",
   "upcoming_games": 16,
   "team_rows": 32,
   "status_counts": {
@@ -15,25 +15,25 @@
   "sources": {
     "schedule": {
       "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
-      "observed_at_utc": "2026-11-24T13:29:19.396367+00:00",
-      "sha256": "7e0a7d62517d127e5afda1f58dbd4ddb4562eace669cf1e1e382f6c123ad7651",
+      "observed_at_utc": "2026-11-24T16:24:08.336313+00:00",
+      "sha256": "6f37052356770c95205da126f111c1bba14505e4c91ec9037ff2afecdee571f1",
       "last_modified_utc": null
     },
     "depth": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
-      "observed_at_utc": "2026-11-24T13:29:20.481872+00:00",
+      "observed_at_utc": "2026-11-24T16:24:09.255226+00:00",
       "sha256": "da06cb94bc9112e999c1947777cabac7c6a127199c29c0c534d37d5925950668",
       "last_modified_utc": "2026-11-24T07:02:33+00:00"
     },
     "injuries": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv",
-      "observed_at_utc": "2026-11-24T13:29:23.829889+00:00",
+      "observed_at_utc": "2026-11-24T16:24:12.626814+00:00",
       "sha256": "c6e2c17e8d0daa67533e1999da91e89c951f657e2cc876e39970bae8911d4964",
       "last_modified_utc": "2026-11-24T07:01:22+00:00"
     },
     "players": {
       "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
-      "observed_at_utc": "2026-11-24T13:29:24.007279+00:00",
+      "observed_at_utc": "2026-11-24T16:24:12.807376+00:00",
       "sha256": "6841de1b685d478b4cbe3da2ab533d9e19438e347f4a25e060d5921d7dd2e47b",
       "last_modified_utc": "2026-11-23T19:50:34+00:00"
     }
