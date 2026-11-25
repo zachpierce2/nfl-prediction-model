@@ -1,0 +1,133 @@
+{
+  "game": "2026_12_GB_LA",
+  "kickoff": "2026-11-26T01:00:00+00:00",
+  "minutes": 90,
+  "cutoff": "2026-11-25T23:30:00+00:00",
+  "observed": "2026-11-25T22:59:01.662611+00:00",
+  "qbs": {
+    "home": {
+      "qb_id": "00-0026498",
+      "evidence": [
+        {
+          "game_id": "2026_12_GB_LA",
+          "team": "LAR",
+          "qb_id": "00-0026498",
+          "qb_name": "Matthew Stafford",
+          "status": "expected",
+          "reason": "DEPTH_CHART",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
+          "published_at_utc": "2026-11-25T17:56:34Z",
+          "observed_at_utc": "2026-11-25T22:59:00.118142+00:00",
+          "kickoff_utc": "2026-11-26T01:00:00+00:00",
+          "injury_status": "no_game_designation",
+          "practice_status": "Full Participation in Practice",
+          "evidence_json": "[{\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-25T17:56:34Z\", \"qb_id\": \"00-0026498\", \"qb_name\": \"Matthew Stafford\", \"rank\": 1.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-25T17:56:34Z\", \"qb_id\": \"00-0039107\", \"qb_name\": \"Stetson Bennett IV\", \"rank\": 2.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-25T17:56:34Z\", \"qb_id\": \"00-0041568\", \"qb_name\": \"Ty Simpson\", \"rank\": 3.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-25T17:56:34Z\", \"qb_id\": \"00-0041414\", \"qb_name\": \"Matthew Caldwell\", \"rank\": 4.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"first_name\": \"John\", \"full_name\": \"Matthew Stafford\", \"game_type\": \"REG\", \"gsis_id\": \"00-0026498\", \"kind\": \"injury_report\", \"last_name\": \"Stafford\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"QB\", \"practice_primary_injury\": \"Elbow\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Aaron\", \"full_name\": \"Aaron Donald\", \"game_type\": \"REG\", \"gsis_id\": \"00-0031388\", \"kind\": \"injury_report\", \"last_name\": \"Donald\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"DT\", \"practice_primary_injury\": \"Not injury related - resting player\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Joseph\", \"full_name\": \"Joe Cardona\", \"game_type\": \"REG\", \"gsis_id\": \"00-0032228\", \"kind\": \"injury_report\", \"last_name\": \"Cardona\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"LS\", \"practice_primary_injury\": \"Ankle\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Tyler\", \"full_name\": \"Tyler Higbee\", \"game_type\": \"REG\", \"gsis_id\": \"00-0033110\", \"kind\": \"injury_report\", \"last_name\": \"Higbee\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"TE\", \"practice_primary_injury\": \"Not injury related - resting player\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Myles\", \"full_name\": \"Myles Garrett\", \"game_type\": \"REG\", \"gsis_id\": \"00-0033868\", \"kind\": \"injury_report\", \"last_name\": \"Garrett\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Knee\", \"practice_secondary_injury\": \"Not injury related - resting player\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Coleman\", \"full_name\": \"Coleman Shelton\", \"game_type\": \"REG\", \"gsis_id\": \"00-0034114\", \"kind\": \"injury_report\", \"last_name\": \"Shelton\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"C\", \"practice_primary_injury\": \"Hamstring\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Hamstring\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Colby\", \"full_name\": \"Colby Parkinson\", \"game_type\": \"REG\", \"gsis_id\": \"00-0036244\", \"kind\": \"injury_report\", \"last_name\": \"Parkinson\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"TE\", \"practice_primary_injury\": \"Ribs\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Kamren\", \"full_name\": \"Kam Curl\", \"game_type\": \"REG\", \"gsis_id\": \"00-0036349\", \"kind\": \"injury_report\", \"last_name\": \"Curl\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"S\", \"practice_primary_injury\": \"Toe\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Trent\", \"full_name\": \"Trent McDuffie\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037191\", \"kind\": \"injury_report\", \"last_name\": \"McDuffie\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"CB\", \"practice_primary_injury\": \"Back\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Nate\", \"full_name\": \"Nate Landman\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037587\", \"kind\": \"injury_report\", \"last_name\": \"Landman\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Toe\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Kyren\", \"full_name\": \"Kyren Williams\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037840\", \"kind\": \"injury_report\", \"last_name\": \"Williams\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"RB\", \"practice_primary_injury\": \"Toe\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Steve\", \"full_name\": \"Steve Avila\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039058\", \"kind\": \"injury_report\", \"last_name\": \"Avila\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Hamstring\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Hamstring\", \"report_secondary_injury\": \"\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Davis\", \"full_name\": \"Davis Allen\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039074\", \"kind\": \"injury_report\", \"last_name\": \"Allen\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"TE\", \"practice_primary_injury\": \"Oblique\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Byron\", \"full_name\": \"Byron Young\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039137\", \"kind\": \"injury_report\", \"last_name\": \"Young\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Not injury related - resting player\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Kobie\", \"full_name\": \"Kobie Turner\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039138\", \"kind\": \"injury_report\", \"last_name\": \"Turner\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"DT\", \"practice_primary_injury\": \"Groin\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Justin\", \"full_name\": \"Justin Dedich\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039784\", \"kind\": \"injury_report\", \"last_name\": \"Dedich\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Hand\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}, {\"first_name\": \"Terrance\", \"full_name\": \"Terrance Ferguson\", \"game_type\": \"REG\", \"gsis_id\": \"00-0040737\", \"kind\": \"injury_report\", \"last_name\": \"Ferguson\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"TE\", \"practice_primary_injury\": \"Ankle\", \"practice_secondary_injury\": \"Hamstring\", \"practice_status\": \"Did Not Participate In Practice\", \"report_primary_injury\": \"Ankle\", \"report_secondary_injury\": \"Hamstring\", \"report_status\": \"Out\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"LAR\", \"week\": \"12\"}]"
+        }
+      ]
+    },
+    "away": {
+      "qb_id": "00-0036264",
+      "evidence": [
+        {
+          "game_id": "2026_12_GB_LA",
+          "team": "GB",
+          "qb_id": "00-0036264",
+          "qb_name": "Jordan Love",
+          "status": "expected",
+          "reason": "DEPTH_CHART",
+          "source_url": "https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv",
+          "published_at_utc": "2026-11-25T17:56:34Z",
+          "observed_at_utc": "2026-11-25T22:59:00.118142+00:00",
+          "kickoff_utc": "2026-11-26T01:00:00+00:00",
+          "injury_status": "unknown",
+          "practice_status": "unknown",
+          "evidence_json": "[{\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-25T17:56:34Z\", \"qb_id\": \"00-0036264\", \"qb_name\": \"Jordan Love\", \"rank\": 1.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"kind\": \"depth_chart\", \"published_at_utc\": \"2026-11-25T17:56:34Z\", \"qb_id\": \"00-0028118\", \"qb_name\": \"Tyrod Taylor\", \"rank\": 2.0, \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/depth_charts/depth_charts_2026.csv\"}, {\"first_name\": \"Kevin\", \"full_name\": \"Kevin Zeitler\", \"game_type\": \"REG\", \"gsis_id\": \"00-0029592\", \"kind\": \"injury_report\", \"last_name\": \"Zeitler\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Triceps\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Triceps\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Zaire\", \"full_name\": \"Zaire Franklin\", \"game_type\": \"REG\", \"gsis_id\": \"00-0034431\", \"kind\": \"injury_report\", \"last_name\": \"Franklin\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Shin\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Shin\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Joshua\", \"full_name\": \"Josh Jacobs\", \"game_type\": \"REG\", \"gsis_id\": \"00-0035700\", \"kind\": \"injury_report\", \"last_name\": \"Jacobs\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"RB\", \"practice_primary_injury\": \"Finger\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Finger\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Aaron\", \"full_name\": \"Aaron Banks\", \"game_type\": \"REG\", \"gsis_id\": \"00-0036551\", \"kind\": \"injury_report\", \"last_name\": \"Banks\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Knee\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Stevenson\", \"full_name\": \"Isaiah McDuffie\", \"game_type\": \"REG\", \"gsis_id\": \"00-0036658\", \"kind\": \"injury_report\", \"last_name\": \"McDuffie\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Rib\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Micah\", \"full_name\": \"Micah Parsons\", \"game_type\": \"REG\", \"gsis_id\": \"00-0036932\", \"kind\": \"injury_report\", \"last_name\": \"Parsons\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"LB\", \"practice_primary_injury\": \"Knee\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Knee\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Sean\", \"full_name\": \"Sean Rhyan\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037076\", \"kind\": \"injury_report\", \"last_name\": \"Rhyan\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"C\", \"practice_primary_injury\": \"Ankle\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Ankle\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Miles\", \"full_name\": \"Bo Melton\", \"game_type\": \"REG\", \"gsis_id\": \"00-0037091\", \"kind\": \"injury_report\", \"last_name\": \"Melton\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"WR\", \"practice_primary_injury\": \"Thigh\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Thigh\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Skyy\", \"full_name\": \"Skyy Moore\", \"game_type\": \"REG\", \"gsis_id\": \"00-0038090\", \"kind\": \"injury_report\", \"last_name\": \"Moore\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"WR\", \"practice_primary_injury\": \"Ankle\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Ankle\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Travis\", \"full_name\": \"Travis Glover\", \"game_type\": \"REG\", \"gsis_id\": \"00-0039819\", \"kind\": \"injury_report\", \"last_name\": \"Glover\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"G\", \"practice_primary_injury\": \"Shoulder\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Limited Participation in Practice\", \"report_primary_injury\": \"Shoulder\", \"report_secondary_injury\": \"\", \"report_status\": \"Questionable\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}, {\"first_name\": \"Brandon\", \"full_name\": \"Brandon Cisse\", \"game_type\": \"REG\", \"gsis_id\": \"00-0041470\", \"kind\": \"injury_report\", \"last_name\": \"Cisse\", \"observed_at_utc\": \"2026-11-25T22:58:59.417743+00:00\", \"position\": \"CB\", \"practice_primary_injury\": \"Rib\", \"practice_secondary_injury\": \"\", \"practice_status\": \"Full Participation in Practice\", \"report_primary_injury\": \"\", \"report_secondary_injury\": \"\", \"report_status\": \"\", \"season\": \"2026\", \"season_type\": \"REG\", \"source_url\": \"https://github.com/nflverse/nflverse-data/releases/download/injuries/injuries_2026.csv\", \"team\": \"GB\", \"week\": \"12\"}]"
+        }
+      ]
+    }
+  },
+  "quote": {
+    "status": "OBSERVED",
+    "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+    "market": {
+      "can_close_early": true,
+      "close_time": "2026-11-28T01:00:00Z",
+      "created_time": "2026-11-19T02:01:34.218734Z",
+      "custom_strike": {
+        "football_team": "422d5fd7-ad18-4c96-902d-6f7c50e4660f"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNFLSPREAD-26NOV25GBLAR",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-11-26T04:00:00Z",
+      "expiration_value": "",
+      "floor_strike": 2.5,
+      "last_price_dollars": "0.5100",
+      "latest_expiration_time": "2026-11-28T01:00:00Z",
+      "market_type": "binary",
+      "no_ask_dollars": "0.4900",
+      "no_bid_dollars": "0.4800",
+      "no_sub_title": "Los Angeles R wins by over 2.5 points",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-11-26T04:00:00Z",
+      "open_interest_fp": "1073408.71",
+      "open_time": "2026-11-19T02:06:00Z",
+      "previous_price_dollars": "0.5100",
+      "previous_yes_ask_dollars": "0.5100",
+      "previous_yes_bid_dollars": "0.5000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Los Angeles R wins by more than 2.5 points in the Green Bay vs Los Angeles R Pro Football game originally scheduled for Nov 25, 2026, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_bounds_type": "default",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+      "title": "Los Angeles R wins by over 2.5 points?",
+      "updated_time": "2026-11-19T02:06:00.77991Z",
+      "volume_24h_fp": "745003.92",
+      "volume_fp": "1189522.39",
+      "yes_ask_dollars": "0.5200",
+      "yes_ask_size_fp": "2131767.22",
+      "yes_bid_dollars": "0.5100",
+      "yes_bid_size_fp": "1776883.18",
+      "yes_sub_title": "Los Angeles R wins by over 2.5 points"
+    },
+    "book": {
+      "no_dollars": [
+        [
+          "0.4800",
+          "2131543.96"
+        ]
+      ],
+      "yes_dollars": [
+        [
+          "0.5100",
+          "1776840.33"
+        ]
+      ]
+    },
+    "offers": {
+      "yes": {
+        "ask": "0.5200",
+        "available": "2131543.96",
+        "fee": "0.0175"
+      },
+      "no": {
+        "ask": "0.4900",
+        "available": "1776840.33",
+        "fee": "0.0175"
+      }
+    },
+    "fee_type": "quadratic_with_maker_fees",
+    "fee_multiplier": "1"
+  }
+}
