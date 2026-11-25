@@ -1,10 +1,10 @@
 {
   "coverage": {
     "insufficient_books": 5,
-    "comparable": 7
+    "comparable": 8
   },
   "all_entries": {
-    "games": 12,
+    "games": 13,
     "baseline": {
       "trades": 1,
       "usable_closes": 1,
@@ -23,7 +23,7 @@
     }
   },
   "three_book_pairs": {
-    "games": 7,
+    "games": 8,
     "baseline": {
       "trades": 0,
       "usable_closes": 0,
@@ -250,6 +250,22 @@
       "filtered": {
         "side": "pass",
         "net_dollars": 0,
+        "advantage_cents": null
+      }
+    },
+    {
+      "game": "2026_12_GB_LA",
+      "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+      "status": "comparable",
+      "close_status": "pending",
+      "baseline": {
+        "side": "pass",
+        "net_dollars": null,
+        "advantage_cents": null
+      },
+      "filtered": {
+        "side": "pass",
+        "net_dollars": null,
         "advantage_cents": null
       }
     }

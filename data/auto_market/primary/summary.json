@@ -6,15 +6,15 @@
     "changed_price": 13,
     "missing_price": 0,
     "comparable": 0,
-    "primary_forecasts": 13,
+    "primary_forecasts": 29,
     "mean_points": null
   },
   "primary_model": "market_plus_epa",
   "primary": {
-    "updated_at_utc": "2026-11-24T10:33:49.490591+00:00",
-    "forecasts": 13,
+    "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+    "forecasts": 29,
     "graded_games": 13,
-    "pending_games": 0,
+    "pending_games": 16,
     "hypothetical_wins": 8,
     "hypothetical_losses": 5,
     "pushes": 0,
@@ -27,9 +27,9 @@
     "mean_matched_line_value_points": 0.038461538461538464
   },
   "total_comparison": {
-    "paired": 13,
+    "paired": 29,
     "graded": 13,
-    "pending": 0,
+    "pending": 16,
     "disagreements": 2,
     "baseline": {
       "WIN": 8,

@@ -1,7 +1,7 @@
 {
-  "paired": 12,
+  "paired": 28,
   "graded": 12,
-  "pending": 0,
+  "pending": 16,
   "disagreements": 0,
   "baseline": {
     "WIN": 7,

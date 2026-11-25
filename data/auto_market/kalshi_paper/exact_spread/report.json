@@ -1,7 +1,7 @@
 {
-  "matched_games": 12,
+  "matched_games": 13,
   "games_with_positive_sportsbook_edge": 1,
-  "awaiting_settlement": 0,
+  "awaiting_settlement": 1,
   "paired": {
     "comparable": 12,
     "excluded_settlements": 0,

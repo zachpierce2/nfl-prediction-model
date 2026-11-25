@@ -1,8 +1,8 @@
 {
   "version": "signed_home_margin_gaussian_3pt_mean_tilt_v1",
-  "paired": 12,
+  "paired": 28,
   "graded": 12,
-  "pending": 0,
+  "pending": 16,
   "primary": {
     "WIN": 7,
     "LOSS": 5,

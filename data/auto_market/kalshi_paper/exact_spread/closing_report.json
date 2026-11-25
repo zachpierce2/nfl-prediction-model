@@ -83,9 +83,10 @@
       }
     },
     "both pass": {
-      "games": 11,
+      "games": 12,
       "closing_coverage": {
-        "usable": 11
+        "usable": 11,
+        "pending": 1
       },
       "sportsbooks": {
         "trades": 0,
@@ -423,6 +424,25 @@
         "sportsbooks_epa_blend": {
           "side": "pass",
           "net_paper_dollars": 0.0
+        }
+      }
+    },
+    {
+      "game": "2026_12_GB_LA",
+      "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+      "entry_time": "2026-11-25T01:29:55.947149+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
         }
       }
     }
