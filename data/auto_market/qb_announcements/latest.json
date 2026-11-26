@@ -1,6 +1,6 @@
 {
   "adapter": "official_explicit_game_v2",
-  "observed_at_utc": "2026-11-26T07:34:57.738089+00:00",
+  "observed_at_utc": "2026-11-26T10:22:33.524664+00:00",
   "schedule_upcoming_games": 16,
   "player_identity_rows": 111,
   "sources_attempted": 53,
@@ -15,7 +15,7 @@
       {
         "game_id": "2026_12_ATL_MIN",
         "kickoff_utc": "2026-11-29T18:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "MIN",
@@ -31,7 +31,7 @@
       {
         "game_id": "2026_12_BAL_HOU",
         "kickoff_utc": "2026-11-29T18:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "HOU",
@@ -47,7 +47,7 @@
       {
         "game_id": "2026_12_CAR_TB",
         "kickoff_utc": "2026-12-01T01:15:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "TB",
@@ -63,7 +63,7 @@
       {
         "game_id": "2026_12_CHI_DET",
         "kickoff_utc": "2026-11-26T18:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "DET",
@@ -79,7 +79,7 @@
       {
         "game_id": "2026_12_DEN_PIT",
         "kickoff_utc": "2026-11-27T20:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "PIT",
@@ -95,7 +95,7 @@
       {
         "game_id": "2026_12_KC_BUF",
         "kickoff_utc": "2026-11-27T01:20:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "BUF",
@@ -111,7 +111,7 @@
       {
         "game_id": "2026_12_LV_CLE",
         "kickoff_utc": "2026-11-30T01:20:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "CLE",
@@ -127,7 +127,7 @@
       {
         "game_id": "2026_12_NE_LAC",
         "kickoff_utc": "2026-11-29T21:05:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "LAC",
@@ -143,7 +143,7 @@
       {
         "game_id": "2026_12_NO_CIN",
         "kickoff_utc": "2026-11-29T18:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "CIN",
@@ -159,7 +159,7 @@
       {
         "game_id": "2026_12_NYG_IND",
         "kickoff_utc": "2026-11-29T18:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "IND",
@@ -175,7 +175,7 @@
       {
         "game_id": "2026_12_NYJ_MIA",
         "kickoff_utc": "2026-11-29T18:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "MIA",
@@ -191,7 +191,7 @@
       {
         "game_id": "2026_12_PHI_DAL",
         "kickoff_utc": "2026-11-26T21:30:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "DAL",
@@ -207,7 +207,7 @@
       {
         "game_id": "2026_12_SEA_SF",
         "kickoff_utc": "2026-11-29T21:25:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "SF",
@@ -223,7 +223,7 @@
       {
         "game_id": "2026_12_TEN_JAX",
         "kickoff_utc": "2026-11-29T18:00:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "JAX",
@@ -239,7 +239,7 @@
       {
         "game_id": "2026_12_WAS_ARI",
         "kickoff_utc": "2026-11-29T21:25:00+00:00",
-        "latest_quote_at_utc": "2026-11-26T04:15:15.068206+00:00",
+        "latest_quote_at_utc": "2026-11-26T07:35:11.494366+00:00",
         "both_confirmed": false,
         "home": {
           "team": "ARI",
@@ -272,7 +272,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_BAL_HOU",
@@ -288,7 +288,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_CAR_TB",
@@ -304,7 +304,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_CHI_DET",
@@ -320,7 +320,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_DEN_PIT",
@@ -336,7 +336,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_KC_BUF",
@@ -352,7 +352,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_LV_CLE",
@@ -368,7 +368,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_NE_LAC",
@@ -384,7 +384,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_NO_CIN",
@@ -400,7 +400,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_NYG_IND",
@@ -416,7 +416,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_NYJ_MIA",
@@ -432,7 +432,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_PHI_DAL",
@@ -448,7 +448,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_SEA_SF",
@@ -464,7 +464,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_TEN_JAX",
@@ -480,7 +480,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_12_WAS_ARI",
@@ -496,7 +496,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       },
       {
         "game_id": "2026_13_KC_LA",
@@ -512,7 +512,7 @@
           "qb_id": null,
           "status": "MISSING"
         },
-        "schedule_captured_at_utc": "2026-11-26T07:34:54.610894+00:00"
+        "schedule_captured_at_utc": "2026-11-26T10:22:30.303832+00:00"
       }
     ],
     "scope": "Every upcoming regular-season game in the current schedule over eight days",
