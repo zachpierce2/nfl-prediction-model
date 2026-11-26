@@ -9,9 +9,9 @@
       "correct": 18
     },
     "360": {
-      "due": 14,
-      "captured": 4,
-      "quoted": 4,
+      "due": 15,
+      "captured": 5,
+      "quoted": 5,
       "graded_teams": 8,
       "named": 8,
       "correct": 8
@@ -343,6 +343,46 @@
         "90": {
           "home": "00-0037834",
           "away": "00-0029604"
+        }
+      }
+    },
+    {
+      "game": "2026_12_CHI_DET",
+      "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI2",
+      "side": "yes",
+      "earlier": 1440,
+      "later": 360,
+      "earlier_cost": "0.5075",
+      "later_cost": "0.5075",
+      "cost_change": "0.0000",
+      "starters": {
+        "1440": {
+          "home": "00-0033106",
+          "away": "00-0039918"
+        },
+        "360": {
+          "home": "00-0033106",
+          "away": "00-0039918"
+        }
+      }
+    },
+    {
+      "game": "2026_12_CHI_DET",
+      "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI2",
+      "side": "no",
+      "earlier": 1440,
+      "later": 360,
+      "earlier_cost": "0.5375",
+      "later_cost": "0.5375",
+      "cost_change": "0.0000",
+      "starters": {
+        "1440": {
+          "home": "00-0033106",
+          "away": "00-0039918"
+        },
+        "360": {
+          "home": "00-0033106",
+          "away": "00-0039918"
         }
       }
     }
