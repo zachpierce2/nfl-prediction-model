@@ -1,56 +1,56 @@
 {
   "agreement_vs_blend": {
-    "comparable": 13,
+    "comparable": 14,
     "excluded_settlements": 0,
     "agreement_v1": {
       "trades": 0,
-      "passes": 13,
+      "passes": 14,
       "net_paper_dollars": 0.0,
-      "brier": 0.2635046684395167
+      "brier": 0.26205888219953527
     },
     "blend": {
       "trades": 0,
-      "passes": 13,
+      "passes": 14,
       "net_paper_dollars": 0.0,
-      "brier": 0.2609305051795516
+      "brier": 0.25966858774385343
     }
   },
   "three_way": {
-    "comparable": 13,
+    "comparable": 14,
     "excluded_settlements": 0,
     "model": {
       "trades": 4,
-      "passes": 9,
+      "passes": 10,
       "net_paper_dollars": 0.9501,
-      "brier": 0.2567808739146261
+      "brier": 0.25569000260818736
     },
     "market": {
       "trades": 0,
-      "passes": 13,
+      "passes": 14,
       "net_paper_dollars": 0.0,
-      "brier": 0.26530000000000004
+      "brier": 0.26385178571428575
     },
     "blend": {
       "trades": 0,
-      "passes": 13,
+      "passes": 14,
       "net_paper_dollars": 0.0,
-      "brier": 0.2609305051795516
+      "brier": 0.25966858774385343
     }
   },
   "probability_benchmark": {
-    "comparable": 13,
+    "comparable": 14,
     "excluded": 0,
-    "model_brier": 0.2567808739146261,
-    "kalshi_midpoint_brier": 0.26530000000000004,
-    "model_advantage": 0.008519126085373918
+    "model_brier": 0.25569000260818736,
+    "kalshi_midpoint_brier": 0.26385178571428575,
+    "model_advantage": 0.008161783106098386
   },
   "recorded": 29,
-  "graded": 13,
-  "awaiting_binary_settlement": 16,
+  "graded": 14,
+  "awaiting_binary_settlement": 15,
   "graded_paper_trades": 4,
-  "graded_passes": 9,
+  "graded_passes": 10,
   "net_paper_dollars": 0.9501,
-  "mean_brier": 0.2567808739146261,
+  "mean_brier": 0.25569000260818736,
   "games": [
     {
       "comparison": {
@@ -532,6 +532,43 @@
       "result": "yes",
       "net_dollars": 0.0,
       "brier": 0.2380379373878543
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5085646780862374,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24150867562448347
+        },
+        "market": {
+          "p_yes": 0.505,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.245025
+        },
+        "blend": {
+          "p_yes": 0.5067823390431188,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24326366107977707
+        },
+        "agreement_v1": {
+          "p_yes": 0.5067823390431188,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24326366107977707
+        }
+      },
+      "model_yes_probability": 0.5085646780862374,
+      "kalshi_yes_midpoint": 0.505,
+      "midpoint_brier": 0.245025,
+      "game": "2026_12_GB_LA",
+      "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.24150867562448347
     }
   ]
 }

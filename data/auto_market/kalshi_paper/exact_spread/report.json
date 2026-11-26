@@ -1,21 +1,21 @@
 {
-  "matched_games": 13,
+  "matched_games": 16,
   "games_with_positive_sportsbook_edge": 1,
-  "awaiting_settlement": 1,
+  "awaiting_settlement": 3,
   "paired": {
-    "comparable": 12,
+    "comparable": 13,
     "excluded_settlements": 0,
     "sportsbooks": {
       "trades": 1,
-      "passes": 11,
+      "passes": 12,
       "net_paper_dollars": -0.4774,
-      "brier": 0.2569956940848231
+      "brier": 0.2563755399818313
     },
     "sportsbooks_epa_blend": {
       "trades": 1,
-      "passes": 11,
+      "passes": 12,
       "net_paper_dollars": -0.4774,
-      "brier": 0.25726615605586706
+      "brier": 0.25633853874949974
     }
   },
   "games": [
@@ -232,6 +232,24 @@
           "decision": "pass",
           "net_dollars": 0.0,
           "brier": 0.2439823136440693
+        }
+      }
+    },
+    {
+      "game": "2026_12_GB_LA",
+      "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5010674487007984,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24893369074593039
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5048160633935179,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.24520713107309247
         }
       }
     }

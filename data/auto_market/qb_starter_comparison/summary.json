@@ -1,6 +1,6 @@
 {
   "version": "market_epa_last_observed_same_fit_v1",
-  "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+  "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
   "complete_triples": 19,
   "expected_forecasts": 19,
   "last_observed_forecasts": 19,
@@ -9,54 +9,54 @@
   "starter_changed_forecasts": 3,
   "same_game_results": {
     "epa": {
-      "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+      "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
       "forecasts": 19,
-      "graded_games": 3,
-      "pending_games": 16,
-      "hypothetical_wins": 2,
+      "graded_games": 4,
+      "pending_games": 15,
+      "hypothetical_wins": 3,
       "hypothetical_losses": 1,
       "pushes": 0,
       "no_lean": 0,
-      "hypothetical_win_pct": 66.66666666666667,
-      "market_mae": 13.333333333333334,
-      "model_mae": 13.17682356302614,
+      "hypothetical_win_pct": 75.0,
+      "market_mae": 12.625,
+      "model_mae": 12.48975247822738,
       "missing_result_over_3_days": [],
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "last_observed": {
-      "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+      "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
       "forecasts": 19,
-      "graded_games": 3,
-      "pending_games": 16,
-      "hypothetical_wins": 2,
+      "graded_games": 4,
+      "pending_games": 15,
+      "hypothetical_wins": 3,
       "hypothetical_losses": 1,
       "pushes": 0,
       "no_lean": 0,
-      "hypothetical_win_pct": 66.66666666666667,
-      "market_mae": 13.333333333333334,
-      "model_mae": 13.179024074450636,
+      "hypothetical_win_pct": 75.0,
+      "market_mae": 12.625,
+      "model_mae": 12.483494958695989,
       "missing_result_over_3_days": [],
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "expected": {
-      "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+      "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
       "forecasts": 19,
-      "graded_games": 3,
-      "pending_games": 16,
-      "hypothetical_wins": 2,
+      "graded_games": 4,
+      "pending_games": 15,
+      "hypothetical_wins": 3,
       "hypothetical_losses": 1,
       "pushes": 0,
       "no_lean": 0,
-      "hypothetical_win_pct": 66.66666666666667,
-      "market_mae": 13.333333333333334,
-      "model_mae": 13.179024074450636,
+      "hypothetical_win_pct": 75.0,
+      "market_mae": 12.625,
+      "model_mae": 12.483494958695989,
       "missing_result_over_3_days": [],
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     }
   },
   "changed_starter_results": {
     "epa": {
-      "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+      "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
       "forecasts": 3,
       "graded_games": 0,
       "pending_games": 3,
@@ -71,7 +71,7 @@
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "last_observed": {
-      "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+      "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
       "forecasts": 3,
       "graded_games": 0,
       "pending_games": 3,
@@ -86,7 +86,7 @@
       "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim."
     },
     "expected": {
-      "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+      "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
       "forecasts": 3,
       "graded_games": 0,
       "pending_games": 3,
@@ -104,7 +104,7 @@
   "disagreements": [
     {
       "comparison": "expected vs last_observed",
-      "graded_games": 3,
+      "graded_games": 4,
       "pick_disagreements": 0,
       "first_wins_other_loses": 0,
       "other_wins_first_loses": 0,
@@ -112,19 +112,19 @@
     },
     {
       "comparison": "expected vs epa",
-      "graded_games": 3,
+      "graded_games": 4,
       "pick_disagreements": 0,
       "first_wins_other_loses": 0,
       "other_wins_first_loses": 0,
-      "mean_absolute_error_improvement": -0.0022005114244952515
+      "mean_absolute_error_improvement": 0.00625751953139142
     },
     {
       "comparison": "last_observed vs epa",
-      "graded_games": 3,
+      "graded_games": 4,
       "pick_disagreements": 0,
       "first_wins_other_loses": 0,
       "other_wins_first_loses": 0,
-      "mean_absolute_error_improvement": -0.0022005114244952515
+      "mean_absolute_error_improvement": 0.00625751953139142
     }
   ],
   "interpretation": "Prospective identical-game comparison. QB arms share training, fitted coefficients, source snapshots and quote; only live starter IDs differ. No backfill or automatic promotion. Zero-game rates are null; no profitability established."

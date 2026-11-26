@@ -1,10 +1,10 @@
 {
-  "updated_at_utc": "2026-11-25T10:38:23.076958+00:00",
+  "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
   "forecasts": 31,
   "status_counts": {
     "NEAR_KICKOFF_PROXY": 14,
-    "NO_LATER_SAME_BOOK_QUOTE": 1,
-    "PENDING_KICKOFF": 16
+    "NO_LATER_SAME_BOOK_QUOTE": 2,
+    "PENDING_KICKOFF": 15
   },
   "near_kickoff_games": 14,
   "early_observations": 0,

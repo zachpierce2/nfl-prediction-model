@@ -1,19 +1,19 @@
 # NFL prospective grading
 
-Updated: 2026-11-25T10:38:23.076958+00:00
+Updated: 2026-11-26T10:37:38.771256+00:00
 
 | Metric | Result |
 |---|---:|
 | Forecasts | 31 |
-| Graded games | 15 |
-| Pending | 16 |
+| Graded games | 16 |
+| Pending | 15 |
 | Hypothetical wins | 8 |
-| Hypothetical losses | 7 |
+| Hypothetical losses | 8 |
 | Pushes | 0 |
 | No lean | 0 |
-| Win rate excluding pushes | 53.33% |
-| Sportsbook MAE | 8.4333 |
-| Model MAE | 8.3868 |
+| Win rate excluding pushes | 50.00% |
+| Sportsbook MAE | 8.5625 |
+| Model MAE | 8.5195 |
 
 Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.
 
@@ -37,7 +37,7 @@ Earlier last observations: 0 (excluded from that average).
 
 Positive means the saved pick had a better spread than the later same-book quote. Each CSV row shows the quote time and minutes before kickoff. Three-hour polling may miss the closing price. These are proxies, not certified closing lines; odds/juice are shown separately and are not included in point value.
 
-Status counts: {"NEAR_KICKOFF_PROXY": 14, "NO_LATER_SAME_BOOK_QUOTE": 1, "PENDING_KICKOFF": 16}
+Status counts: {"NEAR_KICKOFF_PROXY": 14, "NO_LATER_SAME_BOOK_QUOTE": 2, "PENDING_KICKOFF": 15}
 
 ## Prospective core versus EPA (paired games only)
 
@@ -45,8 +45,8 @@ Paired pregame forecasts: 29. Historical predictions are not backfilled.
 
 | Model | Graded | Wins | Losses | Pushes | ATS win rate | MAE |
 |---|---:|---:|---:|---:|---:|---:|
-| core | 13 | 8 | 5 | 0 | 61.54% | 7.8272 |
-| epa | 13 | 8 | 5 | 0 | 61.54% | 7.8260 |
+| core | 14 | 8 | 6 | 0 | 57.14% | 8.0189 |
+| epa | 14 | 9 | 5 | 0 | 64.29% | 8.0119 |
 
 Matched same-book near-kickoff comparisons: 13. Separate line-value means are in epa_shadow/summary.json. These are point-spread proxies, not certified closing prices or profit.
 # Starting QB comparison
@@ -55,9 +55,9 @@ All three models use the same games and sportsbook quotes.
 
 | Model | Graded | W–L–P | ATS | MAE |
 |---|---:|---|---:|---:|
-| epa | 3 | 2–1–0 | 66.67% | 13.1768 |
-| last_observed | 3 | 2–1–0 | 66.67% | 13.1790 |
-| expected | 3 | 2–1–0 | 66.67% | 13.1790 |
+| epa | 4 | 3–1–0 | 75.00% | 12.4898 |
+| last_observed | 4 | 3–1–0 | 75.00% | 12.4835 |
+| expected | 4 | 3–1–0 | 75.00% | 12.4835 |
 
 Complete forecast triples: 19. Starter identity changes: 3. Expected forecasts missing a control: 0. Controls missing EPA: 0.
 

@@ -1,16 +1,16 @@
 {
   "coverage": {
-    "insufficient_books": 5,
-    "comparable": 8
+    "insufficient_books": 6,
+    "comparable": 10
   },
   "all_entries": {
-    "games": 13,
+    "games": 16,
     "baseline": {
       "trades": 1,
       "usable_closes": 1,
       "mean_advantage_cents": -2.24,
       "beat_close": 0,
-      "settled_games": 12,
+      "settled_games": 13,
       "net_paper_dollars": -0.4774
     },
     "filtered": {
@@ -18,18 +18,18 @@
       "usable_closes": 0,
       "mean_advantage_cents": null,
       "beat_close": 0,
-      "settled_games": 12,
+      "settled_games": 13,
       "net_paper_dollars": 0
     }
   },
   "three_book_pairs": {
-    "games": 8,
+    "games": 10,
     "baseline": {
       "trades": 0,
       "usable_closes": 0,
       "mean_advantage_cents": null,
       "beat_close": 0,
-      "settled_games": 7,
+      "settled_games": 8,
       "net_paper_dollars": 0
     },
     "filtered": {
@@ -37,7 +37,7 @@
       "usable_closes": 0,
       "mean_advantage_cents": null,
       "beat_close": 0,
-      "settled_games": 7,
+      "settled_games": 8,
       "net_paper_dollars": 0
     }
   },
@@ -254,8 +254,56 @@
       }
     },
     {
+      "game": "2026_12_CHI_DET",
+      "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI2",
+      "status": "comparable",
+      "close_status": "pending",
+      "baseline": {
+        "side": "pass",
+        "net_dollars": null,
+        "advantage_cents": null
+      },
+      "filtered": {
+        "side": "pass",
+        "net_dollars": null,
+        "advantage_cents": null
+      }
+    },
+    {
       "game": "2026_12_GB_LA",
       "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+      "status": "comparable",
+      "close_status": "usable",
+      "baseline": {
+        "side": "pass",
+        "net_dollars": 0,
+        "advantage_cents": null
+      },
+      "filtered": {
+        "side": "pass",
+        "net_dollars": 0,
+        "advantage_cents": null
+      }
+    },
+    {
+      "game": "2026_12_KC_BUF",
+      "ticker": "KXNFLSPREAD-26NOV26KCBUF-BUF3",
+      "status": "insufficient_books",
+      "close_status": "pending",
+      "baseline": {
+        "side": "pass",
+        "net_dollars": null,
+        "advantage_cents": null
+      },
+      "filtered": {
+        "side": "pass",
+        "net_dollars": null,
+        "advantage_cents": null
+      }
+    },
+    {
+      "game": "2026_12_PHI_DAL",
+      "ticker": "KXNFLSPREAD-26NOV26PHIDAL-DAL9",
       "status": "comparable",
       "close_status": "pending",
       "baseline": {

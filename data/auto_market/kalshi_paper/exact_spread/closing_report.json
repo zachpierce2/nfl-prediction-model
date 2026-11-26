@@ -1,8 +1,10 @@
 {
   "groups": {
     "EPA adds": {
-      "games": 0,
-      "closing_coverage": {},
+      "games": 1,
+      "closing_coverage": {
+        "pending": 1
+      },
       "sportsbooks": {
         "trades": 0,
         "usable_closes": 0,
@@ -12,7 +14,7 @@
         "net_paper_dollars": null
       },
       "sportsbooks_epa_blend": {
-        "trades": 0,
+        "trades": 1,
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
@@ -83,17 +85,17 @@
       }
     },
     "both pass": {
-      "games": 12,
+      "games": 14,
       "closing_coverage": {
-        "usable": 11,
-        "pending": 1
+        "usable": 12,
+        "pending": 2
       },
       "sportsbooks": {
         "trades": 0,
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
-        "settled_games": 11,
+        "settled_games": 12,
         "net_paper_dollars": 0.0
       },
       "sportsbooks_epa_blend": {
@@ -101,7 +103,7 @@
         "usable_closes": 0,
         "beat_close": 0,
         "mean_advantage_cents": null,
-        "settled_games": 11,
+        "settled_games": 12,
         "net_paper_dollars": 0.0
       }
     }
@@ -428,9 +430,76 @@
       }
     },
     {
+      "game": "2026_12_CHI_DET",
+      "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI2",
+      "entry_time": "2026-11-25T19:06:06.674823+00:00",
+      "group": "EPA adds",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "yes",
+          "net_paper_dollars": null,
+          "entry_cost": 0.5075,
+          "available": "685850.69",
+          "p_yes": 0.5158763669335393
+        }
+      }
+    },
+    {
       "game": "2026_12_GB_LA",
       "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
       "entry_time": "2026-11-25T01:29:55.947149+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "usable",
+        "end_period_ts": 1795654740,
+        "yes_bid": "0.5000",
+        "yes_ask": "0.5100",
+        "yes_midpoint": "0.5050",
+        "seconds_before_kickoff": 60.0,
+        "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
+        "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV25GBLAR-LAR3/candlesticks?start_ts=1795654500&end_ts=1795654799&period_interval=1"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": 0.0
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": 0.0
+        }
+      }
+    },
+    {
+      "game": "2026_12_KC_BUF",
+      "ticker": "KXNFLSPREAD-26NOV26KCBUF-BUF3",
+      "entry_time": "2026-11-26T01:29:27.710789+00:00",
+      "group": "both pass",
+      "closing_quote": {
+        "status": "pending"
+      },
+      "arms": {
+        "sportsbooks": {
+          "side": "pass",
+          "net_paper_dollars": null
+        },
+        "sportsbooks_epa_blend": {
+          "side": "pass",
+          "net_paper_dollars": null
+        }
+      }
+    },
+    {
+      "game": "2026_12_PHI_DAL",
+      "ticker": "KXNFLSPREAD-26NOV26PHIDAL-DAL9",
+      "entry_time": "2026-11-25T22:07:56.416004+00:00",
       "group": "both pass",
       "closing_quote": {
         "status": "pending"
