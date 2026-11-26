@@ -1,0 +1,256 @@
+{
+  "game": "2026_12_DEN_PIT",
+  "ticker": "KXNFLSPREAD-26NOV27DENPIT-DEN5",
+  "forecast": {
+    "game_id": "2026_12_DEN_PIT",
+    "quote_id": "a3772f013b778e1ade52daa0",
+    "home_team": "PIT",
+    "away_team": "DEN",
+    "sportsbook": "DraftKings",
+    "home_line": "3.0",
+    "home_price_american": "-115",
+    "away_line": "-3.0",
+    "away_price_american": "-104",
+    "adjustment": "0.136374804232297",
+    "predicted_home_margin": "-2.863625195767703",
+    "home_model_spread": "2.863625195767703",
+    "captured_at_utc": "2026-11-24T19:56:45.641178+00:00",
+    "kickoff_utc": "2026-11-27T20:00:00+00:00",
+    "forecast_created_at_utc": "2026-11-24T19:56:48.493664+00:00",
+    "history_last_scored_date": "2026-11-23",
+    "snapshot_id": "20261124T195645641178Z",
+    "model_sha256": "118a883ca84586a162d6b3b71d6688ba30ff72024aac383c46580972096230f8",
+    "pipeline_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+    "github_run_id": "45475411527",
+    "status": "RESEARCH_ONLY_UNVALIDATED",
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+    "core_forecast_sha256": "ebf83cc1b8654393cc2d9c546feed98938a4cdd16ee6ce9e23d23e4eaf0d48d0",
+    "epa_inputs_sha256": "728d66749a58a29abd49fcd352b474bbe71dcafb58020632204c150b4e624d56",
+    "adj_off_epa_diff": "0.018544369353277246",
+    "adj_def_epa_diff": "-0.03742428515481819",
+    "adj_off_success_diff": "0.023975785990418715",
+    "adj_def_success_diff": "-0.026303386667064846"
+  },
+  "market": {
+    "can_close_early": true,
+    "close_time": "2026-11-29T20:00:00Z",
+    "created_time": "2026-11-20T20:01:45.719292Z",
+    "custom_strike": {
+      "football_team": "0aa02fd7-1bb1-474b-98e1-5379d0a191e3"
+    },
+    "early_close_condition": "This market will close and expire after a winner is declared.",
+    "event_ticker": "KXNFLSPREAD-26NOV27DENPIT",
+    "exchange_index": 0,
+    "expected_expiration_time": "2026-11-27T23:00:00Z",
+    "expiration_value": "",
+    "floor_strike": 4.5,
+    "last_price_dollars": "0.5000",
+    "latest_expiration_time": "2026-11-29T20:00:00Z",
+    "market_type": "binary",
+    "no_ask_dollars": "0.5000",
+    "no_bid_dollars": "0.4900",
+    "no_sub_title": "Denver wins by over 4.5 points",
+    "notional_value_dollars": "1.0000",
+    "occurrence_datetime": "2026-11-27T23:00:00Z",
+    "open_interest_fp": "415979.86",
+    "open_time": "2026-11-20T20:06:00Z",
+    "previous_price_dollars": "0.4800",
+    "previous_yes_ask_dollars": "0.4800",
+    "previous_yes_bid_dollars": "0.4600",
+    "price_level_structure": "linear_cent",
+    "price_ranges": [
+      {
+        "end": "1.0000",
+        "start": "0.0000",
+        "step": "0.0100"
+      }
+    ],
+    "result": "",
+    "rules_primary": "If Denver wins by more than 4.5 points in the Denver vs Pittsburgh Pro Football game originally scheduled for Nov 27, 2026, then the market resolves to Yes.",
+    "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+    "settlement_bounds_type": "default",
+    "settlement_timer_seconds": 60,
+    "status": "active",
+    "strike_type": "greater",
+    "ticker": "KXNFLSPREAD-26NOV27DENPIT-DEN5",
+    "title": "Denver wins by over 4.5 points?",
+    "updated_time": "2026-11-20T20:06:01.55344Z",
+    "volume_24h_fp": "309625.44",
+    "volume_fp": "426119.81",
+    "yes_ask_dollars": "0.5100",
+    "yes_ask_size_fp": "1016008.37",
+    "yes_bid_dollars": "0.5000",
+    "yes_bid_size_fp": "792351.25",
+    "yes_sub_title": "Denver wins by over 4.5 points"
+  },
+  "sign": -1,
+  "sportsbooks": [
+    {
+      "provider_event_id": "44a3bcf5bd002583ddef2207a92dd977",
+      "game_id": "2026_12_DEN_PIT",
+      "home_team": "PIT",
+      "away_team": "DEN",
+      "bookmaker_key": "draftkings",
+      "sportsbook": "DraftKings",
+      "home_line": 4.5,
+      "home_price_american": 101,
+      "away_line": -4.5,
+      "away_price_american": -122,
+      "provider_updated_at_utc": "2026-11-26T22:05:55+00:00",
+      "captured_at_utc": "2026-11-26T22:06:14.091778+00:00",
+      "kickoff_utc": "2026-11-27T20:00:00+00:00",
+      "snapshot_id": "20261126T220614091778Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "a0a0087279db16a4f68cf5cb"
+    },
+    {
+      "provider_event_id": "44a3bcf5bd002583ddef2207a92dd977",
+      "game_id": "2026_12_DEN_PIT",
+      "home_team": "PIT",
+      "away_team": "DEN",
+      "bookmaker_key": "fanduel",
+      "sportsbook": "FanDuel",
+      "home_line": 4.5,
+      "home_price_american": -110,
+      "away_line": -4.5,
+      "away_price_american": -110,
+      "provider_updated_at_utc": "2026-11-26T22:05:34+00:00",
+      "captured_at_utc": "2026-11-26T22:06:14.091778+00:00",
+      "kickoff_utc": "2026-11-27T20:00:00+00:00",
+      "snapshot_id": "20261126T220614091778Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "54b782afa849152dce87dff7"
+    },
+    {
+      "provider_event_id": "44a3bcf5bd002583ddef2207a92dd977",
+      "game_id": "2026_12_DEN_PIT",
+      "home_team": "PIT",
+      "away_team": "DEN",
+      "bookmaker_key": "betonlineag",
+      "sportsbook": "BetOnline.ag",
+      "home_line": 4.5,
+      "home_price_american": -105,
+      "away_line": -4.5,
+      "away_price_american": -115,
+      "provider_updated_at_utc": "2026-11-26T22:05:34+00:00",
+      "captured_at_utc": "2026-11-26T22:06:14.091778+00:00",
+      "kickoff_utc": "2026-11-27T20:00:00+00:00",
+      "snapshot_id": "20261126T220614091778Z",
+      "source": "THE_ODDS_API_CURRENT_SPREADS",
+      "quote_id": "504a9a430e84926465ba87c2"
+    }
+  ],
+  "kalshi_book": {
+    "no_dollars": [
+      [
+        "0.4900",
+        "1016008.37"
+      ]
+    ],
+    "yes_dollars": [
+      [
+        "0.5000",
+        "792351.25"
+      ]
+    ]
+  },
+  "kalshi_observed_at": "2026-11-26T22:06:19.992459+00:00",
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "model_yes_probability": 0.4305965741287655,
+  "arms": {
+    "sportsbooks": {
+      "p_yes": 0.5108342361863488,
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "1016008.37",
+          "fee": "0.0175",
+          "probability": 0.5108342361863488,
+          "net_expected_dollars": -0.016665763813651147
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "792351.25",
+          "fee": "0.0175",
+          "probability": 0.4891657638136512,
+          "net_expected_dollars": -0.028334236186348782
+        }
+      },
+      "decision": "pass"
+    },
+    "sportsbooks_epa_blend": {
+      "p_yes": 0.47071540515755717,
+      "offers": {
+        "yes": {
+          "ask": "0.5100",
+          "available": "1016008.37",
+          "fee": "0.0175",
+          "probability": 0.47071540515755717,
+          "net_expected_dollars": -0.056784594842442804
+        },
+        "no": {
+          "ask": "0.5000",
+          "available": "792351.25",
+          "fee": "0.0175",
+          "probability": 0.5292845948424428,
+          "net_expected_dollars": 0.011784594842442875
+        }
+      },
+      "decision": "no"
+    }
+  },
+  "movement_v1": {
+    "status": "insufficient_books",
+    "direction": null,
+    "common_books": 2,
+    "up": 1,
+    "down": 0,
+    "median_change_pp": 1.2969453481866644,
+    "previous_quotes": [
+      {
+        "provider_event_id": "44a3bcf5bd002583ddef2207a92dd977",
+        "game_id": "2026_12_DEN_PIT",
+        "home_team": "PIT",
+        "away_team": "DEN",
+        "bookmaker_key": "draftkings",
+        "sportsbook": "DraftKings",
+        "home_line": 4.5,
+        "home_price_american": -110,
+        "away_line": -4.5,
+        "away_price_american": -109,
+        "provider_updated_at_utc": "2026-11-26T19:12:17+00:00",
+        "captured_at_utc": "2026-11-26T19:12:30.292375+00:00",
+        "kickoff_utc": "2026-11-27T20:00:00+00:00",
+        "snapshot_id": "20261126T191230292375Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "0b81d9d2a0334c8ff3fb0379"
+      },
+      {
+        "provider_event_id": "44a3bcf5bd002583ddef2207a92dd977",
+        "game_id": "2026_12_DEN_PIT",
+        "home_team": "PIT",
+        "away_team": "DEN",
+        "bookmaker_key": "fanduel",
+        "sportsbook": "FanDuel",
+        "home_line": 4.5,
+        "home_price_american": -110,
+        "away_line": -4.5,
+        "away_price_american": -110,
+        "provider_updated_at_utc": "2026-11-26T19:12:00+00:00",
+        "captured_at_utc": "2026-11-26T19:12:30.292375+00:00",
+        "kickoff_utc": "2026-11-27T20:00:00+00:00",
+        "snapshot_id": "20261126T191230292375Z",
+        "source": "THE_ODDS_API_CURRENT_SPREADS",
+        "quote_id": "e89c7f09556715c3e9072573"
+      }
+    ],
+    "current_quote_ids": [
+      "a0a0087279db16a4f68cf5cb",
+      "54b782afa849152dce87dff7"
+    ],
+    "previous_snapshot": "20261126T191230292375Z",
+    "current_snapshot": "20261126T220614091778Z",
+    "decision": "pass"
+  }
+}
