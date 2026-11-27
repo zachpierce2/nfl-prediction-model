@@ -1,19 +1,19 @@
 # NFL prospective grading
 
-Updated: 2026-11-26T10:37:38.771256+00:00
+Updated: 2026-11-27T10:34:34.975080+00:00
 
 | Metric | Result |
 |---|---:|
-| Forecasts | 31 |
-| Graded games | 16 |
-| Pending | 15 |
+| Forecasts | 32 |
+| Graded games | 19 |
+| Pending | 13 |
 | Hypothetical wins | 8 |
-| Hypothetical losses | 8 |
-| Pushes | 0 |
+| Hypothetical losses | 10 |
+| Pushes | 1 |
 | No lean | 0 |
-| Win rate excluding pushes | 50.00% |
-| Sportsbook MAE | 8.5625 |
-| Model MAE | 8.5195 |
+| Win rate excluding pushes | 44.44% |
+| Sportsbook MAE | 7.7895 |
+| Model MAE | 7.7701 |
 
 Grades use the frozen forecast and recorded spread. Any nonzero adjustment counts as a hypothetical lean, however tiny. This is not an executed betting record. No profit or ROI is claimed.
 
@@ -31,34 +31,34 @@ Matched finals: 0
 
 ## Line movement against later sportsbook prices
 
-Near-kickoff comparisons (within 60 minutes): 14. Average point advantage: +0.036.
+Near-kickoff comparisons (within 60 minutes): 15. Average point advantage: +0.100.
 
 Earlier last observations: 0 (excluded from that average).
 
 Positive means the saved pick had a better spread than the later same-book quote. Each CSV row shows the quote time and minutes before kickoff. Three-hour polling may miss the closing price. These are proxies, not certified closing lines; odds/juice are shown separately and are not included in point value.
 
-Status counts: {"NEAR_KICKOFF_PROXY": 14, "NO_LATER_SAME_BOOK_QUOTE": 2, "PENDING_KICKOFF": 15}
+Status counts: {"NEAR_KICKOFF_PROXY": 15, "NO_LATER_SAME_BOOK_QUOTE": 4, "PENDING_KICKOFF": 13}
 
 ## Prospective core versus EPA (paired games only)
 
-Paired pregame forecasts: 29. Historical predictions are not backfilled.
+Paired pregame forecasts: 30. Historical predictions are not backfilled.
 
 | Model | Graded | Wins | Losses | Pushes | ATS win rate | MAE |
 |---|---:|---:|---:|---:|---:|---:|
-| core | 14 | 8 | 6 | 0 | 57.14% | 8.0189 |
-| epa | 14 | 9 | 5 | 0 | 64.29% | 8.0119 |
+| core | 17 | 8 | 8 | 1 | 50.00% | 7.2697 |
+| epa | 17 | 9 | 7 | 1 | 56.25% | 7.2788 |
 
-Matched same-book near-kickoff comparisons: 13. Separate line-value means are in epa_shadow/summary.json. These are point-spread proxies, not certified closing prices or profit.
+Matched same-book near-kickoff comparisons: 14. Separate line-value means are in epa_shadow/summary.json. These are point-spread proxies, not certified closing prices or profit.
 # Starting QB comparison
 
 All three models use the same games and sportsbook quotes.
 
 | Model | Graded | W–L–P | ATS | MAE |
 |---|---:|---|---:|---:|
-| epa | 4 | 3–1–0 | 75.00% | 12.4898 |
-| last_observed | 4 | 3–1–0 | 75.00% | 12.4835 |
-| expected | 4 | 3–1–0 | 75.00% | 12.4835 |
+| epa | 7 | 3–3–1 | 50.00% | 8.7904 |
+| last_observed | 7 | 3–3–1 | 50.00% | 8.7832 |
+| expected | 7 | 3–3–1 | 50.00% | 8.7832 |
 
-Complete forecast triples: 19. Starter identity changes: 3. Expected forecasts missing a control: 0. Controls missing EPA: 0.
+Complete forecast triples: 20. Starter identity changes: 3. Expected forecasts missing a control: 0. Controls missing EPA: 0.
 
 The changed-starter subgroup and pairwise disagreements are in summary.json; per-game IDs, picks, results and errors are in changed_picks.csv. A small early sample does not establish improvement.

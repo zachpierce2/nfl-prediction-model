@@ -1,15 +1,15 @@
 {
-  "updated_at_utc": "2026-11-26T10:37:38.771256+00:00",
-  "forecasts": 31,
+  "updated_at_utc": "2026-11-27T10:34:34.975080+00:00",
+  "forecasts": 32,
   "status_counts": {
-    "NEAR_KICKOFF_PROXY": 14,
-    "NO_LATER_SAME_BOOK_QUOTE": 2,
-    "PENDING_KICKOFF": 15
+    "NEAR_KICKOFF_PROXY": 15,
+    "NO_LATER_SAME_BOOK_QUOTE": 4,
+    "PENDING_KICKOFF": 13
   },
-  "near_kickoff_games": 14,
+  "near_kickoff_games": 15,
   "early_observations": 0,
-  "mean_near_kickoff_line_value_points": 0.03571428571428571,
-  "positive_near_kickoff_games": 2,
+  "mean_near_kickoff_line_value_points": 0.1,
+  "positive_near_kickoff_games": 3,
   "negative_near_kickoff_games": 1,
   "unchanged_near_kickoff_games": 11,
   "certified_closing_lines": 0,

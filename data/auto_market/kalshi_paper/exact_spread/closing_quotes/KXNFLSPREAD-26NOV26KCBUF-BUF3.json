@@ -1,0 +1,10 @@
+{
+  "status": "usable",
+  "end_period_ts": 1795742340,
+  "yes_bid": "0.5400",
+  "yes_ask": "0.5500",
+  "yes_midpoint": "0.5450",
+  "seconds_before_kickoff": 60.0,
+  "ticker": "KXNFLSPREAD-26NOV26KCBUF-BUF3",
+  "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV26KCBUF-BUF3/candlesticks?start_ts=1795742100&end_ts=1795742399&period_interval=1"
+}

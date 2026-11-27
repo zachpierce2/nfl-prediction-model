@@ -1,0 +1,10 @@
+{
+  "status": "usable",
+  "end_period_ts": 1795715940,
+  "yes_bid": "0.4700",
+  "yes_ask": "0.4800",
+  "yes_midpoint": "0.4750",
+  "seconds_before_kickoff": 60.0,
+  "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI2",
+  "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV26CHIDET-CHI2/candlesticks?start_ts=1795715700&end_ts=1795715999&period_interval=1"
+}

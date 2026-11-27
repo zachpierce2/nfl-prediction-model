@@ -12,3 +12,6 @@ game_id,quote_id,home_line,changed,primary,exact
 2026_11_MIN_SF,aa2dbc95d4b01170fc7475a9,-3.5,True,WIN,LOSS
 2026_11_CIN_WAS,8fcddd35bf7c14bec5bf83fc,6.0,True,LOSS,WIN
 2026_12_GB_LA,3958a246a7bc03acdf9b8e3f,-2.5,False,WIN,WIN
+2026_12_CHI_DET,e34cae6559e68b35c0dc9676,2.5,True,LOSS,WIN
+2026_12_PHI_DAL,534983fbafebc9ca89711a39,-8.5,True,LOSS,WIN
+2026_12_KC_BUF,d7bc36e8063404f0deffd4df,-3.0,True,PUSH,PUSH

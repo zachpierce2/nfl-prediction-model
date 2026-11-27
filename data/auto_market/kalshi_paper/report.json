@@ -1,56 +1,56 @@
 {
   "agreement_vs_blend": {
-    "comparable": 14,
+    "comparable": 17,
     "excluded_settlements": 0,
     "agreement_v1": {
       "trades": 0,
-      "passes": 14,
+      "passes": 17,
       "net_paper_dollars": 0.0,
-      "brier": 0.26205888219953527
+      "brier": 0.2587709206982766
     },
     "blend": {
       "trades": 0,
-      "passes": 14,
+      "passes": 17,
       "net_paper_dollars": 0.0,
-      "brier": 0.25966858774385343
+      "brier": 0.25733992467350697
     }
   },
   "three_way": {
-    "comparable": 14,
+    "comparable": 17,
     "excluded_settlements": 0,
     "model": {
       "trades": 4,
-      "passes": 10,
+      "passes": 13,
       "net_paper_dollars": 0.9501,
-      "brier": 0.25569000260818736
+      "brier": 0.25460667152332506
     },
     "market": {
       "trades": 0,
-      "passes": 14,
+      "passes": 17,
       "net_paper_dollars": 0.0,
-      "brier": 0.26385178571428575
+      "brier": 0.26025735294117647
     },
     "blend": {
       "trades": 0,
-      "passes": 14,
+      "passes": 17,
       "net_paper_dollars": 0.0,
-      "brier": 0.25966858774385343
+      "brier": 0.25733992467350697
     }
   },
   "probability_benchmark": {
-    "comparable": 14,
+    "comparable": 17,
     "excluded": 0,
-    "model_brier": 0.25569000260818736,
-    "kalshi_midpoint_brier": 0.26385178571428575,
-    "model_advantage": 0.008161783106098386
+    "model_brier": 0.25460667152332506,
+    "kalshi_midpoint_brier": 0.26025735294117647,
+    "model_advantage": 0.005650681417851411
   },
   "recorded": 29,
-  "graded": 14,
-  "awaiting_binary_settlement": 15,
+  "graded": 17,
+  "awaiting_binary_settlement": 12,
   "graded_paper_trades": 4,
-  "graded_passes": 10,
+  "graded_passes": 13,
   "net_paper_dollars": 0.9501,
-  "mean_brier": 0.25569000260818736,
+  "mean_brier": 0.25460667152332506,
   "games": [
     {
       "comparison": {
@@ -536,6 +536,43 @@
     {
       "comparison": {
         "model": {
+          "p_yes": 0.48670998227997636,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26346664229102223
+        },
+        "market": {
+          "p_yes": 0.505,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.245025
+        },
+        "blend": {
+          "p_yes": 0.4958549911399882,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25416218995846135
+        },
+        "agreement_v1": {
+          "p_yes": 0.505,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.245025
+        }
+      },
+      "model_yes_probability": 0.48670998227997636,
+      "kalshi_yes_midpoint": 0.505,
+      "midpoint_brier": 0.245025,
+      "game": "2026_12_CHI_DET",
+      "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI3",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.26346664229102223
+    },
+    {
+      "comparison": {
+        "model": {
           "p_yes": 0.5085646780862374,
           "decision": "pass",
           "net_dollars": 0.0,
@@ -569,6 +606,80 @@
       "result": "yes",
       "net_dollars": 0.0,
       "brier": 0.24150867562448347
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5304193738924985,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.22050596441551312
+        },
+        "market": {
+          "p_yes": 0.52,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2304
+        },
+        "blend": {
+          "p_yes": 0.5252096869462493,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.22542584136967864
+        },
+        "agreement_v1": {
+          "p_yes": 0.5252096869462493,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.22542584136967864
+        }
+      },
+      "model_yes_probability": 0.5304193738924985,
+      "kalshi_yes_midpoint": 0.52,
+      "midpoint_brier": 0.2304,
+      "game": "2026_12_KC_BUF",
+      "ticker": "KXNFLSPREAD-26NOV26KCBUF-BUF3",
+      "decision": "pass",
+      "result": "yes",
+      "net_dollars": 0.0,
+      "brier": 0.22050596441551312
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5144713526284702,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26468077267536777
+        },
+        "market": {
+          "p_yes": 0.505,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.255025
+        },
+        "blend": {
+          "p_yes": 0.5097356763142351,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25983045970753066
+        },
+        "agreement_v1": {
+          "p_yes": 0.5097356763142351,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25983045970753066
+        }
+      },
+      "model_yes_probability": 0.5144713526284702,
+      "kalshi_yes_midpoint": 0.505,
+      "midpoint_brier": 0.255025,
+      "game": "2026_12_PHI_DAL",
+      "ticker": "KXNFLSPREAD-26NOV26PHIDAL-DAL9",
+      "decision": "pass",
+      "result": "no",
+      "net_dollars": 0.0,
+      "brier": 0.26468077267536777
     }
   ]
 }

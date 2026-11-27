@@ -1,21 +1,21 @@
 {
-  "matched_games": 16,
+  "matched_games": 17,
   "games_with_positive_sportsbook_edge": 1,
-  "awaiting_settlement": 3,
+  "awaiting_settlement": 1,
   "paired": {
-    "comparable": 13,
+    "comparable": 16,
     "excluded_settlements": 0,
     "sportsbooks": {
       "trades": 1,
-      "passes": 12,
+      "passes": 15,
       "net_paper_dollars": -0.4774,
-      "brier": 0.2563755399818313
+      "brier": 0.2539523800465039
     },
     "sportsbooks_epa_blend": {
-      "trades": 1,
-      "passes": 12,
-      "net_paper_dollars": -0.4774,
-      "brier": 0.25633853874949974
+      "trades": 2,
+      "passes": 14,
+      "net_paper_dollars": 0.015100000000000002,
+      "brier": 0.25304160014954374
     }
   },
   "games": [
@@ -236,6 +236,24 @@
       }
     },
     {
+      "game": "2026_12_CHI_DET",
+      "ticker": "KXNFLSPREAD-26NOV26CHIDET-CHI2",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.4983800227034637,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25162260162297756
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5158763669335393,
+          "decision": "yes",
+          "net_dollars": 0.4925,
+          "brier": 0.23437569209346906
+        }
+      }
+    },
+    {
       "game": "2026_12_GB_LA",
       "ticker": "KXNFLSPREAD-26NOV25GBLAR-LAR3",
       "comparison": {
@@ -250,6 +268,42 @@
           "decision": "pass",
           "net_dollars": 0.0,
           "brier": 0.24520713107309247
+        }
+      }
+    },
+    {
+      "game": "2026_12_KC_BUF",
+      "ticker": "KXNFLSPREAD-26NOV26KCBUF-BUF3",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5217391304347826,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2287334593572779
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5260792521636406,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.22460087522977415
+        }
+      }
+    },
+    {
+      "game": "2026_12_PHI_DAL",
+      "ticker": "KXNFLSPREAD-26NOV26PHIDAL-DAL9",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.5072356763142352,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.25728803132595957
         }
       }
     }
