@@ -1,0 +1,34 @@
+{
+  "status": "ADVANCED_SHADOW_RECORDED",
+  "feature_cutoff_utc": "2026-11-27T01:32:15.511005+00:00",
+  "arms": {
+    "epa_baseline": {
+      "new_forecasts": 1,
+      "missing_feature_games": []
+    },
+    "epa_pressure": {
+      "new_forecasts": 1,
+      "missing_feature_games": []
+    },
+    "epa_explosive": {
+      "new_forecasts": 1,
+      "missing_feature_games": []
+    },
+    "epa_special": {
+      "new_forecasts": 1,
+      "missing_feature_games": []
+    },
+    "epa_injury": {
+      "new_forecasts": 0,
+      "missing_feature_games": [
+        "2026_13_KC_LA"
+      ]
+    },
+    "epa_all": {
+      "new_forecasts": 0,
+      "missing_feature_games": [
+        "2026_13_KC_LA"
+      ]
+    }
+  }
+}
