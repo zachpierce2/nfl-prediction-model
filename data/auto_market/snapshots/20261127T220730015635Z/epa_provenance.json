@@ -1,0 +1,19 @@
+{
+  "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
+  "captured_at_utc": "2026-11-27T22:07:33.321171+00:00",
+  "historical_features_sha256": "e9b8e433a8ffc551b4646d22e0e41f434507edeffc098930f42366ab3b470b73",
+  "current_sources": [
+    {
+      "season": 2026,
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2026.parquet",
+      "pbp_sha256": "5f3213baeee2024b43cf269d36fc931154af19bb68fd4bdd7131d5a900a4c2a3",
+      "prior_scored_games": 167
+    }
+  ],
+  "feature_builder_sha256": "ca271dc0449561a0294bcad3ba6747bbbc6058f2fabfc9982f8952dae271636a",
+  "limitations": [
+    "Historical features are revised development data through 2025.",
+    "Current EPA uses only prior scored game dates from this run schedule; same-day scores excluded.",
+    "Exact derived feature and team-game inputs archived; source PBP hashes retained."
+  ]
+}
