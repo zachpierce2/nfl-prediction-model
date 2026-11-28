@@ -4,9 +4,9 @@
       "due": 18,
       "captured": 13,
       "quoted": 13,
-      "graded_teams": 24,
-      "named": 22,
-      "correct": 22
+      "graded_teams": 26,
+      "named": 24,
+      "correct": 24
     },
     "360": {
       "due": 18,
@@ -20,9 +20,9 @@
       "due": 18,
       "captured": 7,
       "quoted": 7,
-      "graded_teams": 12,
-      "named": 12,
-      "correct": 12
+      "graded_teams": 14,
+      "named": 14,
+      "correct": 14
     }
   },
   "paired_one_contract_costs": [
