@@ -15,3 +15,4 @@ game_id,quote_id,home_line,changed,primary,exact
 2026_12_CHI_DET,e34cae6559e68b35c0dc9676,2.5,True,LOSS,WIN
 2026_12_PHI_DAL,534983fbafebc9ca89711a39,-8.5,True,LOSS,WIN
 2026_12_KC_BUF,d7bc36e8063404f0deffd4df,-3.0,True,PUSH,PUSH
+2026_12_DEN_PIT,a3772f013b778e1ade52daa0,3.0,True,WIN,LOSS

@@ -1,21 +1,21 @@
 {
   "matched_games": 17,
   "games_with_positive_sportsbook_edge": 1,
-  "awaiting_settlement": 1,
+  "awaiting_settlement": 0,
   "paired": {
-    "comparable": 16,
+    "comparable": 17,
     "excluded_settlements": 0,
     "sportsbooks": {
       "trades": 1,
-      "passes": 15,
+      "passes": 16,
       "net_paper_dollars": -0.4774,
-      "brier": 0.2539523800465039
+      "brier": 0.2543640998590678
     },
     "sportsbooks_epa_blend": {
-      "trades": 2,
+      "trades": 3,
       "passes": 14,
-      "net_paper_dollars": 0.015100000000000002,
-      "brier": 0.25304160014954374
+      "net_paper_dollars": 0.4976,
+      "brier": 0.25119050559090256
     }
   },
   "games": [
@@ -250,6 +250,24 @@
           "decision": "yes",
           "net_dollars": 0.4925,
           "brier": 0.23437569209346906
+        }
+      }
+    },
+    {
+      "game": "2026_12_DEN_PIT",
+      "ticker": "KXNFLSPREAD-26NOV27DENPIT-DEN5",
+      "comparison": {
+        "sportsbooks": {
+          "p_yes": 0.5108342361863488,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.2609516168600904
+        },
+        "sportsbooks_epa_blend": {
+          "p_yes": 0.47071540515755717,
+          "decision": "no",
+          "net_dollars": 0.4825,
+          "brier": 0.22157299265264319
         }
       }
     },

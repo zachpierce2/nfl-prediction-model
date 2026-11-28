@@ -16,3 +16,4 @@ game_id,primary_side,primary_grade,primary_price,primary_units,consensus_side,co
 2026_12_CHI_DET,home,LOSS,-106.0,-1.0,home,LOSS,-106.0,-1.0,False
 2026_12_PHI_DAL,home,LOSS,-111.0,-1.0,home,LOSS,-111.0,-1.0,False
 2026_12_KC_BUF,home,PUSH,101.0,0.0,away,PUSH,-121.0,0.0,True
+2026_12_DEN_PIT,home,WIN,-115.0,0.8695652173913043,home,WIN,-115.0,0.8695652173913043,False

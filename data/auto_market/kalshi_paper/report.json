@@ -1,56 +1,56 @@
 {
   "agreement_vs_blend": {
-    "comparable": 17,
+    "comparable": 18,
     "excluded_settlements": 0,
     "agreement_v1": {
       "trades": 0,
-      "passes": 17,
+      "passes": 18,
       "net_paper_dollars": 0.0,
-      "brier": 0.2587709206982766
+      "brier": 0.2596746291557557
     },
     "blend": {
       "trades": 0,
-      "passes": 17,
+      "passes": 18,
       "net_paper_dollars": 0.0,
-      "brier": 0.25733992467350697
+      "brier": 0.25832313291013986
     }
   },
   "three_way": {
-    "comparable": 17,
+    "comparable": 18,
     "excluded_settlements": 0,
     "model": {
       "trades": 4,
-      "passes": 13,
+      "passes": 14,
       "net_paper_dollars": 0.9501,
-      "brier": 0.25460667152332506
+      "brier": 0.2551325985828711
     },
     "market": {
       "trades": 0,
-      "passes": 17,
+      "passes": 18,
       "net_paper_dollars": 0.0,
-      "brier": 0.26025735294117647
+      "brier": 0.26170000000000004
     },
     "blend": {
       "trades": 0,
-      "passes": 17,
+      "passes": 18,
       "net_paper_dollars": 0.0,
-      "brier": 0.25733992467350697
+      "brier": 0.25832313291013986
     }
   },
   "probability_benchmark": {
-    "comparable": 17,
+    "comparable": 18,
     "excluded": 0,
-    "model_brier": 0.25460667152332506,
-    "kalshi_midpoint_brier": 0.26025735294117647,
-    "model_advantage": 0.005650681417851411
+    "model_brier": 0.2551325985828711,
+    "kalshi_midpoint_brier": 0.26170000000000004,
+    "model_advantage": 0.006567401417128971
   },
   "recorded": 29,
-  "graded": 17,
-  "awaiting_binary_settlement": 12,
+  "graded": 18,
+  "awaiting_binary_settlement": 11,
   "graded_paper_trades": 4,
-  "graded_passes": 13,
+  "graded_passes": 14,
   "net_paper_dollars": 0.9501,
-  "mean_brier": 0.25460667152332506,
+  "mean_brier": 0.255132598582871,
   "games": [
     {
       "comparison": {
@@ -569,6 +569,43 @@
       "result": "yes",
       "net_dollars": 0.0,
       "brier": 0.26346664229102223
+    },
+    {
+      "comparison": {
+        "model": {
+          "p_yes": 0.5138806851742469,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.26407335859515346
+        },
+        "market": {
+          "p_yes": 0.535,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.286225
+        },
+        "blend": {
+          "p_yes": 0.5244403425871235,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.27503767293289944
+        },
+        "agreement_v1": {
+          "p_yes": 0.5244403425871235,
+          "decision": "pass",
+          "net_dollars": 0.0,
+          "brier": 0.27503767293289944
+        }
+      },
+      "model_yes_probability": 0.5138806851742469,
+      "kalshi_yes_midpoint": 0.535,
+      "midpoint_brier": 0.286225,
+      "game": "2026_12_DEN_PIT",
+      "ticker": "KXNFLSPREAD-26NOV27DENPIT-DEN3",
+      "decision": "pass",
+      "result": "no",
+      "net_dollars": 0.0,
+      "brier": 0.26407335859515346
     },
     {
       "comparison": {

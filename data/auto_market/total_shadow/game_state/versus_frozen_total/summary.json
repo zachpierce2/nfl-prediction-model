@@ -1,17 +1,17 @@
 {
   "paired": 29,
-  "graded": 16,
-  "pending": 13,
+  "graded": 17,
+  "pending": 12,
   "disagreements": 1,
   "baseline": {
-    "WIN": 8,
+    "WIN": 9,
     "LOSS": 7,
     "PUSH": 1,
     "NO_LEAN": 0,
     "wins_on_disagreements": 1
   },
   "game_state_weighted": {
-    "WIN": 7,
+    "WIN": 8,
     "LOSS": 8,
     "PUSH": 1,
     "NO_LEAN": 0,

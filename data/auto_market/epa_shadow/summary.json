@@ -1,38 +1,38 @@
 {
-  "updated_at_utc": "2026-11-27T10:34:34.975080+00:00",
+  "updated_at_utc": "2026-11-28T10:30:49.812106+00:00",
   "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1",
   "paired_forecasts": 30,
   "core": {
-    "updated_at_utc": "2026-11-27T10:34:34.975080+00:00",
+    "updated_at_utc": "2026-11-28T10:30:49.812106+00:00",
     "forecasts": 30,
-    "graded_games": 17,
-    "pending_games": 13,
-    "hypothetical_wins": 8,
+    "graded_games": 18,
+    "pending_games": 12,
+    "hypothetical_wins": 9,
     "hypothetical_losses": 8,
     "pushes": 1,
     "no_lean": 0,
-    "hypothetical_win_pct": 50.0,
-    "market_mae": 7.294117647058823,
-    "model_mae": 7.269687698277317,
+    "hypothetical_win_pct": 52.94117647058823,
+    "market_mae": 8.277777777777779,
+    "model_mae": 8.253742156591663,
     "missing_result_over_3_days": [],
     "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim.",
-    "mean_matched_line_value_points": 0.10714285714285714
+    "mean_matched_line_value_points": 0.0
   },
   "epa": {
-    "updated_at_utc": "2026-11-27T10:34:34.975080+00:00",
+    "updated_at_utc": "2026-11-28T10:30:49.812106+00:00",
     "forecasts": 30,
-    "graded_games": 17,
-    "pending_games": 13,
-    "hypothetical_wins": 9,
+    "graded_games": 18,
+    "pending_games": 12,
+    "hypothetical_wins": 10,
     "hypothetical_losses": 7,
     "pushes": 1,
     "no_lean": 0,
-    "hypothetical_win_pct": 56.25,
-    "market_mae": 7.294117647058823,
-    "model_mae": 7.278841617994026,
+    "hypothetical_win_pct": 58.8235294117647,
+    "market_mae": 8.277777777777779,
+    "model_mae": 8.255774038981452,
     "missing_result_over_3_days": [],
     "interpretation": "Diagnostic direction of every nonzero model adjustment; excludes pushes from win rate. Not an executed betting record; no profitability claim.",
-    "mean_matched_line_value_points": 0.10714285714285714
+    "mean_matched_line_value_points": 0.0
   },
-  "matched_near_kickoff_comparisons": 14
+  "matched_near_kickoff_comparisons": 15
 }

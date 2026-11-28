@@ -1,0 +1,10 @@
+{
+  "status": "usable",
+  "end_period_ts": 1795809540,
+  "yes_bid": "0.5000",
+  "yes_ask": "0.5100",
+  "yes_midpoint": "0.5050",
+  "seconds_before_kickoff": 60.0,
+  "ticker": "KXNFLSPREAD-26NOV27DENPIT-DEN5",
+  "source": "series/KXNFLSPREAD/markets/KXNFLSPREAD-26NOV27DENPIT-DEN5/candlesticks?start_ts=1795809300&end_ts=1795809599&period_interval=1"
+}
