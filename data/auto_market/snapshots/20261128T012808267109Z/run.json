@@ -1,0 +1,51 @@
+{
+  "captured_at_utc": "2026-11-28T01:28:08.267109+00:00",
+  "snapshot_id": "20261128T012808267109Z",
+  "provider_events": 22,
+  "exact_line_shadow": {
+    "eligible": 0,
+    "saved": 0
+  },
+  "opening_comparison": {
+    "first_seen": 0,
+    "saved": 0,
+    "later_saved": 11
+  },
+  "consensus_shadow": {
+    "primary_forecasts": 0,
+    "paired": 0
+  },
+  "total_shadow": {
+    "paired": 0,
+    "missing_total": 0
+  },
+  "eligible_quotes": 12,
+  "new_forecasts": 0,
+  "epa_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_epa_forecasts": 0,
+    "model_version": "opponent_epa_alpha1000_shrink025_cap2_v1"
+  },
+  "advanced_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "arms": {}
+  },
+  "qb_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_qb_forecasts": 0
+  },
+  "qb_passing_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_qb_forecasts": 0
+  },
+  "expected_qb_shadow": {
+    "status": "NO_NEW_CORE_FORECASTS",
+    "new_qb_forecasts": 0
+  },
+  "skipped": [],
+  "remaining_credits": "251",
+  "last_request_credits": "2",
+  "schedule_sha256": "ce1197963da0e31cf2bf9d408937f5e87e72dd05de28e6e7b7e9a99084e58179",
+  "odds_sha256": "449f363f57cbe8d2151681ac30a12ca30a625eef9f20a90edb043049df3e96d9",
+  "policy": "First automatic quote within 7 days of kickoff; fixed bookmaker priority; same-day scores excluded"
+}
